@@ -14,9 +14,9 @@ The benchmark and CI defaults use only the fictional demo. Corpus-level experime
 
 ## Current release gate
 
-The sanitized tree is prepared as a parentless root commit on `codex/github-ready-clean-history`; it has no connection to the old history. The existing `main`, `origin/main`, and Codex backup refs remain untouched and still contain earlier copies of real reports, benchmark outputs, evaluation data, and screenshots. Do not publish those refs as part of this release.
+Local and GitHub `main` now use a sanitized two-commit history rooted independently from the old history. The old history remains in ignored local backups and Codex backup refs; never push or publish those refs. A read-only remote check after the update found only `main` among advertised refs and no pull-request refs.
 
-The old history is preserved locally in `financial_python/local_data/archive/git-history-backup-20261006.bundle`. No push has been performed. The requested initial visibility is private; the GitHub target's actual visibility has not been checked or changed. Before publishing, confirm the target repository and push only the clean release ref.
+Gitleaks v8.30.0 scanned the release history and files with no findings. The push triggered GitHub Actions, but its run result has not been checked. Repository visibility was not checked or changed; verify the CI run and visibility before switching the repository to public. A history rewrite does not necessarily purge cached commit views or references held by forks, pull requests, or existing clones; review [GitHub's guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) before changing visibility.
 
 ## Verification
 

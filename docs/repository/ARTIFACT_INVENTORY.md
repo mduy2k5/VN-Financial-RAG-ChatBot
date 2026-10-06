@@ -1,7 +1,7 @@
 # Repository artifact inventory
 
-The 2026-10-06 baseline contained 408 tracked files totaling approximately 146 MiB. The largest items were real-corpus benchmark results, evaluation/review datasets, source reports, and UI QA screenshots.
+The tracked tree contains application code, configuration, schemas, tests, documentation, a small fictional report, and synthetic benchmark cases. Real reports, source-grounded evaluation data, run outputs, review packs, machine snapshots, and UI QA screenshots stay in ignored local storage.
 
-The working-tree policy now keeps only a small synthetic report and two synthetic benchmark cases in Git. The previous real inputs and detailed outputs are preserved locally under the ignored `financial_python/local_data/archive/` directory (166 files, approximately 139 MiB). This archive is for local work and must not be added to GitHub.
+The current `main` has a sanitized two-commit history rooted independently from the previous history. Gitleaks v8.30.0 scanned both commits and the tracked files with no findings. Keep local archives and backup refs out of release pushes.
 
-The sanitized tree is prepared as the parentless root commit on `codex/github-ready-clean-history`. The local backup bundle is `financial_python/local_data/archive/git-history-backup-20261006.bundle`. The existing `main` and remote-tracking history remain untouched and still contain old copies of removed material; do not push those refs. Check the GitHub target and visibility before publishing the clean branch.
+Rewriting branch history removes the old commits from advertised branch refs, but does not guarantee removal of cached commit views, pull-request references, forks, or existing clones. Before making this repository public, review [GitHub's sensitive-data removal guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) and use its support process if eligible cached views or pull-request references need purging.
