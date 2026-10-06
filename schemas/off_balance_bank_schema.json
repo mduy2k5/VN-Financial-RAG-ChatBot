@@ -1,0 +1,497 @@
+{
+  "schema_id": "UNIVERSAL_OFF_BALANCE_BANK_V1_3",
+  "schema_version": "1.3.0",
+  "statement_type": "FINANCIAL_POSITION",
+  "sub_statement_type": "OFF_BALANCE",
+  "sector": "bank",
+  "value_type": "POINT_IN_TIME",
+  "design_principles": {
+    "mapping_key": "semantic node_id",
+    "form_code_used_for_mapping": false,
+    "hierarchy_used_as_context": true,
+    "formatting_variants_are_aliases": false,
+    "participates_in_balance_identity": false
+  },
+  "nodes": [
+    {
+      "node_id": "OFF_BALANCE",
+      "canonical_name": "Các chỉ tiêu ngoài báo cáo tình hình tài chính",
+      "parent_id": null,
+      "kind": "root",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.GUARANTEES",
+        "OFF_BALANCE.FX_COMMITMENTS",
+        "OFF_BALANCE.CREDIT_COMMITMENTS",
+        "OFF_BALANCE.FUTURE_TRANSACTION_COMMITMENTS",
+        "OFF_BALANCE.OTHER_COMMITMENTS",
+        "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES",
+        "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT",
+        "OFF_BALANCE.OTHER_ASSETS_DOCUMENTS",
+        "OFF_BALANCE.TOTAL"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES",
+      "canonical_name": "Bảo lãnh",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.GUARANTEES.LOAN",
+        "OFF_BALANCE.GUARANTEES.PAYMENT",
+        "OFF_BALANCE.GUARANTEES.PERFORMANCE",
+        "OFF_BALANCE.GUARANTEES.BID",
+        "OFF_BALANCE.GUARANTEES.OTHER"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.LOAN",
+      "canonical_name": "Bảo lãnh vay vốn",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.PAYMENT",
+      "canonical_name": "Bảo lãnh thanh toán",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.PERFORMANCE",
+      "canonical_name": "Bảo lãnh thực hiện hợp đồng",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.BID",
+      "canonical_name": "Bảo lãnh dự thầu",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.OTHER",
+      "canonical_name": "Bảo lãnh khác",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "canonical_name": "Cam kết giao dịch hối đoái",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group_or_value",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.FX_COMMITMENTS.BUY_FX",
+        "OFF_BALANCE.FX_COMMITMENTS.SELL_FX",
+        "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+        "OFF_BALANCE.FX_COMMITMENTS.CROSS_CURRENCY_SWAP_FX",
+        "OFF_BALANCE.FX_COMMITMENTS.CROSS_CURRENCY_SWAP_VND",
+        "OFF_BALANCE.FX_COMMITMENTS.INTEREST_RATE_SWAP_FX",
+        "OFF_BALANCE.FX_COMMITMENTS.INTEREST_RATE_SWAP_VND",
+        "OFF_BALANCE.FX_COMMITMENTS.SECURITIES_FORWARD"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.BUY_FX",
+      "canonical_name": "Cam kết mua ngoại tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SELL_FX",
+      "canonical_name": "Cam kết bán ngoại tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "canonical_name": "Cam kết giao dịch hoán đổi",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf_or_group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY",
+        "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY",
+      "canonical_name": "Cam kết mua - giao dịch hoán đổi tiền tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL",
+      "canonical_name": "Cam kết bán - giao dịch hoán đổi tiền tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.CROSS_CURRENCY_SWAP_FX",
+      "canonical_name": "Cam kết hoán đổi tiền tệ chéo bằng ngoại tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.CROSS_CURRENCY_SWAP_VND",
+      "canonical_name": "Cam kết hoán đổi tiền tệ chéo bằng VND",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.INTEREST_RATE_SWAP_FX",
+      "canonical_name": "Cam kết hoán đổi lãi suất bằng ngoại tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.INTEREST_RATE_SWAP_VND",
+      "canonical_name": "Cam kết hoán đổi lãi suất bằng VND",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SECURITIES_FORWARD",
+      "canonical_name": "Cam kết kỳ hạn giấy tờ có giá",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "canonical_name": "Cam kết tín dụng",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.CREDIT_COMMITMENTS.LC",
+        "OFF_BALANCE.CREDIT_COMMITMENTS.IRREVOCABLE_LOAN",
+        "OFF_BALANCE.CREDIT_COMMITMENTS.UNUSED_LIMIT"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.LC",
+      "canonical_name": "Cam kết trong nghiệp vụ thư tín dụng",
+      "parent_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.IRREVOCABLE_LOAN",
+      "canonical_name": "Cam kết cho vay không hủy ngang",
+      "parent_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.UNUSED_LIMIT",
+      "canonical_name": "Hạn mức tín dụng chưa sử dụng",
+      "parent_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.FUTURE_TRANSACTION_COMMITMENTS",
+      "canonical_name": "Cam kết giao dịch tương lai",
+      "parent_id": "OFF_BALANCE",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": true
+    },
+    {
+      "node_id": "OFF_BALANCE.OTHER_COMMITMENTS",
+      "canonical_name": "Các cam kết khác",
+      "parent_id": "OFF_BALANCE",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES",
+      "canonical_name": "Lãi cho vay và phí phải thu chưa thu được",
+      "parent_id": "OFF_BALANCE",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT",
+      "canonical_name": "Nợ khó đòi đã xử lý",
+      "parent_id": "OFF_BALANCE",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.OTHER_ASSETS_DOCUMENTS",
+      "canonical_name": "Tài sản và chứng từ khác",
+      "parent_id": "OFF_BALANCE",
+      "kind": "leaf",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": false
+    },
+    {
+      "node_id": "OFF_BALANCE.TOTAL",
+      "canonical_name": "Tổng cộng chỉ tiêu ngoài báo cáo tình hình tài chính",
+      "parent_id": "OFF_BALANCE",
+      "kind": "total",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      },
+      "off_balance_optional": true
+    }
+  ]
+}

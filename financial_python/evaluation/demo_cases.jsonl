@@ -1,0 +1,2 @@
+{"id":"demo_assets_2025","company_code":"DEMO","fiscal_year":2025,"query":"Tổng tài sản của DEMO cuối năm 2025 là bao nhiêu?","relevant_pages":[8],"relevant_sources":[{"source":"DEMO_SYNTHETIC_2025.md","page":8}],"expected_value":"1.250","expected_unit":"Triệu đồng","split":"dev"}
+{"id":"demo_revenue_2025","company_code":"DEMO","fiscal_year":2025,"query":"Doanh thu thuần của DEMO năm 2025 là bao nhiêu?","relevant_pages":[11],"relevant_sources":[{"source":"DEMO_SYNTHETIC_2025.md","page":11}],"expected_value":"900","expected_unit":"Triệu đồng","split":"dev"}

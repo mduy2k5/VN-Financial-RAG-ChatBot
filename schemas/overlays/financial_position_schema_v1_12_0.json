@@ -1,0 +1,24 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.12.0",
+  "base_schema": "financial_position_schema_v1_11_0.json",
+  "schema_id": "UNIVERSAL_FINANCIAL_POSITION_V1",
+  "schema_version": "1.12.0",
+  "nodes_add": [
+    {
+      "node_id": "LIABILITY.OTHER.PROVISION",
+      "canonical_name": "Dự phòng các khoản nợ khác",
+      "parent_id": "LIABILITY.OTHER",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    }
+  ]
+}

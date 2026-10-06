@@ -1,0 +1,213 @@
+{
+  "alias_type": "notes",
+  "alias_schema_version": "BANK_NOTES_ALIASES_V1@1.0.0",
+  "profile": "bank_v1",
+  "target_ir_schema": "GENERIC_NOTE_IR_V1",
+  "description": "Optional aliases for B05/TCTD bank disclosures. Aliases annotate a row; they never remove or reshape source data.",
+  "matching_policy": {
+    "section": "note_id_exact_then_title_exact",
+    "row": "section_scoped_exact_label",
+    "fuzzy_matching": false,
+    "parent_context_required_when_declared": true
+  },
+  "unmatched_policy": {
+    "status": "unmapped",
+    "storage_mode": "raw_tree",
+    "preserve": [
+      "section_id",
+      "section_title",
+      "block_form",
+      "headers_raw",
+      "dimensions",
+      "row_label_raw",
+      "hierarchy_path",
+      "values_in_source_order",
+      "raw_cells",
+      "source_line",
+      "source_column"
+    ]
+  },
+  "multi_column_policy": {
+    "storage_mode": "raw_matrix",
+    "preserve_headers": true,
+    "preserve_empty_cells": true,
+    "preserve_source_column": true,
+    "preserve_value_order": true,
+    "allow_unbounded_rows": true,
+    "semantic_mapping_is_optional": true
+  },
+  "sections": [
+    {
+      "alias_id": "BANK.NOTE.4.CASH_AND_VALUABLES",
+      "canonical_name": "Tiền mặt, vàng bạc, đá quý",
+      "note_ids": ["4"],
+      "titles": ["Tiền mặt, vàng bạc, đá quý"],
+      "title_aliases": ["Tiền mặt và vàng bạc, đá quý"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.4.VND_CASH", "canonical_name": "Tiền mặt bằng VND", "aliases": ["Tiền mặt bằng VND"] },
+        { "alias_id": "BANK.NOTE.4.FX_CASH", "canonical_name": "Tiền mặt bằng ngoại tệ", "aliases": ["Tiền mặt bằng ngoại tệ"] },
+        { "alias_id": "BANK.NOTE.4.FX_DOCUMENTS", "canonical_name": "Chứng từ có giá bằng ngoại tệ", "aliases": ["Chứng từ có giá bằng ngoại tệ"] },
+        { "alias_id": "BANK.NOTE.4.MONETARY_GOLD", "canonical_name": "Vàng tiền tệ", "aliases": ["Vàng tiền tệ"] },
+        { "alias_id": "BANK.NOTE.4.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.5.CENTRAL_BANK_DEPOSITS",
+      "canonical_name": "Tiền gửi tại Ngân hàng Nhà nước",
+      "note_ids": ["5"],
+      "titles": ["Tiền gửi tại Ngân hàng Nhà nước"],
+      "title_aliases": ["Tiền gửi tại Ngân hàng Nhà nước Việt Nam"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.5.SBV_VIETNAM", "canonical_name": "Tiền gửi tại Ngân hàng Nhà nước Việt Nam", "aliases": ["Tiền gửi tại Ngân hàng Nhà nước Việt Nam"] },
+        { "alias_id": "BANK.NOTE.5.SBV_LAOS", "canonical_name": "Tiền gửi tại Ngân hàng Nhà nước Lào", "aliases": ["Tiền gửi tại Ngân hàng Nhà nước Lào"] },
+        { "alias_id": "BANK.NOTE.5.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.6.INTERBANK",
+      "canonical_name": "Tiền gửi và cho vay các tổ chức tín dụng khác",
+      "note_ids": ["6"],
+      "titles": ["Tiền gửi và cho vay các tổ chức tín dụng khác"],
+      "title_aliases": ["Tiền gửi tại và cho vay các tổ chức tín dụng khác", "Tiền gửi và cho vay các TCTD khác"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.6.DEMAND_VND", "canonical_name": "Tiền gửi không kỳ hạn bằng VND", "aliases": ["Tiền gửi không kỳ hạn bằng VND"] },
+        { "alias_id": "BANK.NOTE.6.DEMAND_FX", "canonical_name": "Tiền gửi không kỳ hạn bằng ngoại tệ", "aliases": ["Tiền gửi không kỳ hạn bằng ngoại tệ"] },
+        { "alias_id": "BANK.NOTE.6.TERM_VND", "canonical_name": "Tiền gửi có kỳ hạn bằng VND", "aliases": ["Tiền gửi có kỳ hạn bằng VND"] },
+        { "alias_id": "BANK.NOTE.6.TERM_FX", "canonical_name": "Tiền gửi có kỳ hạn bằng ngoại tệ", "aliases": ["Tiền gửi có kỳ hạn bằng ngoại tệ"] },
+        { "alias_id": "BANK.NOTE.6.LOANS_VND", "canonical_name": "Cho vay bằng VND", "aliases": ["Cho vay bằng VND"] },
+        { "alias_id": "BANK.NOTE.6.LOANS_FX", "canonical_name": "Cho vay bằng ngoại tệ", "aliases": ["Cho vay bằng ngoại tệ"] },
+        { "alias_id": "BANK.NOTE.6.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.7.TRADING_SECURITIES",
+      "canonical_name": "Chứng khoán kinh doanh",
+      "note_ids": ["7"],
+      "titles": ["Chứng khoán kinh doanh"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.7.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] },
+        { "alias_id": "BANK.NOTE.7.OPENING_BALANCE", "canonical_name": "Số dư đầu kỳ", "aliases": ["Số dư đầu kỳ", "Số dư đầu năm"] },
+        { "alias_id": "BANK.NOTE.7.CLOSING_BALANCE", "canonical_name": "Số dư cuối kỳ", "aliases": ["Số dư cuối kỳ", "Số dư cuối năm"] },
+        { "alias_id": "BANK.NOTE.7.PROVISION", "canonical_name": "Dự phòng rủi ro chứng khoán kinh doanh", "aliases": ["Dự phòng rủi ro chứng khoán kinh doanh", "Dự phòng chứng khoán kinh doanh"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.8.CUSTOMER_LOANS",
+      "canonical_name": "Cho vay khách hàng",
+      "note_ids": ["8"],
+      "titles": ["Cho vay khách hàng"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.8.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] },
+        { "alias_id": "BANK.NOTE.8.STANDARD_DEBT", "canonical_name": "Nợ đủ tiêu chuẩn", "aliases": ["Nợ đủ tiêu chuẩn"] },
+        { "alias_id": "BANK.NOTE.8.SPECIAL_MENTION", "canonical_name": "Nợ cần chú ý", "aliases": ["Nợ cần chú ý"] },
+        { "alias_id": "BANK.NOTE.8.SUBSTANDARD", "canonical_name": "Nợ dưới tiêu chuẩn", "aliases": ["Nợ dưới tiêu chuẩn"] },
+        { "alias_id": "BANK.NOTE.8.DOUBTFUL", "canonical_name": "Nợ nghi ngờ", "aliases": ["Nợ nghi ngờ"] },
+        { "alias_id": "BANK.NOTE.8.LOSS", "canonical_name": "Nợ có khả năng mất vốn", "aliases": ["Nợ có khả năng mất vốn"] },
+        { "alias_id": "BANK.NOTE.8.PROVISION", "canonical_name": "Dự phòng rủi ro cho vay khách hàng", "aliases": ["Dự phòng rủi ro cho vay khách hàng", "Dự phòng cho vay khách hàng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.10.INVESTMENT_SECURITIES",
+      "canonical_name": "Chứng khoán đầu tư",
+      "note_ids": ["10"],
+      "titles": ["Chứng khoán đầu tư"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.10.GOVERNMENT_BONDS", "canonical_name": "Trái phiếu Chính phủ", "aliases": ["Trái phiếu Chính phủ"] },
+        { "alias_id": "BANK.NOTE.10.CORPORATE_BONDS", "canonical_name": "Chứng khoán nợ do các TCTD khác trong nước phát hành", "aliases": ["Chứng khoán nợ do các TCTD khác trong nước phát hành"] },
+        { "alias_id": "BANK.NOTE.10.FOREIGN_DEBT", "canonical_name": "Chứng khoán nợ nước ngoài", "aliases": ["Chứng khoán nợ nước ngoài"] },
+        { "alias_id": "BANK.NOTE.10.PROVISION", "canonical_name": "Dự phòng rủi ro chứng khoán đầu tư giữ đến ngày đáo hạn", "aliases": ["Dự phòng rủi ro chứng khoán đầu tư giữ đến ngày đáo hạn", "Dự phòng chứng khoán đầu tư"] },
+        { "alias_id": "BANK.NOTE.10.GENERAL_PROVISION", "canonical_name": "Dự phòng chung Trái phiếu doanh nghiệp chưa niêm yết", "aliases": ["Dự phòng chung Trái phiếu doanh nghiệp chưa niêm yết"] },
+        { "alias_id": "BANK.NOTE.10.SPECIFIC_PROVISION", "canonical_name": "Dự phòng cụ thể Trái phiếu doanh nghiệp chưa niêm yết", "aliases": ["Dự phòng cụ thể Trái phiếu doanh nghiệp chưa niêm yết"] },
+        { "alias_id": "BANK.NOTE.10.STANDARD_DEBT", "canonical_name": "Nợ đủ tiêu chuẩn", "aliases": ["Nợ đủ tiêu chuẩn"] },
+        { "alias_id": "BANK.NOTE.10.DOUBTFUL_DEBT", "canonical_name": "Nợ nghi ngờ", "aliases": ["Nợ nghi ngờ"] },
+        { "alias_id": "BANK.NOTE.10.LOSS_DEBT", "canonical_name": "Nợ có khả năng mất vốn", "aliases": ["Nợ có khả năng mất vốn"] },
+        { "alias_id": "BANK.NOTE.10.CORPORATE_DEBT", "canonical_name": "Chứng khoán nợ do các TCKT trong nước phát hành", "aliases": ["Chứng khoán nợ do các TCKT trong nước phát hành"] },
+        { "alias_id": "BANK.NOTE.10.OPENING_BALANCE", "canonical_name": "Số dư đầu kỳ", "aliases": ["Số dư đầu kỳ", "Số dư đầu năm"] },
+        { "alias_id": "BANK.NOTE.10.CLOSING_BALANCE", "canonical_name": "Số dư cuối kỳ", "aliases": ["Số dư cuối kỳ", "Số dư cuối năm"] },
+        { "alias_id": "BANK.NOTE.10.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Tổng cộng sau dự phòng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.11.LONG_TERM_INVESTMENTS",
+      "canonical_name": "Góp vốn đầu tư dài hạn",
+      "note_ids": ["11"],
+      "titles": ["Góp vốn đầu tư dài hạn"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.11.COST", "canonical_name": "Giá gốc", "aliases": ["Giá gốc", "Nguyên giá"] },
+        { "alias_id": "BANK.NOTE.11.CARRYING_AMOUNT", "canonical_name": "Giá trị ghi sổ", "aliases": ["Giá trị ghi sổ", "Giá trị còn lại"] },
+        { "alias_id": "BANK.NOTE.11.INDUSTRY", "canonical_name": "Ngành kinh doanh", "aliases": ["Ngành kinh doanh"] },
+        { "alias_id": "BANK.NOTE.11.OWNERSHIP", "canonical_name": "Tỷ lệ vốn góp", "aliases": ["Tỷ lệ vốn góp"] },
+        { "alias_id": "BANK.NOTE.11.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.14.OTHER_ASSETS",
+      "canonical_name": "Tài sản có khác",
+      "note_ids": ["14"],
+      "titles": ["Tài sản có khác", "Tài sản Có khác"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.14.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] },
+        { "alias_id": "BANK.NOTE.14.ACCRUED_INTEREST", "canonical_name": "Phí phải thu", "aliases": ["Phí phải thu", "Lãi, phí phải thu"] },
+        { "alias_id": "BANK.NOTE.14.DEFERRED_TAX", "canonical_name": "Tài sản thuế thu nhập doanh nghiệp hoãn lại", "aliases": ["Tài sản thuế thu nhập doanh nghiệp hoãn lại"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.15.GOVERNMENT_CENTRAL_BANK",
+      "canonical_name": "Các khoản nợ Chính Phủ và Ngân hàng Nhà nước Việt Nam",
+      "note_ids": ["15"],
+      "titles": ["Các khoản nợ Chính Phủ và Ngân hàng Nhà nước Việt Nam", "Các khoản nợ Chính phủ và Ngân hàng Nhà nước Việt Nam"],
+      "title_aliases": ["Các khoản nợ Chính phủ và Ngân hàng Nhà nước"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.15.NHNN_LOANS", "canonical_name": "Vay Ngân hàng Nhà nước", "aliases": ["Vay Ngân hàng Nhà nước", "Vay NHNN"] },
+        { "alias_id": "BANK.NOTE.15.TREASURY_DEPOSITS", "canonical_name": "Tiền gửi thanh toán của Kho bạc Nhà nước", "aliases": ["Tiền gửi thanh toán của Kho bạc Nhà nước"] },
+        { "alias_id": "BANK.NOTE.15.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.20.OTHER_LIABILITIES",
+      "canonical_name": "Các khoản phải trả và công nợ khác",
+      "note_ids": ["20"],
+      "titles": ["Các khoản phải trả và công nợ khác"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.20.TAX_PAYABLE", "canonical_name": "Thuế phải trả", "aliases": ["Thuế phải trả"] },
+        { "alias_id": "BANK.NOTE.20.PREPAID_REVENUE", "canonical_name": "Doanh thu nhận trước chờ phân bổ", "aliases": ["Doanh thu nhận trước chờ phân bổ"] },
+        { "alias_id": "BANK.NOTE.20.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.21.EQUITY_AND_FUNDS",
+      "canonical_name": "Vốn và các quỹ",
+      "note_ids": ["21"],
+      "titles": ["Vốn và các quỹ"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.21.CHARTER_CAPITAL", "canonical_name": "Vốn điều lệ", "aliases": ["Vốn điều lệ"] },
+        { "alias_id": "BANK.NOTE.21.SHARE_PREMIUM", "canonical_name": "Thặng dư vốn cổ phần", "aliases": ["Thặng dư vốn cổ phần"] },
+        { "alias_id": "BANK.NOTE.21.RESERVES", "canonical_name": "Quỹ dự trữ bổ sung vốn điều lệ", "aliases": ["Quỹ dự trữ bổ sung vốn điều lệ", "Quỹ dự phòng tài chính", "Quỹ đầu tư phát triển"] },
+        { "alias_id": "BANK.NOTE.21.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.33.CASH_EQUIVALENTS",
+      "canonical_name": "Tiền và các khoản tương đương tiền",
+      "note_ids": ["33"],
+      "titles": ["Tiền và các khoản tương đương tiền"],
+      "rows": [
+        { "alias_id": "BANK.NOTE.33.TOTAL", "canonical_name": "Tổng cộng", "aliases": ["Tổng cộng", "Cộng"] }
+      ]
+    },
+    {
+      "alias_id": "BANK.NOTE.37.SEGMENT_REPORTING",
+      "canonical_name": "Báo cáo bộ phận",
+      "note_ids": ["37"],
+      "titles": ["Báo cáo bộ phận"],
+      "rows": []
+    },
+    {
+      "alias_id": "BANK.NOTE.38.FINANCIAL_INSTRUMENTS",
+      "canonical_name": "Thuyết minh công cụ tài chính",
+      "note_ids": ["38"],
+      "titles": ["Thuyết minh công cụ tài chính"],
+      "rows": []
+    }
+  ]
+}

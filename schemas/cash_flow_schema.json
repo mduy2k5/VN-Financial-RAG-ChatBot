@@ -1,0 +1,1359 @@
+{
+  "schema_id": "UNIVERSAL_CASH_FLOW_V1",
+  "schema_version": "1.1.1",
+  "statement_type": "CASH_FLOW_STATEMENT",
+  "profiles": [
+    "enterprise_direct",
+    "enterprise_indirect",
+    "bank_direct",
+    "bank_indirect",
+    "securities_indirect"
+  ],
+  "nodes": [
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.CASH_FROM_CUSTOMERS",
+      "canonical_name": "Tiền thu từ bán hàng, cung cấp dịch vụ và doanh thu khác",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.PAYMENTS_TO_SUPPLIERS",
+      "canonical_name": "Tiền chi trả cho người cung cấp hàng hóa và dịch vụ",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.PAYMENTS_TO_EMPLOYEES",
+      "canonical_name": "Tiền chi trả cho người lao động",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.INTEREST_PAID",
+      "canonical_name": "Tiền lãi vay đã trả",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.INCOME_TAX_PAID",
+      "canonical_name": "Thuế thu nhập doanh nghiệp đã nộp",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.OTHER_OPERATING_RECEIPTS",
+      "canonical_name": "Tiền thu khác từ hoạt động kinh doanh",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.DIRECT.OTHER_OPERATING_PAYMENTS",
+      "canonical_name": "Tiền chi khác cho hoạt động kinh doanh",
+      "sector": "enterprise",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "07"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.PROFIT_BEFORE_TAX",
+      "canonical_name": "Lợi nhuận trước thuế",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.DEPRECIATION",
+      "canonical_name": "Khấu hao TSCĐ và BĐSĐT",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.PROVISIONS",
+      "canonical_name": "Các khoản dự phòng",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.UNREALIZED_FX",
+      "canonical_name": "Lãi, lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.INVESTING_GAIN_LOSS",
+      "canonical_name": "Lãi, lỗ từ hoạt động đầu tư",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.INTEREST_EXPENSE",
+      "canonical_name": "Chi phí lãi vay",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.OTHER_ADJUSTMENTS",
+      "canonical_name": "Các khoản điều chỉnh khác",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "07"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.OPERATING_BEFORE_WORKING_CAPITAL",
+      "canonical_name": "Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "08"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_RECEIVABLES",
+      "canonical_name": "Tăng, giảm các khoản phải thu",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "09"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_INVENTORIES",
+      "canonical_name": "Tăng, giảm hàng tồn kho",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "10"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_PAYABLES",
+      "canonical_name": "Tăng, giảm các khoản phải trả",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "11"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_PREPAID_EXPENSES",
+      "canonical_name": "Tăng, giảm chi phí trả trước",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "12"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_TRADING_SECURITIES",
+      "canonical_name": "Tăng, giảm chứng khoán kinh doanh",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "13"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.INTEREST_PAID",
+      "canonical_name": "Tiền lãi vay đã trả",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "14"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.INCOME_TAX_PAID",
+      "canonical_name": "Thuế thu nhập doanh nghiệp đã nộp",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "15"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.OTHER_OPERATING_RECEIPTS",
+      "canonical_name": "Tiền thu khác từ hoạt động kinh doanh",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "16"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INDIRECT.OTHER_OPERATING_PAYMENTS",
+      "canonical_name": "Tiền chi khác cho hoạt động kinh doanh",
+      "sector": "enterprise",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "17"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.OPERATING.NET_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "operating",
+      "form_code": "20"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.PURCHASE_PPE",
+      "canonical_name": "Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "21"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.PROCEEDS_PPE",
+      "canonical_name": "Tiền thu từ thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "22"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.LOANS_ADVANCED",
+      "canonical_name": "Tiền chi cho vay, mua các công cụ nợ của đơn vị khác",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "23"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.LOANS_COLLECTED",
+      "canonical_name": "Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "24"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.EQUITY_INVESTMENTS",
+      "canonical_name": "Tiền chi đầu tư góp vốn vào đơn vị khác",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "25"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.EQUITY_DIVESTMENTS",
+      "canonical_name": "Tiền thu hồi đầu tư góp vốn vào đơn vị khác",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "26"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.INTEREST_DIVIDENDS_RECEIVED",
+      "canonical_name": "Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "27"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.INVESTING.NET_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động đầu tư",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "investing",
+      "form_code": "30"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.EQUITY_ISSUANCE",
+      "canonical_name": "Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "31"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.CAPITAL_REPAYMENT",
+      "canonical_name": "Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu của doanh nghiệp đã phát hành",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "32"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.BORROWINGS_RECEIVED",
+      "canonical_name": "Tiền thu từ đi vay",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "33"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.BORROWINGS_REPAID",
+      "canonical_name": "Tiền trả nợ gốc vay",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "34"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.FINANCE_LEASE_REPAID",
+      "canonical_name": "Tiền trả nợ gốc thuê tài chính",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "35"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.DIVIDENDS_PAID",
+      "canonical_name": "Cổ tức, lợi nhuận đã trả cho chủ sở hữu",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "36"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FINANCING.NET_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động tài chính",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "financing",
+      "form_code": "40"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.NET_CHANGE_IN_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần trong kỳ",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "50"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.CASH_BEGINNING",
+      "canonical_name": "Tiền và tương đương tiền đầu kỳ",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "60"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.FX_EFFECT",
+      "canonical_name": "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "61"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.TRANSLATION_DIFFERENCE",
+      "canonical_name": "Chênh lệch quy đổi tiền tệ",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "62"
+    },
+    {
+      "node_id": "CASHFLOW.ENTERPRISE.CASH_ENDING",
+      "canonical_name": "Tiền và tương đương tiền cuối kỳ",
+      "sector": "enterprise",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "70"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.INTEREST_RECEIVED",
+      "canonical_name": "Thu nhập lãi và các khoản thu nhập tương tự nhận được",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.INTEREST_PAID",
+      "canonical_name": "Chi phí lãi và các chi phí tương tự đã trả",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.SERVICE_CASH_RECEIVED",
+      "canonical_name": "Thu nhập từ hoạt động dịch vụ nhận được",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.TRADING_NET_CASH",
+      "canonical_name": "Chênh lệch số tiền thực thu/thực chi từ hoạt động kinh doanh (ngoại tệ, vàng bạc, chứng khoán)",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.OTHER_INCOME_CASH",
+      "canonical_name": "Thu nhập khác",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.RECOVERED_WRITTEN_OFF_DEBT",
+      "canonical_name": "Tiền thu các khoản nợ đã được xử lý xóa, bù đắp bằng nguồn rủi ro",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.EMPLOYEE_ADMIN_PAYMENTS",
+      "canonical_name": "Tiền chi trả cho nhân viên và hoạt động quản lý, công vụ",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "07"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.INCOME_TAX_PAID",
+      "canonical_name": "Tiền thuế thu nhập thực nộp trong kỳ",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "08"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.DIRECT.OPERATING_BEFORE_BALANCE_CHANGES",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động kinh doanh trước những thay đổi về tài sản và vốn lưu động",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": null
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_INTERBANK_PLACEMENTS",
+      "canonical_name": "(Tăng)/Giảm các khoản tiền gửi và cho vay các TCTD khác",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "09"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_SECURITIES",
+      "canonical_name": "(Tăng)/Giảm các khoản về kinh doanh chứng khoán",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "10"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_DERIVATIVE_ASSETS",
+      "canonical_name": "(Tăng)/Giảm các công cụ tài chính phái sinh và các tài sản tài chính khác",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "11"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_CUSTOMER_LOANS",
+      "canonical_name": "(Tăng)/Giảm các khoản cho vay khách hàng",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "12"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.PROVISIONS_USED",
+      "canonical_name": "Giảm nguồn dự phòng để bù đắp tổn thất các khoản",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "13"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_OTHER_ASSETS",
+      "canonical_name": "(Tăng)/Giảm khác về tài sản hoạt động",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "14"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_GOVERNMENT_CENTRAL_BANK_LIABILITIES",
+      "canonical_name": "Tăng/(Giảm) các khoản nợ chính phủ và NHNN",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "15"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_INTERBANK_FUNDING",
+      "canonical_name": "Tăng/(Giảm) các khoản tiền gửi, tiền vay các TCTD",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "16"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_CUSTOMER_DEPOSITS",
+      "canonical_name": "Tăng/(Giảm) tiền gửi của khách hàng (bao gồm cả Kho bạc Nhà nước)",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "17"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_DEBT_SECURITIES",
+      "canonical_name": "Tăng/(Giảm) phát hành giấy tờ có giá (ngoại trừ giấy tờ có giá phát hành được tính vào hoạt động tài chính)",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "18"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_TRUST_FUNDS",
+      "canonical_name": "Tăng/(Giảm) vốn tài trợ, ủy thác đầu tư, cho vay mà TCTD chịu rủi ro",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "19"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_DERIVATIVE_LIABILITIES",
+      "canonical_name": "Tăng/(Giảm) các công cụ tài chính phái sinh và các khoản nợ tài chính khác",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "20"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.CHANGE_OTHER_LIABILITIES",
+      "canonical_name": "Tăng/(Giảm) khác về công nợ hoạt động",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "21"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.FUND_PAYMENTS",
+      "canonical_name": "Chi từ các quỹ của TCTD",
+      "sector": "bank",
+      "method": "direct",
+      "section": "operating",
+      "form_code": "22"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.PROFIT_BEFORE_TAX",
+      "canonical_name": "Lợi nhuận trước thuế",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.DEPRECIATION",
+      "canonical_name": "Khấu hao TSCĐ, bất động sản đầu tư",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.PROVISIONS",
+      "canonical_name": "Dự phòng rủi ro tín dụng, giảm giá, đầu tư tăng thêm/(hoàn nhập) trong năm",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.ACCRUED_INTEREST_RECEIVABLE",
+      "canonical_name": "Lãi và phí phải thu trong kỳ (thực tế chưa thu)",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.ACCRUED_INTEREST_PAYABLE",
+      "canonical_name": "Lãi và phí phải trả trong kỳ (thực tế chưa trả)",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.DISPOSAL_PPE_GAIN_LOSS",
+      "canonical_name": "(Lãi)/lỗ do thanh lý TSCĐ",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.DISPOSAL_INVESTMENT_PROPERTY_GAIN_LOSS",
+      "canonical_name": "(Lãi)/lỗ do bán, thanh lý bất động sản đầu tư",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "07"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.INVESTMENT_GAIN_LOSS",
+      "canonical_name": "(Lãi)/lỗ do thanh lý những khoản đầu tư, góp vốn dài hạn vào đơn vị khác, lãi, cổ tức nhận được, lợi nhuận được chia từ HĐ đầu tư, góp vốn dài hạn",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "08"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.UNREALIZED_FX",
+      "canonical_name": "Chênh lệch tỷ giá hối đoái chưa thực hiện",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "09"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.OTHER_ADJUSTMENTS",
+      "canonical_name": "Các điều chỉnh khác",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "10"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_INTERBANK_PLACEMENTS",
+      "canonical_name": "(Tăng)/Giảm các khoản tiền gửi và cho vay các TCTD khác",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "11"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_SECURITIES",
+      "canonical_name": "(Tăng)/Giảm các khoản về kinh doanh chứng khoán",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "12"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_DERIVATIVE_ASSETS",
+      "canonical_name": "(Tăng)/Giảm các công cụ tài chính phái sinh và các tài sản tài chính khác",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "13"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_CUSTOMER_LOANS",
+      "canonical_name": "(Tăng)/Giảm các khoản cho vay khách hàng",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "14"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_INTEREST_RECEIVABLE",
+      "canonical_name": "(Tăng)/Giảm lãi, phí phải thu",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "15"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_PROVISIONS",
+      "canonical_name": "(Giảm)/Tăng nguồn dự phòng để bù đắp tổn thất các khoản",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "16"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_OTHER_ASSETS",
+      "canonical_name": "(Tăng)/Giảm khác về tài sản hoạt động",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "17"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_GOVERNMENT_CENTRAL_BANK_LIABILITIES",
+      "canonical_name": "Tăng/(Giảm) các khoản nợ chính phủ và NHNN",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "18"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_INTERBANK_FUNDING",
+      "canonical_name": "Tăng/(Giảm) các khoản tiền gửi và vay các TCTD",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "19"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_CUSTOMER_DEPOSITS",
+      "canonical_name": "Tăng/(Giảm) tiền gửi của khách hàng (bao gồm cả Kho bạc Nhà nước)",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "20"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_DERIVATIVE_LIABILITIES",
+      "canonical_name": "Tăng/(Giảm) các công cụ TC phái sinh và các khoản nợ tài chính khác",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "21"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_TRUST_FUNDS",
+      "canonical_name": "Tăng/(Giảm) vốn tài trợ, ủy thác đầu tư, cho vay mà TCTD phải chịu rủi ro",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "22"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_DEBT_SECURITIES",
+      "canonical_name": "Tăng/(Giảm) phát hành giấy tờ có giá (ngoại trừ GTCG được tính vào hoạt động tài chính)",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "23"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_INTEREST_PAYABLE",
+      "canonical_name": "Tăng/(Giảm) lãi, phí phải trả",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "24"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.CHANGE_OTHER_LIABILITIES",
+      "canonical_name": "Tăng/(Giảm) khác về công nợ hoạt động",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "25"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.INCOME_TAX_PAID",
+      "canonical_name": "Thuế TNDN đã nộp",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "26"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INDIRECT.FUND_PAYMENTS",
+      "canonical_name": "Chi từ các quỹ của TCTD",
+      "sector": "bank",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "27"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.OPERATING.NET_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+      "sector": "bank",
+      "method": "any",
+      "section": "operating",
+      "form_code": "I"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.PURCHASE_PPE",
+      "canonical_name": "Mua sắm tài sản cố định",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.PROCEEDS_PPE",
+      "canonical_name": "Tiền thu từ thanh lý, nhượng bán tài sản cố định",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.COSTS_DISPOSAL_PPE",
+      "canonical_name": "Tiền chi từ thanh lý, nhượng bán tài sản cố định",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.PURCHASE_INVESTMENT_PROPERTY",
+      "canonical_name": "Mua sắm bất động sản đầu tư",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.PROCEEDS_INVESTMENT_PROPERTY",
+      "canonical_name": "Tiền thu từ bán, thanh lý bất động sản đầu tư",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.COSTS_DISPOSAL_INVESTMENT_PROPERTY",
+      "canonical_name": "Tiền chi ra do bán, thanh lý bất động sản đầu tư",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.EQUITY_INVESTMENTS",
+      "canonical_name": "Tiền chi đầu tư, góp vốn vào các đơn vị khác",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "07"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.EQUITY_DIVESTMENTS",
+      "canonical_name": "Tiền thu đầu tư, góp vốn vào các đơn vị khác",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "08"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.DIVIDENDS_RECEIVED",
+      "canonical_name": "Tiền thu cổ tức và lợi nhuận được chia từ các khoản đầu tư, góp vốn dài hạn",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "09"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.INVESTING.NET_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động đầu tư",
+      "sector": "bank",
+      "method": "any",
+      "section": "investing",
+      "form_code": "II"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.EQUITY_ISSUANCE",
+      "canonical_name": "Tăng vốn cổ phần từ góp vốn và/hoặc phát hành cổ phiếu",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.LONG_TERM_DEBT_ISSUANCE",
+      "canonical_name": "Tiền thu từ phát hành giấy tờ có giá dài hạn có đủ điều kiện tính vào vốn tự có và các khoản vốn vay dài hạn khác",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.LONG_TERM_DEBT_REPAYMENT",
+      "canonical_name": "Tiền chi thanh toán giấy tờ có giá dài hạn có đủ điều kiện tính vào vốn tự có và các khoản vốn vay dài hạn khác",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.DIVIDENDS_PAID",
+      "canonical_name": "Cổ tức trả cho cổ đông, lợi nhuận đã chia",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.TREASURY_SHARES_PURCHASED",
+      "canonical_name": "Tiền chi ra mua cổ phiếu quỹ",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.TREASURY_SHARES_SOLD",
+      "canonical_name": "Tiền thu được do bán cổ phiếu quỹ",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FINANCING.NET_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động tài chính",
+      "sector": "bank",
+      "method": "any",
+      "section": "financing",
+      "form_code": "III"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.NET_CHANGE_IN_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần trong kỳ",
+      "sector": "bank",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "IV"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.CASH_BEGINNING",
+      "canonical_name": "Tiền và các khoản tương đương tiền tại thời điểm đầu kỳ",
+      "sector": "bank",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "V"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.FX_EFFECT",
+      "canonical_name": "Điều chỉnh ảnh hưởng của thay đổi tỷ giá",
+      "sector": "bank",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "VI"
+    },
+    {
+      "node_id": "CASHFLOW.BANK.CASH_ENDING",
+      "canonical_name": "Tiền và các khoản tương đương tiền tại thời điểm cuối kỳ",
+      "sector": "bank",
+      "method": "any",
+      "section": "reconciliation",
+      "form_code": "VII"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PROFIT_BEFORE_TAX",
+      "canonical_name": "Lợi nhuận trước thuế TNDN",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "01"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.ADJUSTMENTS_TOTAL",
+      "canonical_name": "Điều chỉnh cho các khoản",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "02"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.DEPRECIATION",
+      "canonical_name": "Khấu hao tài sản cố định",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "03"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PROVISIONS",
+      "canonical_name": "Các khoản dự phòng",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "04"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.INTEREST_EXPENSE",
+      "canonical_name": "Chi phí lãi vay",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.INVESTING_GAIN",
+      "canonical_name": "Lãi từ hoạt động đầu tư",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "07"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.ACCRUED_INTEREST",
+      "canonical_name": "Dự thu tiền lãi",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "08"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "canonical_name": "Tăng các chi phí phi tiền tệ",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "10"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_LOSS",
+      "canonical_name": "Lỗ đánh giá lại giá trị các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "11"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "canonical_name": "Giảm các doanh thu phi tiền tệ",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "18"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_GAIN",
+      "canonical_name": "Lãi đánh giá lại giá trị các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "19"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE",
+      "canonical_name": "Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "30"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_FVTPL",
+      "canonical_name": "Tăng giảm tài sản tài chính FVTPL",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "31"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_HTM",
+      "canonical_name": "Tăng giảm các khoản đầu tư HTM",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "32"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_LOANS",
+      "canonical_name": "Tăng các khoản cho vay",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "33"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_AFS",
+      "canonical_name": "Tăng giảm các tài sản tài chính AFS",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "34"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_RECEIVABLE_SECURITIES",
+      "canonical_name": "Tăng giảm phải thu bán các tài sản tài chính",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "35"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_DIVIDEND_INTEREST_RECEIVABLE",
+      "canonical_name": "Giảm phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "36"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_SERVICE_RECEIVABLES",
+      "canonical_name": "Tăng giảm phải thu các dịch vụ công ty chứng khoán cung cấp",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "37"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_RECEIVABLES",
+      "canonical_name": "Tăng giảm các khoản phải thu khác",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "39"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_ASSETS",
+      "canonical_name": "Tăng giảm các tài sản khác",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "40"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ACCRUED_EXPENSES",
+      "canonical_name": "Tăng chi phí phải trả",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "41"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_PREPAID_EXPENSES",
+      "canonical_name": "Tăng giảm chi phí trả trước",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "42"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.INCOME_TAX_PAID",
+      "canonical_name": "Thuế TNDN đã nộp",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "43"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.INTEREST_PAID",
+      "canonical_name": "Lãi vay đã trả",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "44"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_TRADE_PAYABLES",
+      "canonical_name": "Tăng giảm phải trả cho người bán",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "45"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_EMPLOYEE_BENEFITS",
+      "canonical_name": "Tăng giảm các khoản trích nộp phúc lợi nhân viên",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "46"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_TAX_PAYABLES",
+      "canonical_name": "Tăng giảm thuế và các khoản phải nộp Nhà nước",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "47"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_EMPLOYEE_PAYABLES",
+      "canonical_name": "Tăng giảm phải trả người lao động",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "48"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_PAYABLES",
+      "canonical_name": "Tăng giảm phải trả phải nộp khác",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "50"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.OTHER_OPERATING_RECEIPTS",
+      "canonical_name": "Tiền thu khác cho hoạt động kinh doanh",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "51"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.OTHER_OPERATING_PAYMENTS",
+      "canonical_name": "Tiền chi khác cho hoạt động kinh doanh",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "52"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NET_OPERATING_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "operating",
+      "form_code": "60"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PROCEEDS_DISPOSAL_ASSETS",
+      "canonical_name": "Tiền thu từ thanh lý nhượng bán tài sản cố định bất động sản đầu tư và các tài sản khác",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "investing",
+      "form_code": "62"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.DIVIDENDS_RECEIVED",
+      "canonical_name": "Tiền thu về cổ tức và lợi nhuận được chia từ các khoản đầu tư tài chính dài hạn",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "investing",
+      "form_code": "65"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NET_INVESTING_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động đầu tư",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "investing",
+      "form_code": "70"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED",
+      "canonical_name": "Tiền vay gốc",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "financing",
+      "form_code": "73"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NET_FINANCING_CASH",
+      "canonical_name": "Lưu chuyển tiền thuần từ hoạt động tài chính",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "financing",
+      "form_code": "80"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NET_CHANGE_IN_CASH",
+      "canonical_name": "Tăng giảm tiền thuần trong năm",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "reconciliation",
+      "form_code": "90"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING",
+      "canonical_name": "Tiền và các khoản tương đương tiền đầu năm",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "reconciliation",
+      "form_code": "101"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING_CASH",
+      "canonical_name": "Tiền đầu năm",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "reconciliation",
+      "form_code": "101.1"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING_EQUIVALENTS",
+      "canonical_name": "Các khoản tương đương tiền đầu năm",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "reconciliation",
+      "form_code": "101.2"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PURCHASE_PPE",
+      "canonical_name": "Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "investing",
+      "form_code": "61"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.EQUITY_ISSUANCE",
+      "canonical_name": "Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "financing",
+      "form_code": "71"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID",
+      "canonical_name": "Tiền chi trả nợ gốc vay",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "financing",
+      "form_code": "74"
+    }
+  ],
+  "formulas": {
+    "enterprise": [
+      {
+        "name": "net_change_in_cash",
+        "target": "CASHFLOW.ENTERPRISE.NET_CHANGE_IN_CASH",
+        "components": [
+          "CASHFLOW.ENTERPRISE.OPERATING.NET_CASH",
+          "CASHFLOW.ENTERPRISE.INVESTING.NET_CASH",
+          "CASHFLOW.ENTERPRISE.FINANCING.NET_CASH"
+        ],
+        "method": "any"
+      },
+      {
+        "name": "cash_ending",
+        "target": "CASHFLOW.ENTERPRISE.CASH_ENDING",
+        "components": [
+          "CASHFLOW.ENTERPRISE.NET_CHANGE_IN_CASH",
+          "CASHFLOW.ENTERPRISE.CASH_BEGINNING",
+          "CASHFLOW.ENTERPRISE.FX_EFFECT"
+        ],
+        "method": "any",
+        "optional_components": [
+          "CASHFLOW.ENTERPRISE.TRANSLATION_DIFFERENCE"
+        ]
+      }
+    ],
+    "bank": [
+      {
+        "name": "net_change_in_cash",
+        "target": "CASHFLOW.BANK.NET_CHANGE_IN_CASH",
+        "components": [
+          "CASHFLOW.BANK.OPERATING.NET_CASH",
+          "CASHFLOW.BANK.INVESTING.NET_CASH",
+          "CASHFLOW.BANK.FINANCING.NET_CASH"
+        ],
+        "method": "any"
+      },
+      {
+        "name": "cash_ending",
+        "target": "CASHFLOW.BANK.CASH_ENDING",
+        "components": [
+          "CASHFLOW.BANK.NET_CHANGE_IN_CASH",
+          "CASHFLOW.BANK.CASH_BEGINNING",
+          "CASHFLOW.BANK.FX_EFFECT"
+        ],
+        "method": "any"
+      }
+    ]
+  }
+}

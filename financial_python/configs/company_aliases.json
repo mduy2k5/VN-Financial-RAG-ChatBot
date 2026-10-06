@@ -1,0 +1,82 @@
+{
+  "ABB": [
+    "ABB",
+    "AN BÌNH",
+    "NGÂN HÀNG AN BÌNH",
+    "NGÂN HÀNG TMCP AN BÌNH",
+    "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN AN BÌNH",
+    "ABBANK"
+  ],
+  "ACB": [
+    "ACB",
+    "ACB BANK",
+    "ASIA COMMERCIAL BANK",
+    "ASIA COMMERCIAL JOINT STOCK BANK",
+    "NGÂN HÀNG Á CHÂU",
+    "NGÂN HÀNG TMCP Á CHÂU",
+    "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN Á CHÂU"
+  ],
+  "ACBS": [
+    "ACBS",
+    "ACB SECURITIES",
+    "CÔNG TY CHỨNG KHOÁN ACB"
+  ],
+  "VCB": [
+    "VCB",
+    "VIETCOMBANK",
+    "NGÂN HÀNG NGOẠI THƯƠNG"
+  ],
+  "TCB": [
+    "TCB",
+    "TECHCOMBANK",
+    "KỸ THƯƠNG"
+  ],
+  "MBB": [
+    "MBB",
+    "MB BANK",
+    "MILITARY COMMERCIAL JOINT STOCK BANK",
+    "NGÂN HÀNG TMCP QUÂN ĐỘI",
+    "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN QUÂN ĐỘI",
+    "NGÂN HÀNG QUÂN ĐỘI"
+  ],
+  "VPB": [
+    "VPB",
+    "VPBANK",
+    "NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
+    "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN VIỆT NAM THỊNH VƯỢNG"
+  ],
+  "FPT": [
+    "FPT",
+    "TẬP ĐOÀN FPT"
+  ],
+  "VNM": [
+    "VNM",
+    "VINAMILK",
+    "SỮA VIỆT NAM"
+  ],
+  "HPG": [
+    "HPG",
+    "HÒA PHÁT",
+    "TẬP ĐOÀN HÒA PHÁT"
+  ],
+  "VNF": [
+    "VNF",
+    "VINAFREIGHT",
+    "CÔNG TY CỔ PHẦN VINAFREIGHT"
+  ],
+  "ACV": [
+    "ACV",
+    "CẢNG HÀNG KHÔNG",
+    "TỔNG CÔNG TY CẢNG HÀNG KHÔNG",
+    "TỔNG CÔNG TY CẢNG HÀNG KHÔNG VIỆT NAM",
+    "AIRPORTS CORPORATION OF VIETNAM"
+  ],
+  "DEMO": [
+    "DEMO",
+    "CÔNG TY HƯ CẤU MINH HỌA"
+  ],
+  "MOCK": [
+    "MOCK",
+    "DOANH NGHIỆP MINH HỌA MẪU"
+  ]
+}

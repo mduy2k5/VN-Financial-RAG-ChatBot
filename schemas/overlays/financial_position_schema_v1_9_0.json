@@ -1,0 +1,47 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.9.0",
+  "base_schema": "financial_position_schema_v1_7_0.json",
+  "schema_id": "UNIVERSAL_FINANCIAL_POSITION_V1",
+  "schema_version": "1.9.0",
+  "node_updates": {
+    "LIABILITY.INTERNAL": {
+      "children": [
+        "LIABILITY.INTERNAL.SHORT_TERM",
+        "LIABILITY.INTERNAL.LONG_TERM"
+      ]
+    }
+  },
+  "nodes_add": [
+    {
+      "node_id": "LIABILITY.INTERNAL.SHORT_TERM",
+      "canonical_name": "Phải trả nội bộ ngắn hạn",
+      "parent_id": "LIABILITY.INTERNAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.INTERNAL.LONG_TERM",
+      "canonical_name": "Phải trả nội bộ dài hạn",
+      "parent_id": "LIABILITY.INTERNAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    }
+  ]
+}

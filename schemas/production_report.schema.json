@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vn-financial-report:production-output:2.0.0",
+  "title": "VN financial report production output",
+  "description": "Stable downstream contract emitted by app/pipeline.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "report", "periods", "statements", "notes", "quality"],
+  "properties": {
+    "contract": { "$ref": "#/$defs/contract" },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source"],
+      "properties": {
+        "id": { "type": "string" },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "sha256"],
+          "properties": {
+            "name": { "type": "string" },
+            "sha256": { "type": "string", "minLength": 64, "maxLength": 64 }
+          }
+        }
+      }
+    },
+    "periods": { "$ref": "#/$defs/periods" },
+    "statements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["financial_position", "income_statement", "cash_flow"],
+      "properties": {
+        "financial_position": { "$ref": "#/$defs/statement" },
+        "income_statement": { "$ref": "#/$defs/statement" },
+        "cash_flow": { "$ref": "#/$defs/statement" }
+      }
+    },
+    "notes": { "$ref": "#/$defs/notes" },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "issues", "statements", "periods", "gate"],
+      "properties": {
+        "status": { "type": "string" },
+        "issues": { "type": "array", "items": { "type": "string" } },
+        "statements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["financial_position", "income_statement", "cash_flow"],
+          "properties": {
+            "financial_position": { "type": ["string", "null"] },
+            "income_statement": { "type": ["string", "null"] },
+            "cash_flow": { "type": ["string", "null"] }
+          }
+        },
+        "periods": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["conflict"],
+          "properties": { "conflict": { "type": "boolean" } }
+        },
+        "gate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "eligible_for_use", "policy", "issues"],
+          "properties": {
+            "status": { "type": "string" },
+            "eligible_for_use": { "type": "boolean" },
+            "policy": { "type": "string" },
+            "issues": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "vn_financial_report_output" },
+        "version": { "const": "2.0.0" }
+      }
+    },
+    "nullableString": { "type": ["string", "null"] },
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["year", "start_date", "end_date"],
+      "properties": {
+        "year": { "type": ["integer", "null"] },
+        "start_date": { "type": ["string", "null"] },
+        "end_date": { "type": ["string", "null"] }
+      }
+    },
+    "periods": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "previous", "type", "resolution"],
+      "properties": {
+        "current": { "$ref": "#/$defs/period" },
+        "previous": { "$ref": "#/$defs/period" },
+        "type": { "type": ["string", "null"] },
+        "resolution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["method", "confidence", "conflict"],
+          "properties": {
+            "method": { "type": ["string", "null"] },
+            "confidence": { "type": ["number", "null"] },
+            "conflict": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sector", "method", "unit"],
+      "properties": {
+        "sector": { "$ref": "#/$defs/nullableString" },
+        "method": { "$ref": "#/$defs/nullableString" },
+        "unit": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "parent_id", "children", "section", "sector", "method", "form_code", "code", "note_ref", "source_context"],
+      "properties": {
+        "kind": { "$ref": "#/$defs/nullableString" },
+        "parent_id": { "$ref": "#/$defs/nullableString" },
+        "children": { "type": "array" },
+        "section": { "$ref": "#/$defs/nullableString" },
+        "sector": { "$ref": "#/$defs/nullableString" },
+        "method": { "$ref": "#/$defs/nullableString" },
+        "form_code": { "$ref": "#/$defs/nullableString" },
+        "code": { "$ref": "#/$defs/nullableString" },
+        "note_ref": { "$ref": "#/$defs/nullableString" },
+        "source_context": { "type": ["object", "null"] }
+      }
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "previous", "additional", "note", "unit", "raw_text", "raw_values"],
+      "properties": {
+        "current": { "type": ["number", "null"] },
+        "previous": { "type": ["number", "null"] },
+        "additional": {},
+        "note": { "type": ["string", "number", "null"] },
+        "unit": { "$ref": "#/$defs/nullableString" },
+        "raw_text": {},
+        "raw_values": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["current", "previous"],
+          "properties": {
+            "current": { "type": ["string", "null"] },
+            "previous": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_line", "source_label", "raw_text", "confidence"],
+      "properties": {
+        "source_line": { "type": ["integer", "null"] },
+        "source_label": { "type": ["string", "null"] },
+        "raw_text": {},
+        "confidence": { "type": ["number", "null"] }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "target_id", "method", "confidence"],
+      "properties": {
+        "status": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "method": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"] }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "id", "source_id", "label", "attributes", "value", "provenance"],
+      "properties": {
+        "record_type": { "enum": ["semantic_item", "source_observation"] },
+        "id": { "type": ["string", "null"] },
+        "source_id": { "type": ["string", "null"] },
+        "label": { "type": ["string", "null"] },
+        "attributes": { "$ref": "#/$defs/attributes" },
+        "value": { "$ref": "#/$defs/value" },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["evidence", "mapping"],
+          "properties": {
+            "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+            "mapping": { "$ref": "#/$defs/mapping" }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["counts", "mapping", "coverage"],
+      "properties": {
+        "counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["items", "observations", "valued_items"],
+          "properties": {
+            "items": { "type": "integer" },
+            "observations": { "type": "integer" },
+            "valued_items": { "type": ["integer", "null"] }
+          }
+        },
+        "mapping": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["input_rows", "mapped_rows", "unmapped_rows", "rate"],
+          "properties": {
+            "input_rows": { "type": ["integer", "null"] },
+            "mapped_rows": { "type": ["integer", "null"] },
+            "unmapped_rows": { "type": ["integer", "null"] },
+            "rate": { "type": ["number", "null"] }
+          }
+        },
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["current", "previous"],
+          "properties": {
+            "current": { "type": ["number", "null"] },
+            "previous": { "type": ["number", "null"] }
+          }
+        }
+      }
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "statement_type", "schema", "context", "items", "observations", "summary", "validation"],
+      "properties": {
+        "status": { "type": "string" },
+        "statement_type": { "type": "string" },
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "version"],
+          "properties": {
+            "id": { "type": ["string", "null"] },
+            "version": { "type": ["string", "null"] }
+          }
+        },
+        "context": { "$ref": "#/$defs/context" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "observations": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+        "summary": { "$ref": "#/$defs/summary" },
+        "validation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "formulas", "gate"],
+          "properties": {
+            "status": { "type": ["string", "null"] },
+            "formulas": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["evaluated", "passed", "failed", "pass_rate"],
+              "properties": {
+                "evaluated": { "type": ["integer", "null"] },
+                "passed": { "type": ["integer", "null"] },
+                "failed": { "type": ["integer", "null"] },
+                "pass_rate": { "type": ["number", "null"] }
+              }
+            },
+            "gate": { "$ref": "#/$defs/statementGate" }
+          }
+        }
+      }
+    },
+    "statementGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "eligible_for_use", "policy", "issues"],
+      "properties": {
+        "status": { "type": "string" },
+        "eligible_for_use": { "type": "boolean" },
+        "policy": { "type": "string" },
+        "issues": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "schema", "sections", "rows", "raw_blocks", "links", "summary"],
+      "properties": {
+        "status": { "type": "string" },
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "version"],
+          "properties": {
+            "id": { "type": ["string", "null"] },
+            "version": { "type": ["string", "null"] }
+          }
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start_line", "end_line", "confidence"],
+          "properties": {
+            "start_line": { "type": ["integer", "null"] },
+            "end_line": { "type": ["integer", "null"] },
+            "confidence": { "type": ["number", "null"] }
+          }
+        },
+        "sections": { "type": "array" },
+        "rows": { "type": "array" },
+        "raw_blocks": { "type": "array" },
+        "links": { "type": "array" },
+        "summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["section_count", "row_count", "link_count"],
+          "properties": {
+            "section_count": { "type": "integer" },
+            "row_count": { "type": "integer" },
+            "link_count": { "type": "integer" }
+          }
+        }
+      }
+    }
+  }
+}

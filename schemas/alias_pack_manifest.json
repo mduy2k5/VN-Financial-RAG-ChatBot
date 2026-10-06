@@ -1,0 +1,40 @@
+{
+  "pack_id": "OFF_BALANCE_ALIAS_PACK_V1_3",
+  "version": "1.3.0",
+  "status": "candidate",
+  "target": "Vietnamese bank OFF_BALANCE semantic mapping on top of an existing structural parser (e.g. B02 engine)",
+  "parser_dependency": "none; expects engine to provide extracted source label/value context",
+  "files": [
+    "schema_off_balance_bank_v1_3.json",
+    "aliases_off_balance_bank_v1_3.json",
+    "normalization_contract_off_balance_v1.json",
+    "review_decisions_v1_3.json"
+  ],
+  "semantic_alias_additions": {
+    "OFF_BALANCE.GUARANTEES.LOAN": [
+      "Bảo lãnh vốn vay"
+    ],
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY": [
+      "Cam kết mua giao dịch hoán đổi ngoại tệ"
+    ],
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL": [
+      "Cam kết bán giao dịch hoán đổi ngoại tệ"
+    ],
+    "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES": [
+      "Lãi cho vay và chi phí chưa thu được"
+    ]
+  },
+  "non_goals": [
+    "structural parsing",
+    "table parsing",
+    "period resolution",
+    "source ambiguity resolution",
+    "securities/enterprise/insurance schemas"
+  ],
+  "merge_policy": "semantic-equivalence only; formatting variants belong to normalization, not aliases",
+  "source_basis": {
+    "reports": 57,
+    "year": 2025,
+    "diagnostics_version": "1.2.2"
+  }
+}

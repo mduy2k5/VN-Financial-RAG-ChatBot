@@ -1,0 +1,868 @@
+{
+  "schema_version": 1,
+  "metric_count": 54,
+  "metrics": [
+    {
+      "metric_id": "tong_cong_tai_san",
+      "canonical_name": "TỔNG CỘNG TÀI SẢN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "270",
+      "section": "tai_san",
+      "aliases": [
+        "TỔNG CỘNG TÀI SẢN",
+        "tổng cộng tài sản",
+        "tổng tài sản",
+        "quy mô tài sản",
+        "tổng ts",
+        "tài sản tổng cộng",
+        "total assets"
+      ]
+    },
+    {
+      "metric_id": "tai_san_ngan_han",
+      "canonical_name": "TÀI SẢN NGẮN HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "100",
+      "section": "tai_san_ngan_han",
+      "aliases": [
+        "TÀI SẢN NGẮN HẠN",
+        "tài sản ngắn hạn",
+        "tổng tài sản ngắn hạn",
+        "tsnh",
+        "current assets"
+      ]
+    },
+    {
+      "metric_id": "tien_va_tuong_duong_tien",
+      "canonical_name": "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "110",
+      "section": "tai_san_ngan_han",
+      "aliases": [
+        "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN",
+        "tiền và tương đương tiền",
+        "tiền và các khoản tương đương tiền",
+        "tiền mặt và tương đương tiền",
+        "cash and cash equivalents"
+      ]
+    },
+    {
+      "metric_id": "dau_tu_tai_chinh_ngan_han",
+      "canonical_name": "ĐẦU TƯ TÀI CHÍNH NGẮN HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "120",
+      "section": "tai_san_ngan_han",
+      "aliases": [
+        "ĐẦU TƯ TÀI CHÍNH NGẮN HẠN",
+        "đầu tư tài chính ngắn hạn",
+        "chứng khoán kinh doanh",
+        "đttc ngắn hạn"
+      ]
+    },
+    {
+      "metric_id": "cac_khoan_phai_thu_ngan_han",
+      "canonical_name": "CÁC KHOẢN PHẢI THU NGẮN HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "130",
+      "section": "tai_san_ngan_han",
+      "aliases": [
+        "CÁC KHOẢN PHẢI THU NGẮN HẠN",
+        "các khoản phải thu ngắn hạn",
+        "phải thu ngắn hạn",
+        "phải thu của khách hàng",
+        "phải thu khách hàng",
+        "các khoản phải thu",
+        "khoản phải thu ngắn hạn",
+        "accounts receivable"
+      ]
+    },
+    {
+      "metric_id": "hang_ton_kho",
+      "canonical_name": "HÀNG TỒN KHO",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "140",
+      "section": "tai_san_ngan_han",
+      "aliases": [
+        "HÀNG TỒN KHO",
+        "hàng tồn kho",
+        "giá trị hàng tồn kho",
+        "tồn kho",
+        "dự phòng giảm giá hàng tồn kho",
+        "inventory"
+      ]
+    },
+    {
+      "metric_id": "tai_san_dai_han",
+      "canonical_name": "TÀI SẢN DÀI HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "200",
+      "section": "tai_san_dai_han",
+      "aliases": [
+        "TÀI SẢN DÀI HẠN",
+        "tài sản dài hạn",
+        "tổng tài sản dài hạn",
+        "tsdh",
+        "non-current assets"
+      ]
+    },
+    {
+      "metric_id": "tai_san_co_dinh",
+      "canonical_name": "TÀI SẢN CỐ ĐỊNH",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "220",
+      "section": "tai_san_dai_han",
+      "aliases": [
+        "TÀI SẢN CỐ ĐỊNH",
+        "tài sản cố định",
+        "tscđ",
+        "tài sản cố định hữu hình",
+        "tài sản cố định vô hình",
+        "fixed assets"
+      ]
+    },
+    {
+      "metric_id": "tai_san_thue_thu_nhap_hoan_lai",
+      "canonical_name": "TÀI SẢN THUẾ THU NHẬP HOÃN LẠI",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "262",
+      "section": "tai_san_dai_han",
+      "aliases": [
+        "TÀI SẢN THUẾ THU NHẬP HOÃN LẠI",
+        "tài sản thuế thu nhập hoãn lại",
+        "tài sản thuế hoãn lại",
+        "deferred tax assets"
+      ]
+    },
+    {
+      "metric_id": "tong_no_phai_tra",
+      "canonical_name": "TỔNG NỢ PHẢI TRẢ",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "300",
+      "section": "no_phai_tra",
+      "aliases": [
+        "TỔNG NỢ PHẢI TRẢ",
+        "tổng nợ phải trả",
+        "nợ phải trả",
+        "tổng nợ",
+        "các khoản nợ phải trả",
+        "các khoản nợ",
+        "total liabilities",
+        "liabilities"
+      ]
+    },
+    {
+      "metric_id": "no_ngan_han",
+      "canonical_name": "NỢ NGẮN HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "310",
+      "section": "no_phai_tra",
+      "aliases": [
+        "NỢ NGẮN HẠN",
+        "nợ ngắn hạn",
+        "tổng nợ ngắn hạn",
+        "các khoản nợ ngắn hạn",
+        "nợ ngắn",
+        "current liabilities"
+      ]
+    },
+    {
+      "metric_id": "phai_tra_nguoi_ban_ngan_han",
+      "canonical_name": "PHẢI TRẢ NGƯỜI BÁN NGẮN HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "311",
+      "section": "no_phai_tra",
+      "aliases": [
+        "PHẢI TRẢ NGƯỜI BÁN NGẮN HẠN",
+        "phải trả người bán ngắn hạn",
+        "phải trả người bán",
+        "phải trả nhà cung cấp",
+        "accounts payable"
+      ]
+    },
+    {
+      "metric_id": "thue_va_cac_khoan_phai_nop_nha_nuoc",
+      "canonical_name": "THUẾ VÀ CÁC KHOẢN PHẢI NỘP NHÀ NƯỚC",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "313",
+      "section": "no_phai_tra",
+      "aliases": [
+        "THUẾ VÀ CÁC KHOẢN PHẢI NỘP NHÀ NƯỚC",
+        "thuế và các khoản phải nộp nhà nước",
+        "thuế phải nộp nhà nước",
+        "taxes and other payables to the state"
+      ]
+    },
+    {
+      "metric_id": "phai_tra_nguoi_lao_dong",
+      "canonical_name": "PHẢI TRẢ NGƯỜI LAO ĐỘNG",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "314",
+      "section": "no_phai_tra",
+      "aliases": [
+        "PHẢI TRẢ NGƯỜI LAO ĐỘNG",
+        "phải trả người lao động",
+        "khoản phải trả người lao động",
+        "payables to employees"
+      ]
+    },
+    {
+      "metric_id": "vay_va_no_thue_tai_chinh_ngan_han",
+      "canonical_name": "VAY VÀ NỢ THUÊ TÀI CHÍNH NGẮN HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "320",
+      "section": "no_phai_tra",
+      "aliases": [
+        "VAY VÀ NỢ THUÊ TÀI CHÍNH NGẮN HẠN",
+        "vay và nợ thuê tài chính ngắn hạn",
+        "vay ngắn hạn",
+        "nợ vay ngắn hạn",
+        "vay nợ ngắn hạn",
+        "short-term debt"
+      ]
+    },
+    {
+      "metric_id": "no_dai_han",
+      "canonical_name": "NỢ DÀI HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "330",
+      "section": "no_phai_tra",
+      "aliases": [
+        "NỢ DÀI HẠN",
+        "nợ dài hạn",
+        "tổng nợ dài hạn",
+        "các khoản nợ dài hạn",
+        "nợ dài",
+        "long-term liabilities"
+      ]
+    },
+    {
+      "metric_id": "vay_va_no_thue_tai_chinh_dai_han",
+      "canonical_name": "VAY VÀ NỢ THUÊ TÀI CHÍNH DÀI HẠN",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "338",
+      "section": "no_phai_tra",
+      "aliases": [
+        "VAY VÀ NỢ THUÊ TÀI CHÍNH DÀI HẠN",
+        "vay và nợ thuê tài chính dài hạn",
+        "vay dài hạn",
+        "nợ vay dài hạn",
+        "vay nợ dài hạn",
+        "long-term debt"
+      ]
+    },
+    {
+      "metric_id": "tong_von_chu_so_huu",
+      "canonical_name": "TỔNG VỐN CHỦ SỞ HỮU",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "400",
+      "section": "von_chu_so_huu",
+      "aliases": [
+        "TỔNG VỐN CHỦ SỞ HỮU",
+        "tổng vốn chủ sở hữu",
+        "vốn chủ sở hữu",
+        "vcsh",
+        "nguồn vốn chủ sở hữu",
+        "vốn chủ",
+        "equity",
+        "shareholders equity"
+      ]
+    },
+    {
+      "metric_id": "von_dieu_le",
+      "canonical_name": "VỐN ĐIỀU LỆ",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "411",
+      "section": "von_chu_so_huu",
+      "aliases": [
+        "VỐN ĐIỀU LỆ",
+        "vốn góp của chủ sở hữu",
+        "vốn điều lệ",
+        "vốn cổ phần",
+        "vốn góp",
+        "charter capital",
+        "paid-in capital"
+      ]
+    },
+    {
+      "metric_id": "loi_nhuan_chua_phan_phoi",
+      "canonical_name": "LỢI NHUẬN CHƯA PHÂN PHỐI",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": "421",
+      "section": "von_chu_so_huu",
+      "aliases": [
+        "LỢI NHUẬN CHƯA PHÂN PHỐI",
+        "lợi nhuận sau thuế chưa phân phối",
+        "lợi nhuận chưa phân phối",
+        "lãi chưa phân phối",
+        "lncpp",
+        "retained earnings"
+      ]
+    },
+    {
+      "metric_id": "tien_gui_cua_khach_hang",
+      "canonical_name": "TIỀN GỬI CỦA KHÁCH HÀNG",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": null,
+      "section": "no_phai_tra",
+      "aliases": [
+        "TIỀN GỬI CỦA KHÁCH HÀNG",
+        "tiền gửi của khách hàng",
+        "tiền gửi khách hàng",
+        "tiền gửi",
+        "customer deposits"
+      ]
+    },
+    {
+      "metric_id": "cho_vay_khach_hang",
+      "canonical_name": "CHO VAY KHÁCH HÀNG",
+      "statement_type": "balance_sheet",
+      "statement_name_vi": "Bảng cân đối kế toán",
+      "code": null,
+      "section": "tai_san",
+      "aliases": [
+        "CHO VAY KHÁCH HÀNG",
+        "cho vay khách hàng",
+        "dư nợ cho vay",
+        "dư nợ tín dụng",
+        "cho vay",
+        "loans to customers"
+      ]
+    },
+    {
+      "metric_id": "doanh_thu_ban_hang_va_cung_cap_dich_vu",
+      "canonical_name": "DOANH THU BÁN HÀNG VÀ CUNG CẤP DỊCH VỤ",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "01",
+      "section": "doanh_thu",
+      "aliases": [
+        "DOANH THU BÁN HÀNG VÀ CUNG CẤP DỊCH VỤ",
+        "doanh thu bán hàng và cung cấp dịch vụ",
+        "doanh thu bán hàng",
+        "tổng doanh thu",
+        "doanh thu gộp",
+        "gross revenue"
+      ]
+    },
+    {
+      "metric_id": "cac_khoan_giam_tru_doanh_thu",
+      "canonical_name": "CÁC KHOẢN GIẢM TRỪ DOANH THU",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "02",
+      "section": "doanh_thu",
+      "aliases": [
+        "CÁC KHOẢN GIẢM TRỪ DOANH THU",
+        "các khoản giảm trừ doanh thu",
+        "giảm trừ doanh thu"
+      ]
+    },
+    {
+      "metric_id": "doanh_thu_thuan",
+      "canonical_name": "DOANH THU THUẦN",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "10",
+      "section": "doanh_thu",
+      "aliases": [
+        "DOANH THU THUẦN",
+        "doanh thu thuần về bán hàng và cung cấp dịch vụ",
+        "doanh thu thuần bán hàng và cung cấp dịch vụ",
+        "doanh thu thuần",
+        "doanh thu",
+        "dtt",
+        "doanh số",
+        "net revenue",
+        "revenue"
+      ]
+    },
+    {
+      "metric_id": "gia_von_hang_ban",
+      "canonical_name": "GIÁ VỐN HÀNG BÁN",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "11",
+      "section": "chi_phi",
+      "aliases": [
+        "GIÁ VỐN HÀNG BÁN",
+        "giá vốn hàng bán và dịch vụ cung cấp",
+        "giá vốn hàng bán",
+        "giá vốn",
+        "cogs",
+        "cost of goods sold"
+      ]
+    },
+    {
+      "metric_id": "loi_nhuan_gop",
+      "canonical_name": "LỢI NHUẬN GỘP",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "20",
+      "section": "loi_nhuan",
+      "aliases": [
+        "LỢI NHUẬN GỘP",
+        "lợi nhuận gộp về bán hàng và cung cấp dịch vụ",
+        "lợi nhuận gộp",
+        "lãi gộp",
+        "lợi nhuận gộp về bán hàng",
+        "gross profit"
+      ]
+    },
+    {
+      "metric_id": "doanh_thu_hoat_dong_tai_chinh",
+      "canonical_name": "DOANH THU HOẠT ĐỘNG TÀI CHÍNH",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "21",
+      "section": "doanh_thu",
+      "aliases": [
+        "DOANH THU HOẠT ĐỘNG TÀI CHÍNH",
+        "doanh thu hoạt động tài chính",
+        "doanh thu tài chính",
+        "lãi tiền gửi",
+        "financial income"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_tai_chinh",
+      "canonical_name": "CHI PHÍ TÀI CHÍNH",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "22",
+      "section": "chi_phi",
+      "aliases": [
+        "CHI PHÍ TÀI CHÍNH",
+        "chi phí tài chính",
+        "chi phí hđ tài chính",
+        "financial expenses"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_lai_vay",
+      "canonical_name": "CHI PHÍ LÃI VAY",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "23",
+      "section": "chi_phi",
+      "aliases": [
+        "CHI PHÍ LÃI VAY",
+        "chi phí lãi vay",
+        "lãi vay",
+        "chi phí lãi",
+        "interest expense"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_ban_hang",
+      "canonical_name": "CHI PHÍ BÁN HÀNG",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "25",
+      "section": "chi_phi",
+      "aliases": [
+        "CHI PHÍ BÁN HÀNG",
+        "chi phí bán hàng",
+        "cpbh",
+        "selling expenses"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_quan_ly_doanh_nghiep",
+      "canonical_name": "CHI PHÍ QUẢN LÝ DOANH NGHIỆP",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "26",
+      "section": "chi_phi",
+      "aliases": [
+        "CHI PHÍ QUẢN LÝ DOANH NGHIỆP",
+        "chi phí quản lý doanh nghiệp",
+        "chi phí quản lý",
+        "cpqldn",
+        "general and administrative expenses",
+        "g&a"
+      ]
+    },
+    {
+      "metric_id": "loi_nhuan_thuan_tu_hoat_dong_kinh_doanh",
+      "canonical_name": "LỢI NHUẬN THUẦN TỪ HOẠT ĐỘNG KINH DOANH",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "30",
+      "section": "loi_nhuan",
+      "aliases": [
+        "LỢI NHUẬN THUẦN TỪ HOẠT ĐỘNG KINH DOANH",
+        "lợi nhuận thuần từ hoạt động kinh doanh",
+        "lợi nhuận thuần",
+        "lợi nhuận hoạt động kinh doanh",
+        "lnthđkd",
+        "operating profit"
+      ]
+    },
+    {
+      "metric_id": "tong_loi_nhuan_ke_toan_truoc_thue",
+      "canonical_name": "TỔNG LỢI NHUẬN KẾ TOÁN TRƯỚC THUẾ",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "50",
+      "section": "loi_nhuan",
+      "aliases": [
+        "TỔNG LỢI NHUẬN KẾ TOÁN TRƯỚC THUẾ",
+        "tổng lợi nhuận kế toán trước thuế",
+        "lợi nhuận kế toán trước thuế",
+        "lợi nhuận trước thuế",
+        "lntt",
+        "lãi trước thuế",
+        "tổng lợi nhuận trước thuế",
+        "profit before tax",
+        "pbt"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_thue_tndn",
+      "canonical_name": "CHI PHÍ THUẾ TNDN",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "51",
+      "section": "chi_phi",
+      "aliases": [
+        "CHI PHÍ THUẾ TNDN",
+        "chi phí thuế thu nhập doanh nghiệp",
+        "chi phí thuế tndn",
+        "thuế tndn",
+        "thuế thu nhập doanh nghiệp",
+        "chi phí thuế",
+        "tax expense"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_thue_tndn_hien_hanh",
+      "canonical_name": "CHI PHÍ THUẾ TNDN HIỆN HÀNH",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": null,
+      "section": "chi_phi_thue",
+      "aliases": [
+        "CHI PHÍ THUẾ TNDN HIỆN HÀNH",
+        "chi phí thuế thu nhập doanh nghiệp hiện hành",
+        "chi phí thuế tndn hiện hành",
+        "thuế thu nhập doanh nghiệp hiện hành",
+        "thuế tndn hiện hành"
+      ]
+    },
+    {
+      "metric_id": "chi_phi_thue_tndn_hoan_lai",
+      "canonical_name": "CHI PHÍ THUẾ TNDN HOÃN LẠI",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": null,
+      "section": "chi_phi_thue",
+      "aliases": [
+        "CHI PHÍ THUẾ TNDN HOÃN LẠI",
+        "chi phí thuế thu nhập doanh nghiệp hoãn lại",
+        "chi phí thuế tndn hoãn lại",
+        "thuế thu nhập doanh nghiệp hoãn lại",
+        "thuế tndn hoãn lại"
+      ]
+    },
+    {
+      "metric_id": "loi_nhuan_sau_thue",
+      "canonical_name": "LỢI NHUẬN SAU THUẾ",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "60",
+      "section": "loi_nhuan",
+      "aliases": [
+        "LỢI NHUẬN SAU THUẾ",
+        "lợi nhuận sau thuế thu nhập doanh nghiệp",
+        "lợi nhuận sau thuế tndn",
+        "lợi nhuận sau thuế",
+        "lnst",
+        "lãi sau thuế",
+        "lợi nhuận ròng",
+        "lãi ròng",
+        "lợi nhuận thuần sau thuế",
+        "net profit",
+        "pat"
+      ]
+    },
+    {
+      "metric_id": "lai_co_ban_tren_co_phieu",
+      "canonical_name": "LÃI CƠ BẢN TRÊN CỔ PHIẾU",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": "70",
+      "section": "co_phieu",
+      "aliases": [
+        "LÃI CƠ BẢN TRÊN CỔ PHIẾU",
+        "lãi cơ bản trên cổ phiếu",
+        "eps",
+        "thu nhập trên mỗi cổ phiếu",
+        "thu nhập một cổ phiếu",
+        "earnings per share"
+      ]
+    },
+    {
+      "metric_id": "thu_nhap_lai_thuan",
+      "canonical_name": "THU NHẬP LÃI THUẦN",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": null,
+      "section": "doanh_thu",
+      "aliases": [
+        "THU NHẬP LÃI THUẦN",
+        "thu nhập lãi thuần",
+        "lãi thuần",
+        "thu nhập lãi",
+        "net interest income",
+        "nii"
+      ]
+    },
+    {
+      "metric_id": "tong_thu_nhap_hoat_dong",
+      "canonical_name": "TỔNG THU NHẬP HOẠT ĐỘNG",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": null,
+      "section": "doanh_thu",
+      "aliases": [
+        "TỔNG THU NHẬP HOẠT ĐỘNG",
+        "tổng thu nhập hoạt động",
+        "thu nhập hoạt động",
+        "toir",
+        "operating income"
+      ]
+    },
+    {
+      "metric_id": "thu_nhap_tu_hoat_dong_khac",
+      "canonical_name": "THU NHẬP TỪ HOẠT ĐỘNG KHÁC",
+      "statement_type": "income_statement",
+      "statement_name_vi": "Báo cáo kết quả hoạt động kinh doanh",
+      "code": null,
+      "section": "doanh_thu_khac",
+      "aliases": [
+        "THU NHẬP TỪ HOẠT ĐỘNG KHÁC",
+        "thu nhập từ hoạt động khác",
+        "thu nhập hoạt động khác",
+        "other operating income"
+      ]
+    },
+    {
+      "metric_id": "luu_chuyen_tien_tu_hoat_dong_kinh_doanh",
+      "canonical_name": "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG KINH DOANH",
+      "statement_type": "cash_flow",
+      "statement_name_vi": "Báo cáo lưu chuyển tiền tệ",
+      "code": "20",
+      "section": "dong_tien_kinh_doanh",
+      "aliases": [
+        "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG KINH DOANH",
+        "lưu chuyển tiền thuần từ hoạt động kinh doanh",
+        "lưu chuyển tiền thuần sử dụng từ hoạt động kinh doanh",
+        "tiền thuần từ hoạt động kinh doanh",
+        "lưu chuyển tiền từ hoạt động kinh doanh",
+        "dòng tiền từ hoạt động kinh doanh",
+        "dòng tiền hoạt động kinh doanh",
+        "dòng tiền thuần từ hoạt động kinh doanh",
+        "tiền từ hđkd",
+        "dòng tiền kinh doanh",
+        "lưu chuyển tiền từ hđkd",
+        "cfo",
+        "cash flow from operations"
+      ]
+    },
+    {
+      "metric_id": "luu_chuyen_tien_tu_hoat_dong_dau_tu",
+      "canonical_name": "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG ĐẦU TƯ",
+      "statement_type": "cash_flow",
+      "statement_name_vi": "Báo cáo lưu chuyển tiền tệ",
+      "code": "30",
+      "section": "dong_tien_dau_tu",
+      "aliases": [
+        "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG ĐẦU TƯ",
+        "lưu chuyển tiền thuần từ hoạt động đầu tư",
+        "lưu chuyển tiền từ hoạt động đầu tư",
+        "dòng tiền từ hoạt động đầu tư",
+        "dòng tiền hoạt động đầu tư",
+        "dòng tiền đầu tư",
+        "tiền từ hđđt",
+        "lưu chuyển tiền từ hđđt",
+        "cfi",
+        "cash flow from investing"
+      ]
+    },
+    {
+      "metric_id": "luu_chuyen_tien_tu_hoat_dong_tai_chinh",
+      "canonical_name": "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG TÀI CHÍNH",
+      "statement_type": "cash_flow",
+      "statement_name_vi": "Báo cáo lưu chuyển tiền tệ",
+      "code": "40",
+      "section": "dong_tien_tai_chinh",
+      "aliases": [
+        "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG TÀI CHÍNH",
+        "lưu chuyển tiền thuần từ hoạt động tài chính",
+        "lưu chuyển tiền từ hoạt động tài chính",
+        "dòng tiền từ hoạt động tài chính",
+        "dòng tiền hoạt động tài chính",
+        "dòng tiền tài chính",
+        "tiền từ hđtc",
+        "lưu chuyển tiền từ hđtc",
+        "cff",
+        "cash flow from financing"
+      ]
+    },
+    {
+      "metric_id": "luu_chuyen_tien_thuan_trong_ky",
+      "canonical_name": "LƯU CHUYỂN TIỀN THUẦN TRONG KỲ",
+      "statement_type": "cash_flow",
+      "statement_name_vi": "Báo cáo lưu chuyển tiền tệ",
+      "code": "50",
+      "section": "dong_tien_tong",
+      "aliases": [
+        "LƯU CHUYỂN TIỀN THUẦN TRONG KỲ",
+        "lưu chuyển tiền thuần trong kỳ",
+        "dòng tiền thuần",
+        "biến động tiền thuần",
+        "tăng/giảm tiền thuần",
+        "net cash flow"
+      ]
+    },
+    {
+      "metric_id": "tien_va_tuong_duong_tien_dau_ky",
+      "canonical_name": "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN ĐẦU KỲ",
+      "statement_type": "cash_flow",
+      "statement_name_vi": "Báo cáo lưu chuyển tiền tệ",
+      "code": "60",
+      "section": "dong_tien_tong",
+      "aliases": [
+        "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN ĐẦU KỲ",
+        "tiền và tương đương tiền đầu kỳ",
+        "tiền và các khoản tương đương tiền đầu kỳ",
+        "tiền và các khoản tương đương tiền đầu năm",
+        "tiền đầu năm",
+        "tiền đầu kỳ",
+        "beginning cash"
+      ]
+    },
+    {
+      "metric_id": "tien_va_tuong_duong_tien_cuoi_ky",
+      "canonical_name": "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN CUỐI KỲ",
+      "statement_type": "cash_flow",
+      "statement_name_vi": "Báo cáo lưu chuyển tiền tệ",
+      "code": "70",
+      "section": "dong_tien_tong",
+      "aliases": [
+        "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN CUỐI KỲ",
+        "tiền và tương đương tiền cuối kỳ",
+        "tiền và các khoản tương đương tiền cuối kỳ",
+        "tiền và tương đương tiền cuối năm",
+        "tiền và các khoản tương đương tiền cuối năm",
+        "tiền cuối năm",
+        "tiền cuối kỳ",
+        "ending cash"
+      ]
+    },
+    {
+      "metric_id": "cho_vay_giao_dich_ky_quy_va_ung_truoc_cho_khach_hang",
+      "canonical_name": "CHO VAY GIAO DỊCH KÝ QUỸ VÀ ỨNG TRƯỚC CHO KHÁCH HÀNG",
+      "statement_type": "notes",
+      "statement_name_vi": "Thuyết minh báo cáo tài chính",
+      "code": null,
+      "section": "cho_vay_khach_hang",
+      "aliases": [
+        "CHO VAY GIAO DỊCH KÝ QUỸ VÀ ỨNG TRƯỚC CHO KHÁCH HÀNG",
+        "cho vay giao dịch ký quỹ và ứng trước cho khách hàng"
+      ]
+    },
+    {
+      "metric_id": "thuyet_minh_hang_ton_kho",
+      "canonical_name": "THUYẾT MINH HÀNG TỒN KHO",
+      "statement_type": "notes",
+      "statement_name_vi": "Thuyết minh báo cáo tài chính",
+      "code": null,
+      "section": "thuyet_minh",
+      "aliases": [
+        "THUYẾT MINH HÀNG TỒN KHO",
+        "thuyết minh hàng tồn kho",
+        "tm hàng tồn kho",
+        "chi tiết hàng tồn kho"
+      ]
+    },
+    {
+      "metric_id": "thuyet_minh_phai_thu_khach_hang",
+      "canonical_name": "THUYẾT MINH PHẢI THU KHÁCH HÀNG",
+      "statement_type": "notes",
+      "statement_name_vi": "Thuyết minh báo cáo tài chính",
+      "code": null,
+      "section": "thuyet_minh",
+      "aliases": [
+        "THUYẾT MINH PHẢI THU KHÁCH HÀNG",
+        "thuyết minh phải thu",
+        "tm phải thu",
+        "chi tiết phải thu khách hàng"
+      ]
+    },
+    {
+      "metric_id": "thuyet_minh_no_phai_tra",
+      "canonical_name": "THUYẾT MINH NỢ PHẢI TRẢ",
+      "statement_type": "notes",
+      "statement_name_vi": "Thuyết minh báo cáo tài chính",
+      "code": null,
+      "section": "thuyet_minh",
+      "aliases": [
+        "THUYẾT MINH NỢ PHẢI TRẢ",
+        "thuyết minh nợ phải trả",
+        "tm nợ",
+        "thuyết minh vay nợ",
+        "chi tiết vay và nợ thuê tài chính"
+      ]
+    },
+    {
+      "metric_id": "thuyet_minh_von_chu_so_huu",
+      "canonical_name": "THUYẾT MINH VỐN CHỦ SỞ HỮU",
+      "statement_type": "notes",
+      "statement_name_vi": "Thuyết minh báo cáo tài chính",
+      "code": null,
+      "section": "thuyet_minh",
+      "aliases": [
+        "THUYẾT MINH VỐN CHỦ SỞ HỮU",
+        "thuyết minh vốn chủ sở hữu",
+        "tm vốn chủ",
+        "biến động vốn chủ sở hữu"
+      ]
+    },
+    {
+      "metric_id": "thuyet_minh_doanh_thu",
+      "canonical_name": "THUYẾT MINH DOANH THU",
+      "statement_type": "notes",
+      "statement_name_vi": "Thuyết minh báo cáo tài chính",
+      "code": null,
+      "section": "thuyet_minh",
+      "aliases": [
+        "THUYẾT MINH DOANH THU",
+        "thuyết minh doanh thu",
+        "tm doanh thu",
+        "chi tiết doanh thu bán hàng"
+      ]
+    }
+  ]
+}

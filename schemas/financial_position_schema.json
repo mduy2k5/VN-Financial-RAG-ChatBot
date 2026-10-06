@@ -1,0 +1,3300 @@
+{
+  "schema_id": "UNIVERSAL_FINANCIAL_POSITION_V1",
+  "schema_version": "1.6.0",
+  "statement_type": "FINANCIAL_POSITION",
+  "design_principles": {
+    "mapping_key": "semantic node_id",
+    "form_code_used_for_mapping": false,
+    "display_index_used_for_mapping": false,
+    "hierarchy_used_as_context": true,
+    "supports_sparse_reports": true,
+    "sector_specific_nodes_allowed": true
+  },
+  "coverage": [
+    "Ngân hàng/TCTD - B02 và biến thể",
+    "Doanh nghiệp - B01-DN/B01a-DN/B01b-DN",
+    "Doanh nghiệp nhỏ và vừa - B01a-DNN/B01-DNNKLT",
+    "Doanh nghiệp không đáp ứng giả định hoạt động liên tục",
+    "TT200/2014, TT133/2016, TT99/2025 theo các mẫu đã cung cấp",
+    "Ngân hàng/TCTD - Các chỉ tiêu ngoài báo cáo tình hình tài chính",
+    "Enterprise semantic refinement - current/non-current provisions and retained earnings detail"
+  ],
+  "nodes": [
+    {
+      "node_id": "ASSET",
+      "canonical_name": "Tài sản",
+      "parent_id": null,
+      "kind": "section",
+      "sector": "common",
+      "children": [
+        "TOTAL_ASSETS",
+        "ASSET.CURRENT",
+        "ASSET.NON_CURRENT",
+        "ASSET.CASH_EQUIV",
+        "ASSET.CENTRAL_BANK_BALANCES",
+        "ASSET.INTERBANK",
+        "ASSET.FIN_INV",
+        "ASSET.DERIVATIVES",
+        "ASSET.CUSTOMER_LOANS",
+        "ASSET.DEBT_PURCHASE",
+        "ASSET.RECEIVABLES",
+        "ASSET.INVENTORY",
+        "ASSET.BIOLOGICAL",
+        "ASSET.FIXED_ASSETS",
+        "ASSET.INVESTMENT_PROPERTY",
+        "ASSET.CIP",
+        "ASSET.CONSTRUCTION_IN_PROGRESS",
+        "ASSET.OTHER"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY",
+      "canonical_name": "Nợ phải trả",
+      "parent_id": null,
+      "kind": "section",
+      "sector": "common",
+      "children": [
+        "TOTAL_LIABILITIES",
+        "LIABILITY.CURRENT",
+        "LIABILITY.NON_CURRENT",
+        "LIABILITY.GOV_CENTRAL_BANK",
+        "LIABILITY.INTERBANK",
+        "LIABILITY.CUSTOMER_DEPOSITS",
+        "LIABILITY.DERIVATIVES",
+        "LIABILITY.ENTRUSTED_FUNDS",
+        "LIABILITY.ISSUED_SECURITIES",
+        "LIABILITY.TRADE_PAYABLES",
+        "LIABILITY.CUSTOMER_ADVANCES",
+        "LIABILITY.DIVIDEND_PAYABLE",
+        "LIABILITY.TAX_PAYABLE",
+        "LIABILITY.EMPLOYEE_PAYABLE",
+        "LIABILITY.ACCRUED_EXPENSES",
+        "LIABILITY.INTERNAL_CAPITAL",
+        "LIABILITY.INTERNAL",
+        "LIABILITY.CONSTRUCTION_CONTRACT",
+        "LIABILITY.DEFERRED_REVENUE",
+        "LIABILITY.BORROWINGS",
+        "LIABILITY.CONVERTIBLE_BONDS",
+        "LIABILITY.PREFERRED_SHARES_LIABILITY",
+        "LIABILITY.DEFERRED_TAX",
+        "LIABILITY.PROVISIONS",
+        "LIABILITY.BONUS_WELFARE_FUND",
+        "LIABILITY.SCI_TECH_FUND",
+        "LIABILITY.PRICE_STABILIZATION_FUND",
+        "LIABILITY.GOV_BOND_REPO",
+        "LIABILITY.OTHER"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY",
+      "canonical_name": "Vốn chủ sở hữu",
+      "parent_id": null,
+      "kind": "section",
+      "sector": "common",
+      "children": [
+        "TOTAL_EQUITY",
+        "EQUITY.OWNER_CAPITAL",
+        "EQUITY.SHARE_PREMIUM",
+        "EQUITY.CONVERTIBLE_OPTION",
+        "EQUITY.OTHER_CAPITAL",
+        "EQUITY.TREASURY_SHARES",
+        "EQUITY.REVALUATION_RESERVE",
+        "EQUITY.FX_RESERVE",
+        "EQUITY.DEVELOPMENT_FUND",
+        "EQUITY.RESTRUCTURING_FUND",
+        "EQUITY.OTHER_FUNDS",
+        "EQUITY.RETAINED_EARNINGS",
+        "EQUITY.CONSTRUCTION_CAPITAL",
+        "EQUITY.FUNDING",
+        "EQUITY.NON_CONTROLLING_INTEREST",
+        "EQUITY.BANK_RESERVES"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "TOTAL_ASSETS",
+      "canonical_name": "Tổng cộng tài sản",
+      "parent_id": "ASSET",
+      "kind": "total",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "TOTAL_LIABILITIES",
+      "canonical_name": "Tổng cộng nợ phải trả",
+      "parent_id": "LIABILITY",
+      "kind": "total",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "TOTAL_EQUITY",
+      "canonical_name": "Tổng cộng vốn chủ sở hữu",
+      "parent_id": "EQUITY",
+      "kind": "total",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "TOTAL_LIABILITIES_AND_EQUITY",
+      "canonical_name": "Tổng cộng nguồn vốn",
+      "parent_id": null,
+      "kind": "total",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CURRENT",
+      "canonical_name": "Tài sản ngắn hạn",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.NON_CURRENT",
+      "canonical_name": "Tài sản dài hạn",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CASH_EQUIV",
+      "canonical_name": "Tiền và các khoản tương đương tiền",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.CASH_EQUIV.CASH",
+        "ASSET.CASH_EQUIV.CASH_ON_HAND",
+        "ASSET.CASH_EQUIV.CASH_EQUIVALENTS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CASH_EQUIV.CASH",
+      "canonical_name": "Tiền",
+      "parent_id": "ASSET.CASH_EQUIV",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CASH_EQUIV.CASH_ON_HAND",
+      "canonical_name": "Tiền mặt, vàng bạc, đá quý",
+      "parent_id": "ASSET.CASH_EQUIV",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CASH_EQUIV.CASH_EQUIVALENTS",
+      "canonical_name": "Các khoản tương đương tiền",
+      "parent_id": "ASSET.CASH_EQUIV",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CENTRAL_BANK_BALANCES",
+      "canonical_name": "Tiền gửi tại Ngân hàng Nhà nước",
+      "parent_id": "ASSET",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INTERBANK",
+      "canonical_name": "Tiền gửi và cho vay các tổ chức tín dụng khác",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "ASSET.INTERBANK.DEPOSITS",
+        "ASSET.INTERBANK.LOANS",
+        "ASSET.INTERBANK.ALLOWANCE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INTERBANK.DEPOSITS",
+      "canonical_name": "Tiền gửi tại các tổ chức tín dụng khác",
+      "parent_id": "ASSET.INTERBANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INTERBANK.LOANS",
+      "canonical_name": "Cho vay các tổ chức tín dụng khác",
+      "parent_id": "ASSET.INTERBANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INTERBANK.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro tiền gửi và cho vay các tổ chức tín dụng khác",
+      "parent_id": "ASSET.INTERBANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV",
+      "canonical_name": "Đầu tư tài chính",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.FIN_INV.SHORT_TERM",
+        "ASSET.FIN_INV.LONG_TERM",
+        "ASSET.FIN_INV.TRADING_SECURITIES",
+        "ASSET.FIN_INV.HTM",
+        "ASSET.FIN_INV.AFS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.SHORT_TERM",
+      "canonical_name": "Đầu tư tài chính ngắn hạn",
+      "parent_id": "ASSET.FIN_INV",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.LONG_TERM",
+      "canonical_name": "Đầu tư tài chính dài hạn",
+      "parent_id": "ASSET.FIN_INV",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.FIN_INV.SUBSIDIARY",
+        "ASSET.FIN_INV.ASSOC_JV",
+        "ASSET.FIN_INV.OTHER_EQUITY",
+        "ASSET.FIN_INV.OTHER",
+        "ASSET.FIN_INV.ALLOWANCE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.TRADING_SECURITIES",
+      "canonical_name": "Chứng khoán kinh doanh",
+      "parent_id": "ASSET.FIN_INV",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.FIN_INV.TRADING_SECURITIES.ALLOWANCE",
+        "ASSET.FIN_INV.TRADING_SECURITIES.GROSS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.TRADING_SECURITIES.ALLOWANCE",
+      "canonical_name": "Dự phòng giảm giá chứng khoán kinh doanh",
+      "parent_id": "ASSET.FIN_INV.TRADING_SECURITIES",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.HTM",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn",
+      "parent_id": "ASSET.FIN_INV",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.FIN_INV.HTM.SHORT_TERM",
+        "ASSET.FIN_INV.HTM.LONG_TERM",
+        "ASSET.FIN_INV.HTM.ALLOWANCE",
+        "ASSET.FIN_INV.HTM.GROSS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.HTM.SHORT_TERM",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn ngắn hạn",
+      "parent_id": "ASSET.FIN_INV.HTM",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.HTM.LONG_TERM",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn dài hạn",
+      "parent_id": "ASSET.FIN_INV.HTM",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.HTM.ALLOWANCE",
+      "canonical_name": "Dự phòng đầu tư nắm giữ đến ngày đáo hạn",
+      "parent_id": "ASSET.FIN_INV.HTM",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.AFS",
+      "canonical_name": "Chứng khoán đầu tư sẵn sàng để bán",
+      "parent_id": "ASSET.FIN_INV",
+      "kind": "line",
+      "sector": "bank",
+      "children": [
+        "ASSET.FIN_INV.AFS.ALLOWANCE",
+        "ASSET.FIN_INV.AFS.GROSS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.AFS.ALLOWANCE",
+      "canonical_name": "Dự phòng giảm giá chứng khoán đầu tư sẵn sàng để bán",
+      "parent_id": "ASSET.FIN_INV.AFS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.SUBSIDIARY",
+      "canonical_name": "Đầu tư vào công ty con",
+      "parent_id": "ASSET.FIN_INV.LONG_TERM",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.ASSOC_JV",
+      "canonical_name": "Đầu tư vào công ty liên doanh, liên kết",
+      "parent_id": "ASSET.FIN_INV.LONG_TERM",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.OTHER_EQUITY",
+      "canonical_name": "Đầu tư góp vốn vào đơn vị khác",
+      "parent_id": "ASSET.FIN_INV.LONG_TERM",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.OTHER",
+      "canonical_name": "Đầu tư tài chính khác",
+      "parent_id": "ASSET.FIN_INV.LONG_TERM",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.ALLOWANCE",
+      "canonical_name": "Dự phòng tổn thất đầu tư tài chính",
+      "parent_id": "ASSET.FIN_INV.LONG_TERM",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.DERIVATIVES",
+      "canonical_name": "Công cụ tài chính phái sinh và các tài sản tài chính khác",
+      "parent_id": "ASSET",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CUSTOMER_LOANS",
+      "canonical_name": "Cho vay khách hàng",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "ASSET.CUSTOMER_LOANS.GROSS",
+        "ASSET.CUSTOMER_LOANS.ALLOWANCE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CUSTOMER_LOANS.GROSS",
+      "canonical_name": "Cho vay khách hàng trước dự phòng",
+      "parent_id": "ASSET.CUSTOMER_LOANS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CUSTOMER_LOANS.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro cho vay khách hàng",
+      "parent_id": "ASSET.CUSTOMER_LOANS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.DEBT_PURCHASE",
+      "canonical_name": "Hoạt động mua nợ",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "ASSET.DEBT_PURCHASE.GROSS",
+        "ASSET.DEBT_PURCHASE.ALLOWANCE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.DEBT_PURCHASE.GROSS",
+      "canonical_name": "Mua nợ",
+      "parent_id": "ASSET.DEBT_PURCHASE",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.DEBT_PURCHASE.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro hoạt động mua nợ",
+      "parent_id": "ASSET.DEBT_PURCHASE",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES",
+      "canonical_name": "Các khoản phải thu",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.RECEIVABLES.SHORT_TERM",
+        "ASSET.RECEIVABLES.LONG_TERM",
+        "ASSET.RECEIVABLES.CUSTOMER",
+        "ASSET.RECEIVABLES.SUPPLIER_ADVANCE",
+        "ASSET.RECEIVABLES.INTERNAL_CAPITAL",
+        "ASSET.RECEIVABLES.INTERNAL",
+        "ASSET.RECEIVABLES.CONSTRUCTION_CONTRACT",
+        "ASSET.RECEIVABLES.LOANS",
+        "ASSET.RECEIVABLES.OTHER",
+        "ASSET.RECEIVABLES.ALLOWANCE",
+        "ASSET.RECEIVABLES.SHORTAGE_PENDING"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.SHORT_TERM",
+      "canonical_name": "Các khoản phải thu ngắn hạn",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.LONG_TERM",
+      "canonical_name": "Các khoản phải thu dài hạn",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.CUSTOMER",
+      "canonical_name": "Phải thu của khách hàng",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.RECEIVABLES.CUSTOMER.SHORT_TERM",
+        "ASSET.RECEIVABLES.CUSTOMER.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.CUSTOMER.SHORT_TERM",
+      "canonical_name": "Phải thu ngắn hạn của khách hàng",
+      "parent_id": "ASSET.RECEIVABLES.CUSTOMER",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.CUSTOMER.LONG_TERM",
+      "canonical_name": "Phải thu dài hạn của khách hàng",
+      "parent_id": "ASSET.RECEIVABLES.CUSTOMER",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE",
+      "canonical_name": "Trả trước cho người bán",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.SHORT_TERM",
+        "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL_CAPITAL",
+      "canonical_name": "Vốn kinh doanh ở đơn vị trực thuộc",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL",
+      "canonical_name": "Phải thu nội bộ",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [
+        "ASSET.RECEIVABLES.INTERNAL.SHORT_TERM",
+        "ASSET.RECEIVABLES.INTERNAL.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.CONSTRUCTION_CONTRACT",
+      "canonical_name": "Phải thu theo tiến độ hợp đồng xây dựng",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.LOANS",
+      "canonical_name": "Phải thu về cho vay",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [
+        "ASSET.RECEIVABLES.LOANS.SHORT_TERM",
+        "ASSET.RECEIVABLES.LOANS.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.OTHER",
+      "canonical_name": "Phải thu khác",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.RECEIVABLES.OTHER.SHORT_TERM",
+        "ASSET.RECEIVABLES.OTHER.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.ALLOWANCE",
+      "canonical_name": "Dự phòng phải thu khó đòi",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.RECEIVABLES.ALLOWANCE.SHORT_TERM",
+        "ASSET.RECEIVABLES.ALLOWANCE.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.SHORTAGE_PENDING",
+      "canonical_name": "Tài sản thiếu chờ xử lý",
+      "parent_id": "ASSET.RECEIVABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INVENTORY",
+      "canonical_name": "Hàng tồn kho",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "ASSET.INVENTORY.ALLOWANCE",
+        "ASSET.INVENTORY.GROSS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INVENTORY.ALLOWANCE",
+      "canonical_name": "Dự phòng giảm giá hàng tồn kho",
+      "parent_id": "ASSET.INVENTORY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL",
+      "canonical_name": "Tài sản sinh học",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "ASSET.BIOLOGICAL.CURRENT",
+        "ASSET.BIOLOGICAL.NON_CURRENT",
+        "ASSET.BIOLOGICAL.ANIMALS_PERIODIC",
+        "ASSET.BIOLOGICAL.ANIMALS_ONE_TIME",
+        "ASSET.BIOLOGICAL.SEASONAL_CROPS",
+        "ASSET.BIOLOGICAL.COST",
+        "ASSET.BIOLOGICAL.ACCUM_DEPR",
+        "ASSET.BIOLOGICAL.ALLOWANCE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.CURRENT",
+      "canonical_name": "Tài sản sinh học ngắn hạn",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.NON_CURRENT",
+      "canonical_name": "Tài sản sinh học dài hạn",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.ANIMALS_PERIODIC",
+      "canonical_name": "Súc vật nuôi cho sản phẩm định kỳ",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.ANIMALS_ONE_TIME",
+      "canonical_name": "Súc vật nuôi lấy sản phẩm một lần",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.SEASONAL_CROPS",
+      "canonical_name": "Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.COST",
+      "canonical_name": "Nguyên giá tài sản sinh học",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.ACCUM_DEPR",
+      "canonical_name": "Giá trị khấu hao lũy kế tài sản sinh học",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.BIOLOGICAL.ALLOWANCE",
+      "canonical_name": "Dự phòng tổn thất tài sản sinh học",
+      "parent_id": "ASSET.BIOLOGICAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS",
+      "canonical_name": "Tài sản cố định",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.FIXED_ASSETS.TANGIBLE",
+        "ASSET.FIXED_ASSETS.FINANCE_LEASE",
+        "ASSET.FIXED_ASSETS.INTANGIBLE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.TANGIBLE",
+      "canonical_name": "Tài sản cố định hữu hình",
+      "parent_id": "ASSET.FIXED_ASSETS",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.FIXED_ASSETS.TANGIBLE.COST",
+        "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.TANGIBLE.COST",
+      "canonical_name": "Nguyên giá tài sản cố định hữu hình",
+      "parent_id": "ASSET.FIXED_ASSETS.TANGIBLE",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế tài sản cố định hữu hình",
+      "parent_id": "ASSET.FIXED_ASSETS.TANGIBLE",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE",
+      "canonical_name": "Tài sản cố định thuê tài chính",
+      "parent_id": "ASSET.FIXED_ASSETS",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.FIXED_ASSETS.FINANCE_LEASE.COST",
+        "ASSET.FIXED_ASSETS.FINANCE_LEASE.ACCUM_DEPR"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE.COST",
+      "canonical_name": "Nguyên giá tài sản cố định thuê tài chính",
+      "parent_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế tài sản cố định thuê tài chính",
+      "parent_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.INTANGIBLE",
+      "canonical_name": "Tài sản cố định vô hình",
+      "parent_id": "ASSET.FIXED_ASSETS",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.FIXED_ASSETS.INTANGIBLE.COST",
+        "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.INTANGIBLE.COST",
+      "canonical_name": "Nguyên giá tài sản cố định vô hình",
+      "parent_id": "ASSET.FIXED_ASSETS.INTANGIBLE",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế tài sản cố định vô hình",
+      "parent_id": "ASSET.FIXED_ASSETS.INTANGIBLE",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INVESTMENT_PROPERTY",
+      "canonical_name": "Bất động sản đầu tư",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.INVESTMENT_PROPERTY.COST",
+        "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INVESTMENT_PROPERTY.COST",
+      "canonical_name": "Nguyên giá bất động sản đầu tư",
+      "parent_id": "ASSET.INVESTMENT_PROPERTY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế bất động sản đầu tư",
+      "parent_id": "ASSET.INVESTMENT_PROPERTY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CIP",
+      "canonical_name": "Tài sản dở dang dài hạn",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "ASSET.CIP.PRODUCTION",
+        "ASSET.CIP.CONSTRUCTION"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CIP.PRODUCTION",
+      "canonical_name": "Chi phí sản xuất, kinh doanh dở dang dài hạn",
+      "parent_id": "ASSET.CIP",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CIP.CONSTRUCTION",
+      "canonical_name": "Chi phí xây dựng cơ bản dở dang",
+      "parent_id": "ASSET.CIP",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.CONSTRUCTION_IN_PROGRESS",
+      "canonical_name": "Xây dựng cơ bản dở dang",
+      "parent_id": "ASSET",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER",
+      "canonical_name": "Tài sản khác",
+      "parent_id": "ASSET",
+      "kind": "group",
+      "sector": "common",
+      "children": [
+        "ASSET.OTHER.CURRENT",
+        "ASSET.OTHER.NON_CURRENT",
+        "ASSET.OTHER.PREPAID_EXPENSE",
+        "ASSET.OTHER.VAT_DEDUCTIBLE",
+        "ASSET.OTHER.TAX_RECEIVABLE",
+        "ASSET.OTHER.GOV_BOND_REPO",
+        "ASSET.OTHER.DEFERRED_TAX",
+        "ASSET.OTHER.REPLACEMENT_PARTS",
+        "ASSET.OTHER.GOODWILL",
+        "ASSET.OTHER.OTHER",
+        "ASSET.OTHER.ACCRUED_INTEREST_FEES",
+        "ASSET.OTHER.ALLOWANCE"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.CURRENT",
+      "canonical_name": "Tài sản ngắn hạn khác",
+      "parent_id": "ASSET.OTHER",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "ASSET.OTHER.CURRENT.OTHER"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.NON_CURRENT",
+      "canonical_name": "Tài sản dài hạn khác",
+      "parent_id": "ASSET.OTHER",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.PREPAID_EXPENSE",
+      "canonical_name": "Chi phí trả trước / chờ phân bổ",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "ASSET.OTHER.PREPAID_EXPENSE.SHORT_TERM",
+        "ASSET.OTHER.PREPAID_EXPENSE.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.VAT_DEDUCTIBLE",
+      "canonical_name": "Thuế GTGT được khấu trừ",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.TAX_RECEIVABLE",
+      "canonical_name": "Thuế và các khoản khác phải thu Nhà nước",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.GOV_BOND_REPO",
+      "canonical_name": "Giao dịch mua bán lại trái phiếu Chính phủ",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.DEFERRED_TAX",
+      "canonical_name": "Tài sản thuế thu nhập hoãn lại",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.REPLACEMENT_PARTS",
+      "canonical_name": "Thiết bị, vật tư, phụ tùng thay thế dài hạn",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.GOODWILL",
+      "canonical_name": "Lợi thế thương mại",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.OTHER",
+      "canonical_name": "Tài sản khác",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CURRENT",
+      "canonical_name": "Nợ ngắn hạn",
+      "parent_id": "LIABILITY",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "LIABILITY.CURRENT.PROVISIONS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.NON_CURRENT",
+      "canonical_name": "Nợ dài hạn",
+      "parent_id": "LIABILITY",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "LIABILITY.NON_CURRENT.PROVISIONS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.GOV_CENTRAL_BANK",
+      "canonical_name": "Các khoản nợ Chính phủ và Ngân hàng Nhà nước",
+      "parent_id": "LIABILITY",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "LIABILITY.GOV_CENTRAL_BANK.DEPOSITS_BORROWINGS",
+        "LIABILITY.GOV_CENTRAL_BANK.REPO"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.INTERBANK",
+      "canonical_name": "Tiền gửi và vay các tổ chức tín dụng khác",
+      "parent_id": "LIABILITY",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "LIABILITY.INTERBANK.DEPOSITS",
+        "LIABILITY.INTERBANK.BORROWINGS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.INTERBANK.DEPOSITS",
+      "canonical_name": "Tiền gửi của các tổ chức tín dụng khác",
+      "parent_id": "LIABILITY.INTERBANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.INTERBANK.BORROWINGS",
+      "canonical_name": "Vay các tổ chức tín dụng khác",
+      "parent_id": "LIABILITY.INTERBANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CUSTOMER_DEPOSITS",
+      "canonical_name": "Tiền gửi của khách hàng",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.DERIVATIVES",
+      "canonical_name": "Công cụ tài chính phái sinh và các khoản nợ tài chính khác",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.ENTRUSTED_FUNDS",
+      "canonical_name": "Vốn tài trợ, ủy thác đầu tư, cho vay mà tổ chức tín dụng chịu rủi ro",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.ISSUED_SECURITIES",
+      "canonical_name": "Phát hành giấy tờ có giá",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.TRADE_PAYABLES",
+      "canonical_name": "Phải trả người bán",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "LIABILITY.TRADE_PAYABLES.SHORT_TERM",
+        "LIABILITY.TRADE_PAYABLES.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CUSTOMER_ADVANCES",
+      "canonical_name": "Người mua trả tiền trước",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "LIABILITY.CUSTOMER_ADVANCES.SHORT_TERM",
+        "LIABILITY.CUSTOMER_ADVANCES.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.DIVIDEND_PAYABLE",
+      "canonical_name": "Phải trả cổ tức, lợi nhuận",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.TAX_PAYABLE",
+      "canonical_name": "Thuế và các khoản phải nộp Nhà nước",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.EMPLOYEE_PAYABLE",
+      "canonical_name": "Phải trả người lao động",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.ACCRUED_EXPENSES",
+      "canonical_name": "Chi phí phải trả",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "LIABILITY.ACCRUED_EXPENSES.SHORT_TERM",
+        "LIABILITY.ACCRUED_EXPENSES.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.INTERNAL_CAPITAL",
+      "canonical_name": "Phải trả nội bộ về vốn kinh doanh",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.INTERNAL",
+      "canonical_name": "Phải trả nội bộ",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CONSTRUCTION_CONTRACT",
+      "canonical_name": "Phải trả theo tiến độ hợp đồng xây dựng",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.DEFERRED_REVENUE",
+      "canonical_name": "Doanh thu chưa thực hiện / chờ phân bổ",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "LIABILITY.DEFERRED_REVENUE.SHORT_TERM",
+        "LIABILITY.DEFERRED_REVENUE.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.OTHER_PAYABLES",
+      "canonical_name": "Phải trả khác",
+      "parent_id": "LIABILITY.OTHER",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "LIABILITY.OTHER_PAYABLES.SHORT_TERM",
+        "LIABILITY.OTHER_PAYABLES.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.BORROWINGS",
+      "canonical_name": "Vay và nợ thuê tài chính",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "LIABILITY.BORROWINGS.SHORT_TERM",
+        "LIABILITY.BORROWINGS.LONG_TERM"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CONVERTIBLE_BONDS",
+      "canonical_name": "Trái phiếu chuyển đổi",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.PREFERRED_SHARES_LIABILITY",
+      "canonical_name": "Cổ phiếu ưu đãi được phân loại là nợ phải trả",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.DEFERRED_TAX",
+      "canonical_name": "Thuế thu nhập hoãn lại phải trả",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.BONUS_WELFARE_FUND",
+      "canonical_name": "Quỹ khen thưởng, phúc lợi",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.SCI_TECH_FUND",
+      "canonical_name": "Quỹ phát triển khoa học và công nghệ",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.PRICE_STABILIZATION_FUND",
+      "canonical_name": "Quỹ bình ổn giá",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.GOV_BOND_REPO",
+      "canonical_name": "Giao dịch mua bán lại trái phiếu Chính phủ",
+      "parent_id": "LIABILITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.OWNER_CAPITAL",
+      "canonical_name": "Vốn góp của chủ sở hữu",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "EQUITY.OWNER_CAPITAL.COMMON",
+        "EQUITY.OWNER_CAPITAL.PREFERRED"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.OWNER_CAPITAL.COMMON",
+      "canonical_name": "Cổ phiếu phổ thông có quyền biểu quyết",
+      "parent_id": "EQUITY.OWNER_CAPITAL",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.OWNER_CAPITAL.PREFERRED",
+      "canonical_name": "Cổ phiếu ưu đãi thuộc vốn chủ sở hữu",
+      "parent_id": "EQUITY.OWNER_CAPITAL",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.SHARE_PREMIUM",
+      "canonical_name": "Thặng dư vốn cổ phần",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.CONVERTIBLE_OPTION",
+      "canonical_name": "Quyền chọn chuyển đổi trái phiếu",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.OTHER_CAPITAL",
+      "canonical_name": "Vốn khác của chủ sở hữu",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.TREASURY_SHARES",
+      "canonical_name": "Cổ phiếu quỹ / cổ phiếu mua lại của chính mình",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.REVALUATION_RESERVE",
+      "canonical_name": "Chênh lệch đánh giá lại tài sản",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.FX_RESERVE",
+      "canonical_name": "Chênh lệch tỷ giá hối đoái",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.DEVELOPMENT_FUND",
+      "canonical_name": "Quỹ đầu tư phát triển",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.RESTRUCTURING_FUND",
+      "canonical_name": "Quỹ hỗ trợ sắp xếp doanh nghiệp",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.OTHER_FUNDS",
+      "canonical_name": "Các quỹ khác thuộc vốn chủ sở hữu",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.RETAINED_EARNINGS",
+      "canonical_name": "Lợi nhuận sau thuế chưa phân phối / Lỗ lũy kế",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [
+        "EQUITY.RETAINED_EARNINGS.PRIOR",
+        "EQUITY.RETAINED_EARNINGS.CURRENT"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.RETAINED_EARNINGS.PRIOR",
+      "canonical_name": "Lợi nhuận chưa phân phối lũy kế đến cuối kỳ trước",
+      "parent_id": "EQUITY.RETAINED_EARNINGS",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.RETAINED_EARNINGS.CURRENT",
+      "canonical_name": "Lợi nhuận sau thuế chưa phân phối kỳ này",
+      "parent_id": "EQUITY.RETAINED_EARNINGS",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.CONSTRUCTION_CAPITAL",
+      "canonical_name": "Nguồn vốn đầu tư xây dựng cơ bản",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.FUNDING",
+      "canonical_name": "Nguồn kinh phí và quỹ khác",
+      "parent_id": "EQUITY",
+      "kind": "group",
+      "sector": "enterprise",
+      "children": [
+        "EQUITY.FUNDING.SOURCE",
+        "EQUITY.FUNDING.FIXED_ASSETS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.FUNDING.SOURCE",
+      "canonical_name": "Nguồn kinh phí",
+      "parent_id": "EQUITY.FUNDING",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.FUNDING.FIXED_ASSETS",
+      "canonical_name": "Nguồn kinh phí đã hình thành tài sản cố định",
+      "parent_id": "EQUITY.FUNDING",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.NON_CONTROLLING_INTEREST",
+      "canonical_name": "Lợi ích của cổ đông không kiểm soát / cổ đông thiểu số",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "common",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "EQUITY.BANK_RESERVES",
+      "canonical_name": "Các quỹ của tổ chức tín dụng",
+      "parent_id": "EQUITY",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.TRADING_SECURITIES.GROSS",
+      "canonical_name": "Chứng khoán kinh doanh trước dự phòng",
+      "parent_id": "ASSET.FIN_INV.TRADING_SECURITIES",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.HTM.GROSS",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn trước dự phòng",
+      "parent_id": "ASSET.FIN_INV.HTM",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.FIN_INV.AFS.GROSS",
+      "canonical_name": "Chứng khoán đầu tư sẵn sàng để bán trước dự phòng",
+      "parent_id": "ASSET.FIN_INV.AFS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.ACCRUED_INTEREST_FEES",
+      "canonical_name": "Các khoản lãi, phí phải thu",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro cho các tài sản Có nội bảng khác",
+      "parent_id": "ASSET.OTHER",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.ACCRUED_INTEREST_FEES",
+      "canonical_name": "Các khoản lãi, phí phải trả",
+      "parent_id": "LIABILITY.OTHER",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.GOV_CENTRAL_BANK.DEPOSITS_BORROWINGS",
+      "canonical_name": "Tiền gửi và vay Chính phủ, Ngân hàng Nhà nước",
+      "parent_id": "LIABILITY.GOV_CENTRAL_BANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.GOV_CENTRAL_BANK.REPO",
+      "canonical_name": "Giao dịch bán và mua lại trái phiếu Chính phủ với Kho bạc Nhà nước",
+      "parent_id": "LIABILITY.GOV_CENTRAL_BANK",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.OTHER",
+      "canonical_name": "Các khoản nợ khác",
+      "parent_id": "LIABILITY",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "LIABILITY.OTHER_PAYABLES",
+        "LIABILITY.ACCRUED_INTEREST_FEES"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.BORROWINGS.SHORT_TERM",
+      "canonical_name": "Vay và nợ thuê tài chính ngắn hạn",
+      "parent_id": "LIABILITY.BORROWINGS",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.BORROWINGS.LONG_TERM",
+      "canonical_name": "Vay và nợ thuê tài chính dài hạn",
+      "parent_id": "LIABILITY.BORROWINGS",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.TRADE_PAYABLES.SHORT_TERM",
+      "canonical_name": "Phải trả người bán ngắn hạn",
+      "parent_id": "LIABILITY.TRADE_PAYABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.TRADE_PAYABLES.LONG_TERM",
+      "canonical_name": "Phải trả người bán dài hạn",
+      "parent_id": "LIABILITY.TRADE_PAYABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CUSTOMER_ADVANCES.SHORT_TERM",
+      "canonical_name": "Người mua trả tiền trước ngắn hạn",
+      "parent_id": "LIABILITY.CUSTOMER_ADVANCES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CUSTOMER_ADVANCES.LONG_TERM",
+      "canonical_name": "Người mua trả tiền trước dài hạn",
+      "parent_id": "LIABILITY.CUSTOMER_ADVANCES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.ACCRUED_EXPENSES.SHORT_TERM",
+      "canonical_name": "Chi phí phải trả ngắn hạn",
+      "parent_id": "LIABILITY.ACCRUED_EXPENSES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.ACCRUED_EXPENSES.LONG_TERM",
+      "canonical_name": "Chi phí phải trả dài hạn",
+      "parent_id": "LIABILITY.ACCRUED_EXPENSES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.DEFERRED_REVENUE.SHORT_TERM",
+      "canonical_name": "Doanh thu chưa thực hiện ngắn hạn",
+      "parent_id": "LIABILITY.DEFERRED_REVENUE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.DEFERRED_REVENUE.LONG_TERM",
+      "canonical_name": "Doanh thu chưa thực hiện dài hạn",
+      "parent_id": "LIABILITY.DEFERRED_REVENUE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.OTHER_PAYABLES.SHORT_TERM",
+      "canonical_name": "Phải trả ngắn hạn khác",
+      "parent_id": "LIABILITY.OTHER_PAYABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.OTHER_PAYABLES.LONG_TERM",
+      "canonical_name": "Phải trả dài hạn khác",
+      "parent_id": "LIABILITY.OTHER_PAYABLES",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.SHORT_TERM",
+      "canonical_name": "Trả trước cho người bán ngắn hạn",
+      "parent_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.LONG_TERM",
+      "canonical_name": "Trả trước cho người bán dài hạn",
+      "parent_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL.SHORT_TERM",
+      "canonical_name": "Phải thu nội bộ ngắn hạn",
+      "parent_id": "ASSET.RECEIVABLES.INTERNAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL.LONG_TERM",
+      "canonical_name": "Phải thu nội bộ dài hạn",
+      "parent_id": "ASSET.RECEIVABLES.INTERNAL",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.LOANS.SHORT_TERM",
+      "canonical_name": "Phải thu về cho vay ngắn hạn",
+      "parent_id": "ASSET.RECEIVABLES.LOANS",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.LOANS.LONG_TERM",
+      "canonical_name": "Phải thu về cho vay dài hạn",
+      "parent_id": "ASSET.RECEIVABLES.LOANS",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.OTHER.SHORT_TERM",
+      "canonical_name": "Phải thu ngắn hạn khác",
+      "parent_id": "ASSET.RECEIVABLES.OTHER",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.OTHER.LONG_TERM",
+      "canonical_name": "Phải thu dài hạn khác",
+      "parent_id": "ASSET.RECEIVABLES.OTHER",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.ALLOWANCE.SHORT_TERM",
+      "canonical_name": "Dự phòng phải thu ngắn hạn khó đòi",
+      "parent_id": "ASSET.RECEIVABLES.ALLOWANCE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.RECEIVABLES.ALLOWANCE.LONG_TERM",
+      "canonical_name": "Dự phòng phải thu dài hạn khó đòi",
+      "parent_id": "ASSET.RECEIVABLES.ALLOWANCE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.PREPAID_EXPENSE.SHORT_TERM",
+      "canonical_name": "Chi phí trả trước ngắn hạn",
+      "parent_id": "ASSET.OTHER.PREPAID_EXPENSE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.PREPAID_EXPENSE.LONG_TERM",
+      "canonical_name": "Chi phí trả trước dài hạn",
+      "parent_id": "ASSET.OTHER.PREPAID_EXPENSE",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.INVENTORY.GROSS",
+      "canonical_name": "Hàng tồn kho trước dự phòng",
+      "parent_id": "ASSET.INVENTORY",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "ASSET.OTHER.CURRENT.OTHER",
+      "canonical_name": "Tài sản ngắn hạn khác - khoản khác",
+      "parent_id": "ASSET.OTHER.CURRENT",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE",
+      "canonical_name": "Các chỉ tiêu ngoài báo cáo tình hình tài chính",
+      "parent_id": null,
+      "kind": "section",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.GUARANTEES",
+        "OFF_BALANCE.FX_COMMITMENTS",
+        "OFF_BALANCE.CREDIT_COMMITMENTS",
+        "OFF_BALANCE.OTHER_COMMITMENTS",
+        "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES",
+        "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT",
+        "OFF_BALANCE.OTHER_ASSETS_DOCUMENTS",
+        "OFF_BALANCE.OTHER_ITEMS"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES",
+      "canonical_name": "Bảo lãnh",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.GUARANTEES.LOAN",
+        "OFF_BALANCE.GUARANTEES.OTHER"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.LOAN",
+      "canonical_name": "Bảo lãnh vay vốn",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.GUARANTEES.OTHER",
+      "canonical_name": "Bảo lãnh khác",
+      "parent_id": "OFF_BALANCE.GUARANTEES",
+      "kind": "group",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "canonical_name": "Cam kết giao dịch",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.FX_COMMITMENTS.FX_TRANSACTION",
+        "OFF_BALANCE.FX_COMMITMENTS.BUY_FX",
+        "OFF_BALANCE.FX_COMMITMENTS.SELL_FX",
+        "OFF_BALANCE.FX_COMMITMENTS.SWAP"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.FX_TRANSACTION",
+      "canonical_name": "Cam kết giao dịch hối đoái",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.BUY_FX",
+      "canonical_name": "Cam kết mua ngoại tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SELL_FX",
+      "canonical_name": "Cam kết bán ngoại tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "canonical_name": "Cam kết giao dịch hoán đổi",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY",
+        "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY",
+      "canonical_name": "Cam kết mua - giao dịch hoán đổi tiền tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL",
+      "canonical_name": "Cam kết bán - giao dịch hoán đổi tiền tệ",
+      "parent_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "canonical_name": "Cam kết tín dụng",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [
+        "OFF_BALANCE.CREDIT_COMMITMENTS.LC",
+        "OFF_BALANCE.CREDIT_COMMITMENTS.IRREVOCABLE_LOAN",
+        "OFF_BALANCE.CREDIT_COMMITMENTS.UNUSED_LIMIT"
+      ],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.LC",
+      "canonical_name": "Cam kết trong nghiệp vụ L/C",
+      "parent_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.IRREVOCABLE_LOAN",
+      "canonical_name": "Cam kết cho vay không hủy ngang",
+      "parent_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.UNUSED_LIMIT",
+      "canonical_name": "Hạn mức tín dụng chưa sử dụng",
+      "parent_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.OTHER_COMMITMENTS",
+      "canonical_name": "Các cam kết khác",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES",
+      "canonical_name": "Lãi cho vay và phí phải thu chưa thu được",
+      "parent_id": "OFF_BALANCE",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT",
+      "canonical_name": "Nợ khó đòi đã xử lý",
+      "parent_id": "OFF_BALANCE",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.OTHER_ASSETS_DOCUMENTS",
+      "canonical_name": "Tài sản và chứng từ khác",
+      "parent_id": "OFF_BALANCE",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "OFF_BALANCE.OTHER_ITEMS",
+      "canonical_name": "Các khoản mục ngoài bảng khác",
+      "parent_id": "OFF_BALANCE",
+      "kind": "group",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.CURRENT.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả ngắn hạn",
+      "parent_id": "LIABILITY.CURRENT",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    },
+    {
+      "node_id": "LIABILITY.NON_CURRENT.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả dài hạn",
+      "parent_id": "LIABILITY.NON_CURRENT",
+      "kind": "line",
+      "sector": "enterprise",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    }
+  ]
+}

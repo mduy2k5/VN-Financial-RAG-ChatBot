@@ -1,0 +1,52 @@
+{
+  "run_id": "YYYYMMDD-HHMMSS-<track>-<split>",
+  "track": "controlled-local-or-native-stack",
+  "split": "dev-or-holdout",
+  "started_at_utc": null,
+  "corpus_manifest_sha256": null,
+  "case_set_sha256": null,
+  "host": {
+    "os": "Windows",
+    "cpu_model": "13th Gen Intel(R) Core(TM) i7-13650HX",
+    "logical_cpu_count": 20,
+    "ram_bytes": 16780566528,
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpu_vram_bytes": 6438256640
+  },
+  "shared_limits": {
+    "container_cpu_limit": null,
+    "container_memory_limit_bytes": null,
+    "gpu_visible": true,
+    "max_inflight_queries": 1,
+    "answer_timeout_seconds": null
+  },
+  "systems": {
+    "financial_rag": {
+      "source_path": "F:/Indexium/VN-Financial-Understanding",
+      "git_commit": null,
+      "image_digest": null,
+      "embedding_provider_model_revision": null,
+      "generation_provider_model_revision": null,
+      "temperature": null,
+      "corpus_files_indexed": null,
+      "chunks_indexed": null
+    },
+    "data_services": {
+      "source_path": "F:/Indexium/Vindex/New folder/data-services",
+      "git_commit": null,
+      "image_digest": null,
+      "embedding_provider_model_revision": null,
+      "generation_provider_model_revision": null,
+      "temperature": null,
+      "corpus_files_indexed": null,
+      "chunks_indexed": null
+    }
+  },
+  "protocol": {
+    "warmup_cases": 5,
+    "repeats_per_case": 3,
+    "answer_cache_disabled_or_cleared": null,
+    "runs_sequentially": true,
+    "raw_response_retained": true
+  }
+}

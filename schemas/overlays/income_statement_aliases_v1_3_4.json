@@ -1,0 +1,52 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_INCOME_STATEMENT_V1@1.3.4",
+  "base_aliases": "../income_statement_aliases.json",
+  "alias_schema_version": "1.3.4",
+  "target_schema": "UNIVERSAL_INCOME_STATEMENT_V1@1.5.2",
+  "entries_update": {
+    "INCOME.ENTERPRISE.GROSS_PROFIT": {
+      "exact_add": [
+        "Lợi nhuận gộp về bán và dịch vụ cung cấp"
+      ]
+    },
+    "INCOME.ENTERPRISE.SHARE_OF_PROFIT_ASSOCIATES": {
+      "exact_add": [
+        "Phần lãi (lỗ) trong công ty liên doanh",
+        "Phần lãi (lỗ) trong công ty liên kết",
+        "Phần lãi hoặc lỗ trong công ty liên kết"
+      ]
+    },
+    "INCOME.ENTERPRISE.INTEREST_EXPENSE": {
+      "exact_add": [
+        "Trong đó: Chi phí lãi vay và chi phí phát hành"
+      ]
+    },
+    "INCOME.ENTERPRISE.DEFERRED_TAX_EXPENSE": {
+      "exact_add": [
+        "(Thu nhập) thuế thu nhập doanh nghiệp hoãn lại"
+      ]
+    },
+    "INCOME.ENTERPRISE.PROFIT_ATTRIBUTABLE_PARENT": {
+      "exact_add": [
+        "Cổ đông của Công ty mẹ"
+      ]
+    },
+    "INCOME.ENTERPRISE.PROFIT_ATTRIBUTABLE_NCI": {
+      "exact_add": [
+        "Cổ đông không kiểm soát",
+        "Lỗ sau thuế của cổ đông không kiểm soát"
+      ]
+    },
+    "INCOME.ENTERPRISE.OTHER_PROFIT": {
+      "exact_add": [
+        "Lợi nhuận (lỗ) khác"
+      ]
+    },
+    "INCOME.BANK.NET_FX_TRADING": {
+      "exact_add": [
+        "(Lỗ)/Lãi thuần từ hoạt động kinh doanh ngoại hối"
+      ]
+    }
+  }
+}

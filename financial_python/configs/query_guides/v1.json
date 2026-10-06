@@ -1,0 +1,854 @@
+{
+  "version": 1,
+  "domains": {
+    "esg": [
+      "esg",
+      "bền vững",
+      "phát triển bền vững",
+      "môi trường",
+      "xã hội",
+      "phát thải",
+      "carbon",
+      "khí nhà kính"
+    ],
+    "financial": [
+      "tài chính",
+      "tài sản",
+      "nợ phải trả",
+      "doanh thu",
+      "lợi nhuận",
+      "dòng tiền",
+      "tiền gửi",
+      "cổ phiếu",
+      "sức khỏe tài chính",
+      "đánh giá tài chính",
+      "chất lượng tài sản",
+      "chất lượng tín dụng",
+      "nợ xấu",
+      "roa",
+      "roe",
+      "cir",
+      "nim",
+      "car",
+      "thanh khoản",
+      "khả năng sinh lời",
+      "hiệu quả hoạt động",
+      "báo cáo tài chính"
+    ],
+    "annual_report": [
+      "báo cáo thường niên",
+      "chiến lược",
+      "triển vọng",
+      "hoạt động kinh doanh",
+      "rủi ro",
+      "mục tiêu kinh doanh",
+      "ban lãnh đạo",
+      "kết quả kinh doanh"
+    ]
+  },
+  "tasks": {
+    "driver_analysis": [
+      "yếu tố thúc đẩy",
+      "động lực tăng trưởng",
+      "động lực chính",
+      "phân tích yếu tố",
+      "phân tích nguyên nhân",
+      "đóng góp của",
+      "điều gì khiến",
+      "do đâu mà"
+    ],
+    "evaluation": [
+      "đánh giá",
+      "nhận xét",
+      "hiệu quả",
+      "sức khỏe tài chính",
+      "chất lượng tài sản",
+      "khả năng thanh toán",
+      "có tốt không",
+      "mạnh hay yếu",
+      "mức độ an toàn"
+    ],
+    "analysis": [
+      "phân tích",
+      "phân tích sâu",
+      "phân tích toàn diện",
+      "mổ xẻ"
+    ],
+    "trend": [
+      "xu hướng",
+      "qua các năm",
+      "qua các kỳ",
+      "theo thời gian",
+      "tăng trưởng",
+      "biến động qua",
+      "diễn biến qua"
+    ],
+    "comparison": [
+      "so sánh",
+      "so với",
+      "đối chiếu",
+      "chênh lệch",
+      "hơn hay kém"
+    ],
+    "explanation": [
+      "giải thích",
+      "nguyên nhân",
+      "vì sao",
+      "tại sao",
+      "lý do"
+    ],
+    "summary": [
+      "tóm tắt",
+      "tổng quan",
+      "điểm chính",
+      "khái quát",
+      "nêu các điểm",
+      "đã làm gì",
+      "điểm nổi bật",
+      "nổi bật",
+      "hoạt động nào"
+    ],
+    "lookup": [
+      "bao nhiêu",
+      "là gì",
+      "mức nào",
+      "cho biết",
+      "thế nào",
+      "ra sao",
+      "chỉ tiêu"
+    ]
+  },
+  "analysis_dimensions": {
+    "financial": {
+      "profitability": [
+        "sinh lời",
+        "roa",
+        "roe",
+        "nim",
+        "biên lợi nhuận",
+        "lợi nhuận"
+      ],
+      "growth": [
+        "tăng trưởng",
+        "tăng quy mô",
+        "mức tăng",
+        "suy giảm"
+      ],
+      "liquidity": [
+        "thanh khoản",
+        "khả năng thanh toán",
+        "tiền mặt",
+        "dòng tiền"
+      ],
+      "leverage_and_capital": [
+        "đòn bẩy",
+        "vốn chủ sở hữu",
+        "an toàn vốn",
+        "car"
+      ],
+      "asset_quality": [
+        "chất lượng tài sản",
+        "chất lượng tín dụng",
+        "nợ xấu",
+        "nợ nhóm",
+        "dự phòng rủi ro"
+      ],
+      "operating_efficiency": [
+        "hiệu quả hoạt động",
+        "cir",
+        "chi phí trên thu nhập",
+        "năng suất"
+      ]
+    },
+    "esg": {
+      "environment": [
+        "môi trường",
+        "phát thải",
+        "carbon",
+        "khí nhà kính"
+      ],
+      "social": [
+        "xã hội",
+        "nhân sự",
+        "cộng đồng",
+        "bình đẳng"
+      ],
+      "governance": [
+        "quản trị",
+        "quản trị doanh nghiệp",
+        "kiểm soát nội bộ"
+      ],
+      "sustainability_targets": [
+        "mục tiêu bền vững",
+        "cam kết",
+        "tiến độ",
+        "kết quả"
+      ]
+    },
+    "annual_report": {
+      "strategy": [
+        "chiến lược",
+        "định hướng",
+        "mục tiêu"
+      ],
+      "business_performance": [
+        "kết quả kinh doanh",
+        "hiệu quả hoạt động",
+        "doanh thu",
+        "lợi nhuận"
+      ],
+      "risks": [
+        "rủi ro",
+        "thách thức",
+        "biến động"
+      ],
+      "outlook": [
+        "triển vọng",
+        "kế hoạch",
+        "dự báo"
+      ]
+    }
+  },
+  "analysis_metric_groups": {
+    "financial": {
+      "profitability": [
+        "loi_nhuan_sau_thue",
+        "doanh_thu_thuan",
+        "tong_thu_nhap_hoat_dong"
+      ],
+      "growth": [
+        "doanh_thu_thuan",
+        "loi_nhuan_sau_thue",
+        "tong_cong_tai_san",
+        "tong_thu_nhap_hoat_dong"
+      ],
+      "liquidity": [
+        "tien_va_tuong_duong_tien",
+        "tai_san_ngan_han",
+        "no_ngan_han",
+        "luu_chuyen_tien_tu_hoat_dong_kinh_doanh"
+      ],
+      "leverage_and_capital": [
+        "tong_no_phai_tra",
+        "tong_cong_tai_san",
+        "tong_von_chu_so_huu"
+      ],
+      "operating_efficiency": [
+        "tong_thu_nhap_hoat_dong",
+        "loi_nhuan_sau_thue",
+        "doanh_thu_thuan"
+      ]
+    }
+  },
+  "analysis_metric_profiles": {
+    "bank": {
+      "profitability": [
+        "loi_nhuan_sau_thue",
+        "thu_nhap_lai_thuan",
+        "tong_thu_nhap_hoat_dong"
+      ],
+      "growth": [
+        "loi_nhuan_sau_thue",
+        "tong_thu_nhap_hoat_dong",
+        "tong_cong_tai_san",
+        "ASSET.CUSTOMER_LOANS.GROSS",
+        "ASSET.CUSTOMER_LOANS.ALLOWANCE",
+        "tien_gui_cua_khach_hang"
+      ],
+      "liquidity": [
+        "tien_va_tuong_duong_tien_cuoi_ky",
+        "tien_gui_cua_khach_hang",
+        "luu_chuyen_tien_tu_hoat_dong_kinh_doanh"
+      ],
+      "leverage_and_capital": [
+        "tong_no_phai_tra",
+        "tong_cong_tai_san",
+        "tong_von_chu_so_huu"
+      ],
+      "asset_quality": [
+        "BANK.NOTE.8.STANDARD_DEBT",
+        "BANK.NOTE.8.SPECIAL_MENTION",
+        "BANK.NOTE.8.SUBSTANDARD",
+        "BANK.NOTE.8.DOUBTFUL",
+        "BANK.NOTE.8.LOSS",
+        "ASSET.CUSTOMER_LOANS.GROSS",
+        "ASSET.CUSTOMER_LOANS.ALLOWANCE",
+        "cho_vay_giao_dich_ky_quy_va_ung_truoc_cho_khach_hang"
+      ],
+      "operating_efficiency": [
+        "INCOME.BANK.OPERATING_EXPENSE",
+        "tong_thu_nhap_hoat_dong",
+        "loi_nhuan_sau_thue"
+      ]
+    },
+    "enterprise": {
+      "profitability": [
+        "loi_nhuan_sau_thue",
+        "doanh_thu_thuan"
+      ],
+      "growth": [
+        "doanh_thu_thuan",
+        "loi_nhuan_sau_thue",
+        "tong_cong_tai_san"
+      ],
+      "liquidity": [
+        "tien_va_tuong_duong_tien",
+        "tai_san_ngan_han",
+        "no_ngan_han",
+        "luu_chuyen_tien_tu_hoat_dong_kinh_doanh"
+      ],
+      "leverage_and_capital": [
+        "tong_no_phai_tra",
+        "tong_cong_tai_san",
+        "tong_von_chu_so_huu"
+      ],
+      "operating_efficiency": [
+        "loi_nhuan_sau_thue",
+        "doanh_thu_thuan"
+      ]
+    },
+    "securities": {
+      "profitability": [
+        "loi_nhuan_sau_thue",
+        "INCOME.SECURITIES.TOTAL_OPERATING_REVENUE"
+      ],
+      "growth": [
+        "loi_nhuan_sau_thue",
+        "INCOME.SECURITIES.TOTAL_OPERATING_REVENUE",
+        "tong_cong_tai_san"
+      ],
+      "liquidity": [
+        "tien_va_tuong_duong_tien",
+        "luu_chuyen_tien_tu_hoat_dong_kinh_doanh"
+      ],
+      "leverage_and_capital": [
+        "tong_no_phai_tra",
+        "tong_cong_tai_san",
+        "tong_von_chu_so_huu"
+      ],
+      "operating_efficiency": [
+        "loi_nhuan_sau_thue",
+        "INCOME.SECURITIES.TOTAL_OPERATING_REVENUE"
+      ]
+    }
+  },
+  "guides": [
+    {
+      "guide_id": "financial_analysis",
+      "domain": "financial",
+      "task": "analysis",
+      "examples": [
+        "Phân tích toàn diện tình hình tài chính của {company} trong năm {period}.",
+        "Phân tích diễn biến các chỉ tiêu tài chính của {company} giữa {period_a} và {period_b}."
+      ],
+      "required_slots": [
+        "company_codes",
+        "fiscal_years"
+      ],
+      "evidence_groups": [
+        "financial_position",
+        "performance",
+        "cash_flow",
+        "requested_period",
+        "supporting_narrative"
+      ],
+      "retrieval_policy": {
+        "default_dimensions": [
+          "profitability",
+          "growth",
+          "liquidity",
+          "leverage_and_capital"
+        ],
+        "max_dimension_groups": 6,
+        "retrieve_structured_values_and_related_explanations": true,
+        "period_comparison_requires_aligned_periods": true,
+        "derive_only_registered_formulas": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "require_cited_inputs_for_derived_values": true,
+        "do_not_infer_unreported_drivers": true,
+        "require_disclosed_benchmark_before_normative_rating": true
+      },
+      "answer_format": "multi_metric_analysis_with_evidence"
+    },
+    {
+      "guide_id": "financial_evaluation",
+      "domain": "financial",
+      "task": "evaluation",
+      "examples": [
+        "Đánh giá sức khỏe tài chính của {company} trong năm {period}.",
+        "Nhận xét hiệu quả hoạt động và khả năng thanh toán của {company} trong {period}."
+      ],
+      "required_slots": [
+        "company_codes",
+        "fiscal_years"
+      ],
+      "evidence_groups": [
+        "financial_position",
+        "profitability",
+        "liquidity",
+        "capital_and_leverage",
+        "comparison_basis",
+        "supporting_narrative"
+      ],
+      "retrieval_policy": {
+        "default_dimensions": [
+          "profitability",
+          "growth",
+          "liquidity",
+          "leverage_and_capital"
+        ],
+        "max_dimension_groups": 6,
+        "retrieve_structured_values_and_related_explanations": true,
+        "period_comparison_requires_aligned_periods": true,
+        "derive_only_registered_formulas": true,
+        "never_apply_implicit_good_bad_threshold": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "require_cited_inputs_for_derived_values": true,
+        "require_disclosed_benchmark_before_normative_rating": true,
+        "report_missing_dimensions": true
+      },
+      "answer_format": "evidence_based_financial_evaluation"
+    },
+    {
+      "guide_id": "financial_driver_analysis",
+      "domain": "financial",
+      "task": "driver_analysis",
+      "examples": [
+        "Phân tích các yếu tố thúc đẩy tăng trưởng doanh thu của {company} trong {period}.",
+        "Điều gì khiến lợi nhuận của {company} thay đổi so với {period_baseline}?"
+      ],
+      "required_slots": [
+        "company_codes",
+        "fiscal_years"
+      ],
+      "evidence_groups": [
+        "observed_metric_change",
+        "candidate_driver_values",
+        "management_explanation",
+        "baseline_period"
+      ],
+      "retrieval_policy": {
+        "retrieve_driver_inputs_and_narrative_explanations": true,
+        "separate_observed_changes_from_source_claimed_causes": true,
+        "period_comparison_requires_aligned_periods": true,
+        "derive_only_registered_formulas": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "do_not_infer_unreported_drivers": true,
+        "label_correlation_separately_from_causation": true,
+        "require_cited_inputs_for_derived_values": true
+      },
+      "answer_format": "driver_analysis_with_causal_limits"
+    },
+    {
+      "guide_id": "esg_evaluation",
+      "domain": "esg",
+      "task": "evaluation",
+      "examples": [
+        "Đánh giá tiến độ các cam kết ESG của {company} trong {period}.",
+        "Nhận xét kết quả môi trường, xã hội và quản trị của {company}."
+      ],
+      "required_slots": [
+        "company_codes",
+        "fiscal_years"
+      ],
+      "evidence_groups": [
+        "stated_commitments",
+        "reported_outcomes",
+        "one_group_per_period",
+        "missing_disclosures"
+      ],
+      "retrieval_policy": {
+        "compare_commitments_with_reported_outcomes": true,
+        "group_results_by_esg_pillar": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "do_not_treat_commitment_as_achieved_outcome": true,
+        "report_missing_or_non_comparable_indicators": true
+      },
+      "answer_format": "evidence_based_esg_evaluation"
+    },
+    {
+      "guide_id": "annual_report_analysis",
+      "domain": "annual_report",
+      "task": "analysis",
+      "examples": [
+        "Phân tích kết quả, chiến lược và rủi ro của {company} trong báo cáo thường niên {period}.",
+        "Đánh giá kế hoạch và triển vọng kinh doanh của {company} qua các năm."
+      ],
+      "required_slots": [
+        "company_codes",
+        "fiscal_years"
+      ],
+      "evidence_groups": [
+        "reported_performance",
+        "strategy",
+        "risks",
+        "outlook",
+        "one_group_per_period"
+      ],
+      "retrieval_policy": {
+        "group_results_by_section": true,
+        "compare_targets_with_reported_results_when_both_exist": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "separate_management_outlook_from_realized_results": true,
+        "do_not_infer_unreported_drivers": true
+      },
+      "answer_format": "evidence_based_annual_report_analysis"
+    },
+    {
+      "guide_id": "financial_lookup",
+      "domain": "financial",
+      "task": "lookup",
+      "examples": [
+        "Tổng tài sản của {company} cuối năm {period} là bao nhiêu?",
+        "Tiền gửi khách hàng {company} trong báo cáo {period} là bao nhiêu?"
+      ],
+      "required_slots": [
+        "company_codes",
+        "metric_id"
+      ],
+      "evidence_groups": [
+        "company",
+        "requested_period",
+        "metric_row"
+      ],
+      "retrieval_policy": {
+        "preserve_explicit_company_and_period": true,
+        "prefer_exact_metric_row": true,
+        "allow_silent_period_expansion": false
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "required_source_fields": [
+          "report_name",
+          "page_number",
+          "source_id"
+        ]
+      },
+      "answer_format": "single_metric_with_citation"
+    },
+    {
+      "guide_id": "financial_comparison",
+      "domain": "financial",
+      "task": "comparison",
+      "examples": [
+        "So sánh {metric} của {company_a} và {company_b} trong {period}.",
+        "Mức {metric} năm {period_a} chênh lệch bao nhiêu so với {period_b}?"
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "subject_a",
+        "subject_b",
+        "comparison_basis"
+      ],
+      "retrieval_policy": {
+        "balance_results_by_subject": true,
+        "preserve_explicit_company_and_period": true,
+        "allow_silent_period_expansion": false
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "require_evidence_for_each_subject": true
+      },
+      "answer_format": "balanced_comparison"
+    },
+    {
+      "guide_id": "financial_trend",
+      "domain": "financial",
+      "task": "trend",
+      "examples": [
+        "Xu hướng {metric} của {company} qua các năm {periods}.",
+        "{metric} của {company} tăng trưởng thế nào theo thời gian?"
+      ],
+      "required_slots": [
+        "company_codes",
+        "metric_id"
+      ],
+      "evidence_groups": [
+        "one_group_per_period",
+        "trend_basis"
+      ],
+      "retrieval_policy": {
+        "balance_results_by_period": true,
+        "preserve_explicit_company_and_period": true,
+        "allow_silent_period_expansion": false
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_periods": true
+      },
+      "answer_format": "period_ordered_trend"
+    },
+    {
+      "guide_id": "financial_explanation",
+      "domain": "financial",
+      "task": "explanation",
+      "examples": [
+        "Giải thích nguyên nhân {metric} của {company} biến động trong {period}.",
+        "Vì sao kết quả tài chính của {company} thay đổi?"
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "reported_change",
+        "source_explanation"
+      ],
+      "retrieval_policy": {
+        "prefer_narrative_explanation_after_fact": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "do_not_infer_unreported_causes": true
+      },
+      "answer_format": "evidence_limited_explanation"
+    },
+    {
+      "guide_id": "financial_summary",
+      "domain": "financial",
+      "task": "summary",
+      "examples": [
+        "Tóm tắt tình hình tài chính của {company} trong {period}.",
+        "Nêu các điểm chính về tài chính của {company}."
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "financial_highlights",
+        "reported_risks",
+        "requested_period"
+      ],
+      "retrieval_policy": {
+        "group_results_by_topic": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_topics": true
+      },
+      "answer_format": "cited_section_summary"
+    },
+    {
+      "guide_id": "esg_summary",
+      "domain": "esg",
+      "task": "summary",
+      "examples": [
+        "Tóm tắt ESG của {company} trong báo cáo {period}.",
+        "Ngân hàng {company} đã làm gì về môi trường, xã hội và quản trị?"
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "environment",
+        "social",
+        "governance",
+        "sustainability"
+      ],
+      "retrieval_policy": {
+        "group_results_by_section": true,
+        "prefer_esg_and_annual_reports": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_sections": true
+      },
+      "answer_format": "summary_by_esg_section"
+    },
+    {
+      "guide_id": "esg_lookup",
+      "domain": "esg",
+      "task": "lookup",
+      "examples": [
+        "Chỉ tiêu phát thải của {company} trong {period} là bao nhiêu?",
+        "Tìm số liệu môi trường của {company} trong báo cáo ESG."
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "requested_esg_indicator",
+        "requested_period"
+      ],
+      "retrieval_policy": {
+        "target_named_esg_indicator": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_indicator": true
+      },
+      "answer_format": "indicator_with_citation"
+    },
+    {
+      "guide_id": "esg_comparison",
+      "domain": "esg",
+      "task": "comparison",
+      "examples": [
+        "So sánh hoạt động môi trường của {company_a} và {company_b}.",
+        "Đối chiếu chỉ tiêu ESG năm {period_a} với {period_b}."
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "subject_a",
+        "subject_b",
+        "esg_comparison_basis"
+      ],
+      "retrieval_policy": {
+        "balance_results_by_subject": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "require_evidence_for_each_subject": true
+      },
+      "answer_format": "balanced_esg_comparison"
+    },
+    {
+      "guide_id": "esg_trend",
+      "domain": "esg",
+      "task": "trend",
+      "examples": [
+        "Xu hướng phát thải của {company} qua các năm {periods}.",
+        "Chỉ số môi trường của {company} thay đổi thế nào theo thời gian?"
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "one_group_per_period",
+        "requested_esg_indicator"
+      ],
+      "retrieval_policy": {
+        "balance_results_by_period": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_periods": true
+      },
+      "answer_format": "period_ordered_esg_trend"
+    },
+    {
+      "guide_id": "annual_report_summary",
+      "domain": "annual_report",
+      "task": "summary",
+      "examples": [
+        "Tóm tắt chiến lược và rủi ro của {company} trong báo cáo thường niên {period}.",
+        "Nêu các điểm chính trong hoạt động kinh doanh của {company}."
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "strategy",
+        "business_results",
+        "risks",
+        "outlook"
+      ],
+      "retrieval_policy": {
+        "group_results_by_section": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_sections": true
+      },
+      "answer_format": "summary_by_annual_report_section"
+    },
+    {
+      "guide_id": "annual_report_lookup",
+      "domain": "annual_report",
+      "task": "lookup",
+      "examples": [
+        "Mục tiêu kinh doanh của {company} trong báo cáo thường niên {period} là gì?",
+        "Báo cáo thường niên nêu triển vọng nào cho {company}?"
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "requested_disclosure",
+        "requested_period"
+      ],
+      "retrieval_policy": {
+        "target_named_disclosure": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "do_not_infer_unreported_targets": true
+      },
+      "answer_format": "direct_narrative_answer"
+    },
+    {
+      "guide_id": "annual_report_comparison",
+      "domain": "annual_report",
+      "task": "comparison",
+      "examples": [
+        "So sánh triển vọng kinh doanh của {company} giữa {period_a} và {period_b}.",
+        "Đối chiếu chiến lược của {company_a} và {company_b}."
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "subject_a",
+        "subject_b",
+        "comparison_basis"
+      ],
+      "retrieval_policy": {
+        "balance_results_by_subject": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "require_evidence_for_each_subject": true
+      },
+      "answer_format": "balanced_narrative_comparison"
+    },
+    {
+      "guide_id": "annual_report_trend",
+      "domain": "annual_report",
+      "task": "trend",
+      "examples": [
+        "Xu hướng kết quả kinh doanh của {company} qua các năm {periods}.",
+        "Triển vọng của {company} thay đổi thế nào theo thời gian?"
+      ],
+      "required_slots": [
+        "company_codes"
+      ],
+      "evidence_groups": [
+        "one_group_per_period",
+        "narrative_trend_basis"
+      ],
+      "retrieval_policy": {
+        "balance_results_by_period": true,
+        "preserve_explicit_company_and_period": true
+      },
+      "evidence_policy": {
+        "require_citations": true,
+        "report_missing_periods": true
+      },
+      "answer_format": "period_ordered_narrative_trend"
+    }
+  ]
+}

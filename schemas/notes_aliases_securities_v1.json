@@ -1,0 +1,797 @@
+{
+  "alias_type": "notes",
+  "alias_schema_version": "SECURITIES_NOTES_ALIASES_V1@1.0.0",
+  "profile": "securities_v1",
+  "target_ir_schema": "GENERIC_NOTE_IR_V1",
+  "description": "Optional aliases for B05-CTCK disclosures under TT210 and the observed BSI/CTS variants. Aliases annotate Notes and never replace raw rows or matrices.",
+  "source_templates": [
+    "docs/template/BCTC-CK.pdf"
+  ],
+  "matching_policy": {
+    "section": "note_id_and_title_exact_then_title_base_then_unique_id",
+    "row": "section_scoped_exact_label",
+    "fuzzy_matching": false,
+    "continuation_title_allowed": true,
+    "parent_context_required_when_declared": true,
+    "reused_note_number_requires_title": true,
+    "strict_note_id": true
+  },
+  "unmatched_policy": {
+    "status": "unmapped",
+    "storage_mode": "raw_tree",
+    "preserve": [
+      "section_id",
+      "section_title",
+      "block_form",
+      "headers_raw",
+      "dimensions",
+      "row_label_raw",
+      "hierarchy_path",
+      "values_in_source_order",
+      "raw_cells",
+      "source_line",
+      "source_column"
+    ]
+  },
+  "multi_column_policy": {
+    "storage_mode": "raw_matrix",
+    "preserve_headers": true,
+    "preserve_empty_cells": true,
+    "preserve_source_column": true,
+    "preserve_value_order": true,
+    "allow_unbounded_rows": true,
+    "semantic_mapping_is_optional": true
+  },
+  "sections": [
+    {
+      "alias_id": "SECURITIES.POLICY.COMPANY_INFO",
+      "canonical_name": "Thông tin doanh nghiệp",
+      "note_ids": ["1"],
+      "titles": ["THÔNG TIN DOANH NGHIỆP", "THÔNG TIN CHUNG VỀ DOANH NGHIỆP"],
+      "title_aliases": ["Thông tin doanh nghiệp", "Thông tin chung về doanh nghiệp", "Đặc điểm hoạt động của CTCK"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.PRESENTATION",
+      "canonical_name": "Cơ sở trình bày",
+      "note_ids": ["2"],
+      "titles": ["CƠ SỞ TRÌNH BÀY"],
+      "title_aliases": ["Cơ sở lập và trình bày báo cáo tài chính", "Cơ sở lập báo cáo tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.ACCOUNTING_POLICIES",
+      "canonical_name": "Các chính sách kế toán chủ yếu",
+      "note_ids": ["2", "4"],
+      "titles": ["CÁC CHÍNH SÁCH KẾ TOÁN CHỦ YẾU", "TÓM TẮT CÁC CHÍNH SÁCH KẾ TOÁN CHỦ YẾU"],
+      "title_aliases": ["Các chính sách kế toán chủ yếu", "Chính sách kế toán chủ yếu", "Các chính sách kế toán áp dụng"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.STANDARDS",
+      "canonical_name": "Chuẩn mực và chế độ kế toán áp dụng",
+      "note_ids": ["2.1", "3"],
+      "titles": ["Chuẩn mực và Chế độ kế toán áp dụng", "TUYÊN BỐ VỀ VIỆC TUÂN THỦ CHUẨN MỰC KẾ TOÁN VÀ CHẾ ĐỘ KẾ TOÁN VIỆT NAM"],
+      "title_aliases": ["Chuẩn mực kế toán và chế độ kế toán áp dụng", "Tuân thủ chuẩn mực kế toán và chế độ kế toán Việt Nam"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.ACCOUNTING_FORM",
+      "canonical_name": "Hình thức sổ kế toán áp dụng",
+      "note_ids": ["2.2"],
+      "titles": ["Hình thức sổ kế toán áp dụng"],
+      "title_aliases": ["Hình thức kế toán áp dụng"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.ACCOUNTING_PERIOD",
+      "canonical_name": "Kỳ kế toán năm",
+      "note_ids": ["2.3"],
+      "titles": ["Kỳ kế toán năm"],
+      "title_aliases": ["Kỳ kế toán"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.CURRENCY",
+      "canonical_name": "Đơn vị tiền tệ sử dụng trong kế toán",
+      "note_ids": ["2.4"],
+      "titles": ["Đơn vị tiền tệ sử dụng trong kế toán"],
+      "title_aliases": ["Đơn vị tiền tệ kế toán", "Đơn vị tiền tệ sử dụng"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.FINANCIAL_ASSETS",
+      "canonical_name": "Tài sản tài chính",
+      "note_ids": ["2.8"],
+      "titles": ["Tài sản tài chính"],
+      "title_aliases": ["Nguyên tắc ghi nhận tài sản tài chính", "Phân loại tài sản tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.FVTPL",
+      "canonical_name": "Tài sản tài chính ghi nhận thông qua lãi/lỗ",
+      "note_ids": ["4.3"],
+      "titles": ["Tài sản tài chính ghi nhận thông qua lãi/lỗ (\"FVTPL\")"],
+      "title_aliases": ["Tài sản tài chính ghi nhận thông qua lãi/lỗ", "Tài sản tài chính FVTPL"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.HTM",
+      "canonical_name": "Tài sản tài chính giữ đến ngày đáo hạn",
+      "note_ids": ["4.4"],
+      "titles": ["Tài sản tài chính giữ đến ngày đáo hạn (\"HTM\")"],
+      "title_aliases": ["Tài sản tài chính HTM", "Các khoản đầu tư nắm giữ đến ngày đáo hạn"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.FIXED_ASSETS",
+      "canonical_name": "Tài sản cố định",
+      "note_ids": ["2.12"],
+      "titles": ["Tài sản cố định (“TSCĐ”)"],
+      "title_aliases": ["Tài sản cố định", "TSCĐ"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.ACCOUNTING_ESTIMATES",
+      "canonical_name": "Ước tính kế toán trọng yếu",
+      "note_ids": ["2.2"],
+      "titles": ["Ước tính kế toán trọng yếu"],
+      "title_aliases": ["Các ước tính kế toán trọng yếu", "Ước tính kế toán"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.CASH",
+      "canonical_name": "Nguyên tắc kế toán tiền và các khoản tương đương tiền",
+      "note_ids": ["4.2"],
+      "titles": ["Tiền và các khoản tương đương tiền"],
+      "title_aliases": ["Nguyên tắc ghi nhận tiền và các khoản tương đương tiền"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.RECEIVABLES",
+      "canonical_name": "Nguyên tắc kế toán các khoản phải thu",
+      "note_ids": ["4.12"],
+      "titles": ["Các khoản phải thu"],
+      "title_aliases": ["Nguyên tắc kế toán các khoản phải thu"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.TANGIBLE_ASSETS",
+      "canonical_name": "Nguyên tắc kế toán tài sản cố định hữu hình",
+      "note_ids": ["4.13"],
+      "titles": ["Tài sản cố định hữu hình"],
+      "title_aliases": ["Nguyên tắc ghi nhận tài sản cố định hữu hình"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.INTANGIBLE_ASSETS",
+      "canonical_name": "Nguyên tắc kế toán tài sản cố định vô hình",
+      "note_ids": ["4.14"],
+      "titles": ["Tài sản cố định vô hình"],
+      "title_aliases": ["Nguyên tắc ghi nhận tài sản cố định vô hình"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.TAX",
+      "canonical_name": "Nguyên tắc kế toán thuế thu nhập doanh nghiệp",
+      "note_ids": ["4.27"],
+      "titles": ["Thuế thu nhập doanh nghiệp"],
+      "title_aliases": ["Thuế TNDN"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.EQUITY",
+      "canonical_name": "Nguyên tắc kế toán vốn chủ sở hữu",
+      "note_ids": ["2.22", "4.28"],
+      "titles": ["Vốn chủ sở hữu"],
+      "title_aliases": ["Nguyên tắc ghi nhận vốn chủ sở hữu"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.EPS",
+      "canonical_name": "Nguyên tắc kế toán lãi trên cổ phiếu",
+      "note_ids": ["4.30"],
+      "titles": ["Lãi trên cổ phiếu"],
+      "title_aliases": ["Lãi cơ bản trên cổ phiếu"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.SEGMENTS",
+      "canonical_name": "Nguyên tắc báo cáo bộ phận",
+      "note_ids": ["2.32", "4.31"],
+      "titles": ["Thông tin bộ phận", "Báo cáo bộ phận"],
+      "title_aliases": ["Nguyên tắc lập báo cáo bộ phận"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.POLICY.RELATED_PARTIES",
+      "canonical_name": "Nguyên tắc về các bên liên quan",
+      "note_ids": ["4.32"],
+      "titles": ["Các bên liên quan"],
+      "title_aliases": ["Thông tin về các bên liên quan"],
+      "rows": []
+    },
+
+    {
+      "alias_id": "SECURITIES.BS.SUPPLEMENT",
+      "canonical_name": "Thông tin bổ sung báo cáo tình hình tài chính",
+      "note_ids": ["3"],
+      "titles": ["THÔNG TIN BỔ SUNG BÁO CÁO TÌNH HÌNH TÀI CHÍNH", "THÔNG TIN BỔ SUNG BÁO CÁO TÌNH HÌNH TÀI CHÍNH (TIẾP THEO)"],
+      "title_aliases": ["Thông tin bổ sung báo cáo tình hình tài chính", "Thông tin bổ sung cho báo cáo tình hình tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.CASH",
+      "canonical_name": "Tiền và các khoản tương đương tiền",
+      "note_ids": ["3.1", "5"],
+      "titles": ["Tiền và các khoản tương đương tiền", "TIỀN VÀ CÁC KHOẢN TƯƠNG ĐƯƠNG TIỀN"],
+      "title_aliases": ["Tiền và tương đương tiền"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.CASH.ON_HAND","canonical_name":"Tiền mặt tại quỹ","aliases":["Tiền mặt tại quỹ","Tiền mặt"]},
+        {"alias_id":"SECURITIES.BS.CASH.BANK","canonical_name":"Tiền gửi ngân hàng","aliases":["Tiền gửi ngân hàng"]},
+        {"alias_id":"SECURITIES.BS.CASH.COMPANY_BANK","canonical_name":"Tiền gửi ngân hàng của Công ty","aliases":["Tiền gửi ngân hàng của Công ty"]},
+        {"alias_id":"SECURITIES.BS.CASH.OPERATION_BANK","canonical_name":"Tiền gửi ngân hàng cho hoạt động của Công ty","aliases":["Tiền gửi ngân hàng cho hoạt động của Công ty"]},
+        {"alias_id":"SECURITIES.BS.CASH.CLEARING","canonical_name":"Tiền gửi bù trừ và thanh toán giao dịch chứng khoán","aliases":["Tiền gửi bù trừ và thanh toán giao dịch chứng khoán","Tiền gửi bù trừ và thanh toán trong giao dịch chứng khoán"]},
+        {"alias_id":"SECURITIES.BS.CASH.ESCROW","canonical_name":"Tiền ký quỹ","aliases":["Tiền ký quỹ"]},
+        {"alias_id":"SECURITIES.BS.CASH.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.TRADING_VOLUME",
+      "canonical_name": "Giá trị và khối lượng giao dịch thực hiện trong năm",
+      "note_ids": ["6", "10"],
+      "titles": ["GIÁ TRỊ VÀ KHỐI LƯỢNG GIAO DỊCH THỰC HIỆN TRONG NĂM", "KHỐI LƯỢNG VÀ GIÁ TRỊ GIAO DỊCH THỰC HIỆN TRONG NĂM"],
+      "title_aliases": ["Giá trị khối lượng giao dịch thực hiện trong năm", "Khối lượng và giá trị giao dịch"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.TRADING_VOLUME.TOTAL_VOLUME","canonical_name":"Tổng cộng khối lượng giao dịch","aliases":["Tổng cộng khối lượng giao dịch"]},
+        {"alias_id":"SECURITIES.BS.TRADING_VOLUME.TOTAL_VALUE","canonical_name":"Tổng cộng giá trị giao dịch","aliases":["Tổng cộng giá trị giao dịch","Tổng cộng giá trị giao dịch (VND)"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.FINANCIAL_ASSETS_GROUP",
+      "canonical_name": "Các loại tài sản tài chính",
+      "note_ids": ["7"],
+      "titles": ["CÁC LOẠI TÀI SẢN TÀI CHÍNH", "CÁC LOẠI TÀI SẢN TÀI CHÍNH (TIẾP THEO)"],
+      "title_aliases": ["Danh mục tài sản tài chính", "Danh mục tài sản tài chính (tiếp theo)"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.FVTPL",
+      "canonical_name": "Tài sản tài chính ghi nhận thông qua lãi/lỗ",
+      "note_ids": ["7.1"],
+      "titles": ["Tài sản tài chính ghi nhận thông qua lãi/lỗ (\"FVTPL\")"],
+      "title_aliases": ["Tài sản tài chính FVTPL", "Tài sản tài chính ghi nhận thông qua lãi/lỗ"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.FVTPL.LISTED_STOCKS","canonical_name":"Cổ phiếu niêm yết","aliases":["Cổ phiếu niêm yết"]},
+        {"alias_id":"SECURITIES.BS.FVTPL.UNLISTED_STOCKS","canonical_name":"Cổ phiếu chưa niêm yết","aliases":["Cổ phiếu chưa niêm yết"]},
+        {"alias_id":"SECURITIES.BS.FVTPL.LISTED_BONDS","canonical_name":"Trái phiếu niêm yết","aliases":["Trái phiếu niêm yết"]},
+        {"alias_id":"SECURITIES.BS.FVTPL.UNLISTED_BONDS","canonical_name":"Trái phiếu chưa niêm yết","aliases":["Trái phiếu chưa niêm yết","Trái phiếu không niêm yết"]},
+        {"alias_id":"SECURITIES.BS.FVTPL.CERTIFICATES","canonical_name":"Chứng chỉ tiền gửi","aliases":["Chứng chỉ tiền gửi"]},
+        {"alias_id":"SECURITIES.BS.FVTPL.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.HTM",
+      "canonical_name": "Các khoản đầu tư nắm giữ đến ngày đáo hạn",
+      "note_ids": ["7.2"],
+      "titles": ["Các khoản đầu tư nắm giữ đến ngày đáo hạn (\"HTM\")"],
+      "title_aliases": ["Các khoản đầu tư giữ đến ngày đáo hạn", "Đầu tư nắm giữ đến ngày đáo hạn"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.HTM.CARRYING_AMOUNT","canonical_name":"Giá trị ghi sổ","aliases":["Giá trị ghi sổ"]},
+        {"alias_id":"SECURITIES.BS.HTM.FAIR_VALUE","canonical_name":"Giá trị hợp lý","aliases":["Giá trị hợp lý"]},
+        {"alias_id":"SECURITIES.BS.HTM.CLOSING","canonical_name":"Số cuối năm","aliases":["Số cuối năm"]},
+        {"alias_id":"SECURITIES.BS.HTM.OPENING","canonical_name":"Số đầu năm","aliases":["Số đầu năm"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.MARKET_VALUE_MOVEMENT",
+      "canonical_name": "Tình hình biến động giá trị thị trường của các tài sản tài chính",
+      "note_ids": ["7.5"],
+      "titles": ["Tình hình biến động giá trị thị trường của các tài sản tài chính"],
+      "title_aliases": ["Biến động giá trị thị trường của các tài sản tài chính"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.MARKET_VALUE_MOVEMENT.COST","canonical_name":"Giá mua/Giá gốc","aliases":["Giá mua/Giá gốc","Giá gốc"]},
+        {"alias_id":"SECURITIES.BS.MARKET_VALUE_MOVEMENT.INCREASE","canonical_name":"Chênh lệch tăng","aliases":["Chênh lệch tăng"]},
+        {"alias_id":"SECURITIES.BS.MARKET_VALUE_MOVEMENT.DECREASE","canonical_name":"Chênh lệch giảm","aliases":["Chênh lệch giảm"]},
+        {"alias_id":"SECURITIES.BS.MARKET_VALUE_MOVEMENT.REVALUATION","canonical_name":"Giá trị đánh giá lại","aliases":["Giá trị đánh giá lại"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.PROVISIONS",
+      "canonical_name": "Dự phòng suy giảm giá trị tài sản tài chính và tài sản nhận thế chấp",
+      "note_ids": ["8"],
+      "titles": ["DỰ PHÒNG SUY GIẢM GIÁ TRỊ CÁC TÀI SẢN TÀI CHÍNH VÀ TÀI SẢN NHẬN THỂ CHẤP"],
+      "title_aliases": ["Dự phòng suy giảm giá trị tài sản tài chính", "Dự phòng tài sản tài chính"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.PROVISIONS.OPENING","canonical_name":"Số dư đầu năm","aliases":["Số dư đầu năm"]},
+        {"alias_id":"SECURITIES.BS.PROVISIONS.MOVEMENT","canonical_name":"(Hoàn nhập)/trích lập dự phòng trong năm","aliases":["(Hoàn nhập)/trích lập dự phòng trong năm","Hoàn nhập/trích lập dự phòng trong năm"]},
+        {"alias_id":"SECURITIES.BS.PROVISIONS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.RECEIVABLES",
+      "canonical_name": "Các khoản phải thu",
+      "note_ids": ["3.4", "9"],
+      "titles": ["Các khoản phải thu ngắn hạn", "CÁC TÀI SẢN TÀI CHÍNH KHÁC"],
+      "title_aliases": ["Các khoản phải thu", "Tài sản tài chính khác"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.SALE_ASSETS","canonical_name":"Các khoản phải thu bán các tài sản tài chính","aliases":["Các khoản phải thu bán các tài sản tài chính","Phải thu bán các tài sản tài chính"]},
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.DIVIDEND_INTEREST","canonical_name":"Các khoản phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính","aliases":["Các khoản phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính"]},
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.ADVANCES","canonical_name":"Trả trước cho người bán","aliases":["Trả trước cho người bán"]},
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.SERVICES","canonical_name":"Phải thu các dịch vụ CTCK cung cấp","aliases":["Phải thu các dịch vụ CTCK cung cấp"]},
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.OTHER","canonical_name":"Các khoản phải thu khác","aliases":["Các khoản phải thu khác"]},
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.PROVISION","canonical_name":"Dự phòng suy giảm giá trị các khoản phải thu","aliases":["Dự phòng suy giảm giá trị các khoản phải thu"]},
+        {"alias_id":"SECURITIES.BS.RECEIVABLES.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.OTHER_CURRENT_ASSETS",
+      "canonical_name": "Tài sản ngắn hạn khác",
+      "note_ids": ["10"],
+      "titles": ["TÀI SẢN NGÂN HẠN KHÁC"],
+      "title_aliases": ["Tài sản ngắn hạn khác"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.OTHER_CURRENT_ASSETS.ADVANCES","canonical_name":"Tạm ứng","aliases":["Tạm ứng"]},
+        {"alias_id":"SECURITIES.BS.OTHER_CURRENT_ASSETS.OFFICE_SUPPLIES","canonical_name":"Vật tư văn phòng, công cụ, dụng cụ","aliases":["Vật tư văn phòng, công cụ, dụng cụ"]},
+        {"alias_id":"SECURITIES.BS.OTHER_CURRENT_ASSETS.PREPAID","canonical_name":"Chi phí trả trước ngắn hạn","aliases":["Chi phí trả trước ngắn hạn"]},
+        {"alias_id":"SECURITIES.BS.OTHER_CURRENT_ASSETS.OTHER","canonical_name":"Tài sản ngắn hạn khác","aliases":["Tài sản ngắn hạn khác"]},
+        {"alias_id":"SECURITIES.BS.OTHER_CURRENT_ASSETS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.TANGIBLE_ASSETS",
+      "canonical_name": "Tài sản cố định hữu hình",
+      "note_ids": ["3.7", "11"],
+      "titles": ["TÀI SẢN CÓ ĐỊNH HỮU HÌNH", "TSCĐ (TIẾP THEO)"],
+      "title_aliases": ["Tài sản cố định hữu hình", "TSCĐ hữu hình"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.TANGIBLE_ASSETS.COST","canonical_name":"Nguyên giá","aliases":["Nguyên giá"]},
+        {"alias_id":"SECURITIES.BS.TANGIBLE_ASSETS.DEPRECIATION","canonical_name":"Khấu hao trong năm","aliases":["Khấu hao trong năm"]},
+        {"alias_id":"SECURITIES.BS.TANGIBLE_ASSETS.OPENING","canonical_name":"Ngày 01 tháng 01 năm 2025","aliases":["Ngày 01 tháng 01 năm 2025","Tại ngày 1 tháng 1 năm 2025"]},
+        {"alias_id":"SECURITIES.BS.TANGIBLE_ASSETS.CLOSING","canonical_name":"Ngày 31 tháng 12 năm 2025","aliases":["Ngày 31 tháng 12 năm 2025","Tại ngày 31 tháng 12 năm 2025"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.INTANGIBLE_ASSETS",
+      "canonical_name": "Tài sản cố định vô hình",
+      "note_ids": ["12"],
+      "titles": ["TÀI SẢN CÓ ĐỊNH VÔ HÌNH"],
+      "title_aliases": ["Tài sản cố định vô hình", "TSCĐ vô hình"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.INTANGIBLE_ASSETS.COST","canonical_name":"Nguyên giá","aliases":["Nguyên giá"]},
+        {"alias_id":"SECURITIES.BS.INTANGIBLE_ASSETS.AMORTIZATION","canonical_name":"Khấu hao trong năm","aliases":["Khấu hao trong năm"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.LONG_TERM_DEPOSITS",
+      "canonical_name": "Cầm cố, thế chấp, ký quỹ, ký cược dài hạn",
+      "note_ids": ["13"],
+      "titles": ["CẦM CỐ, THẾ CHẤP, KÝ QUỸ, KÝ CƯỢC DÀI HẠN"],
+      "title_aliases": ["Cầm cố, thế chấp, ký quỹ, ký cược dài hạn"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.LONG_TERM_DEPOSITS.CLOSING","canonical_name":"Số cuối năm","aliases":["Số cuối năm"]},
+        {"alias_id":"SECURITIES.BS.LONG_TERM_DEPOSITS.OPENING","canonical_name":"Số đầu năm","aliases":["Số đầu năm"]},
+        {"alias_id":"SECURITIES.BS.LONG_TERM_DEPOSITS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.PREPAID_LONG_TERM",
+      "canonical_name": "Chi phí trả trước dài hạn",
+      "note_ids": ["14"],
+      "titles": ["CHI PHÍ TRẢ TRƯỚC DÀI HẠN"],
+      "title_aliases": ["Chi phí trả trước dài hạn"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.PREPAID_LONG_TERM.OFFICE_REPAIR","canonical_name":"Chi phí sửa chữa văn phòng","aliases":["Chi phí sửa chữa văn phòng"]},
+        {"alias_id":"SECURITIES.BS.PREPAID_LONG_TERM.INSURANCE","canonical_name":"Phí bảo hiểm","aliases":["Phí bảo hiểm"]},
+        {"alias_id":"SECURITIES.BS.PREPAID_LONG_TERM.SOFTWARE","canonical_name":"Phí bản quyền phần mềm","aliases":["Phí bản quyền phần mềm"]},
+        {"alias_id":"SECURITIES.BS.PREPAID_LONG_TERM.OTHER","canonical_name":"Khác","aliases":["Khác"]},
+        {"alias_id":"SECURITIES.BS.PREPAID_LONG_TERM.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.SETTLEMENT_FUNDS",
+      "canonical_name": "Tiền nộp quỹ hỗ trợ thanh toán",
+      "note_ids": ["15"],
+      "titles": ["TIỀN NỘP QUỸ HỖ TRỢ THANH TOÁN"],
+      "title_aliases": ["Tiền nộp Quỹ Hỗ trợ thanh toán"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.SETTLEMENT_FUNDS.INITIAL","canonical_name":"Tiền nộp ban đầu","aliases":["Tiền nộp ban đầu"]},
+        {"alias_id":"SECURITIES.BS.SETTLEMENT_FUNDS.ADDITIONAL","canonical_name":"Tiền nộp bổ sung","aliases":["Tiền nộp bổ sung"]},
+        {"alias_id":"SECURITIES.BS.SETTLEMENT_FUNDS.INTEREST","canonical_name":"Tiền lãi phân bổ","aliases":["Tiền lãi phân bổ"]},
+        {"alias_id":"SECURITIES.BS.SETTLEMENT_FUNDS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.CLEARING_FUND",
+      "canonical_name": "Tiền nộp quỹ bù trừ",
+      "note_ids": ["16"],
+      "titles": ["TIỀN NỘP QUỸ BÙ TRỪ"],
+      "title_aliases": ["Tiền nộp Quỹ bù trừ"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.PLEDGED_ASSETS",
+      "canonical_name": "Các tài sản đã cầm cố, thế chấp",
+      "note_ids": ["17"],
+      "titles": ["CÁC TÀI SẢN ĐÃ CẦM CỐ, THẾ CHẤP"],
+      "title_aliases": ["Tài sản cầm cố, thế chấp"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.BORROWINGS",
+      "canonical_name": "Vay và nợ thuê tài chính",
+      "note_ids": ["3.11", "18"],
+      "titles": ["Các khoản vay (tiếp theo)", "VAY VÀ NỢ THUÊ TÀI CHÍNH NGÂN HẠN"],
+      "title_aliases": ["Các khoản vay", "Vay và nợ thuê tài chính ngắn hạn", "Vay và nợ thuê tài chính"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.BORROWINGS.OPENING","canonical_name":"Số đầu năm","aliases":["Số đầu năm"]},
+        {"alias_id":"SECURITIES.BS.BORROWINGS.INCREASE","canonical_name":"Số vay trong năm","aliases":["Số vay trong năm","Tăng trong năm"]},
+        {"alias_id":"SECURITIES.BS.BORROWINGS.REPAYMENT","canonical_name":"Số trả trong năm","aliases":["Số trả trong năm","Giảm trong năm"]},
+        {"alias_id":"SECURITIES.BS.BORROWINGS.CLOSING","canonical_name":"Số cuối năm","aliases":["Số cuối năm"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.TRADING_PAYABLES",
+      "canonical_name": "Phải trả hoạt động giao dịch chứng khoán",
+      "note_ids": ["19"],
+      "titles": ["PHẢI TRẢ HOẠT ĐỘNG GIAO DỊCH CHỨNG KHOÁN"],
+      "title_aliases": ["Phải trả hoạt động giao dịch chứng khoán"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.TRADING_PAYABLES.OPENING","canonical_name":"Số đầu năm","aliases":["Số đầu năm"]},
+        {"alias_id":"SECURITIES.BS.TRADING_PAYABLES.CLOSING","canonical_name":"Số cuối năm","aliases":["Số cuối năm"]},
+        {"alias_id":"SECURITIES.BS.TRADING_PAYABLES.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.TAXES",
+      "canonical_name": "Thuế và các khoản phải nộp Nhà nước",
+      "note_ids": ["3.14", "20"],
+      "titles": ["Thuế và các khoản phải thu/phải nộp Nhà nước", "THUẾ VÀ CÁC KHOẢN PHẢI NỘP NHÀ NƯỚC"],
+      "title_aliases": ["Thuế và các khoản phải nộp Nhà nước", "Thuế và các khoản phải thu, phải nộp Nhà nước"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.TAXES.OPENING","canonical_name":"Số đầu năm","aliases":["Số đầu năm","Tại ngày 1/1/2025"]},
+        {"alias_id":"SECURITIES.BS.TAXES.ADDITIONS","canonical_name":"Số phải nộp trong năm","aliases":["Số phải nộp trong năm","Phát sinh trong năm"]},
+        {"alias_id":"SECURITIES.BS.TAXES.PAID","canonical_name":"Số đã nộp trong năm","aliases":["Số đã nộp trong năm","Số đã được hoàn/thực nộp trong năm"]},
+        {"alias_id":"SECURITIES.BS.TAXES.OFFSET","canonical_name":"Cấn trừ","aliases":["Cấn trừ"]},
+        {"alias_id":"SECURITIES.BS.TAXES.CLOSING","canonical_name":"Số cuối năm","aliases":["Số cuối năm","Tại ngày 31/12/2025"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.SHORT_TERM_ACCRUALS",
+      "canonical_name": "Chi phí phải trả ngắn hạn",
+      "note_ids": ["21"],
+      "titles": ["CHI PHÍ PHẢI TRẢ NGẮN HẠN"],
+      "title_aliases": ["Chi phí phải trả ngắn hạn"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.OTHER_PAYABLES",
+      "canonical_name": "Các khoản phải trả, phải nộp ngắn hạn khác",
+      "note_ids": ["22"],
+      "titles": ["CÁC KHOẢN PHẢI TRẢ, PHẢI NỘP NGÂN HẠN KHÁC"],
+      "title_aliases": ["Các khoản phải trả, phải nộp ngắn hạn khác"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.DEFERRED_TAX_LIABILITY",
+      "canonical_name": "Thuế thu nhập doanh nghiệp hoãn lại phải trả",
+      "note_ids": ["23"],
+      "titles": ["THUẾ THU NHẬP DOANH NGHIỆP (\"TNDN\") HOÃN LẠI PHẢI TRẢ"],
+      "title_aliases": ["Thuế thu nhập doanh nghiệp hoãn lại phải trả", "Thuế TNDN hoãn lại phải trả"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.EQUITY",
+      "canonical_name": "Vốn chủ sở hữu",
+      "note_ids": ["3.18", "24"],
+      "titles": ["Vốn góp của chủ sở hữu (tiếp theo)", "VỐN CHỦ SỞ HỮU", "VỐN CHỦ SỞ HỮU (TIẾP THEO)"],
+      "title_aliases": ["Vốn chủ sở hữu", "Vốn góp của chủ sở hữu"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.EQUITY.CONTRIBUTED_CAPITAL","canonical_name":"Vốn góp của chủ sở hữu","aliases":["Vốn góp của chủ sở hữu"]},
+        {"alias_id":"SECURITIES.BS.EQUITY.SHARE_PREMIUM","canonical_name":"Thặng dư vốn cổ phần","aliases":["Thặng dư vốn cổ phần"]},
+        {"alias_id":"SECURITIES.BS.EQUITY.TREASURY_SHARES","canonical_name":"Cổ phiếu quỹ","aliases":["Cổ phiếu quỹ"]},
+        {"alias_id":"SECURITIES.BS.EQUITY.RESERVE","canonical_name":"Quỹ dự phòng tài chính và rủi ro nghiệp vụ","aliases":["Quỹ dự phòng tài chính và rủi ro nghiệp vụ","Quỹ dự phòng tài chính và tài sản rủi ro nghiệp vụ"]},
+        {"alias_id":"SECURITIES.BS.EQUITY.RETAINED_EARNINGS","canonical_name":"Lợi nhuận sau thuế chưa phân phối","aliases":["Lợi nhuận sau thuế chưa phân phối","LNST chưa phân phối"]},
+        {"alias_id":"SECURITIES.BS.EQUITY.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.EQUITY_MOVEMENT",
+      "canonical_name": "Tình hình biến động vốn chủ sở hữu",
+      "note_ids": ["3.18", "24.2", "6.1"],
+      "titles": ["Tình hình tăng giảm nguồn vốn chủ sở hữu", "Chi tiết biến động vốn chủ sở hữu"],
+      "title_aliases": ["Tình hình biến động vốn chủ sở hữu", "Chi tiết biến động của vốn chủ sở hữu"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.EQUITY_MOVEMENT.CONTRIBUTED_CAPITAL","canonical_name":"Vốn góp của chủ sở hữu","aliases":["Vốn góp của chủ sở hữu"]},
+        {"alias_id":"SECURITIES.BS.EQUITY_MOVEMENT.SHARE_PREMIUM","canonical_name":"Thặng dư vốn cổ phần","aliases":["Thặng dư vốn cổ phần"]},
+        {"alias_id":"SECURITIES.BS.EQUITY_MOVEMENT.TREASURY_SHARES","canonical_name":"Cổ phiếu quỹ","aliases":["Cổ phiếu quỹ"]},
+        {"alias_id":"SECURITIES.BS.EQUITY_MOVEMENT.RETAINED_EARNINGS","canonical_name":"Lợi nhuận sau thuế chưa phân phối","aliases":["Lợi nhuận sau thuế chưa phân phối","LNST chưa phân phối"]},
+        {"alias_id":"SECURITIES.BS.EQUITY_MOVEMENT.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.SHARES",
+      "canonical_name": "Cổ phiếu",
+      "note_ids": ["24.3"],
+      "titles": ["Cổ phiếu"],
+      "title_aliases": ["Thông tin về cổ phiếu", "Vốn cổ phần"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.SHARES.ISSUED","canonical_name":"Số lượng cổ phiếu đã phát hành","aliases":["Số lượng cổ phiếu đã phát hành"]},
+        {"alias_id":"SECURITIES.BS.SHARES.TREASURY","canonical_name":"Số cổ phiếu quỹ","aliases":["Số cổ phiếu quỹ"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.OFF_BALANCE_GROUP",
+      "canonical_name": "Thuyết minh các chỉ tiêu ngoài báo cáo tình hình tài chính",
+      "note_ids": ["4", "25"],
+      "titles": ["THÔNG TIN BỔ SUNG CÁC CHỈ TIÊU NGOÀI BÁO CÁO TÌNH HÌNH TÀI CHÍNH", "THUYẾT MINH VỀ CÁC CHỈ TIÊU NGOÀI BÁO CÁO TÌNH HÌNH TÀI CHÍNH", "THUYẾT MINH VỀ CÁC CHỈ TIÊU NGOÀI BÁO CÁO TÌNH HÌNH TÀI CHÍNH (TIẾP THEO)"],
+      "title_aliases": ["Các chỉ tiêu ngoài báo cáo tình hình tài chính", "Tài sản của CTCK và tài sản quản lý theo cam kết"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.LISTED_ASSETS",
+      "canonical_name": "Tài sản tài chính niêm yết/đăng ký giao dịch của CTCK",
+      "note_ids": ["25.1"],
+      "titles": ["Tài sản tài chính niêm yết/đăng ký giao dịch tại VSDC của CTCK"],
+      "title_aliases": ["Tài sản tài chính niêm yết/đăng ký giao dịch của CTCK"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.LISTED_ASSETS.FREE_TRANSFER","canonical_name":"Tài sản tài chính giao dịch tự do chuyển nhượng","aliases":["Tài sản tài chính giao dịch tự do chuyển nhượng"]},
+        {"alias_id":"SECURITIES.BS.LISTED_ASSETS.PLEDGED","canonical_name":"Tài sản tài chính giao dịch cầm cố","aliases":["Tài sản tài chính giao dịch cầm cố"]},
+        {"alias_id":"SECURITIES.BS.LISTED_ASSETS.RESTRICTED","canonical_name":"Tài sản tài chính phong tỏa, tạm giữ","aliases":["Tài sản tài chính phong toả, tạm giữ","Tài sản tài chính phong tỏa, tạm giữ"]},
+        {"alias_id":"SECURITIES.BS.LISTED_ASSETS.SETTLEMENT","canonical_name":"Tài sản tài chính chờ thanh toán","aliases":["Tài sản tài chính chờ thanh toán"]},
+        {"alias_id":"SECURITIES.BS.LISTED_ASSETS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.UNSETTLED_ASSETS",
+      "canonical_name": "Tài sản tài chính đã lưu ký và chờ giao dịch",
+      "note_ids": ["25.2"],
+      "titles": ["Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của CTCK"],
+      "title_aliases": ["Tài sản tài chính đã lưu ký tại VSD và chưa giao dịch của CTCK"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.PENDING_ASSETS",
+      "canonical_name": "Tài sản tài chính chờ về của CTCK",
+      "note_ids": ["25.3"],
+      "titles": ["Tài sản tài chính chờ về của CTCK"],
+      "title_aliases": ["Tài sản tài chính chờ về"],
+      "rows": [
+        {"alias_id":"SECURITIES.BS.PENDING_ASSETS.STOCK","canonical_name":"Cổ phiếu","aliases":["Cổ phiếu"]},
+        {"alias_id":"SECURITIES.BS.PENDING_ASSETS.BOND","canonical_name":"Trái phiếu","aliases":["Trái phiếu"]},
+        {"alias_id":"SECURITIES.BS.PENDING_ASSETS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.BS.INVESTOR_DEPOSITS",
+      "canonical_name": "Tiền gửi của Nhà đầu tư",
+      "note_ids": ["25.6"],
+      "titles": ["Tiền gửi của Nhà đầu tư"],
+      "title_aliases": ["Tiền gửi của nhà đầu tư"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.ISSUER_DEPOSITS",
+      "canonical_name": "Tiền gửi của Tổ chức phát hành chứng khoán",
+      "note_ids": ["25.7"],
+      "titles": ["Tiền gửi của Tổ chức phát hành chứng khoán"],
+      "title_aliases": ["Tiền gửi của Tổ chức phát hành"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.INVESTOR_PAYABLES",
+      "canonical_name": "Phải trả Nhà đầu tư",
+      "note_ids": ["25.8"],
+      "titles": ["Phải trả Nhà đầu tư của CTCK"],
+      "title_aliases": ["Phải trả Nhà đầu tư"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.ISSUER_PAYABLES",
+      "canonical_name": "Phải trả Tổ chức phát hành chứng khoán",
+      "note_ids": ["25.9"],
+      "titles": ["Phải trả Tổ chức phát hành chứng khoán"],
+      "title_aliases": ["Phải trả Tổ chức phát hành"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.DIVIDEND_PAYABLES",
+      "canonical_name": "Phải trả cổ tức, gốc và lãi trái phiếu",
+      "note_ids": ["25.10"],
+      "titles": ["Phải trả cổ tức, gốc và lãi trái phiếu"],
+      "title_aliases": ["Phải trả cổ tức, gốc, lãi trái phiếu"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.INVESTOR_SERVICE_PAYABLES",
+      "canonical_name": "Phải trả của Nhà đầu tư về dịch vụ cho CTCK",
+      "note_ids": ["25.11"],
+      "titles": ["Phải trả của Nhà đầu tư về dịch vụ cho CTCK"],
+      "title_aliases": ["Phải trả Nhà đầu tư về dịch vụ cho CTCK"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.BS.MARGIN_PAYABLES",
+      "canonical_name": "Phải trả vay CTCK của Nhà đầu tư",
+      "note_ids": ["25.12"],
+      "titles": ["Phải trả vay CTCK của Nhà đầu tư"],
+      "title_aliases": ["Phải trả vay công ty chứng khoán của Nhà đầu tư", "Phải trả vay CTCK"],
+      "rows": []
+    },
+
+    {
+      "alias_id": "SECURITIES.IS.SUPPLEMENT",
+      "canonical_name": "Thông tin bổ sung báo cáo kết quả hoạt động",
+      "note_ids": ["5"],
+      "titles": ["THÔNG TIN BỔ SUNG BÁO CÁO KẾT QUẢ HOẠT ĐỘNG", "THÔNG TIN BỔ SUNG BÁO CÁO KẾT QUẢ HOẠT ĐỘNG (TIẾP THEO)"],
+      "title_aliases": ["Thông tin bổ sung báo cáo kết quả hoạt động", "Thông tin bổ sung báo cáo thu nhập toàn diện"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.IS.FVTPL_SALE",
+      "canonical_name": "Lãi/(lỗ) ròng từ việc bán các tài sản tài chính FVTPL",
+      "note_ids": ["5.1", "26.1"],
+      "titles": ["Lãi/(lỗ) ròng từ việc bán các tài sản tài chính FVTPL (tiếp theo)", "Lãi (lỗ) bán các tài sản tài chính FVTPL"],
+      "title_aliases": ["Lãi/(lỗ) bán các tài sản tài chính FVTPL", "Lãi lỗ bán tài sản tài chính FVTPL"],
+      "rows": [
+        {"alias_id":"SECURITIES.IS.FVTPL_SALE.LISTED_STOCKS","canonical_name":"Cổ phiếu niêm yết","aliases":["Cổ phiếu niêm yết"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_SALE.UNLISTED_STOCKS","canonical_name":"Cổ phiếu chưa niêm yết","aliases":["Cổ phiếu chưa niêm yết"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_SALE.LISTED_BONDS","canonical_name":"Trái phiếu niêm yết","aliases":["Trái phiếu niêm yết"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_SALE.UNLISTED_BONDS","canonical_name":"Trái phiếu không niêm yết","aliases":["Trái phiếu không niêm yết","Trái phiếu chưa niêm yết"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_SALE.CERTIFICATES","canonical_name":"Chứng chỉ tiền gửi","aliases":["Chứng chỉ tiền gửi"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_SALE.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.IS.FVTPL_REVALUATION",
+      "canonical_name": "Chênh lệch đánh giá lại tài sản tài chính FVTPL",
+      "note_ids": ["5.2", "26.2"],
+      "titles": ["Chênh lệch đánh giá lại các tài sản tài chính FVTPL", "Chênh lệch về đánh giá lại các tài sản tài chính"],
+      "title_aliases": ["Chênh lệch đánh giá lại tài sản tài chính", "Đánh giá lại tài sản tài chính FVTPL"],
+      "rows": [
+        {"alias_id":"SECURITIES.IS.FVTPL_REVALUATION.COST","canonical_name":"Giá gốc","aliases":["Giá gốc (Đồng)","Giá gốc"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_REVALUATION.FAIR_VALUE","canonical_name":"Giá trị thị trường/giá trị hợp lý","aliases":["Giá trị thị trường/giá trị hợp lý (Đồng)","Giá trị thị trường/giá trị hợp lý"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_REVALUATION.CURRENT","canonical_name":"Chênh lệch đánh giá lại lũy kế tại ngày 31/12/2025","aliases":["Chênh lệch đánh giá lại lũy kế tại ngày 31/12/2025 (Đồng)"]},
+        {"alias_id":"SECURITIES.IS.FVTPL_REVALUATION.PRIOR","canonical_name":"Chênh lệch đánh giá lại lũy kế tại ngày 31/12/2024","aliases":["Chênh lệch đánh giá lại lũy kế tại ngày 31/12/2024 (Đồng)"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.IS.FINANCIAL_INCOME",
+      "canonical_name": "Cổ tức, tiền lãi phát sinh từ các tài sản tài chính",
+      "note_ids": ["5.3", "5.4", "5.5", "5.6", "26.3"],
+      "titles": ["Cổ tức, tiền lãi phát sinh từ các tài sản tài chính FVTPL", "Lãi từ các khoản đầu tư HTM", "Lãi từ các khoản cho vay và phải thu", "Lãi từ tài sản tài chính AFS", "Cổ tức, tiền lãi phát sinh từ tài sản tài chính FVTPL, AFS, HTM và các khoản cho vay"],
+      "title_aliases": ["Cổ tức, tiền lãi phát sinh từ các tài sản tài chính", "Lãi từ các tài sản tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.IS.SERVICE_COSTS",
+      "canonical_name": "Chi phí hoạt động ngoài các chi phí liên quan đến tài sản tài chính",
+      "note_ids": ["5.7", "28"],
+      "titles": ["Chi phí hoạt động ngoài các chi phí liên quan đến tài sản tài chính", "CHI PHÍ HOẠT ĐỘNG CUNG CẤP DỊCH VỤ"],
+      "title_aliases": ["Chi phí hoạt động cung cấp dịch vụ", "Chi phí hoạt động"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.IS.FINANCIAL_COSTS",
+      "canonical_name": "Chi phí tài chính",
+      "note_ids": ["29"],
+      "titles": ["CHI PHÍ TÀI CHÍNH"],
+      "title_aliases": ["Chi phí tài chính"],
+      "rows": [
+        {"alias_id":"SECURITIES.IS.FINANCIAL_COSTS.INTEREST","canonical_name":"Chi phí lãi vay","aliases":["Chi phí lãi vay"]},
+        {"alias_id":"SECURITIES.IS.FINANCIAL_COSTS.OTHER","canonical_name":"Chi phí tài chính khác","aliases":["Chi phí tài chính khác"]},
+        {"alias_id":"SECURITIES.IS.FINANCIAL_COSTS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.IS.ADMIN_COSTS",
+      "canonical_name": "Chi phí quản lý công ty chứng khoán",
+      "note_ids": ["30"],
+      "titles": ["CHI PHÍ QUẢN LÝ CÔNG TY CHỨNG KHOÁN"],
+      "title_aliases": ["Chi phí quản lý CTCK", "Chi phí quản lý công ty chứng khoán"],
+      "rows": [
+        {"alias_id":"SECURITIES.IS.ADMIN_COSTS.PERSONNEL","canonical_name":"Chi phí lương và các khoản khác theo lương","aliases":["Chi phí lương và các khoản khác theo lương","Chi phí nhân viên quản lý"]},
+        {"alias_id":"SECURITIES.IS.ADMIN_COSTS.OFFICE","canonical_name":"Chi phí văn phòng phẩm","aliases":["Chi phí văn phòng phẩm"]},
+        {"alias_id":"SECURITIES.IS.ADMIN_COSTS.DEPRECIATION","canonical_name":"Chi phí khấu hao TSCĐ","aliases":["Chi phí khấu hao TSCĐ"]},
+        {"alias_id":"SECURITIES.IS.ADMIN_COSTS.TAXES","canonical_name":"Chi phí thuế, phí và lệ phí","aliases":["Chi phí thuế, phí và lệ phí"]},
+        {"alias_id":"SECURITIES.IS.ADMIN_COSTS.OTHER","canonical_name":"Chi phí khác","aliases":["Chi phí khác"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.IS.TAX",
+      "canonical_name": "Thuế thu nhập doanh nghiệp",
+      "note_ids": ["5.11", "31"],
+      "titles": ["Thuế TNDN", "THUẾ THU NHẬP DOANH NGHIỆP (\"TNDN\")"],
+      "title_aliases": ["Thuế thu nhập doanh nghiệp", "Chi phí thuế thu nhập doanh nghiệp"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.IS.OCI",
+      "canonical_name": "Lũy kế thu nhập toàn diện khác",
+      "note_ids": ["32"],
+      "titles": ["LŨY KẾ THU NHẬP TOÀN DIỆN KHÁC"],
+      "title_aliases": ["Thu nhập toàn diện khác", "Lũy kế thu nhập (lỗ) toàn diện khác"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.IS.EPS",
+      "canonical_name": "Lãi trên cổ phiếu",
+      "note_ids": ["5.12", "34"],
+      "titles": ["Lãi trên cổ phiếu", "Lãi trên cổ phiếu (tiếp theo)", "LÃI CƠ BẢN TRÊN CỔ PHIẾU"],
+      "title_aliases": ["Lãi cơ bản trên cổ phiếu", "Thu nhập trên cổ phiếu"],
+      "rows": [
+        {"alias_id":"SECURITIES.IS.EPS.NET_INCOME","canonical_name":"Lợi nhuận thuần phân bổ cho các cổ đông","aliases":["Lợi nhuận thuần phân bổ cho các cổ đông (VND)","Lợi nhuận thuần phân bổ cho các cổ đông"]},
+        {"alias_id":"SECURITIES.IS.EPS.ADJUSTMENT","canonical_name":"Điều chỉnh giảm số trích quỹ khen thưởng, phúc lợi","aliases":["Điều chỉnh giảm số trích quỹ khen thưởng, phúc lợi (VND) (*)","Điều chỉnh giảm số trích quỹ khen thưởng, phúc lợi (VND) (i)"]},
+        {"alias_id":"SECURITIES.IS.EPS.BASIC_EPS","canonical_name":"Lãi cơ bản trên cổ phiếu","aliases":["Lãi cơ bản trên cổ phiếu (VND)","Lãi cơ bản trên cổ phiếu"]}
+      ]
+    },
+
+    {
+      "alias_id": "SECURITIES.EQUITY.MOVEMENT",
+      "canonical_name": "Thông tin bổ sung cho báo cáo tình hình biến động vốn chủ sở hữu",
+      "note_ids": ["6", "33"],
+      "titles": ["THÔNG TIN BỔ SUNG BÁO CÁO TÌNH HÌNH BIẾN ĐỘNG VỐN CHỦ SỞ HỮU", "THÔNG TIN BỔ SUNG CHO BÁO CÁO TÌNH HÌNH BIÊN ĐỘNG VỐN CHỦ SỞ HỮU"],
+      "title_aliases": ["Thông tin bổ sung báo cáo biến động vốn chủ sở hữu", "Biến động vốn chủ sở hữu"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.RELATED_PARTIES",
+      "canonical_name": "Các bên liên quan",
+      "note_ids": ["7", "35.1"],
+      "titles": ["THUYẾT MINH VỀ CÁC BÊN LIÊN QUAN (TIẾP THEO)", "Nghiệp vụ với các bên liên quan (tiếp theo)"],
+      "title_aliases": ["Các bên liên quan", "Thông tin về các bên liên quan", "Giao dịch với các bên liên quan"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.SEGMENTS",
+      "canonical_name": "Báo cáo bộ phận",
+      "note_ids": ["8", "35.2"],
+      "titles": ["Báo cáo bộ phận", "BÁO CÁO BỘ PHẬN", "Thông tin báo cáo bộ phận (tiếp theo)"],
+      "title_aliases": ["Thông tin bộ phận", "Báo cáo bộ phận (tiếp theo)"],
+      "rows": [
+        {"alias_id":"SECURITIES.SEGMENTS.BROKERAGE","canonical_name":"Môi giới và dịch vụ khách hàng","aliases":["Môi giới và dịch vụ khách hàng","Môi giới và dịch vụ khách hàng (VND)"]},
+        {"alias_id":"SECURITIES.SEGMENTS.PROPRIETARY","canonical_name":"Tự doanh","aliases":["Tự doanh","Tự doanh (VND)"]},
+        {"alias_id":"SECURITIES.SEGMENTS.UNDERWRITING","canonical_name":"Bảo lãnh phát hành","aliases":["Bảo lãnh phát hành","Bảo lãnh phát hành (VND)"]},
+        {"alias_id":"SECURITIES.SEGMENTS.ADVISORY","canonical_name":"Tư vấn","aliases":["Tư vấn","Tư vấn (VND)"]},
+        {"alias_id":"SECURITIES.SEGMENTS.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Tổng cộng (VND)"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.RISK.MANAGEMENT",
+      "canonical_name": "Quản lý rủi ro tài chính",
+      "note_ids": ["9", "35.4"],
+      "titles": ["QUẢN LÝ RỦI RO TÀI CHÍNH", "Mục đích và chính sách quản lý rủi ro tài chính"],
+      "title_aliases": ["Quản lý rủi ro tài chính", "Mục đích và chính sách quản lý rủi ro"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.COMMITMENTS",
+      "canonical_name": "Các cam kết",
+      "note_ids": ["11"],
+      "titles": ["CÁC CAM KẾT"],
+      "title_aliases": ["Các cam kết và nghĩa vụ tiềm tàng", "Cam kết thuê hoạt động"],
+      "rows": [
+        {"alias_id":"SECURITIES.COMMITMENTS.UNDER_ONE_YEAR","canonical_name":"Dưới 1 năm","aliases":["Dưới 1 năm"]},
+        {"alias_id":"SECURITIES.COMMITMENTS.ONE_TO_FIVE","canonical_name":"Từ 1 đến 5 năm","aliases":["Từ 1 đến 5 năm"]},
+        {"alias_id":"SECURITIES.COMMITMENTS.OVER_FIVE","canonical_name":"Trên 5 năm","aliases":["Trên 5 năm"]},
+        {"alias_id":"SECURITIES.COMMITMENTS.TOTAL","canonical_name":"Tổng cộng các khoản thanh toán tối thiểu","aliases":["Tổng cộng các khoản thanh toán tối thiểu"]}
+      ]
+    },
+    {
+      "alias_id": "SECURITIES.OTHER.SUBSEQUENT_EVENTS",
+      "canonical_name": "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm",
+      "note_ids": ["12", "36"],
+      "titles": ["SỰ KIỆN PHÁT SINH SAU NGÀY BÁO CÁO TÀI CHÍNH", "CÁC SỰ KIỆN PHÁT SINH SAU NGÀY KẾT THÚC KỲ KẾ TOÁN NĂM"],
+      "title_aliases": ["Sự kiện phát sinh sau ngày báo cáo tài chính", "Sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm"],
+      "rows": []
+    },
+    {
+      "alias_id": "SECURITIES.OTHER.INFORMATION",
+      "canonical_name": "Những thông tin khác",
+      "note_ids": ["35"],
+      "titles": ["NHỮNG THÔNG TIN KHÁC"],
+      "title_aliases": ["Thông tin khác", "Thông tin bổ sung khác"],
+      "rows": []
+    }
+  ]
+}

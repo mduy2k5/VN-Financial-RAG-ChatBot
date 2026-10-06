@@ -1,0 +1,21 @@
+title = "VN Financial RAG secret scanning"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+  [[rules.allowlists]]
+  description = "64-character logical document hashes in evaluation artifacts are identifiers, not credentials."
+  condition = "AND"
+  regexTarget = "line"
+  paths = ['''financial_python/evaluation/(results|review)/.*\.json$''']
+  regexes = ['''"logical_key"\s*:\s*"[0-9a-f]{64}"''']
+
+  [[rules.allowlists]]
+  description = "This fixed browser localStorage name is a public UI identifier."
+  condition = "AND"
+  regexTarget = "line"
+  paths = ['''financial_ui/app\.js$''']
+  regexes = ['''CONVERSATION_STORAGE_KEY\s*=\s*"financial-rag\.conversations\.v1"''']

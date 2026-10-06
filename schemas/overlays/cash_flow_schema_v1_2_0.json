@@ -1,0 +1,48 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_CASH_FLOW_V1@1.2.0",
+  "base_schema": "../cash_flow_schema.json",
+  "schema_id": "UNIVERSAL_CASH_FLOW_V1",
+  "schema_version": "1.2.0",
+  "nodes_add": [
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING",
+      "canonical_name": "Tiền và các khoản tương đương tiền cuối năm",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "reconciliation",
+      "form_code": "103"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING_CASH",
+      "canonical_name": "Tiền cuối năm",
+      "sector": "securities",
+      "method": "indirect",
+      "section": "reconciliation",
+      "form_code": "103.1"
+    }
+  ],
+  "formula_updates": {
+    "securities": [
+      {
+        "name": "net_change_in_cash",
+        "target": "CASHFLOW.SECURITIES.INDIRECT.NET_CHANGE_IN_CASH",
+        "components": [
+          "CASHFLOW.SECURITIES.INDIRECT.NET_OPERATING_CASH",
+          "CASHFLOW.SECURITIES.INDIRECT.NET_INVESTING_CASH",
+          "CASHFLOW.SECURITIES.INDIRECT.NET_FINANCING_CASH"
+        ],
+        "method": "indirect"
+      },
+      {
+        "name": "cash_ending",
+        "target": "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING",
+        "components": [
+          "CASHFLOW.SECURITIES.INDIRECT.NET_CHANGE_IN_CASH",
+          "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING"
+        ],
+        "method": "indirect"
+      }
+    ]
+  }
+}

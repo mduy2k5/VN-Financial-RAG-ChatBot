@@ -1,0 +1,468 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.11.0",
+  "base_aliases": "financial_position_aliases_v1_10_0.json",
+  "alias_schema_version": "1.11.0",
+  "target_schema": "UNIVERSAL_FINANCIAL_POSITION_V1@1.11.0",
+  "entries_update": {
+    "ASSET.CENTRAL_BANK_BALANCES": {
+      "match": {"aliases_add": ["Tiền gửi tại Ngân hàng Nhà nước Việt Nam (“NHNN”)"]}
+    },
+    "ASSET.INTERBANK": {
+      "match": {"aliases_add": ["Tiền gửi tại các tổ chức tín dụng (“TCTD”) khác", "Tiền gửi tại và cho vay các tổ chức tín dụng (“TCTD”) khác", "Tiền gửi và cho vay các tổ chức tín dụng (“TCTD”) khác", "Tiền gửi tại và cho vay các tổ chức tín dụng (\"TCTD\") khác", "Tiền gửi và cho vay các tổ chức tín dụng (\"TCTD\") khác", "Tiền gửi tại và cho vay các tổ chức tín dụng (\"TCTD”) khác", "Tiền gửi và cho vay các tổ chức tín dụng (“TCTD\") khác"]}
+    },
+    "ASSET.INTERBANK.ALLOWANCE": {
+      "match": {"aliases_add": ["Dự phòng rủi ro tiền gửi tại các TCTD khác và cho vay các TCTD khác", "Dự phòng rủi ro tiền gửi và cho vay các TCTD khác"], "exact_add": ["Dự phòng rủi ro cấp tín dụng cho các TCTD khác"], "parent_context_add": ["Cấp tín dụng cho các TCTD khác"]}
+    },
+    "ASSET.DEBT_PURCHASE.ALLOWANCE": {
+      "match": {"exact_add": ["2. Dự phòng rủi ro hoạt động mua nợ (*)"], "aliases_add": ["Dự phòng rủi ro mua nợ", "Dự phòng rủi ro hoạt động mua nợ"], "parent_context_add": ["VI. Hoạt động mua nợ"]}
+    },
+    "ASSET.FIN_INV": {
+      "match": {"aliases_add": ["Tài sản tài chính", "110 Tài sản tài chính"]}
+    },
+    "ASSET.FIN_INV.TRADING_SECURITIES": {
+      "match": {"aliases_add": ["Các tài sản tài chính ghi nhận thông qua lãi/lỗ (\"FVTPL\")", "112 Tài sản tài chính ghi nhận thông qua lãi/lỗ (\"FVTPL\")"]}
+    },
+    "ASSET.FIN_INV.HTM": {
+      "match": {"aliases_add": ["Các khoản đầu tư nắm giữ đến ngày đáo hạn (\"HTM\")", "Các khoản đầu tư nắm giữ đến ngày đáo hạn (“HTM\")", "113 Các khoản đầu tư nắm giữ đến ngày đáo hạn (“HTM\")"]}
+    },
+    "ASSET.FIN_INV.AFS": {
+      "match": {"aliases_add": ["Tài sản tài chính sẵn sàng để bán (\"AFS\")", "Tài sản tài chính sẵn sàng để bán (“AFS”)", "115 Tài sản tài chính sẵn sàng để bán (“AFS”)"]}
+    },
+    "ASSET.FIN_INV.HTM.SHORT_TERM": {
+      "match": {"aliases_add": ["Đầu tư nắm giữ đến ngày đáo hạn - ngắn hạn", "123 1. Đầu tư nắm giữ đến ngày đáo hạn"]}
+    },
+    "ASSET.FIN_INV.HTM.LONG_TERM": {
+      "match": {"aliases_add": ["Đầu tư nắm giữ đến ngày đáo hạn dài hạn (255) (8(b))", "Các khoản đầu tư nắm giữ đến ngày đáo hạn (\"HTM\")"], "parent_context_add": ["Các khoản đầu tư", "Tài sản tài chính dài hạn"]}
+    },
+    "ASSET.FIN_INV.ASSOC_JV": {
+      "match": {"aliases_remove": ["ĐẦU TƯ VÀO CÔNG TY LIÊN KẾT", "Đầu tư vào công ty liên kết", "Đầu tư vào các công ty liên kết", "Đầu tư vào công ty liên doanh", "Vốn góp liên doanh", "2. Vốn góp liên doanh"], "aliases_add": ["Đầu tư vào công ty liên kết, liên doanh", "Đầu tư vào các công ty liên doanh, liên kết (252) (8(c))"]}
+    },
+    "ASSET.FIN_INV.OTHER_EQUITY": {
+      "match": {"aliases_add": ["Đầu tư góp vốn vào các đơn vị khác (253) (8(c))", "Đầu tư vào đơn vị khác", "Góp vốn, đầu tư dài hạn khác"]}
+    },
+    "ASSET.FIN_INV.ALLOWANCE": {
+      "match": {"aliases_add": ["Dự phòng đầu tư tài chính dài hạn (254) (8(c))", "Dự phòng giảm giá góp vốn, đầu tư dài hạn", "Dự phòng giảm giá đầu tư tài chính dài hạn", "Dự phòng đầu tư dài hạn"]}
+    },
+    "ASSET.RECEIVABLES.CONSTRUCTION_CONTRACT": {
+      "match": {"aliases_add": ["Phải thu theo tiến độ kế hoạch HĐXD"]}
+    },
+    "ASSET.RECEIVABLES.LOANS.LONG_TERM": {
+      "match": {"aliases_add": ["Phải thu cho vay dài hạn"]}
+    },
+    "ASSET.RECEIVABLES.OTHER.LONG_TERM": {
+      "match": {"aliases_add": ["Phải thu dài hạn khác (216) (10(b))"]}
+    },
+    "ASSET.RECEIVABLES.LONG_TERM": {
+      "match": {"aliases_add": ["Phải thu dài hạn"]}
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE.LONG_TERM": {
+      "match": {"aliases_add": ["Dự phòng phải thu dài hạn khó đòi (219) (11(b))"]}
+    },
+    "ASSET.FIXED_ASSETS.FINANCE_LEASE": {
+      "match": {"aliases_add": ["Tài sản cố định hữu hình thuê tài chính (224) (15)"]}
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE.COST": {
+      "match": {"aliases_add": ["222 Nguyên giá", "*Nguyên giá*"] , "parent_context_add": ["Tài sản cố định hữu hình"]}
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR": {
+      "match": {"aliases_add": ["223a Giá trị khấu hao luỹ kế", "Hao mòn lũy kế", "*Giá trị hao mòn lũy kế*", "Hao mòn tài sản cố định hữu hình", "Khấu hao TSCĐ"], "parent_context_add": ["Tài sản cố định hữu hình"]}
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE.COST": {
+      "match": {"aliases_add": ["228 Nguyên giá", "*Nguyên giá*"] , "parent_context_add": ["Tài sản cố định vô hình"]}
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR": {
+      "match": {"aliases_add": ["229a Giá trị khấu hao luỹ kế", "Hao mòn lũy kế", "*Giá trị hao mòn lũy kế*", "Hao mòn tài sản cố định vô hình"], "parent_context_add": ["Tài sản cố định vô hình"]}
+    },
+    "ASSET.INVESTMENT_PROPERTY.COST": {
+      "match": {"aliases_add": ["*Nguyên giá*"], "parent_context_add": ["Bất động sản đầu tư"]}
+    },
+    "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR": {
+      "match": {"aliases_add": ["Hao mòn lũy kế", "*Giá trị hao mòn lũy kế*"], "parent_context_add": ["Bất động sản đầu tư"]}
+    },
+    "ASSET.CURRENT": {
+      "match": {"exact_add": ["100 A. TÀI SẢN NGẮN HẠN", "100 TÀI SẢN NGẮN HẠN", "Tổng tài sản ngắn hạn"]}
+    },
+    "ASSET.CASH_EQUIV": {
+      "match": {"exact_add": ["110 I. Tiền và các khoản tương đương tiền", "111 Tiền và các khoản tương đương tiền", "Tiền và các khoản tương đương tiền (I)"]}
+    },
+    "ASSET.CASH_EQUIV.CASH": {
+      "match": {"exact_add": ["111 1. Tiền", "1 Tiền"]}
+    },
+    "ASSET.CASH_EQUIV.CASH_EQUIVALENTS": {
+      "match": {"exact_add": ["112 2. Các khoản tương đương tiền"]}
+    },
+    "ASSET.FIN_INV.SHORT_TERM": {
+      "match": {"exact_add": ["120 II. Các khoản đầu tư tài chính ngắn hạn", "Đầu tư tài chính ngắn hạn (II)"]}
+    },
+    "ASSET.FIN_INV.LONG_TERM": {
+      "match": {"aliases_add": ["Tài sản tài chính dài hạn"]}
+    },
+    "ASSET.FIN_INV.HTM.GROSS": {
+      "match": {"exact_add": ["123 1. Đầu tư nắm giữ đến ngày đáo hạn"]}
+    },
+    "ASSET.RECEIVABLES.SHORT_TERM": {
+      "match": {"exact_add": ["130 III. Các khoản phải thu ngắn hạn", "Các khoản phải thu ngắn hạn (III)"]}
+    },
+    "ASSET.RECEIVABLES": {
+      "match": {"exact_add": ["117 Các khoản phải thu"]}
+    },
+    "ASSET.RECEIVABLES.SUPPLIER_ADVANCE": {
+      "match": {"exact_add": ["118 Trả trước cho người bán"]}
+    },
+    "ASSET.RECEIVABLES.CUSTOMER.SHORT_TERM": {
+      "match": {"exact_add": ["131 1. Phải thu ngắn hạn của khách hàng"]}
+    },
+    "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.SHORT_TERM": {
+      "match": {"exact_add": ["132 2. Trả trước cho người bán ngắn hạn"]}
+    },
+    "ASSET.RECEIVABLES.OTHER.SHORT_TERM": {
+      "match": {"exact_add": ["136 3. Phải thu ngắn hạn khác", "122 Các khoản phải thu khác"]}
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE.SHORT_TERM": {
+      "match": {"exact_add": ["129 Dự phòng suy giảm giá trị các khoản phải thu", "137 4. Dự phòng phải thu ngắn hạn khó đòi"], "aliases_add": ["Dự phòng suy giảm giá trị các khoản phải thu", "Dự phòng các khoản phải thu ngắn hạn khó đòi"]}
+    },
+    "ASSET.INVENTORY.GROSS": {
+      "match": {"exact_add": ["141 1. Hàng tồn kho"]}
+    },
+    "ASSET.INVENTORY.ALLOWANCE": {
+      "match": {"exact_add": ["149 2. Dự phòng giảm giá hàng tồn kho"]}
+    },
+    "ASSET.OTHER.CURRENT": {
+      "match": {"exact_add": ["Tổng tài sản ngắn hạn khác", "150 V. Tài sản ngắn hạn khác", "130 Tài sản ngắn hạn khác", "Tài sản ngắn hạn khác (V)"]}
+    },
+    "ASSET.OTHER.PREPAID_EXPENSE.SHORT_TERM": {
+      "match": {"exact_add": ["151 1. Chi phí trả trước ngắn hạn", "133 Chi phí trả trước ngắn hạn"]}
+    },
+    "ASSET.OTHER.VAT_DEDUCTIBLE": {
+      "match": {"exact_add": ["152 2. Thuế GTGT được khấu trừ"]}
+    },
+    "ASSET.OTHER.TAX_RECEIVABLE": {
+      "match": {"aliases_add": ["Thuế phải thu Nhà nước", "Thuế và các khoản phải thu Nhà nước"], "exact_add": ["153 3. Thuế và các khoản khác phải thu Nhà nước", "136 Thuế và các khoản khác phải thu Nhà nước"]}
+    },
+    "ASSET.OTHER.GOV_BOND_REPO": {
+      "match": {"aliases_add": ["Giao dịch mua bán trái phiếu chính phủ"], "parent_context_add": ["Tài sản ngắn hạn khác"]}
+    },
+    "ASSET.OTHER.NON_CURRENT": {
+      "match": {"exact_add": ["250 Tài sản dài hạn khác", "(Tổng tài sản dài hạn khác)", "260 IV. Tài sản dài hạn khác"]}
+    },
+    "ASSET.OTHER.NON_CURRENT.OTHER": {
+      "match": {"exact_add": ["255 Tài sản dài hạn khác"]}
+    },
+    "ASSET.OTHER.NON_CURRENT.PLEDGED_LONG_TERM": {
+      "match": {"exact_add": ["251 Cầm cố, thế chấp, ký quỹ, ký cược dài hạn"]}
+    },
+    "ASSET.OTHER.PREPAID_EXPENSE.LONG_TERM": {
+      "match": {"exact_add": ["261 1. Chi phí trả trước dài hạn", "Chi phí trả trước dài hạn (261) (13(b))", "252 Chi phí trả trước dài hạn"]}
+    },
+    "ASSET.OTHER.NON_CURRENT.PAYMENT_SUPPORT_FUND": {
+      "match": {"exact_add": ["254 Tiền nộp Quỹ hỗ trợ thanh toán"]}
+    },
+    "ASSET.OTHER.DEFERRED_TAX": {
+      "match": {"exact_add": ["262 2. Tài sản thuế thu nhập hoãn lại", "Tài sản thuế thu nhập hoãn lại (262) (19)", "Tài sản thuế thu nhập hoãn lại (thuyết minh 43a)"]}
+    },
+    "ASSET.OTHER.ALLOWANCE": {
+      "match": {"aliases_add": ["Các khoản dự phòng cho các tài sản Có nội bảng khác"]}
+    },
+    "ASSET.OTHER.REPLACEMENT_PARTS": {
+      "match": {"exact_add": ["Thiết bị, vật tư, phụ tùng thay thế dài hạn (263) (12(b))"]}
+    },
+    "ASSET.NON_CURRENT": {
+      "match": {"exact_add": ["200 B. TÀI SẢN DÀI HẠN", "200 TÀI SẢN DÀI HẠN", "Tổng cộng tài sản dài hạn"]}
+    },
+    "ASSET.FIXED_ASSETS": {
+      "match": {"exact_add": ["220 I. Tài sản cố định", "220 Tài sản cố định"]}
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE": {
+      "match": {"exact_add": ["221 1. Tài sản cố định hữu hình", "221 Tài sản cố định hữu hình"]}
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE": {
+      "match": {"exact_add": ["227 2. Tài sản cố định vô hình", "227 Tài sản cố định vô hình"]}
+    },
+    "ASSET.INVESTMENT_PROPERTY": {
+      "match": {"exact_add": ["230 II. Bất động sản đầu tư"]}
+    },
+    "ASSET.CIP": {
+      "match": {"exact_add": ["240 III. Tài sản dở dang dài hạn"]}
+    },
+    "ASSET.CIP.CONSTRUCTION": {
+      "match": {"exact_add": ["242 1. Chi phí xây dựng cơ bản dở dang", "240 Chi phí xây dựng cơ bản dở dang"]}
+    },
+    "TOTAL_ASSETS": {
+      "match": {"exact_add": ["270 TỔNG CỘNG TÀI SẢN", "270 TỔNG TÀI SẢN"]}
+    },
+    "LIABILITY.GOV_CENTRAL_BANK": {
+      "match": {"aliases_add": ["Các khoản nợ Chính phủ và NHNNVN", "I. Các khoản nợ Chính phủ và Ngân hàng Nhà nước (Thuyết minh trang 15)"]}
+    },
+    "LIABILITY.INTERBANK.DEPOSITS": {
+      "match": {"aliases_add": ["Tiền gửi của các TCTD khác (16.1)", "Tiền gửi các tổ chức tài chính, các TCTD khác"]}
+    },
+    "LIABILITY.INTERBANK.BORROWINGS": {
+      "match": {"aliases_add": ["Vay các TCTD khác (16.2)", "Vay các tổ chức tài chính, các TCTD khác"]}
+    },
+    "LIABILITY.INTERBANK": {
+      "match": {"aliases_add": ["Tiền gửi và vay các tổ chức tài chính, các TCTD khác", "II. Tiền gửi và vay các tổ chức tín dụng khác (Thuyết minh trang 16)"]}
+    },
+    "LIABILITY.CUSTOMER_DEPOSITS": {
+      "match": {"aliases_add": ["III. Tiền gửi của khách hàng (Thuyết minh trang 17)", "Tiền gửi của khách hàng (Thuyết minh trang 17)"]}
+    },
+    "LIABILITY.ENTRUSTED_FUNDS": {
+      "match": {"aliases_add": ["V. Vốn tài trợ, ủy thác đầu tư, cho vay tổ chức tín dụng chịu rủi ro (Thuyết minh trang 18)", "Vốn tài trợ, ủy thác đầu tư, cho vay tổ chức tín dụng chịu rủi ro (Thuyết minh trang 18)"]}
+    },
+    "LIABILITY.DERIVATIVES": {
+      "match": {"aliases_add": ["Các công cụ tài chính phái sinh và khoản nợ tài chính khác (8)"]}
+    },
+    "LIABILITY.ACCRUED_INTEREST_FEES": {
+      "match": {"aliases_add": ["Các khoản lãi, phí phải trả (20.1)"]}
+    },
+    "LIABILITY.OTHER_PAYABLES": {
+      "match": {"aliases_add": ["Các khoản phải trả và công nợ khác (20.2)", "VII. Các khoản nợ khác (Thuyết minh trang 20)"]}
+    },
+    "LIABILITY.ISSUED_SECURITIES": {
+      "match": {"aliases_add": ["Trái phiếu phát hành ngắn hạn", "VI. Phát hành giấy tờ có giá (Thuyết minh trang 19)"]}
+    },
+    "LIABILITY.GOV_BOND_REPO": {
+      "match": {"aliases_add": ["Giao dịch mua bán lại trái phiếu"], "parent_context_add": ["Nợ ngắn hạn"]}
+    },
+    "LIABILITY.BORROWINGS.SHORT_TERM": {
+      "match": {"exact_add": ["320 Vay ngắn hạn"]}
+    },
+    "LIABILITY.TRADE_PAYABLES.SHORT_TERM": {
+      "match": {"exact_add": ["311 Phải trả người bán ngắn hạn", "1 Phải trả người bán ngắn hạn"]}
+    },
+    "LIABILITY.CUSTOMER_ADVANCES.SHORT_TERM": {
+      "match": {"exact_add": ["312 Người mua trả tiền trước ngắn hạn", "2 Người mua trả tiền trước ngắn hạn"]}
+    },
+    "LIABILITY.CURRENT": {
+      "match": {"exact_add": ["310 Nợ ngắn hạn"], "aliases_add": ["Nợ phải trả ngắn hạn"]}
+    },
+    "LIABILITY.NON_CURRENT": {
+      "match": {"exact_add": ["330 Nợ dài hạn"], "aliases_add": ["Nợ phải trả dài hạn"]}
+    },
+    "LIABILITY.BORROWINGS": {
+      "match": {"exact_add": ["311. Vay", "Vay"], "parent_context_add": ["Nợ phải trả ngắn hạn"]}
+    },
+    "LIABILITY.TAX_PAYABLE": {
+      "match": {"aliases_add": ["Thuế phải nộp Nhà nước"], "exact_add": ["313 Thuế và các khoản phải nộp Nhà nước", "3 Thuế và các khoản phải nộp Nhà nước", "Thuế và các khoản phải nộp Nhà nước (Thuyết minh 3.14(b))"]}
+    },
+    "LIABILITY.EMPLOYEE_PAYABLE": {
+      "match": {"exact_add": ["314 Phải trả người lao động", "4 Phải trả người lao động"]}
+    },
+    "LIABILITY.ACCRUED_EXPENSES.SHORT_TERM": {
+      "match": {"exact_add": ["315 Chi phí phải trả ngắn hạn", "5 Chi phí phải trả ngắn hạn"]}
+    },
+    "LIABILITY.DEFERRED_REVENUE.SHORT_TERM": {
+      "match": {"exact_add": ["318 Doanh thu chưa thực hiện ngắn hạn", "Doanh thu chưa thực hiện", "6 Doanh thu chưa thực hiện ngắn hạn"]}
+    },
+    "LIABILITY.OTHER_PAYABLES.SHORT_TERM": {
+      "match": {"exact_add": ["319 Phải trả ngắn hạn khác", "7 Phải trả ngắn hạn khác"], "aliases_add": ["Các khoản phải trả, phải nộp khác ngắn hạn"], "aliases_remove": ["Các khoản phải trả, phải nộp ngắn hạn khác"]}
+    },
+    "LIABILITY.CURRENT.PROVISIONS": {
+      "match": {"exact_add": ["321 Dự phòng phải trả ngắn hạn"]}
+    },
+    "LIABILITY.BONUS_WELFARE_FUND": {
+      "match": {"aliases_add": ["Quỹ khen thưởng phúc lợi"], "exact_add": ["322 Quỹ khen thưởng, phúc lợi", "Quỹ khen thưởng, phúc lợi"]}
+    },
+    "LIABILITY.OTHER_PAYABLES.LONG_TERM": {
+      "match": {"exact_add": ["337 Phải trả dài hạn khác", "2 Phải trả dài hạn khác"]}
+    },
+    "LIABILITY.BORROWINGS.LONG_TERM": {
+      "match": {"exact_add": ["3 Vay dài hạn"]}
+    },
+    "LIABILITY.DEFERRED_TAX": {
+      "match": {"exact_add": ["341 Thuế thu nhập hoãn lại phải trả", "17 Thuế thu nhập doanh nghiệp hoãn lại phải trả"]}
+    },
+    "LIABILITY": {
+      "match": {"exact_add": ["300 NỢ PHẢI TRẢ", "300 C. NỢ PHẢI TRẢ"]}
+    },
+    "EQUITY": {
+      "match": {"aliases_add": ["Vốn và các quỹ", "Vốn chủ sở hữu (Thuyết minh trang 21)"], "exact_add": ["400 VỐN CHỦ SỞ HỮU", "400 D. VỐN CHỦ SỞ HỮU", "1 Vốn chủ sở hữu"]}
+    },
+    "TOTAL_EQUITY": {
+      "match": {"exact_add": ["410 Vốn chủ sở hữu"]}
+    },
+    "EQUITY.OWNER_CAPITAL": {
+      "canonical_name": "Vốn đầu tư của chủ sở hữu",
+      "match": {"aliases_add": ["Vốn của Ngân hàng", "Vốn cổ phần"], "exact_remove": ["Vốn góp của chủ sở hữu", "411 Vốn góp của chủ sở hữu", "411.1 Vốn cổ phần đã phát hành"], "aliases_remove": ["VỐN ĐIỀU LỆ", "VỐN GÓP CỦA CHỦ SỞ HỮU", "Vốn cổ phần đã phát hành"], "parent_context_add": ["I. Vốn chủ sở hữu"]}
+    },
+    "EQUITY.OWNER_CAPITAL.COMMON": {
+      "match": {"exact_add": ["411a Cổ phiếu phổ thông có quyền biểu quyết"]}
+    },
+    "EQUITY.SHARE_PREMIUM": {
+      "match": {"exact_add": ["2 Thặng dư vốn cổ phần"]}
+    },
+    "EQUITY.TREASURY_SHARES": {
+      "match": {"exact_add": ["3 Cổ phiếu quỹ"]}
+    },
+    "EQUITY.RETAINED_EARNINGS": {
+      "match": {"aliases_add": ["Lợi nhuận chưa phân phối/ Lỗ lũy kế", "Lợi nhuận sau thuế đã thực hiện chưa phân phối"], "exact_add": ["421 Lợi nhuận sau thuế (“LNST”) chưa phân phối", "4 Lợi nhuận sau thuế chưa phân phối"]}
+    },
+    "EQUITY.RETAINED_EARNINGS.PRIOR": {
+      "match": {"aliases_add": ["LNST chưa phân phối lũy kế đến cuối năm trước", "Lợi nhuận sau thuế chưa phân phối lũy kế đến cuối kỳ trước", "421a - LNST chưa phân phối lũy kế của các năm trước", "421a. Lợi nhuận sau thuế chưa phân phối lũy kế đến cuối năm trước", "421a Lợi nhuận sau thuế chưa phân phối lũy kế đến cuối năm trước", "Lợi nhuận lũy kế đến cuối năm trước", "- Lợi nhuận sau thuế chưa phân phối đến cuối năm trước", "Lợi nhuận sau thuế chưa phân phối đến cuối năm trước", "Lợi nhuận để lại năm trước", "421a. - Lợi nhuận sau thuế chưa phân phối luỹ kế đến cuối năm trước", "421a. Lợi nhuận sau thuế chưa phân phối đến cuối năm trước", "421a. Lợi nhuận sau thuế chưa phân phối đến cuối năm trước (Mã số: 421a)", "Lợi nhuận / (lỗ) chưa phân phối lũy kế đến cuối năm trước", "Lợi nhuận / (lỗ) chưa phân phối năm trước", "LNST chưa phân phối đến cuối năm trước"], "exact_add": ["-(LỖ) lũy kế đến cuối năm trước", "-(LỖ) lũy kế đến cuối năm trước (Mã số: 421a)"], "parent_context_add": ["Lợi nhuận chưa phân phối/ Lỗ lũy kế"]}
+    },
+    "EQUITY.RETAINED_EARNINGS.CURRENT": {
+      "match": {"aliases_add": ["LNST chưa phân phối năm nay", "421b - LNST chưa phân phối của năm nay", "421b. Lợi nhuận sau thuế chưa phân phối năm nay", "421b Lợi nhuận sau thuế chưa phân phối năm nay", "Lợi nhuận / (lỗ) chưa phân phối năm nay"], "exact_add": ["421b LNST chưa phân phối của năm nay", "421b. - Lợi nhuận sau thuế chưa phân phối năm nay"]}
+    },
+    "EQUITY.NON_CONTROLLING_INTEREST": {
+      "match": {"exact_add": ["429 Lợi ích cổ đông không kiểm soát"]}
+    },
+    "TOTAL_LIABILITIES_AND_EQUITY": {
+      "match": {"exact_add": ["440 TỔNG NGUỒN VỐN"]}
+    },
+    "EQUITY.FX_RESERVE": {
+      "match": {"aliases_add": ["Chênh lệch tỷ giá quy đổi tiền tệ"]}
+    },
+    "EQUITY.BANK_RESERVES": {
+      "match": {"aliases_add": ["Quỹ của Ngân hàng"], "exact_add": ["2. Các quỹ"]}
+    },
+    "LIABILITY.SCI_TECH_FUND": {
+      "match": {"aliases_add": ["Quỹ phát triển khoa học công nghệ"]}
+    },
+    "ASSET.CASH_EQUIV.CASH_ON_HAND": {
+      "match": {"aliases_add": ["Tiền mặt, vàng, bạc, đá quý"]}
+    },
+    "ASSET.OTHER.GOODWILL": {
+      "match": {"aliases_add": ["*Trong đó: Lợi thế thương mại*"]}
+    },
+    "EQUITY.CONSTRUCTION_CAPITAL": {
+      "match": {"aliases_add": ["Vốn đầu tư xây dựng cơ bản và mua sắm tài sản cố định"]}
+    },
+    "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT": {
+      "match": {"exact_add": ["004 Nợ khó đòi đã xử lý"]}
+    },
+    "OFF_BALANCE": {
+      "match": {"aliases_add": ["Nghĩa vụ tiềm ẩn và các cam kết đưa ra (Thuyết minh: 40)"]}
+    },
+    "OFF_BALANCE.GUARANTEES.LOAN": {
+      "match": {"aliases_add": ["Bảo lãnh vốn vay"]}
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.BUY_FX": {
+      "match": {"exact_add": ["1 Cam kết mua ngoại tệ", "2.1 Cam kết mua ngoại tệ"]}
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SELL_FX": {
+      "match": {"exact_add": ["2 Cam kết bán ngoại tệ", "2.2 Cam kết bán ngoại tệ"]}
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP": {
+      "match": {"exact_add": ["3 Cam kết giao dịch hoán đổi", "2.3 Cam kết giao dịch hoán đổi"]}
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY": {
+      "match": {"aliases_add": ["Cam kết mua giao dịch hoán đổi ngoại tệ", "Cam kết mua - giao dịch hoán đổi tiền tệ"]}
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL": {
+      "match": {"aliases_add": ["Cam kết bán giao dịch hoán đổi ngoại tệ", "Cam kết bán - giao dịch hoán đổi tiền tệ"]}
+    },
+    "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES": {
+      "match": {"aliases_add": ["Lãi cho vay và chi phí chưa thu được"]}
+    },
+    "OFF_BALANCE.OTHER_COMMITMENTS": {
+      "match": {"aliases_remove": ["Cam kết giao dịch tương lai"]}
+    },
+    "LIABILITY.GOV_CENTRAL_BANK.DEPOSITS_BORROWINGS": {
+      "match": {"exact_add": ["1. Tiền gửi và vay Chính phủ và Ngân hàng Nhà nước Việt Nam"], "parent_context_add": ["I. Các khoản nợ Chính phủ và Ngân hàng Nhà nước Việt Nam"]}
+    },
+    "LIABILITY.OTHER.CONTINGENT_RISK_PROVISIONS": {
+      "match": {"exact_add": ["4. Dự phòng rủi ro khác (Dự phòng cho công nợ tiềm ẩn và cam kết ngoại bảng)", "Dự phòng rủi ro khác (Dự phòng cho công nợ tiềm ẩn và cam kết ngoại bảng)", "4. Dự phòng rủi ro khác (DP cho công nợ tiềm ẩn và cam kết ngoại bảng)", "Dự phòng rủi ro khác (DP cho công nợ tiềm ẩn và cam kết ngoại bảng)"]}
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.FX_TRANSACTION": {
+      "match": {"exact_add": ["2. Cam kết giao dịch ngoại hối"]}
+    },
+    "LIABILITY.PRICE_STABILIZATION_FUND": {
+      "match": {"aliases_add": ["Quỹ bình ổn giá xăng dầu"]}
+    }
+  },
+  "entries_add": {
+    "ASSET.REINSURANCE": {"node_id":"ASSET.REINSURANCE","canonical_name":"Tài sản tái bảo hiểm","match":{"exact":["Tài sản tái bảo hiểm"],"aliases":[],"parent_context":["Tài sản ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.REINSURANCE.UNEARNED_PREMIUM": {"node_id":"ASSET.REINSURANCE.UNEARNED_PREMIUM","canonical_name":"Dự phòng phí nhượng tái bảo hiểm","match":{"exact":["Dự phòng phí nhượng tái bảo hiểm"],"aliases":[],"parent_context":["Tài sản tái bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.REINSURANCE.CLAIMS_RESERVE": {"node_id":"ASSET.REINSURANCE.CLAIMS_RESERVE","canonical_name":"Dự phòng bồi thường nhượng tái bảo hiểm","match":{"exact":["Dự phòng bồi thường nhượng tái bảo hiểm"],"aliases":[],"parent_context":["Tài sản tái bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIN_INV.SECURITIES_ALLOWANCE": {"node_id":"ASSET.FIN_INV.SECURITIES_ALLOWANCE","canonical_name":"Dự phòng suy giảm giá trị tài sản tài chính chứng khoán","match":{"exact":["Dự phòng suy giảm giá trị các tài sản tài chính và tài sản thế chấp","Dự phòng suy giảm giá trị các tài sản tài chính","116 Dự phòng suy giảm giá trị các tài sản tài chính"],"aliases":[],"parent_context":["Tài sản tài chính","Các khoản đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIN_INV.LOANS": {"node_id":"ASSET.FIN_INV.LOANS","canonical_name":"Các khoản cho vay trong tài sản tài chính","match":{"exact":["114 Các khoản cho vay","Các khoản cho vay"],"aliases":[],"parent_context":["Tài sản tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIN_INV.LONG_TERM.INVESTMENTS": {"node_id":"ASSET.FIN_INV.LONG_TERM.INVESTMENTS","canonical_name":"Các khoản đầu tư dài hạn","match":{"exact":["Các khoản đầu tư","1. Các khoản đầu tư"],"aliases":[],"parent_context":["Tài sản tài chính dài hạn","Đầu tư tài chính dài hạn"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.RECEIVABLES.FINANCIAL_ASSET_SALE": {"node_id":"ASSET.RECEIVABLES.FINANCIAL_ASSET_SALE","canonical_name":"Phải thu bán các tài sản tài chính","match":{"exact":["Phải thu bán các tài sản tài chính","1 Phải thu bán các tài sản tài chính","117.1 Phải thu bán các tài sản tài chính"],"aliases":[],"parent_context":["Các khoản phải thu","Tài sản tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.RECEIVABLES.DIVIDENDS_INTEREST": {"node_id":"ASSET.RECEIVABLES.DIVIDENDS_INTEREST","canonical_name":"Phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính","match":{"exact":["Phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính","2 Phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính","117.2 Phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính"],"aliases":[],"parent_context":["Các khoản phải thu","Tài sản tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.RECEIVABLES.DIVIDENDS_INTEREST.NOT_DUE": {"node_id":"ASSET.RECEIVABLES.DIVIDENDS_INTEREST.NOT_DUE","canonical_name":"Dự thu cổ tức, tiền lãi chưa đến ngày nhận","match":{"exact":["Dự thu cổ tức, tiền lãi chưa đến ngày nhận","4 Dự thu cổ tức, tiền lãi chưa đến ngày nhận","117.4 Dự thu cổ tức, tiền lãi chưa đến ngày nhận"],"aliases":[],"parent_context":["Phải thu và dự thu cổ tức, tiền lãi các tài sản tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.RECEIVABLES.SECURITIES_SERVICES": {"node_id":"ASSET.RECEIVABLES.SECURITIES_SERVICES","canonical_name":"Phải thu các dịch vụ công ty chứng khoán cung cấp","match":{"exact":["Phải thu các dịch vụ công ty chứng khoán cung cấp","119 Phải thu các dịch vụ công ty chứng khoán cung cấp"],"aliases":[],"parent_context":["Các khoản phải thu"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.OTHER.CURRENT.ADVANCES": {"node_id":"ASSET.OTHER.CURRENT.ADVANCES","canonical_name":"Tạm ứng ngắn hạn","match":{"exact":["Tạm ứng","131 Tạm ứng"],"aliases":[],"parent_context":["Tài sản ngắn hạn khác"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.OTHER.CURRENT.OFFICE_SUPPLIES": {"node_id":"ASSET.OTHER.CURRENT.OFFICE_SUPPLIES","canonical_name":"Vật tư văn phòng, công cụ, dụng cụ","match":{"exact":["Vật tư văn phòng, công cụ, dụng cụ","132 Vật tư văn phòng, công cụ, dụng cụ"],"aliases":[],"parent_context":["Tài sản ngắn hạn khác"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.OTHER.CURRENT.PLEDGED_SHORT_TERM": {"node_id":"ASSET.OTHER.CURRENT.PLEDGED_SHORT_TERM","canonical_name":"Cầm cố, thế chấp, ký quỹ, ký cược ngắn hạn","match":{"exact":["Cầm cố, thế chấp, ký quỹ, ký cược ngắn hạn","134 Cầm cố, thế chấp, ký quỹ, ký cược ngắn hạn"],"aliases":[],"parent_context":["Tài sản ngắn hạn khác"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.GOV_CENTRAL_BANK.BORROWINGS": {"node_id":"LIABILITY.GOV_CENTRAL_BANK.BORROWINGS","canonical_name":"Vay Ngân hàng Nhà nước Việt Nam","match":{"exact":["Vay Ngân hàng Nhà nước Việt Nam","Vay Ngân hàng Nhà nước Việt Nam (15)"],"aliases":["Vay NHNN"],"parent_context":["Các khoản nợ Chính phủ và Ngân hàng Nhà nước Việt Nam","Các khoản nợ NHNN"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.EXCHANGEABLE_BONDS": {"node_id":"LIABILITY.EXCHANGEABLE_BONDS","canonical_name":"Trái phiếu hoán đổi","match":{"exact":["Trái phiếu hoán đổi"],"aliases":[],"parent_context":["Nợ dài hạn","II. Nợ dài hạn"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.OWNER_CAPITAL.REGISTERED_CAPITAL": {"node_id":"EQUITY.OWNER_CAPITAL.REGISTERED_CAPITAL","canonical_name":"Vốn điều lệ","match":{"exact":["Vốn điều lệ","Vốn góp của chủ sở hữu","411 Vốn góp của chủ sở hữu","411.1 Vốn cổ phần đã phát hành","1 Vốn cổ phần đã phát hành"],"aliases":["Vốn cổ phần đã phát hành"],"parent_context":["Vốn của TCTD","Vốn của Ngân hàng","Vốn và các quỹ","Vốn đầu tư của chủ sở hữu","Vốn chủ sở hữu","I. Vốn chủ sở hữu"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.TRADE_PAYABLES.SHORT_TERM.INSURANCE_OPERATIONS": {"node_id":"LIABILITY.TRADE_PAYABLES.SHORT_TERM.INSURANCE_OPERATIONS","canonical_name":"Phải trả hoạt động bảo hiểm","match":{"exact":["Phải trả hoạt động bảo hiểm","1 Phải trả hoạt động bảo hiểm"],"aliases":[],"parent_context":["Phải trả người bán ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.TRADE_PAYABLES.SHORT_TERM.SUPPLIERS_SERVICES": {"node_id":"LIABILITY.TRADE_PAYABLES.SHORT_TERM.SUPPLIERS_SERVICES","canonical_name":"Phải trả người bán và nhà cung cấp dịch vụ","match":{"exact":["Phải trả người bán và nhà cung cấp dịch vụ","2 Phải trả người bán và nhà cung cấp dịch vụ"],"aliases":[],"parent_context":["Phải trả người bán ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.DEFERRED_REVENUE.UNEARNED_COMMISSION": {"node_id":"LIABILITY.DEFERRED_REVENUE.UNEARNED_COMMISSION","canonical_name":"Doanh thu hoa hồng chưa được hưởng","match":{"exact":["Doanh thu hoa hồng chưa được hưởng"],"aliases":[],"parent_context":["Nợ ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.CURRENT.SECURITIES_TRADING_PAYABLE": {"node_id":"LIABILITY.CURRENT.SECURITIES_TRADING_PAYABLE","canonical_name":"Phải trả hoạt động giao dịch chứng khoán","match":{"exact":["Phải trả hoạt động giao dịch chứng khoán","318 Phải trả hoạt động giao dịch chứng khoán","318. Phải trả hoạt động giao dịch chứng khoán (Thuyết minh 3.11)"],"aliases":[],"parent_context":["Nợ phải trả ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.CURRENT.EMPLOYEE_BENEFIT_CONTRIBUTIONS": {"node_id":"LIABILITY.CURRENT.EMPLOYEE_BENEFIT_CONTRIBUTIONS","canonical_name":"Các khoản trích nộp phúc lợi nhân viên","match":{"exact":["Các khoản trích nộp phúc lợi nhân viên"],"aliases":[],"parent_context":["Nợ phải trả ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.CURRENT.DEPOSITS_PAYABLE_SHORT_TERM": {"node_id":"LIABILITY.CURRENT.DEPOSITS_PAYABLE_SHORT_TERM","canonical_name":"Nhận ký quỹ, ký cược ngắn hạn","match":{"exact":["Nhận ký quỹ, ký cược ngắn hạn","328 Nhận ký quỹ, ký cược ngắn hạn"],"aliases":[],"parent_context":["Nợ phải trả ngắn hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES","canonical_name":"Dự phòng nghiệp vụ bảo hiểm","match":{"exact":["Dự phòng nghiệp vụ bảo hiểm"],"aliases":[],"parent_context":["Nợ dài hạn"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.MATHEMATICAL": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.MATHEMATICAL","canonical_name":"Dự phòng toán học","match":{"exact":["Dự phòng toán học","1 Dự phòng toán học"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.UNEARNED_PREMIUM": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.UNEARNED_PREMIUM","canonical_name":"Dự phòng phí chưa được hưởng","match":{"exact":["Dự phòng phí chưa được hưởng","2 Dự phòng phí chưa được hưởng"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.CLAIMS": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.CLAIMS","canonical_name":"Dự phòng bồi thường","match":{"exact":["Dự phòng bồi thường","3 Dự phòng bồi thường"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.PROFIT_SHARING": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.PROFIT_SHARING","canonical_name":"Dự phòng chia lãi","match":{"exact":["Dự phòng chia lãi","4 Dự phòng chia lãi"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.MINIMUM_INVESTMENT_RETURN": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.MINIMUM_INVESTMENT_RETURN","canonical_name":"Dự phòng lãi cam kết đầu tư tối thiểu","match":{"exact":["Dự phòng lãi cam kết đầu tư tối thiểu","5 Dự phòng lãi cam kết đầu tư tối thiểu"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.BALANCE_EQUALIZATION": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.BALANCE_EQUALIZATION","canonical_name":"Dự phòng đảm bảo cân đối","match":{"exact":["Dự phòng đảm bảo cân đối","6 Dự phòng đảm bảo cân đối"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "LIABILITY.INSURANCE.TECHNICAL_RESERVES.CATASTROPHE": {"node_id":"LIABILITY.INSURANCE.TECHNICAL_RESERVES.CATASTROPHE","canonical_name":"Dự phòng dao động lớn","match":{"exact":["Dự phòng dao động lớn","7 Dự phòng dao động lớn"],"aliases":[],"parent_context":["Dự phòng nghiệp vụ bảo hiểm"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.FAIR_VALUE_RESERVE": {"node_id":"EQUITY.FAIR_VALUE_RESERVE","canonical_name":"Chênh lệch đánh giá tài sản theo giá trị hợp lý","match":{"exact":["Chênh lệch đánh giá tài sản theo giá trị hợp lý","412. Chênh lệch đánh giá tài sản theo giá trị hợp lý"],"aliases":[],"parent_context":["Vốn chủ sở hữu"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.FINANCIAL_RISK_RESERVE": {"node_id":"EQUITY.FINANCIAL_RISK_RESERVE","canonical_name":"Quỹ dự phòng tài chính và rủi ro nghiệp vụ","match":{"exact":["Quỹ dự phòng tài chính và rủi ro nghiệp vụ (Thuyết minh 2.22(c))"],"aliases":[],"parent_context":["Vốn chủ sở hữu"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.REALIZED_EARNINGS": {"node_id":"EQUITY.REALIZED_EARNINGS","canonical_name":"Lợi nhuận sau thuế đã thực hiện","match":{"exact":["Lợi nhuận sau thuế đã thực hiện","1 Lợi nhuận sau thuế đã thực hiện"],"aliases":[],"parent_context":["Lợi nhuận chưa phân phối"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.UNREALIZED_EARNINGS": {"node_id":"EQUITY.UNREALIZED_EARNINGS","canonical_name":"Lợi nhuận chưa thực hiện","match":{"exact":["Lợi nhuận chưa thực hiện","2 Lợi nhuận chưa thực hiện"],"aliases":[],"parent_context":["Lợi nhuận chưa phân phối"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.INSURANCE.DEVELOPMENT_FINANCIAL_RESERVE": {"node_id":"EQUITY.INSURANCE.DEVELOPMENT_FINANCIAL_RESERVE","canonical_name":"Quỹ đầu tư phát triển và dự phòng tài chính","match":{"exact":["Quỹ đầu tư phát triển và dự phòng tài chính"],"aliases":[],"parent_context":["Vốn chủ sở hữu"],"contains":[],"exclude_if_contains":[]}},
+    "EQUITY.INSURANCE.MANDATORY_RESERVE": {"node_id":"EQUITY.INSURANCE.MANDATORY_RESERVE","canonical_name":"Quỹ dự trữ bắt buộc hoạt động bảo hiểm","match":{"exact":["Quỹ dự trữ bắt buộc hoạt động bảo hiểm"],"aliases":[],"parent_context":["Vốn chủ sở hữu"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES": {"node_id":"OFF_BALANCE.SECURITIES","canonical_name":"Chỉ tiêu ngoài bảng của công ty chứng khoán","match":{"exact":["Chỉ tiêu ngoài báo cáo tình hình tài chính CTCK"],"aliases":[],"parent_context":["Các chỉ tiêu ngoài báo cáo tình hình tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS","canonical_name":"Tài sản của công ty chứng khoán và tài sản quản lý theo cam kết","match":{"exact":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN (\"CTCK\") VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT","A. TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"aliases":[],"parent_context":["Các chỉ tiêu ngoài báo cáo tình hình tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.OUTSOURCED_FIXED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.OUTSOURCED_FIXED_ASSETS","canonical_name":"Tài sản cố định thuê ngoài","match":{"exact":["001 Tài sản cố định thuê ngoài"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.FOREIGN_CURRENCY": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.FOREIGN_CURRENCY","canonical_name":"Ngoại tệ các loại","match":{"exact":["005 Ngoại tệ các loại"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.SHARES_OUTSTANDING": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.SHARES_OUTSTANDING","canonical_name":"Cổ phiếu đang lưu hành","match":{"exact":["006 Cổ phiếu đang lưu hành (số lượng)","006 Cổ phiếu đang lưu hành (cổ phiếu)"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS","canonical_name":"Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của công ty chứng khoán","match":{"exact":["008 Tài sản tài chính niêm yết đăng ký giao dịch tại Tổng Công ty Lưu ký và Bù trừ Chứng khoán Việt Nam (\"VSDC\") của CTCK","008 Tài sản tài chính niêm yết/đăng ký giao dịch tại Tổng Công ty Lưu ký và Bù trừ Chứng khoán Việt Nam (VSDC) của công ty chứng khoán"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS.FREE_TRANSFER": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS.FREE_TRANSFER","canonical_name":"Tài sản tài chính giao dịch tự do chuyển nhượng của công ty chứng khoán","match":{"exact":["Tài sản tài chính giao dịch tự do chuyển nhượng"],"aliases":[],"parent_context":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS.PENDING_SETTLEMENT": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS.PENDING_SETTLEMENT","canonical_name":"Tài sản tài chính giao dịch chờ thanh toán của công ty chứng khoán","match":{"exact":["Tài sản tài chính giao dịch chờ thanh toán"],"aliases":[],"parent_context":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS.FROZEN": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.LISTED_ASSETS.FROZEN","canonical_name":"Tài sản tài chính phong tỏa, tạm giữ của công ty chứng khoán","match":{"exact":["Tài sản tài chính phong tỏa, tạm giữ"],"aliases":[],"parent_context":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.DEPOSITED_UNTRADED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.DEPOSITED_UNTRADED_ASSETS","canonical_name":"Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của công ty chứng khoán","match":{"exact":["009 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của CTCK","009 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của công ty chứng khoán"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.PENDING_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.PENDING_ASSETS","canonical_name":"Tài sản tài chính chờ về của công ty chứng khoán","match":{"exact":["010 Tài sản tài chính chờ về của CTCK","010 Tài sản tài chính chờ về của công ty chứng khoán"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS","canonical_name":"Tài sản tài chính chưa lưu ký tại VSDC của công ty chứng khoán","match":{"exact":["012 Tài sản tài chính chưa lưu ký tại VSDC của CTCK","012 Tài sản tài chính chưa lưu ký tại VSDC của công ty chứng khoán"],"aliases":[],"parent_context":["Tài sản của công ty chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS.UNLISTED_BONDS": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS.UNLISTED_BONDS","canonical_name":"Trái phiếu không niêm yết của công ty chứng khoán","match":{"exact":["Trái phiếu không niêm yết"],"aliases":[],"parent_context":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS.DEPOSIT_CERTIFICATES": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS.DEPOSIT_CERTIFICATES","canonical_name":"Chứng chỉ tiền gửi của công ty chứng khoán","match":{"exact":["Chứng chỉ tiền gửi"],"aliases":[],"parent_context":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS.UNLISTED_EQUITIES": {"node_id":"OFF_BALANCE.SECURITIES.FIRM_ASSETS.UNDEPOSITED_ASSETS.UNLISTED_EQUITIES","canonical_name":"Cổ phiếu không niêm yết của công ty chứng khoán","match":{"exact":["Cổ phiếu không niêm yết"],"aliases":[],"parent_context":["TÀI SẢN CỦA CÔNG TY CHỨNG KHOÁN VÀ TÀI SẢN QUẢN LÝ THEO CAM KẾT"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES","canonical_name":"Tài sản và khoản phải trả về tài sản quản lý cam kết với khách hàng","match":{"exact":["TÀI SẢN VÀ CÁC KHOẢN PHẢI TRẢ VỀ TÀI SẢN QUẢN LÝ CAM KẾT VỚI KHÁCH HÀNG","TÀI SẢN VÀ CÁC KHOẢN PHẢI TRẢ VỀ TÀI SẢN QUẢN LÝ CAM KÉT VỚI KHÁCH HÀNG","TÀI SẢN VÀ CÁC KHOẢN PHẢI TRẢ VỀ TÀI SẢN QUẢN LÝ CAM KẾT VỚI KHÁCH HÀNG (tiếp theo)"],"aliases":[],"parent_context":["Các chỉ tiêu ngoài báo cáo tình hình tài chính"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS","canonical_name":"Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của nhà đầu tư","match":{"exact":["021 Tài sản tài chính niêm yết đăng ký giao dịch tại VSDC của Nhà đầu tư","021 Tài sản tài chính niêm yết/đăng ký giao dịch tại VSDC của nhà đầu tư"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.FREE_TRANSFER": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.FREE_TRANSFER","canonical_name":"Tài sản tài chính giao dịch tự do chuyển nhượng","match":{"exact":["1 Tài sản tài chính giao dịch tự do chuyển nhượng","021.1 Tài sản tài chính giao dịch tự do chuyển nhượng"],"aliases":[],"parent_context":["Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.RESTRICTED": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.RESTRICTED","canonical_name":"Tài sản tài chính hạn chế chuyển nhượng","match":{"exact":["2 Tài sản tài chính hạn chế chuyển nhượng","021.2 Tài sản tài chính hạn chế chuyển nhượng"],"aliases":[],"parent_context":["Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.PLEDGED": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.PLEDGED","canonical_name":"Tài sản tài chính giao dịch cầm cố","match":{"exact":["3 Tài sản tài chính giao dịch cầm cố","021.3 Tài sản tài chính giao dịch cầm cố"],"aliases":[],"parent_context":["Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.FROZEN": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.FROZEN","canonical_name":"Tài sản tài chính bị phong tỏa, tạm giữ","match":{"exact":["4 Tài sản tài chính bị phong tỏa, tạm giữ","4 Tài sản tài chính phong tỏa, tạm giữ","021.4 Tài sản tài chính bị phong tỏa, tạm giữ"],"aliases":[],"parent_context":["Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.PENDING_SETTLEMENT": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.LISTED_ASSETS.PENDING_SETTLEMENT","canonical_name":"Tài sản tài chính chờ thanh toán","match":{"exact":["5 Tài sản tài chính chờ thanh toán","021.5 Tài sản tài chính chờ thanh toán"],"aliases":[],"parent_context":["Tài sản tài chính niêm yết hoặc đăng ký giao dịch tại VSDC của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS","canonical_name":"Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của nhà đầu tư","match":{"exact":["022 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của Nhà đầu tư","022 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của nhà đầu tư"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.FREE_TRANSFER": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.FREE_TRANSFER","canonical_name":"Tài sản đã lưu ký chưa giao dịch, tự do chuyển nhượng","match":{"exact":["1 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, tự do chuyển nhượng","022.1 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, tự do chuyển nhượng"],"aliases":[],"parent_context":["Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.RESTRICTED": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.RESTRICTED","canonical_name":"Tài sản đã lưu ký chưa giao dịch, hạn chế chuyển nhượng","match":{"exact":["2 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, hạn chế chuyên nhượng","022.2 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, hạn chế chuyên nhượng"],"aliases":[],"parent_context":["Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.PLEDGED": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.PLEDGED","canonical_name":"Tài sản đã lưu ký chưa giao dịch, cầm cố","match":{"exact":["3 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, cắm cổ","022.3 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, cắm cổ"],"aliases":[],"parent_context":["Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.FROZEN": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DEPOSITED_UNTRADED_ASSETS.FROZEN","canonical_name":"Tài sản đã lưu ký chưa giao dịch, phong tỏa, tạm giữ","match":{"exact":["4 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, phong tỏa, tạm giữ","022.4 Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch, phong tỏa, tạm giữ"],"aliases":[],"parent_context":["Tài sản tài chính đã lưu ký tại VSDC và chưa giao dịch của nhà đầu tư"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.PENDING_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.PENDING_ASSETS","canonical_name":"Tài sản tài chính chờ về của nhà đầu tư","match":{"exact":["023 Tài sản tài chính chờ về của Nhà đầu tư","023 Tài sản tài chính chờ về của nhà đầu tư"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.UNDEPOSITED_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.UNDEPOSITED_ASSETS","canonical_name":"Tài sản tài chính chưa lưu ký tại VSDC của nhà đầu tư","match":{"exact":["024b Tài sản tài chính chưa lưu ký tại VSDC của nhà đầu tư"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.ENTITLEMENT_ASSETS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.ENTITLEMENT_ASSETS","canonical_name":"Tài sản tài chính được hưởng quyền của nhà đầu tư","match":{"exact":["025 Tài sản tài chính được hưởng quyền của Nhà đầu tư","025 Tài sản tài chính được hưởng quyền của nhà đầu tư"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CUSTOMER_DEPOSITS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CUSTOMER_DEPOSITS","canonical_name":"Tiền gửi của khách hàng","match":{"exact":["026 Tiền gửi của khách hàng"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.TRADING_DEPOSITS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.TRADING_DEPOSITS","canonical_name":"Tiền gửi của nhà đầu tư về giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý","match":{"exact":["027 Tiền gửi của nhà đầu tư về giao dịch chứng khoán theo phương thức CTCK quản lý","027 Tiền gửi của nhà đầu tư về giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.AGGREGATED_TRADING_DEPOSITS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.AGGREGATED_TRADING_DEPOSITS","canonical_name":"Tiền gửi tổng hợp giao dịch chứng khoán cho khách hàng","match":{"exact":["028 Tiền gửi tổng hợp giao dịch chứng khoán cho khách hàng"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CLEARING_DEPOSITS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CLEARING_DEPOSITS","canonical_name":"Tiền gửi bù trừ và thanh toán giao dịch chứng khoán","match":{"exact":["029 Tiền gửi bù trừ và thanh toán giao dịch chứng khoán"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CLEARING_DEPOSITS.DOMESTIC": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CLEARING_DEPOSITS.DOMESTIC","canonical_name":"Tiền gửi bù trừ và thanh toán giao dịch chứng khoán nhà đầu tư trong nước","match":{"exact":["029.1 Tiền gửi bù trừ và thanh toán giao dịch chứng khoán nhà đầu tư trong nước"],"aliases":[],"parent_context":["Tiền gửi bù trừ và thanh toán giao dịch chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CLEARING_DEPOSITS.FOREIGN": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.CLEARING_DEPOSITS.FOREIGN","canonical_name":"Tiền gửi bù trừ và thanh toán giao dịch chứng khoán nhà đầu tư nước ngoài","match":{"exact":["029.2 Tiền gửi bù trừ và thanh toán giao dịch chứng khoán nhà đầu tư nước ngoài"],"aliases":[],"parent_context":["Tiền gửi bù trừ và thanh toán giao dịch chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.ISSUER_DEPOSITS": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.ISSUER_DEPOSITS","canonical_name":"Tiền gửi của tổ chức phát hành chứng khoán","match":{"exact":["030 Tiền gửi của tổ chức phát hành chứng khoán"],"aliases":[],"parent_context":["Tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.INVESTOR_PAYABLES": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.INVESTOR_PAYABLES","canonical_name":"Phải trả nhà đầu tư về tiền gửi giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý","match":{"exact":["031 Phải trả nhà đầu tư về tiền gửi giao dịch chứng khoán theo phương thức CTCK quản lý","031 Phải trả nhà đầu tư về tiền gửi giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý"],"aliases":[],"parent_context":["Khoản phải trả về tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.INVESTOR_PAYABLES.DOMESTIC": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.INVESTOR_PAYABLES.DOMESTIC","canonical_name":"Phải trả nhà đầu tư trong nước về tiền gửi giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý","match":{"exact":["031.1 Phải trả nhà đầu tư trong nước về tiền gửi giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý"],"aliases":[],"parent_context":["Phải trả nhà đầu tư về tiền gửi giao dịch chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.INVESTOR_PAYABLES.FOREIGN": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.INVESTOR_PAYABLES.FOREIGN","canonical_name":"Phải trả nhà đầu tư nước ngoài về tiền gửi giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý","match":{"exact":["031.2 Phải trả nhà đầu tư nước ngoài về tiền gửi giao dịch chứng khoán theo phương thức công ty chứng khoán quản lý"],"aliases":[],"parent_context":["Phải trả nhà đầu tư về tiền gửi giao dịch chứng khoán"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DIVIDENDS_BONDS_PAYABLE": {"node_id":"OFF_BALANCE.SECURITIES.CLIENT_ASSETS_AND_PAYABLES.DIVIDENDS_BONDS_PAYABLE","canonical_name":"Phải trả cổ tức, gốc và lãi trái phiếu","match":{"exact":["035 Phải trả cổ tức, gốc và lãi trái phiếu"],"aliases":[],"parent_context":["Khoản phải trả về tài sản quản lý cam kết với khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.CUSTOMER_LOANS.NET": {"node_id":"ASSET.CUSTOMER_LOANS.NET","canonical_name":"Cho vay khách hàng sau dự phòng rủi ro","match":{"exact":["Tổng cho vay khách hàng"],"aliases":[],"parent_context":["Cho vay khách hàng"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.INVENTORY.NET": {"node_id":"ASSET.INVENTORY.NET","canonical_name":"Hàng tồn kho sau dự phòng giảm giá","match":{"exact":["140 IV. Hàng tồn kho","Hàng tồn kho (IV)"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_RECEIVE": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP_RECEIVE","canonical_name":"Cam kết nhận theo giao dịch hoán đổi tiền tệ","match":{"exact":["Cam kết nhận - giao dịch hoán đổi tiền tệ"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_PAY": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP_PAY","canonical_name":"Cam kết trả theo giao dịch hoán đổi tiền tệ","match":{"exact":["Cam kết trả - giao dịch hoán đổi tiền tệ"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP.CROSS_CURRENCY": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP.CROSS_CURRENCY","canonical_name":"Cam kết hoán đổi tiền tệ chéo","match":{"exact":[],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP.CROSS_CURRENCY.FOREIGN_CURRENCY": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP.CROSS_CURRENCY.FOREIGN_CURRENCY","canonical_name":"Cam kết hoán đổi tiền tệ chéo bằng ngoại tệ","match":{"exact":["Cam kết hoán đổi tiền tệ chéo bằng ngoại tệ"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP.CROSS_CURRENCY.VND": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP.CROSS_CURRENCY.VND","canonical_name":"Cam kết hoán đổi tiền tệ chéo bằng VND","match":{"exact":["Cam kết hoán đổi tiền tệ chéo bằng VND"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP.INTEREST_RATE": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP.INTEREST_RATE","canonical_name":"Cam kết hoán đổi lãi suất","match":{"exact":[],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP.INTEREST_RATE.FOREIGN_CURRENCY": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP.INTEREST_RATE.FOREIGN_CURRENCY","canonical_name":"Cam kết hoán đổi lãi suất bằng ngoại tệ","match":{"exact":["Cam kết hoán đổi lãi suất bằng ngoại tệ"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP.INTEREST_RATE.VND": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.SWAP.INTEREST_RATE.VND","canonical_name":"Cam kết hoán đổi lãi suất bằng VND","match":{"exact":["Cam kết hoán đổi lãi suất bằng VND"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.OTHER_COMMITMENTS.FORWARD_SECURITIES": {"node_id":"OFF_BALANCE.OTHER_COMMITMENTS.FORWARD_SECURITIES","canonical_name":"Cam kết kỳ hạn giấy tờ có giá","match":{"exact":["Cam kết kỳ hạn giấy tờ có giá"],"aliases":[],"parent_context":[],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIN_INV.ASSOC_JV.JOINT_VENTURES": {"node_id":"ASSET.FIN_INV.ASSOC_JV.JOINT_VENTURES","canonical_name":"Vốn góp liên doanh","match":{"exact":["Vốn góp liên doanh"],"aliases":["Đầu tư vào công ty liên doanh"],"parent_context":["Góp vốn, đầu tư dài hạn","Góp vốn đầu tư dài hạn"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIN_INV.ASSOC_JV.ASSOCIATES": {"node_id":"ASSET.FIN_INV.ASSOC_JV.ASSOCIATES","canonical_name":"Đầu tư vào công ty liên kết","match":{"exact":["Đầu tư vào công ty liên kết"],"aliases":["Đầu tư vào các công ty liên kết"],"parent_context":["Góp vốn, đầu tư dài hạn","Góp vốn đầu tư dài hạn"],"contains":[],"exclude_if_contains":[]}},
+    "OFF_BALANCE.FX_COMMITMENTS.FUTURE_TRANSACTIONS": {"node_id":"OFF_BALANCE.FX_COMMITMENTS.FUTURE_TRANSACTIONS","canonical_name":"Cam kết giao dịch tương lai","match":{"exact":["Cam kết giao dịch tương lai"],"aliases":[],"parent_context":["Cam kết giao dịch hối đoái"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIXED_ASSETS.TANGIBLE.NET_BOOK_VALUE": {"node_id":"ASSET.FIXED_ASSETS.TANGIBLE.NET_BOOK_VALUE","canonical_name":"Giá trị còn lại tài sản cố định hữu hình","match":{"exact":["Giá trị còn lại"],"aliases":[],"parent_context":["Tài sản cố định hữu hình"],"contains":[],"exclude_if_contains":[]}},
+    "ASSET.FIXED_ASSETS.INTANGIBLE.NET_BOOK_VALUE": {"node_id":"ASSET.FIXED_ASSETS.INTANGIBLE.NET_BOOK_VALUE","canonical_name":"Giá trị còn lại tài sản cố định vô hình","match":{"exact":["Giá trị còn lại"],"aliases":[],"parent_context":["Tài sản cố định vô hình"],"contains":[],"exclude_if_contains":[]}}
+  }
+}

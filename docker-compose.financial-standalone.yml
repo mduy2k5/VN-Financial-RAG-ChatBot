@@ -1,0 +1,200 @@
+name: financial-rag-standalone
+
+# Combined with financial-models, all service limits total 10 CPUs / 4032 MiB.
+# This is about 52% of this Docker host (20 CPUs / ~7.57 GiB RAM).
+# memswap_limit equals mem_limit to prevent extra swap usage beyond this budget.
+services:
+  financial-mongodb:
+    image: mongo:8.0.32
+    cpus: 1.0
+    mem_limit: 512m
+    memswap_limit: 512m
+    container_name: financial-rag-mongodb
+    command: ["mongod", "--replSet", "financial-rs", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.25"]
+    ports:
+      - "127.0.0.1:${FINANCIAL_MONGO_HOST_PORT:-27019}:27017"
+    networks:
+      - financial-rag-network
+    volumes:
+      - financial-mongo-data:/data/db
+    healthcheck:
+      # TCP liveness avoids a Node/mongosh process under the 512 MiB ceiling.
+      # The store and API readiness separately verify a writable replica set.
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/27017'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  financial-mongo-init:
+    image: mongo:8.0.32
+    cpus: 0.25
+    mem_limit: 256m
+    memswap_limit: 256m
+    container_name: financial-rag-mongo-init
+    entrypoint: ["mongosh", "mongodb://financial-mongodb:27017/admin", "--quiet", "--file", "/mongo-rs-init.js"]
+    networks:
+      - financial-rag-network
+    volumes:
+      - ./financial_python/docker/mongo-rs-init.js:/mongo-rs-init.js:ro
+    depends_on:
+      financial-mongodb:
+        condition: service_healthy
+    restart: "no"
+
+  financial-qdrant:
+    image: qdrant/qdrant:v1.19.1
+    cpus: 1.0
+    mem_limit: 256m
+    memswap_limit: 256m
+    container_name: financial-rag-qdrant
+    networks:
+      - financial-rag-network
+    volumes:
+      - financial-qdrant-data:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/6333'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  financial-rag:
+    cpus: 2.0
+    mem_limit: 512m
+    memswap_limit: 512m
+    build:
+      context: ./financial_python
+      dockerfile: Dockerfile
+    container_name: financial-rag-standalone
+    networks:
+      - financial-rag-network
+    depends_on:
+      financial-mongo-init:
+        condition: service_completed_successfully
+      financial-qdrant:
+        condition: service_healthy
+    ports:
+      - "${FINANCIAL_BIND_ADDRESS:-127.0.0.1}:${FINANCIAL_HOST_PORT:-8092}:8090"
+    environment: &financial-environment
+      - FINANCIAL_STORAGE_BACKEND=mongo_qdrant
+      - MONGODB_URI=mongodb://financial-mongodb:27017/?replicaSet=financial-rs
+      - FINANCIAL_MONGO_DATABASE=financial_rag
+      - QDRANT_URL=http://financial-qdrant:6333
+      - FINANCIAL_SCHEMA_DIR=/app/schemas
+      - FINANCIAL_ENABLE_DENSE=${FINANCIAL_ENABLE_DENSE:-false}
+      - FINANCIAL_DENSE_SEARCH_BACKEND=${FINANCIAL_DENSE_SEARCH_BACKEND:-qdrant}
+      - FINANCIAL_SCOPED_RUNTIME=${FINANCIAL_SCOPED_RUNTIME:-true}
+      - FINANCIAL_SCOPE_CACHE_CHUNKS=${FINANCIAL_SCOPE_CACHE_CHUNKS:-20000}
+      - FINANCIAL_REQUEST_MAX_CHUNKS=${FINANCIAL_REQUEST_MAX_CHUNKS:-30000}
+      - FINANCIAL_SPARSE_INDEX_DIR=/sparse-index
+      - FINANCIAL_BM25_CACHE_SCOPES=${FINANCIAL_BM25_CACHE_SCOPES:-8}
+      - FINANCIAL_BM25_CACHE_CHUNKS=${FINANCIAL_BM25_CACHE_CHUNKS:-20000}
+      - FINANCIAL_LOAD_SAMPLE_DATA=false
+      - OLLAMA_URL=${OLLAMA_URL:-http://host.docker.internal:11434}
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-qwen3.5:4b}
+      - FINANCIAL_FILTER_MODEL=${FINANCIAL_FILTER_MODEL:-}
+      - OLLAMA_TIMEOUT_SECONDS=${OLLAMA_TIMEOUT_SECONDS:-90}
+      - OLLAMA_NUM_PREDICT=${OLLAMA_NUM_PREDICT:-256}
+      - OLLAMA_NUM_CTX=${OLLAMA_NUM_CTX:-4096}
+      - NOTEBOOK_READER_TOKEN_BUDGET=${NOTEBOOK_READER_TOKEN_BUDGET:-16000}
+      - FINANCIAL_EMBEDDING_URL=${FINANCIAL_EMBEDDING_URL:-http://host.docker.internal:11434}
+      - FINANCIAL_EMBEDDING_MODEL=${FINANCIAL_EMBEDDING_MODEL:-qllama/multilingual-e5-large:q4_k_m}
+      - FINANCIAL_INGEST_STAGE_DB=/ingest-stages/stages.sqlite3
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./schemas:/app/schemas:ro
+      - financial-sparse-index:/sparse-index
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8090/health/ready"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  financial-rag-worker:
+    cpus: 1.0
+    mem_limit: 256m
+    memswap_limit: 256m
+    build:
+      context: ./financial_python
+      dockerfile: Dockerfile
+    container_name: financial-rag-worker
+    command: ["python", "-m", "financial_rag.storage.ingest_worker"]
+    environment: *financial-environment
+    networks:
+      - financial-rag-network
+    volumes:
+      - ./schemas:/app/schemas:ro
+      - financial-sparse-index:/sparse-index
+      - financial-ingest-stages:/ingest-stages
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      financial-mongo-init:
+        condition: service_completed_successfully
+      financial-qdrant:
+        condition: service_healthy
+    restart: unless-stopped
+
+  financial-rag-migrate:
+    profiles: ["migration"]
+    cpus: 0.5
+    mem_limit: 128m
+    memswap_limit: 128m
+    build:
+      context: ./financial_python
+      dockerfile: Dockerfile
+    networks:
+      - financial-rag-network
+    environment:
+      - MONGODB_URI=mongodb://financial-mongodb:27017/?replicaSet=financial-rs
+      - FINANCIAL_MONGO_DATABASE=financial_rag
+      - QDRANT_URL=http://financial-qdrant:6333
+    volumes:
+      # SQLite WAL may need to create its shared-memory sidecar; the migration
+      # code itself opens both database files in read-only mode.
+      - financial-rag-data:/legacy-data
+    command:
+      ["python", "-m", "financial_rag.storage.migrate_sqlite_to_mongo_qdrant", "--legacy-data-dir", "/legacy-data"]
+    depends_on:
+      financial-mongo-init:
+        condition: service_completed_successfully
+      financial-qdrant:
+        condition: service_healthy
+
+  financial-rag-ui:
+    cpus: 0.25
+    mem_limit: 64m
+    memswap_limit: 64m
+    build:
+      context: ./financial_ui
+      dockerfile: Dockerfile
+    container_name: financial-rag-ui-standalone
+    networks:
+      - financial-rag-network
+    ports:
+      - "${FINANCIAL_UI_BIND_ADDRESS:-127.0.0.1}:${FINANCIAL_UI_HOST_PORT:-8093}:80"
+    depends_on:
+      financial-rag:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  financial-ingest-stages:
+  financial-sparse-index:
+  financial-rag-data:
+    external: true
+    name: vn-financial-understanding_financial-rag-data
+  financial-mongo-data:
+    name: vn-financial-understanding_financial-mongo-data
+  financial-qdrant-data:
+    name: vn-financial-understanding_financial-qdrant-data
+
+networks:
+  financial-rag-network:
+    name: financial-rag-standalone-network

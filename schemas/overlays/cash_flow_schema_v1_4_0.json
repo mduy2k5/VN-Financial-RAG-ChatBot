@@ -1,0 +1,399 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_CASH_FLOW_V1@1.4.0",
+  "base_schema": "cash_flow_schema_v1_3_0.json",
+  "schema_id": "UNIVERSAL_CASH_FLOW_V1",
+  "schema_version": "1.4.0",
+  "node_updates": {
+    "CASHFLOW.SECURITIES.INDIRECT.ADJUSTMENTS_TOTAL": {
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.DEPRECIATION",
+        "CASHFLOW.SECURITIES.INDIRECT.PROVISIONS",
+        "CASHFLOW.SECURITIES.INDIRECT.UNREALIZED_FX",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ACCRUED_PAYABLES_PREPAID",
+        "CASHFLOW.SECURITIES.INDIRECT.INVESTING_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.ACCRUED_INTEREST",
+        "CASHFLOW.SECURITIES.INDIRECT.OTHER_ADJUSTMENTS"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES": {
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_LOSS",
+        "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES_FINANCIAL_LIABILITIES",
+        "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES_DERIVATIVES",
+        "CASHFLOW.SECURITIES.INDIRECT.AFS_DISPOSAL_LOSS",
+        "CASHFLOW.SECURITIES.INDIRECT.AFS_IMPAIRMENT_LOSS",
+        "CASHFLOW.SECURITIES.INDIRECT.HEDGING_DERIVATIVE_LOSS",
+        "CASHFLOW.SECURITIES.INDIRECT.PPE_DISPOSAL_LOSS",
+        "CASHFLOW.SECURITIES.INDIRECT.PPE_IMPAIRMENT_LOSS",
+        "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENT_DISPOSAL_LOSS"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION": {
+      "form_code": "20",
+      "form_code_variants": ["18", "20"],
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.FINANCIAL_LIABILITY_REVALUATION_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.AFS_DISPOSAL_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.AFS_IMPAIRMENT_REVERSAL",
+        "CASHFLOW.SECURITIES.INDIRECT.HEDGING_DERIVATIVE_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.LOAN_RECEIVABLE_DISPOSAL_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.PROVISION_REVERSAL",
+        "CASHFLOW.SECURITIES.INDIRECT.PPE_INVESTMENT_PROPERTY_DISPOSAL_GAIN",
+        "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENT_DISPOSAL_GAIN"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_GAIN": {
+      "form_code": "21",
+      "form_code_variants": ["19", "21"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE": {
+      "form_code": "42",
+      "form_code_variants": ["30", "42"],
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_FVTPL",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_HTM",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_LOANS",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_AFS",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_ASSETS",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_RECEIVABLES",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_FINANCIAL_LIABILITIES",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_BORROWED_FINANCIAL_ASSETS",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_CONVERTIBLE_BONDS",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ISSUED_BONDS",
+        "CASHFLOW.SECURITIES.INDIRECT.CHANGE_SETTLEMENT_FUND_BORROWINGS"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_ASSETS": {
+      "form_code": "35",
+      "form_code_variants": ["35", "40"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_RECEIVABLE_SECURITIES": {
+      "form_code_variants": ["35", "43"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_DIVIDEND_INTEREST_RECEIVABLE": {
+      "form_code_variants": ["36", "44"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_SERVICE_RECEIVABLES": {
+      "form_code_variants": ["37", "45"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_RECEIVABLES": {
+      "form_code": "47",
+      "form_code_variants": ["39", "47"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_TRADE_PAYABLES": {
+      "form_code": "48",
+      "form_code_variants": ["45", "48"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_TAX_PAYABLES": {
+      "form_code": "50",
+      "form_code_variants": ["47", "50"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_PAYABLES": {
+      "form_code": "51",
+      "form_code_variants": ["50", "51"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.INCOME_TAX_PAID": {
+      "form_code": "52",
+      "form_code_variants": ["43", "52"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.OTHER_OPERATING_RECEIPTS": {
+      "form_code": "53",
+      "form_code_variants": ["51", "53"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.OTHER_OPERATING_PAYMENTS": {
+      "form_code": "54",
+      "form_code_variants": ["52", "54"]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED": {
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED_SETTLEMENT_FUND",
+        "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED_OTHER"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID": {
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_SETTLEMENT_FUND",
+        "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_FINANCIAL_ASSETS",
+        "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_OTHER"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING": {
+      "form_code_variants": ["101", "102"],
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING_CASH",
+        "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING_EQUIVALENTS",
+        "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING",
+        "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING_OPERATING",
+        "CASHFLOW.SECURITIES.INDIRECT.CASH_EQUIVALENTS_BEGINNING",
+        "CASHFLOW.SECURITIES.INDIRECT.FX_EFFECT_BEGINNING"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING": {
+      "children": [
+        "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING_CASH",
+        "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING",
+        "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING_OPERATING",
+        "CASHFLOW.SECURITIES.INDIRECT.CASH_EQUIVALENTS_ENDING",
+        "CASHFLOW.SECURITIES.INDIRECT.FX_EFFECT_ENDING"
+      ]
+    }
+  },
+  "nodes_add": [
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.UNREALIZED_FX",
+      "canonical_name": "Lãi/lỗ chênh lệch tỷ giá hối đoái chưa thực hiện",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "05"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ACCRUED_PAYABLES_PREPAID",
+      "canonical_name": "Chi phí phải trả, chi phí trả trước",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "06"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.OTHER_ADJUSTMENTS",
+      "canonical_name": "Các khoản điều chỉnh khác",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "09"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES_FINANCIAL_LIABILITIES",
+      "canonical_name": "Lỗ đánh giá giá trị các công nợ tài chính ghi nhận thông qua kết quả kinh doanh",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "12"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES_DERIVATIVES",
+      "canonical_name": "Lỗ đánh giá giá trị các công cụ tài chính phái sinh",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "13"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.AFS_DISPOSAL_LOSS",
+      "canonical_name": "Lỗ từ thanh lý các tài sản tài chính sẵn sàng để bán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "14"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.AFS_IMPAIRMENT_LOSS",
+      "canonical_name": "Suy giảm giá trị của các tài sản tài chính sẵn sàng để bán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "15"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.HEDGING_DERIVATIVE_LOSS",
+      "canonical_name": "Lỗ đánh giá giá trị các công cụ tài chính phái sinh cho mục đích phòng ngừa rủi ro",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "16"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PPE_DISPOSAL_LOSS",
+      "canonical_name": "Lỗ từ thanh lý tài sản cố định",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "17"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PPE_IMPAIRMENT_LOSS",
+      "canonical_name": "Suy giảm giá trị của các tài sản cố định",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "18"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENT_DISPOSAL_LOSS",
+      "canonical_name": "Lỗ từ thanh lý các khoản đầu tư vào công ty con và công ty liên doanh, liên kết",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "19"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.FINANCIAL_LIABILITY_REVALUATION_GAIN",
+      "canonical_name": "Lãi đánh giá giá trị các công nợ tài chính thông qua kết quả kinh doanh",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "22"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.AFS_DISPOSAL_GAIN",
+      "canonical_name": "Lãi từ thanh lý các tài sản tài chính sẵn sàng để bán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "23"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.AFS_IMPAIRMENT_REVERSAL",
+      "canonical_name": "Hoàn nhập suy giảm giá trị của các tài sản tài chính sẵn sàng để bán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "24"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.HEDGING_DERIVATIVE_GAIN",
+      "canonical_name": "Lãi đánh giá giá trị các công cụ tài chính phái sinh cho mục đích phòng ngừa",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "25"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.LOAN_RECEIVABLE_DISPOSAL_GAIN",
+      "canonical_name": "Lãi từ thanh lý các khoản cho vay và phải thu",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "26"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PROVISION_REVERSAL",
+      "canonical_name": "Hoàn nhập chi phí dự phòng",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "27"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.PPE_INVESTMENT_PROPERTY_DISPOSAL_GAIN",
+      "canonical_name": "Lãi từ thanh lý tài sản cố định, BĐSĐT",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "28"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENT_DISPOSAL_GAIN",
+      "canonical_name": "Lãi từ thanh lý các khoản đầu tư vào công ty con và công ty liên doanh, liên kết",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "29"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_FINANCIAL_LIABILITIES",
+      "canonical_name": "Tăng (giảm) vay và nợ thuê tài sản tài chính",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "37"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_BORROWED_FINANCIAL_ASSETS",
+      "canonical_name": "Tăng (giảm) vay tài sản tài chính",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "38"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_CONVERTIBLE_BONDS",
+      "canonical_name": "Tăng (giảm) Trái phiếu chuyển đổi - Cấu phần nợ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "39"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ISSUED_BONDS",
+      "canonical_name": "Tăng (giảm) Trái phiếu phát hành",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "40"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_SETTLEMENT_FUND_BORROWINGS",
+      "canonical_name": "Tăng (giảm) vay Quỹ Hỗ trợ thanh toán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "41"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ERROR_RECEIVABLES",
+      "canonical_name": "Tăng (giảm) các khoản phải thu về lỗi giao dịch chứng khoán",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "46"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ISSUER_PAYABLES",
+      "canonical_name": "Tăng (giảm) phải trả Tổ chức phát hành chứng khoán",
+      "sector": "securities", "method": "indirect", "section": "operating", "form_code": "49"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENTS",
+      "canonical_name": "Tiền chi đầu tư vốn vào công ty con, công ty liên doanh, liên kết và đầu tư khác",
+      "sector": "securities", "method": "indirect", "section": "investing", "form_code": "63"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.EQUITY_DIVESTMENTS",
+      "canonical_name": "Tiền thu hồi đầu tư góp vốn vào công ty con, công ty liên doanh, liên kết và đầu tư khác",
+      "sector": "securities", "method": "indirect", "section": "investing", "form_code": "64"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CAPITAL_REPAYMENT",
+      "canonical_name": "Tiền chi trả vốn góp cho chủ sở hữu, mua lại cổ phiếu quỹ",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "72"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED_SETTLEMENT_FUND",
+      "canonical_name": "Tiền vay Quỹ Hỗ trợ thanh toán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "73.1"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED_OTHER",
+      "canonical_name": "Tiền vay khác",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "73.2"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_SETTLEMENT_FUND",
+      "canonical_name": "Tiền chi trả gốc vay Quỹ Hỗ trợ thanh toán",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "74.1"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_FINANCIAL_ASSETS",
+      "canonical_name": "Tiền chi trả gốc vay tài sản tài chính",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "74.2"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_OTHER",
+      "canonical_name": "Tiền chi trả gốc nợ vay khác",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "74.3"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.FINANCE_LEASE_REPAID",
+      "canonical_name": "Tiền chi trả nợ thuê tài chính",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "75"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.DIVIDENDS_PAID",
+      "canonical_name": "Cổ tức, lợi nhuận đã trả cho chủ sở hữu",
+      "sector": "securities", "method": "indirect", "section": "financing", "form_code": "76"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING",
+      "canonical_name": "Tiền gửi ngân hàng đầu kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "102"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING_OPERATING",
+      "canonical_name": "Tiền gửi ngân hàng cho hoạt động CTCK đầu kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "102.1"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_EQUIVALENTS_BEGINNING",
+      "canonical_name": "Các khoản tương đương tiền đầu kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "102.2"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.FX_EFFECT_BEGINNING",
+      "canonical_name": "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ đầu kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_BEGINNING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "102.3"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING",
+      "canonical_name": "Tiền gửi ngân hàng cuối kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "104"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING_OPERATING",
+      "canonical_name": "Tiền gửi ngân hàng cho hoạt động CTCK cuối kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "104.1"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_EQUIVALENTS_ENDING",
+      "canonical_name": "Các khoản tương đương tiền cuối kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "104.2"
+    },
+    {
+      "node_id": "CASHFLOW.SECURITIES.INDIRECT.FX_EFFECT_ENDING",
+      "canonical_name": "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ cuối kỳ",
+      "parent_id": "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING",
+      "sector": "securities", "method": "indirect", "section": "reconciliation", "form_code": "104.4"
+    }
+  ]
+}

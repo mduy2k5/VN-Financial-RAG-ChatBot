@@ -1,0 +1,68 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.7.0",
+  "base_aliases": "../financial_position_aliases.json",
+  "alias_schema_version": "1.7.0",
+  "target_schema": "UNIVERSAL_FINANCIAL_POSITION_V1@1.7.0",
+  "entries_update": {
+    "ASSET.OTHER.PREPAID_EXPENSE.LONG_TERM": {
+      "match": {
+        "parent_context_add": [
+          "Tài sản dài hạn khác"
+        ]
+      }
+    }
+  },
+  "entries_add": {
+    "ASSET.OTHER.NON_CURRENT.PLEDGED_LONG_TERM": {
+      "node_id": "ASSET.OTHER.NON_CURRENT.PLEDGED_LONG_TERM",
+      "canonical_name": "Cầm cố, thế chấp, ký quỹ, ký cược dài hạn",
+      "match": {
+        "exact": [
+          "Cầm cố, thế chấp, ký quỹ, ký cược dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản dài hạn khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.NON_CURRENT.PAYMENT_SUPPORT_FUND": {
+      "node_id": "ASSET.OTHER.NON_CURRENT.PAYMENT_SUPPORT_FUND",
+      "canonical_name": "Tiền nộp Quỹ Hỗ trợ thanh toán",
+      "match": {
+        "exact": [
+          "Tiền nộp Quỹ Hỗ trợ thanh toán"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản dài hạn khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.NON_CURRENT.OTHER": {
+      "node_id": "ASSET.OTHER.NON_CURRENT.OTHER",
+      "canonical_name": "Tài sản dài hạn khác",
+      "match": {
+        "exact": [
+          "Tài sản dài hạn khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản dài hạn khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 230,
+          "penalty_without_repeated_parent": 260
+        }
+      }
+    }
+  }
+}

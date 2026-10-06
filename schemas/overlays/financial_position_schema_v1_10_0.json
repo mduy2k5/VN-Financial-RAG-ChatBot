@@ -1,0 +1,36 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.10.0",
+  "base_schema": "financial_position_schema_v1_9_0.json",
+  "schema_id": "UNIVERSAL_FINANCIAL_POSITION_V1",
+  "schema_version": "1.10.0",
+  "node_updates": {
+    "EQUITY.CONSTRUCTION_CAPITAL": {
+      "sector": "common"
+    },
+    "LIABILITY.OTHER": {
+      "children": [
+        "LIABILITY.OTHER_PAYABLES",
+        "LIABILITY.ACCRUED_INTEREST_FEES",
+        "LIABILITY.OTHER.CONTINGENT_RISK_PROVISIONS"
+      ]
+    }
+  },
+  "nodes_add": [
+    {
+      "node_id": "LIABILITY.OTHER.CONTINGENT_RISK_PROVISIONS",
+      "canonical_name": "Dự phòng rủi ro khác (Dự phòng cho công nợ tiềm ẩn)",
+      "parent_id": "LIABILITY.OTHER",
+      "kind": "line",
+      "sector": "bank",
+      "children": [],
+      "value": {
+        "current": null,
+        "previous": null,
+        "additional": null,
+        "note": null,
+        "raw_text": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,1022 @@
+{
+  "alias_type": "notes",
+  "alias_schema_version": "ENTERPRISE_NOTES_ALIASES_V1@1.0.0",
+  "profile": "enterprise_v1",
+  "target_ir_schema": "GENERIC_NOTE_IR_V1",
+  "description": "Optional aliases for enterprise B09/DN disclosures under TT200. Aliases annotate the source tree and never replace raw rows or matrices.",
+  "source_templates": [
+    "docs/template/BCTC-B-01–DN.doc",
+    "docs/template/BCTC-B-02–DN.doc",
+    "docs/template/BCTC-B-03–DN.doc",
+    "docs/template/BCTC-B-09–DN.doc"
+  ],
+  "matching_policy": {
+    "section": "note_id_and_title_exact_then_title_base_then_unique_id",
+    "row": "section_scoped_exact_label",
+    "fuzzy_matching": false,
+    "continuation_title_allowed": true,
+    "parent_context_required_when_declared": true,
+    "reused_note_number_requires_title": true
+  },
+  "unmatched_policy": {
+    "status": "unmapped",
+    "storage_mode": "raw_tree",
+    "preserve": [
+      "section_id",
+      "section_title",
+      "block_form",
+      "headers_raw",
+      "dimensions",
+      "row_label_raw",
+      "hierarchy_path",
+      "values_in_source_order",
+      "raw_cells",
+      "source_line",
+      "source_column"
+    ]
+  },
+  "multi_column_policy": {
+    "storage_mode": "raw_matrix",
+    "preserve_headers": true,
+    "preserve_empty_cells": true,
+    "preserve_source_column": true,
+    "preserve_value_order": true,
+    "allow_unbounded_rows": true,
+    "semantic_mapping_is_optional": true
+  },
+  "sections": [
+    {
+      "alias_id": "ENTERPRISE.GROUP.I",
+      "canonical_name": "Đặc điểm hoạt động của doanh nghiệp",
+      "note_ids": ["I"],
+      "titles": ["Đặc điểm hoạt động của doanh nghiệp"],
+      "title_aliases": ["Đặc điểm hoạt động", "Thông tin khái quát", "Thông tin công ty", "Thông tin về công ty"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.II",
+      "canonical_name": "Kỳ kế toán, đơn vị tiền tệ sử dụng trong kế toán",
+      "note_ids": ["II"],
+      "titles": ["Kỳ kế toán, đơn vị tiền tệ sử dụng trong kế toán"],
+      "title_aliases": ["Năm tài chính, đơn vị tiền tệ sử dụng trong kế toán", "Kỳ kế toán và đơn vị tiền tệ kế toán", "Kỳ kế toán"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.III",
+      "canonical_name": "Chuẩn mực và Chế độ kế toán áp dụng",
+      "note_ids": ["III"],
+      "titles": ["Chuẩn mực và Chế độ kế toán áp dụng"],
+      "title_aliases": ["Chuẩn mực kế toán và hệ thống kế toán", "Chuẩn mực và chế độ kế toán áp dụng", "Chế độ và chính sách kế toán áp dụng tại công ty"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.IV",
+      "canonical_name": "Các chính sách kế toán áp dụng",
+      "note_ids": ["IV"],
+      "titles": ["Các chính sách kế toán áp dụng"],
+      "title_aliases": ["Tóm tắt các chính sách kế toán chủ yếu", "Tóm tắt những chính sách kế toán chủ yếu", "Chính sách kế toán"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.V",
+      "canonical_name": "Thông tin bổ sung cho các khoản mục trình bày trong Bảng cân đối kế toán",
+      "note_ids": ["V"],
+      "titles": ["Thông tin bổ sung cho các khoản mục trình bày trong Bảng cân đối kế toán"],
+      "title_aliases": ["Thông tin bổ sung cho các khoản mục trình bày trong Bảng cân đối kế toán hợp nhất", "Thông tin bổ sung cho các khoản mục trình bày trong bảng cân đối kế toán hợp nhất", "Thông tin bổ sung về các khoản mục trong bảng cân đối kế toán hợp nhất"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.VI",
+      "canonical_name": "Thông tin bổ sung cho các khoản mục trình bày trong Báo cáo kết quả hoạt động kinh doanh",
+      "note_ids": ["VI"],
+      "titles": ["Thông tin bổ sung cho các khoản mục trình bày trong Báo cáo kết quả hoạt động kinh doanh"],
+      "title_aliases": ["Thông tin bổ sung cho các khoản mục trình bày trong Báo cáo kết quả hoạt động kinh doanh hợp nhất", "Thông tin bổ sung cho các khoản mục trình bày trên báo cáo kết quả hoạt động kinh doanh hợp nhất", "Thông tin bổ sung cho các khoản mục trình bày trong báo cáo kết quả hoạt động"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.VII",
+      "canonical_name": "Thông tin bổ sung cho các khoản mục trình bày trong Báo cáo lưu chuyển tiền tệ",
+      "note_ids": ["VII"],
+      "titles": ["Thông tin bổ sung cho các khoản mục trình bày trong Báo cáo lưu chuyển tiền tệ"],
+      "title_aliases": ["Thông tin bổ sung cho các khoản mục trình bày trong Báo cáo lưu chuyển tiền tệ hợp nhất", "Thông tin bổ sung về báo cáo lưu chuyển tiền tệ hợp nhất"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.VIII",
+      "canonical_name": "Những thông tin khác",
+      "note_ids": ["VIII"],
+      "titles": ["Những thông tin khác"],
+      "title_aliases": [],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.GROUP.IX",
+      "canonical_name": "Những thông tin khác",
+      "note_ids": ["IX"],
+      "titles": ["Những thông tin khác"],
+      "title_aliases": [],
+      "rows": []
+    },
+
+    {
+      "alias_id": "ENTERPRISE.POLICY.1.FX_TRANSLATION",
+      "canonical_name": "Nguyên tắc chuyển đổi Báo cáo tài chính lập bằng ngoại tệ sang Đồng Việt Nam",
+      "note_ids": ["1"],
+      "titles": ["Nguyên tắc chuyển đổi Báo cáo tài chính lập bằng ngoại tệ sang Đồng Việt Nam"],
+      "title_aliases": ["Nguyên tắc chuyển đổi báo cáo tài chính lập bằng ngoại tệ sang đồng Việt Nam"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.2.EXCHANGE_RATES",
+      "canonical_name": "Các loại tỷ giá hối đoái áp dụng trong kế toán",
+      "note_ids": ["2"],
+      "titles": ["Các loại tỷ giá hối đoái áp dụng trong kế toán"],
+      "title_aliases": ["Đơn vị tiền tệ sử dụng trong kế toán", "Các loại tỷ giá hối đoái"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.3.EFFECTIVE_INTEREST",
+      "canonical_name": "Nguyên tắc xác định lãi suất thực tế dùng để chiết khấu dòng tiền",
+      "note_ids": ["3"],
+      "titles": ["Nguyên tắc xác định lãi suất thực tế (lãi suất hiệu lực) dùng để chiết khấu dòng tiền"],
+      "title_aliases": ["Lãi suất thực tế", "Lãi suất hiệu lực"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.4.CASH",
+      "canonical_name": "Nguyên tắc ghi nhận các khoản tiền và các khoản tương đương tiền",
+      "note_ids": ["4"],
+      "titles": ["Nguyên tắc ghi nhận các khoản tiền và các khoản tương đương tiền"],
+      "title_aliases": ["Tiền và các khoản tương đương tiền"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.5.INVESTMENTS",
+      "canonical_name": "Nguyên tắc kế toán các khoản đầu tư tài chính",
+      "note_ids": ["5"],
+      "titles": ["Nguyên tắc kế toán các khoản đầu tư tài chính"],
+      "title_aliases": ["Nguyên tắc kế toán đầu tư tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.6.RECEIVABLES",
+      "canonical_name": "Nguyên tắc kế toán nợ phải thu",
+      "note_ids": ["6"],
+      "titles": ["Nguyên tắc kế toán nợ phải thu"],
+      "title_aliases": ["Nguyên tắc ghi nhận các khoản phải thu"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.7.INVENTORY",
+      "canonical_name": "Nguyên tắc ghi nhận hàng tồn kho",
+      "note_ids": ["7"],
+      "titles": ["Nguyên tắc ghi nhận hàng tồn kho"],
+      "title_aliases": ["Nguyên tắc đánh giá hàng tồn kho"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.8.FIXED_ASSETS",
+      "canonical_name": "Nguyên tắc ghi nhận và khấu hao tài sản cố định",
+      "note_ids": ["8"],
+      "titles": ["Nguyên tắc ghi nhận và các khấu hao TSCĐ, TSCĐ thuê tài chính, bất động sản đầu tư"],
+      "title_aliases": ["Nguyên tắc ghi nhận tài sản cố định hữu hình và vô hình"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.9.JOINT_OPERATIONS",
+      "canonical_name": "Nguyên tắc kế toán các hợp đồng hợp tác kinh doanh",
+      "note_ids": ["9"],
+      "titles": ["Nguyên tắc kế toán các hợp đồng hợp tác kinh doanh"],
+      "title_aliases": ["Ghi nhận hợp đồng hợp tác kinh doanh"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.10.DEFERRED_TAX",
+      "canonical_name": "Nguyên tắc kế toán thuế TNDN hoãn lại",
+      "note_ids": ["10"],
+      "titles": ["Nguyên tắc kế toán thuế TNDN hoãn lại"],
+      "title_aliases": ["Nguyên tắc kế toán thuế thu nhập hoãn lại"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.11.PREPAID",
+      "canonical_name": "Nguyên tắc kế toán chi phí trả trước",
+      "note_ids": ["11"],
+      "titles": ["Nguyên tắc kế toán chi phí trả trước"],
+      "title_aliases": ["Ghi nhận và phân bổ chi phí trả trước"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.12.PAYABLES",
+      "canonical_name": "Nguyên tắc kế toán nợ phải trả",
+      "note_ids": ["12"],
+      "titles": ["Nguyên tắc kế toán nợ phải trả"],
+      "title_aliases": ["Nguyên tắc kế toán các khoản nợ phải trả"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.13.BORROWINGS",
+      "canonical_name": "Nguyên tắc ghi nhận vay và nợ phải trả thuê tài chính",
+      "note_ids": ["13"],
+      "titles": ["Nguyên tắc ghi nhận vay và nợ phải trả thuê tài chính"],
+      "title_aliases": ["Nguyên tắc ghi nhận vay"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.14.BORROWING_COST",
+      "canonical_name": "Nguyên tắc ghi nhận và vốn hóa các khoản chi phí đi vay",
+      "note_ids": ["14"],
+      "titles": ["Nguyên tắc ghi nhận và vốn hóa các khoản chi phí đi vay"],
+      "title_aliases": ["Nguyên tắc ghi nhận vay và vốn hóa các khoản chi phí đi vay"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.15.ACCRUED_COST",
+      "canonical_name": "Nguyên tắc ghi nhận chi phí phải trả",
+      "note_ids": ["15"],
+      "titles": ["Nguyên tắc ghi nhận chi phí phải trả"],
+      "title_aliases": ["Nguyên tắc ghi nhận các khoản chi phí phải trả"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.16.PROVISIONS",
+      "canonical_name": "Nguyên tắc và phương pháp ghi nhận các khoản dự phòng phải trả",
+      "note_ids": ["16"],
+      "titles": ["Nguyên tắc và phương pháp ghi nhận các khoản dự phòng phải trả"],
+      "title_aliases": ["Nguyên tắc kế toán dự phòng phải trả"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.17.UNEARNED_REVENUE",
+      "canonical_name": "Nguyên tắc ghi nhận doanh thu chưa thực hiện",
+      "note_ids": ["17"],
+      "titles": ["Nguyên tắc ghi nhận doanh thu chưa thực hiện"],
+      "title_aliases": ["Nguyên tắc kế toán doanh thu chưa thực hiện"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.18.CONVERTIBLE_BONDS",
+      "canonical_name": "Nguyên tắc ghi nhận trái phiếu chuyển đổi",
+      "note_ids": ["18"],
+      "titles": ["Nguyên tắc ghi nhận trái phiếu chuyển đổi"],
+      "title_aliases": ["Nguyên tắc kế toán trái phiếu chuyển đổi"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.19.EQUITY",
+      "canonical_name": "Nguyên tắc ghi nhận vốn chủ sở hữu",
+      "note_ids": ["19"],
+      "titles": ["Nguyên tắc ghi nhận vốn chủ sở hữu"],
+      "title_aliases": ["Nguyên tắc kế toán vốn chủ sở hữu"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.20.REVENUE",
+      "canonical_name": "Nguyên tắc và phương pháp ghi nhận doanh thu",
+      "note_ids": ["20"],
+      "titles": ["Nguyên tắc và phương pháp ghi nhận doanh thu"],
+      "title_aliases": ["Nguyên tắc kế toán doanh thu"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.21.REBATES",
+      "canonical_name": "Nguyên tắc kế toán các khoản giảm trừ doanh thu",
+      "note_ids": ["21"],
+      "titles": ["Nguyên tắc kế toán các khoản giảm trừ doanh thu"],
+      "title_aliases": ["Nguyên tắc kế toán các khoản giảm trừ doanh thu"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.22.COGS",
+      "canonical_name": "Nguyên tắc kế toán giá vốn hàng bán",
+      "note_ids": ["22"],
+      "titles": ["Nguyên tắc kế toán giá vốn hàng bán"],
+      "title_aliases": ["Nguyên tắc kế toán giá vốn hàng bán và dịch vụ cung cấp"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.23.FINANCE_COST",
+      "canonical_name": "Nguyên tắc kế toán chi phí tài chính",
+      "note_ids": ["23"],
+      "titles": ["Nguyên tắc kế toán chi phí tài chính"],
+      "title_aliases": ["Nguyên tắc kế toán chi phí tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.24.SELLING_ADMIN",
+      "canonical_name": "Nguyên tắc kế toán chi phí bán hàng, chi phí quản lý doanh nghiệp",
+      "note_ids": ["24"],
+      "titles": ["Nguyên tắc kế toán chi phí bán hàng, chi phí quản lý doanh nghiệp"],
+      "title_aliases": ["Nguyên tắc kế toán chi phí bán hàng và chi phí quản lý doanh nghiệp"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.25.INCOME_TAX",
+      "canonical_name": "Nguyên tắc và phương pháp ghi nhận chi phí thuế thu nhập doanh nghiệp",
+      "note_ids": ["25"],
+      "titles": ["Nguyên tắc và phương pháp ghi nhận chi phí thuế thu nhập doanh nghiệp hiện hành, chi phí thuế thu nhập doanh nghiệp hoãn lại"],
+      "title_aliases": ["Nguyên tắc kế toán chi phí thuế thu nhập doanh nghiệp"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.POLICY.26.OTHER",
+      "canonical_name": "Các nguyên tắc và phương pháp kế toán khác",
+      "note_ids": ["26"],
+      "titles": ["Các nguyên tắc và phương pháp kế toán khác"],
+      "title_aliases": ["Các chính sách kế toán khác"],
+      "rows": []
+    },
+
+    {
+      "alias_id": "ENTERPRISE.BS.1.CASH",
+      "canonical_name": "Tiền và các khoản tương đương tiền",
+      "note_ids": ["1"],
+      "titles": ["Tiền"],
+      "title_aliases": ["Tiền và các khoản tương đương tiền", "Tiền và tương đương tiền"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.1.CASH_ON_HAND","canonical_name":"Tiền mặt","aliases":["Tiền mặt","Tiền mặt tại quỹ"]},
+        {"alias_id":"ENTERPRISE.BS.1.BANK_DEPOSITS","canonical_name":"Tiền gửi ngân hàng không kỳ hạn","aliases":["Tiền gửi ngân hàng không kỳ hạn","Tiền gửi ngân hàng"]},
+        {"alias_id":"ENTERPRISE.BS.1.CASH_IN_TRANSIT","canonical_name":"Tiền đang chuyển","aliases":["Tiền đang chuyển"]},
+        {"alias_id":"ENTERPRISE.BS.1.CASH_EQUIVALENTS","canonical_name":"Các khoản tương đương tiền","aliases":["Các khoản tương đương tiền","Các khoản tương đương tiền (*)","Các khoản tương đương tiền (tiền gửi ngân hàng có kỳ hạn gốc không quá 03 tháng)"]},
+        {"alias_id":"ENTERPRISE.BS.1.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.2.INVESTMENTS",
+      "canonical_name": "Các khoản đầu tư tài chính",
+      "note_ids": ["2"],
+      "titles": ["Các khoản đầu tư tài chính"],
+      "title_aliases": ["Đầu tư tài chính", "Các khoản đầu tư", "Đầu tư nắm giữ đến ngày đáo hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.2.LISTED_EQUITY","canonical_name":"Tổng giá trị cổ phiếu","aliases":["Tổng giá trị cổ phiếu"]},
+        {"alias_id":"ENTERPRISE.BS.2.LISTED_BONDS","canonical_name":"Tổng giá trị trái phiếu","aliases":["Tổng giá trị trái phiếu"]},
+        {"alias_id":"ENTERPRISE.BS.2.OTHER_INVESTMENTS","canonical_name":"Các khoản đầu tư khác","aliases":["Các khoản đầu tư khác"]},
+        {"alias_id":"ENTERPRISE.BS.2.TERM_DEPOSITS","canonical_name":"Tiền gửi có kỳ hạn","aliases":["Tiền gửi có kỳ hạn"]},
+        {"alias_id":"ENTERPRISE.BS.2.BONDS","canonical_name":"Trái phiếu","aliases":["Trái phiếu"]},
+        {"alias_id":"ENTERPRISE.BS.2.SUBSIDIARIES","canonical_name":"Đầu tư vào công ty con","aliases":["Đầu tư vào công ty con"]},
+        {"alias_id":"ENTERPRISE.BS.2.ASSOCIATES","canonical_name":"Đầu tư vào công ty liên doanh, liên kết","aliases":["Đầu tư vào công ty liên doanh, liên kết","Đầu tư vào công ty liên kết"]},
+        {"alias_id":"ENTERPRISE.BS.2.OTHER_ENTITIES","canonical_name":"Đầu tư vào đơn vị khác","aliases":["Đầu tư vào đơn vị khác"]},
+        {"alias_id":"ENTERPRISE.BS.2.COST","canonical_name":"Giá gốc","aliases":["Giá gốc","Giá gốc (VND)"]},
+        {"alias_id":"ENTERPRISE.BS.2.FAIR_VALUE","canonical_name":"Giá trị hợp lý","aliases":["Giá trị hợp lý"]},
+        {"alias_id":"ENTERPRISE.BS.2.CARRYING_AMOUNT","canonical_name":"Giá trị ghi sổ","aliases":["Giá trị ghi sổ","Giá trị ghi sổ (VND)"]},
+        {"alias_id":"ENTERPRISE.BS.2.PROVISION","canonical_name":"Dự phòng","aliases":["Dự phòng"]},
+        {"alias_id":"ENTERPRISE.BS.2.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.3.CUSTOMER_RECEIVABLES",
+      "canonical_name": "Phải thu của khách hàng",
+      "note_ids": ["3"],
+      "titles": ["Phải thu của khách hàng"],
+      "title_aliases": ["Phải thu khách hàng", "Phải thu ngắn hạn của khách hàng", "Phải thu khách hàng và trả trước cho người bán ngắn hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.3.CUSTOMERS","canonical_name":"Phải thu của khách hàng","aliases":["Phải thu của khách hàng","Phải thu khách hàng"]},
+        {"alias_id":"ENTERPRISE.BS.3.OTHER_CUSTOMERS","canonical_name":"Các khoản phải thu khách hàng khác","aliases":["Các khoản phải thu khách hàng khác","Các khoản phải thu khách hàng khách"]},
+        {"alias_id":"ENTERPRISE.BS.3.RELATED","canonical_name":"Phải thu của khách hàng là các bên liên quan","aliases":["Phải thu của khách hàng là các bên liên quan","Phải thu các bên liên quan"]},
+        {"alias_id":"ENTERPRISE.BS.3.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.4.OTHER_RECEIVABLES",
+      "canonical_name": "Phải thu khác",
+      "note_ids": ["4"],
+      "titles": ["Phải thu khác"],
+      "title_aliases": ["Các khoản phải thu khác", "Phải thu ngắn hạn khác", "Phải thu dài hạn khác"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.4.PRIVATIZATION","canonical_name":"Phải thu về cổ phần hoá","aliases":["Phải thu về cổ phần hoá","Phải thu về cổ phần hóa"]},
+        {"alias_id":"ENTERPRISE.BS.4.DIVIDENDS","canonical_name":"Phải thu về cổ tức và lợi nhuận được chia","aliases":["Phải thu về cổ tức và lợi nhuận được chia"]},
+        {"alias_id":"ENTERPRISE.BS.4.EMPLOYEE","canonical_name":"Phải thu người lao động","aliases":["Phải thu người lao động"]},
+        {"alias_id":"ENTERPRISE.BS.4.DEPOSITS","canonical_name":"Ký cược, ký quỹ","aliases":["Ký cược, ký quỹ"]},
+        {"alias_id":"ENTERPRISE.BS.4.LOANS","canonical_name":"Cho mượn","aliases":["Cho mượn"]},
+        {"alias_id":"ENTERPRISE.BS.4.PAID_ON_BEHALF","canonical_name":"Các khoản chi hộ","aliases":["Các khoản chi hộ"]},
+        {"alias_id":"ENTERPRISE.BS.4.OTHER","canonical_name":"Phải thu khác","aliases":["Phải thu khác"]},
+        {"alias_id":"ENTERPRISE.BS.4.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.5.MISSING_ASSETS",
+      "canonical_name": "Tài sản thiếu chờ xử lý",
+      "note_ids": ["5"],
+      "titles": ["Tài sản thiếu chờ xử lý"],
+      "title_aliases": ["Tài sản thiếu chờ xử lý (Chi tiết từng loại tài sản thiếu)"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.5.CASH","canonical_name":"Tiền","aliases":["Tiền"]},
+        {"alias_id":"ENTERPRISE.BS.5.INVENTORY","canonical_name":"Hàng tồn kho","aliases":["Hàng tồn kho"]},
+        {"alias_id":"ENTERPRISE.BS.5.FIXED_ASSETS","canonical_name":"TSCĐ","aliases":["TSCĐ","Tài sản cố định"]},
+        {"alias_id":"ENTERPRISE.BS.5.OTHER","canonical_name":"Tài sản khác","aliases":["Tài sản khác"]},
+        {"alias_id":"ENTERPRISE.BS.5.QUANTITY","canonical_name":"Số lượng","aliases":["Số lượng"]},
+        {"alias_id":"ENTERPRISE.BS.5.VALUE","canonical_name":"Giá trị","aliases":["Giá trị"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.6.BAD_DEBT",
+      "canonical_name": "Nợ xấu",
+      "note_ids": ["6"],
+      "titles": ["Nợ xấu"],
+      "title_aliases": ["Nợ khó đòi", "Dự phòng phải thu ngắn hạn khó đòi"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.6.COST","canonical_name":"Giá gốc","aliases":["Giá gốc","Chi phí gốc"]},
+        {"alias_id":"ENTERPRISE.BS.6.RECOVERABLE","canonical_name":"Giá trị có thể thu hồi","aliases":["Giá trị có thể thu hồi","Giá trị có thể thu hồi (Số cuối năm)","Giá trị có thể thu hồi (Số đầu năm)"]},
+        {"alias_id":"ENTERPRISE.BS.6.PROVISION","canonical_name":"Dự phòng","aliases":["Dự phòng","Trích lập/(hoàn nhập) dự phòng"]},
+        {"alias_id":"ENTERPRISE.BS.6.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.7.INVENTORY",
+      "canonical_name": "Hàng tồn kho",
+      "note_ids": ["7"],
+      "titles": ["Hàng tồn kho"],
+      "title_aliases": ["Hàng tồn kho (tiếp theo)", "Nguyên tắc đánh giá hàng tồn kho"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.7.IN_TRANSIT","canonical_name":"Hàng đang đi trên đường","aliases":["Hàng đang đi trên đường","Hàng mua đang đi trên đường"]},
+        {"alias_id":"ENTERPRISE.BS.7.MATERIALS","canonical_name":"Nguyên liệu, vật liệu","aliases":["Nguyên liệu, vật liệu","Nguyên vật liệu"]},
+        {"alias_id":"ENTERPRISE.BS.7.TOOLS","canonical_name":"Công cụ, dụng cụ","aliases":["Công cụ, dụng cụ","Công cụ và vật tư"]},
+        {"alias_id":"ENTERPRISE.BS.7.WIP","canonical_name":"Chi phí sản xuất kinh doanh dở dang","aliases":["Chi phí sản xuất kinh doanh dở dang","Chi phí sản xuất, kinh doanh dở dang","Dở dang"]},
+        {"alias_id":"ENTERPRISE.BS.7.FINISHED_GOODS","canonical_name":"Thành phẩm","aliases":["Thành phẩm"]},
+        {"alias_id":"ENTERPRISE.BS.7.MERCHANDISE","canonical_name":"Hàng hóa","aliases":["Hàng hóa"]},
+        {"alias_id":"ENTERPRISE.BS.7.CONSIGNMENT","canonical_name":"Hàng gửi bán","aliases":["Hàng gửi bán","Hàng gửi đi bán"]},
+        {"alias_id":"ENTERPRISE.BS.7.BONDED","canonical_name":"Hàng hóa kho bảo thuế","aliases":["Hàng hóa kho bảo thuế"]},
+        {"alias_id":"ENTERPRISE.BS.7.PROVISION","canonical_name":"Dự phòng","aliases":["Dự phòng","Dự phòng (VND)"]},
+        {"alias_id":"ENTERPRISE.BS.7.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.8.LONG_TERM_WIP",
+      "canonical_name": "Tài sản dở dang dài hạn",
+      "note_ids": ["8"],
+      "titles": ["Tài sản dở dang dài hạn"],
+      "title_aliases": ["Tài sản dài hạn dở dang", "Chi phí xây dựng cơ bản dở dang"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.8.LONG_TERM_WIP","canonical_name":"Chi phí sản xuất, kinh doanh dở dang dài hạn","aliases":["Chi phí sản xuất, kinh doanh dở dang dài hạn"]},
+        {"alias_id":"ENTERPRISE.BS.8.CONSTRUCTION","canonical_name":"Xây dựng cơ bản dở dang","aliases":["Xây dựng cơ bản dở dang","Chi phí xây dựng cơ bản dở dang"]},
+        {"alias_id":"ENTERPRISE.BS.8.PROCUREMENT","canonical_name":"Mua sắm","aliases":["Mua sắm"]},
+        {"alias_id":"ENTERPRISE.BS.8.CONSTRUCTION_COST","canonical_name":"XDCB","aliases":["XDCB"]},
+        {"alias_id":"ENTERPRISE.BS.8.REPAIR","canonical_name":"Sửa chữa","aliases":["Sửa chữa"]},
+        {"alias_id":"ENTERPRISE.BS.8.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.9.TANGIBLE_PPE",
+      "canonical_name": "Tăng, giảm tài sản cố định hữu hình",
+      "note_ids": ["9"],
+      "titles": ["Tăng, giảm tài sản cố định hữu hình"],
+      "title_aliases": ["Tài sản cố định hữu hình", "Tăng giảm tài sản cố định hữu hình"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.9.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Tổng"]},
+        {"alias_id":"ENTERPRISE.BS.9.PURCHASES","canonical_name":"Mua trong năm","aliases":["Mua trong năm"]},
+        {"alias_id":"ENTERPRISE.BS.9.CONSTRUCTION_COMPLETE","canonical_name":"Đầu tư XDCB hoàn thành","aliases":["Đầu tư XDCB hoàn thành"]},
+        {"alias_id":"ENTERPRISE.BS.9.OTHER_INCREASE","canonical_name":"Tăng khác","aliases":["Tăng khác"]},
+        {"alias_id":"ENTERPRISE.BS.9.TRANSFER_TO_IP","canonical_name":"Chuyển sang bất động sản đầu tư","aliases":["Chuyển sang bất động sản đầu tư"]},
+        {"alias_id":"ENTERPRISE.BS.9.DISPOSAL","canonical_name":"Thanh lý, nhượng bán","aliases":["Thanh lý, nhượng bán"]},
+        {"alias_id":"ENTERPRISE.BS.9.OTHER_DECREASE","canonical_name":"Giảm khác","aliases":["Giảm khác"]},
+        {"alias_id":"ENTERPRISE.BS.9.DEPRECIATION","canonical_name":"Khấu hao trong năm","aliases":["Khấu hao trong năm"]},
+        {"alias_id":"ENTERPRISE.BS.9.CARRYING_AMOUNT","canonical_name":"Giá trị còn lại","aliases":["Giá trị còn lại"]},
+        {"alias_id":"ENTERPRISE.BS.9.OPENING_CARRYING","canonical_name":"Tại ngày đầu năm","aliases":["Tại ngày đầu năm"]},
+        {"alias_id":"ENTERPRISE.BS.9.CLOSING_CARRYING","canonical_name":"Tại ngày cuối năm","aliases":["Tại ngày cuối năm"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.10.INTANGIBLE_PPE",
+      "canonical_name": "Tăng, giảm tài sản cố định vô hình",
+      "note_ids": ["10"],
+      "titles": ["Tăng, giảm tài sản cố định vô hình"],
+      "title_aliases": ["Tài sản cố định vô hình", "Tài sản có định vô hình", "Tăng giảm tài sản cố định vô hình"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.10.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Tổng"]},
+        {"alias_id":"ENTERPRISE.BS.10.PURCHASES","canonical_name":"Mua trong năm","aliases":["Mua trong năm"]},
+        {"alias_id":"ENTERPRISE.BS.10.INTERNAL","canonical_name":"Tạo ra từ nội bộ DN","aliases":["Tạo ra từ nội bộ DN"]},
+        {"alias_id":"ENTERPRISE.BS.10.BUSINESS_COMBINATION","canonical_name":"Tăng do hợp nhất kinh doanh","aliases":["Tăng do hợp nhất kinh doanh"]},
+        {"alias_id":"ENTERPRISE.BS.10.OTHER_INCREASE","canonical_name":"Tăng khác","aliases":["Tăng khác"]},
+        {"alias_id":"ENTERPRISE.BS.10.DISPOSAL","canonical_name":"Thanh lý, nhượng bán","aliases":["Thanh lý, nhượng bán"]},
+        {"alias_id":"ENTERPRISE.BS.10.OTHER_DECREASE","canonical_name":"Giảm khác","aliases":["Giảm khác"]},
+        {"alias_id":"ENTERPRISE.BS.10.DEPRECIATION","canonical_name":"Khấu hao trong năm","aliases":["Khấu hao trong năm"]},
+        {"alias_id":"ENTERPRISE.BS.10.CARRYING_AMOUNT","canonical_name":"Giá trị còn lại","aliases":["Giá trị còn lại"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.11.LEASED_PPE",
+      "canonical_name": "Tăng, giảm tài sản cố định thuê tài chính",
+      "note_ids": ["11"],
+      "titles": ["Tăng, giảm tài sản cố định thuê tài chính"],
+      "title_aliases": ["Tài sản cố định thuê tài chính", "Tăng giảm tài sản cố định thuê tài chính"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.11.MACHINERY","canonical_name":"Máy móc và thiết bị","aliases":["Máy móc và thiết bị"]},
+        {"alias_id":"ENTERPRISE.BS.11.VEHICLES","canonical_name":"Phương tiện vận tải, truyền dẫn","aliases":["Phương tiện vận tải, truyền dẫn"]},
+        {"alias_id":"ENTERPRISE.BS.11.PURCHASE","canonical_name":"Mua lại TSCĐ thuê tài chính","aliases":["Mua lại TSCĐ thuê tài chính","Mua lại tài sản cố định thuê tài chính"]},
+        {"alias_id":"ENTERPRISE.BS.11.DEPRECIATION","canonical_name":"Khấu hao trong năm","aliases":["Khấu hao trong năm"]},
+        {"alias_id":"ENTERPRISE.BS.11.CARRYING_AMOUNT","canonical_name":"Giá trị còn lại","aliases":["Giá trị còn lại"]},
+        {"alias_id":"ENTERPRISE.BS.11.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","Cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.12.INVESTMENT_PROPERTY",
+      "canonical_name": "Tăng, giảm bất động sản đầu tư",
+      "note_ids": ["12"],
+      "titles": ["Tăng, giảm bất động sản đầu tư"],
+      "title_aliases": ["Bất động sản đầu tư", "Tăng giảm bất động sản đầu tư"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.12.LAND","canonical_name":"Quyền sử dụng đất","aliases":["Quyền sử dụng đất"]},
+        {"alias_id":"ENTERPRISE.BS.12.BUILDING","canonical_name":"Nhà","aliases":["Nhà"]},
+        {"alias_id":"ENTERPRISE.BS.12.LAND_BUILDING","canonical_name":"Nhà và quyền sử dụng đất","aliases":["Nhà và quyền sử dụng đất"]},
+        {"alias_id":"ENTERPRISE.BS.12.INFRASTRUCTURE","canonical_name":"Cơ sở hạ tầng","aliases":["Cơ sở hạ tầng"]},
+        {"alias_id":"ENTERPRISE.BS.12.CARRYING_AMOUNT","canonical_name":"Giá trị còn lại","aliases":["Giá trị còn lại"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.13.PREPAID",
+      "canonical_name": "Chi phí trả trước",
+      "note_ids": ["13"],
+      "titles": ["Chi phí trả trước"],
+      "title_aliases": ["Chi phí trả trước ngắn hạn", "Chi phí trả trước dài hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.13.OPERATING_LEASE","canonical_name":"Chi phí trả trước về thuê hoạt động TSCĐ","aliases":["Chi phí trả trước về thuê hoạt động TSCĐ"]},
+        {"alias_id":"ENTERPRISE.BS.13.TOOLS","canonical_name":"Công cụ, dụng cụ xuất dùng","aliases":["Công cụ, dụng cụ xuất dùng","Công cụ, dụng cụ"]},
+        {"alias_id":"ENTERPRISE.BS.13.BORROWING_COST","canonical_name":"Chi phí đi vay","aliases":["Chi phí đi vay"]},
+        {"alias_id":"ENTERPRISE.BS.13.ESTABLISHMENT","canonical_name":"Chi phí thành lập doanh nghiệp","aliases":["Chi phí thành lập doanh nghiệp"]},
+        {"alias_id":"ENTERPRISE.BS.13.INSURANCE","canonical_name":"Chi phí mua bảo hiểm","aliases":["Chi phí mua bảo hiểm"]},
+        {"alias_id":"ENTERPRISE.BS.13.OTHER","canonical_name":"Các khoản khác","aliases":["Các khoản khác","Chi phí trả trước khác"]},
+        {"alias_id":"ENTERPRISE.BS.13.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.14.OTHER_ASSETS",
+      "canonical_name": "Tài sản khác",
+      "note_ids": ["14"],
+      "titles": ["Tài sản khác"],
+      "title_aliases": ["Tài sản ngắn hạn khác", "Tài sản dài hạn khác"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.14.SHORT_TERM","canonical_name":"Ngắn hạn","aliases":["Ngắn hạn"]},
+        {"alias_id":"ENTERPRISE.BS.14.LONG_TERM","canonical_name":"Dài hạn","aliases":["Dài hạn"]},
+        {"alias_id":"ENTERPRISE.BS.14.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.15.BORROWINGS",
+      "canonical_name": "Vay và nợ thuê tài chính",
+      "note_ids": ["15"],
+      "titles": ["Vay và nợ thuê tài chính"],
+      "title_aliases": ["Vay", "Vay và nợ thuê tài chính dài hạn", "Vay và nợ thuê tài chính ngắn hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.15.SHORT_TERM","canonical_name":"Vay ngắn hạn","aliases":["Vay ngắn hạn"]},
+        {"alias_id":"ENTERPRISE.BS.15.LONG_TERM","canonical_name":"Vay dài hạn","aliases":["Vay dài hạn"]},
+        {"alias_id":"ENTERPRISE.BS.15.LEASE_LIABILITIES","canonical_name":"Các khoản nợ thuê tài chính","aliases":["Các khoản nợ thuê tài chính","Nợ thuê tài chính"]},
+        {"alias_id":"ENTERPRISE.BS.15.OVERDUE_BORROWINGS","canonical_name":"Vay và nợ thuê tài chính quá hạn chưa thanh toán","aliases":["Vay và nợ thuê tài chính quá hạn chưa thanh toán"]},
+        {"alias_id":"ENTERPRISE.BS.15.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.16.SUPPLIER_PAYABLES",
+      "canonical_name": "Phải trả người bán",
+      "note_ids": ["16"],
+      "titles": ["Phải trả người bán"],
+      "title_aliases": ["Phải trả người bán ngắn hạn", "Phải trả người bán và người mua trả tiền trước"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.16.OVERDUE","canonical_name":"Số nợ quá hạn chưa thanh toán","aliases":["Số nợ quá hạn chưa thanh toán"]},
+        {"alias_id":"ENTERPRISE.BS.16.RELATED","canonical_name":"Phải trả người bán là các bên liên quan","aliases":["Phải trả người bán là các bên liên quan"]},
+        {"alias_id":"ENTERPRISE.BS.16.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.17.TAX_PAYABLE",
+      "canonical_name": "Thuế và các khoản phải nộp Nhà nước",
+      "note_ids": ["17"],
+      "titles": ["Thuế và các khoản phải nộp nhà nước"],
+      "title_aliases": ["Thuế và các khoản phải nộp Nhà nước", "Thuế và các khoản phải thu/phải nộp Nhà nước", "Các khoản thu và phải nộp khác cho ngân sách Nhà nước"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.17.VAT","canonical_name":"Thuế giá trị gia tăng","aliases":["Thuế giá trị gia tăng"]},
+        {"alias_id":"ENTERPRISE.BS.17.CIT","canonical_name":"Thuế thu nhập doanh nghiệp","aliases":["Thuế thu nhập doanh nghiệp"]},
+        {"alias_id":"ENTERPRISE.BS.17.PIT","canonical_name":"Thuế thu nhập cá nhân","aliases":["Thuế thu nhập cá nhân"]},
+        {"alias_id":"ENTERPRISE.BS.17.LAND","canonical_name":"Thuế nhà đất và tiền thuê đất","aliases":["Thuế nhà đất và tiền thuê đất"]},
+        {"alias_id":"ENTERPRISE.BS.17.OTHER_TAX","canonical_name":"Các loại thuế khác","aliases":["Các loại thuế khác"]},
+        {"alias_id":"ENTERPRISE.BS.17.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.18.ACCRUED_EXPENSES",
+      "canonical_name": "Chi phí phải trả",
+      "note_ids": ["18"],
+      "titles": ["Chi phí phải trả"],
+      "title_aliases": ["Chi phí phải trả ngắn hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.18.SALARY","canonical_name":"Trích trước chi phí tiền lương trong thời gian nghỉ phép","aliases":["Trích trước chi phí tiền lương trong thời gian nghỉ phép"]},
+        {"alias_id":"ENTERPRISE.BS.18.SUSPENSION","canonical_name":"Chi phí trong thời gian ngừng kinh doanh","aliases":["Chi phí trong thời gian ngừng kinh doanh"]},
+        {"alias_id":"ENTERPRISE.BS.18.COGS","canonical_name":"Chi phí trích trước tạm tính giá vốn hàng hóa, thành phẩm BĐS đã bán","aliases":["Chi phí trích trước tạm tính giá vốn hàng hóa, thành phẩm BĐS đã bán"]},
+        {"alias_id":"ENTERPRISE.BS.18.INTEREST","canonical_name":"Lãi vay","aliases":["Lãi vay","Chi phí lãi vay"]},
+        {"alias_id":"ENTERPRISE.BS.18.OTHER","canonical_name":"Các khoản trích trước khác","aliases":["Các khoản trích trước khác","Các khoản khác"]},
+        {"alias_id":"ENTERPRISE.BS.18.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.19.OTHER_PAYABLES",
+      "canonical_name": "Phải trả khác",
+      "note_ids": ["19"],
+      "titles": ["Phải trả khác"],
+      "title_aliases": ["Phải trả ngắn hạn khác", "Phải trả khác"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.19.SURPLUS_ASSETS","canonical_name":"Tài sản thừa chờ giải quyết","aliases":["Tài sản thừa chờ giải quyết"]},
+        {"alias_id":"ENTERPRISE.BS.19.TRADE_UNION","canonical_name":"Kinh phí công đoàn","aliases":["Kinh phí công đoàn"]},
+        {"alias_id":"ENTERPRISE.BS.19.SOCIAL_INSURANCE","canonical_name":"Bảo hiểm xã hội","aliases":["Bảo hiểm xã hội"]},
+        {"alias_id":"ENTERPRISE.BS.19.HEALTH_INSURANCE","canonical_name":"Bảo hiểm y tế","aliases":["Bảo hiểm y tế"]},
+        {"alias_id":"ENTERPRISE.BS.19.UNEMPLOYMENT","canonical_name":"Bảo hiểm thất nghiệp","aliases":["Bảo hiểm thất nghiệp"]},
+        {"alias_id":"ENTERPRISE.BS.19.DEPOSITS","canonical_name":"Nhận ký quỹ, ký cược ngắn hạn","aliases":["Nhận ký quỹ, ký cược ngắn hạn","Nhận ký quỹ, ký cược dài hạn"]},
+        {"alias_id":"ENTERPRISE.BS.19.DIVIDENDS","canonical_name":"Cổ tức, lợi nhuận phải trả","aliases":["Cổ tức, lợi nhuận phải trả","Cổ tức phải trả"]},
+        {"alias_id":"ENTERPRISE.BS.19.OTHER","canonical_name":"Các khoản phải trả, phải nộp khác","aliases":["Các khoản phải trả, phải nộp khác","Các khoản phải trả ngắn hạn khác"]},
+        {"alias_id":"ENTERPRISE.BS.19.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.20.UNEARNED_REVENUE",
+      "canonical_name": "Doanh thu chưa thực hiện",
+      "note_ids": ["20"],
+      "titles": ["Doanh thu chưa thực hiện"],
+      "title_aliases": ["Doanh thu chưa thực hiện ngắn hạn", "Doanh thu chưa thực hiện dài hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.20.ADVANCE_REVENUE","canonical_name":"Doanh thu nhận trước","aliases":["Doanh thu nhận trước"]},
+        {"alias_id":"ENTERPRISE.BS.20.LOYALTY","canonical_name":"Doanh thu từ chương trình khách hàng truyền thống","aliases":["Doanh thu từ chương trình khách hàng truyền thống"]},
+        {"alias_id":"ENTERPRISE.BS.20.OTHER","canonical_name":"Các khoản doanh thu chưa thực hiện khác","aliases":["Các khoản doanh thu chưa thực hiện khác"]},
+        {"alias_id":"ENTERPRISE.BS.20.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.21.ISSUED_BONDS",
+      "canonical_name": "Trái phiếu phát hành",
+      "note_ids": ["21"],
+      "titles": ["Trái phiếu phát hành"],
+      "title_aliases": ["Trái phiếu thường", "Trái phiếu dài hạn", "Trái phiếu hoán đổi"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.21.PAR_VALUE","canonical_name":"Loại phát hành theo mệnh giá","aliases":["Loại phát hành theo mệnh giá"]},
+        {"alias_id":"ENTERPRISE.BS.21.DISCOUNT","canonical_name":"Loại phát hành có chiết khấu","aliases":["Loại phát hành có chiết khấu"]},
+        {"alias_id":"ENTERPRISE.BS.21.PREMIUM","canonical_name":"Loại phát hành có phụ trội","aliases":["Loại phát hành có phụ trội"]},
+        {"alias_id":"ENTERPRISE.BS.21.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.22.PREFERRED_SHARES_LIABILITY",
+      "canonical_name": "Cổ phiếu ưu đãi phân loại là nợ phải trả",
+      "note_ids": ["22"],
+      "titles": ["Cổ phiếu ưu đãi phân loại là nợ phải trả"],
+      "title_aliases": ["Cổ phiếu ưu đãi là nợ phải trả"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.22.PAR_VALUE","canonical_name":"Mệnh giá","aliases":["Mệnh giá"]},
+        {"alias_id":"ENTERPRISE.BS.22.ISSUE_HOLDER","canonical_name":"Đối tượng được phát hành","aliases":["Đối tượng được phát hành"]},
+        {"alias_id":"ENTERPRISE.BS.22.REPURCHASE","canonical_name":"Giá trị đã mua lại trong kỳ","aliases":["Giá trị đã mua lại trong kỳ"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.23.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả",
+      "note_ids": ["23"],
+      "titles": ["Dự phòng phải trả"],
+      "title_aliases": ["Các khoản dự phòng phải trả", "Dự phòng phải trả ngắn hạn"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.23.PRODUCT_WARRANTY","canonical_name":"Dự phòng bảo hành sản phẩm hàng hóa","aliases":["Dự phòng bảo hành sản phẩm hàng hóa"]},
+        {"alias_id":"ENTERPRISE.BS.23.CONSTRUCTION_WARRANTY","canonical_name":"Dự phòng bảo hành công trình xây dựng","aliases":["Dự phòng bảo hành công trình xây dựng"]},
+        {"alias_id":"ENTERPRISE.BS.23.RESTRUCTURING","canonical_name":"Dự phòng tái cơ cấu","aliases":["Dự phòng tái cơ cấu"]},
+        {"alias_id":"ENTERPRISE.BS.23.OTHER","canonical_name":"Dự phòng phải trả khác","aliases":["Dự phòng phải trả khác"]},
+        {"alias_id":"ENTERPRISE.BS.23.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.24.DEFERRED_TAX",
+      "canonical_name": "Tài sản thuế thu nhập hoãn lại và thuế thu nhập hoãn lại phải trả",
+      "note_ids": ["24"],
+      "titles": ["Tài sản thuế thu nhập hoãn lại và thuế thu nhập hoãn lại phải trả"],
+      "title_aliases": ["Tài sản thuế thu nhập hoãn lại và nợ phải trả thuế thu nhập hoãn lại", "Tài sản thuế thu nhập hoãn lại", "Thuế thu nhập hoãn lại phải trả"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.24.TAX_RATE","canonical_name":"Thuế suất thuế TNDN sử dụng để xác định giá trị tài sản thuế thu nhập hoãn lại","aliases":["Thuế suất thuế TNDN sử dụng để xác định giá trị tài sản thuế thu nhập hoãn lại"]},
+        {"alias_id":"ENTERPRISE.BS.24.DEDUCTIBLE_TEMPORARY","canonical_name":"Tài sản thuế thu nhập hoãn lại liên quan đến khoản chênh lệch tạm thời được khấu trừ","aliases":["Tài sản thuế thu nhập hoãn lại liên quan đến khoản chênh lệch tạm thời được khấu trừ"]},
+        {"alias_id":"ENTERPRISE.BS.24.TAX_LOSS","canonical_name":"Tài sản thuế thu nhập hoãn lại liên quan đến khoản lỗ tính thuế chưa sử dụng","aliases":["Tài sản thuế thu nhập hoãn lại liên quan đến khoản lỗ tính thuế chưa sử dụng"]},
+        {"alias_id":"ENTERPRISE.BS.24.OFFSET","canonical_name":"Số bù trừ với thuế thu nhập hoãn lại phải trả","aliases":["Số bù trừ với thuế thu nhập hoãn lại phải trả"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.25.EQUITY",
+      "canonical_name": "Vốn chủ sở hữu",
+      "note_ids": ["25"],
+      "titles": ["Vốn chủ sở hữu"],
+      "title_aliases": ["Tình hình tăng giảm nguồn vốn chủ sở hữu", "Chi tiết vốn góp của chủ sở hữu"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.25.PARENT_CAPITAL","canonical_name":"Vốn góp của công ty mẹ","aliases":["Vốn góp của công ty mẹ"]},
+        {"alias_id":"ENTERPRISE.BS.25.OTHER_CAPITAL","canonical_name":"Vốn góp của các đối tượng khác","aliases":["Vốn góp của các đối tượng khác"]},
+        {"alias_id":"ENTERPRISE.BS.25.SHARE_CAPITAL","canonical_name":"Vốn cổ phần","aliases":["Vốn cổ phần","Vốn góp của chủ sở hữu"]},
+        {"alias_id":"ENTERPRISE.BS.25.SHARE_PREMIUM","canonical_name":"Thặng dư vốn cổ phần","aliases":["Thặng dư vốn cổ phần"]},
+        {"alias_id":"ENTERPRISE.BS.25.TREASURY_SHARES","canonical_name":"Cổ phiếu quỹ","aliases":["Cổ phiếu quỹ"]},
+        {"alias_id":"ENTERPRISE.BS.25.RETAINED_EARNINGS","canonical_name":"Lợi nhuận sau thuế chưa phân phối","aliases":["Lợi nhuận sau thuế chưa phân phối"]},
+        {"alias_id":"ENTERPRISE.BS.25.NCI","canonical_name":"Lợi ích của cổ đông không kiểm soát","aliases":["Lợi ích của cổ đông không kiểm soát"]},
+        {"alias_id":"ENTERPRISE.BS.25.DIVIDENDS","canonical_name":"Cổ tức, lợi nhuận đã chia","aliases":["Cổ tức, lợi nhuận đã chia","Cổ tức đã phân phối"]},
+        {"alias_id":"ENTERPRISE.BS.25.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng","Tổng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.26.REVALUATION",
+      "canonical_name": "Chênh lệch đánh giá lại tài sản",
+      "note_ids": ["26"],
+      "titles": ["Chênh lệch đánh giá lại tài sản"],
+      "title_aliases": ["Đánh giá lại tài sản"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.27.FX_DIFFERENCE",
+      "canonical_name": "Chênh lệch tỷ giá",
+      "note_ids": ["27"],
+      "titles": ["Chênh lệch tỷ giá"],
+      "title_aliases": ["Chênh lệch tỷ giá hối đoái"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.27.TRANSLATION","canonical_name":"Chênh lệch tỷ giá do chuyển đổi BCTC lập bằng ngoại tệ sang VND","aliases":["Chênh lệch tỷ giá do chuyển đổi BCTC lập bằng ngoại tệ sang VND"]},
+        {"alias_id":"ENTERPRISE.BS.27.OTHER","canonical_name":"Chênh lệch tỷ giá phát sinh vì các nguyên nhân khác","aliases":["Chênh lệch tỷ giá phát sinh vì các nguyên nhân khác"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.28.FUNDS",
+      "canonical_name": "Nguồn kinh phí",
+      "note_ids": ["28"],
+      "titles": ["Nguồn kinh phí"],
+      "title_aliases": ["Các quỹ của doanh nghiệp"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.28.FUNDED","canonical_name":"Nguồn kinh phí được cấp trong năm","aliases":["Nguồn kinh phí được cấp trong năm"]},
+        {"alias_id":"ENTERPRISE.BS.28.EXPENSE","canonical_name":"Chi sự nghiệp","aliases":["Chi sự nghiệp"]},
+        {"alias_id":"ENTERPRISE.BS.28.CLOSING","canonical_name":"Nguồn kinh phí còn lại cuối năm","aliases":["Nguồn kinh phí còn lại cuối năm"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.29.OFF_BALANCE",
+      "canonical_name": "Các khoản mục ngoài Bảng Cân đối kế toán",
+      "note_ids": ["29"],
+      "titles": ["Các khoản mục ngoài Bảng Cân đối kế toán"],
+      "title_aliases": ["Các khoản mục ngoài bảng cân đối kế toán", "Các khoản mục ngoài Bảng cân đối kế toán hợp nhất"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.BS.29.RENTAL_UNDER_ONE_YEAR","canonical_name":"Từ 1 năm trở xuống","aliases":["Từ 1 năm trở xuống"]},
+        {"alias_id":"ENTERPRISE.BS.29.RENTAL_ONE_TO_FIVE","canonical_name":"Trên 1 năm đến 5 năm","aliases":["Trên 1 năm đến 5 năm"]},
+        {"alias_id":"ENTERPRISE.BS.29.RENTAL_OVER_FIVE","canonical_name":"Trên 5 năm","aliases":["Trên 5 năm"]},
+        {"alias_id":"ENTERPRISE.BS.29.FOREIGN_CURRENCY","canonical_name":"Ngoại tệ các loại","aliases":["Ngoại tệ các loại"]},
+        {"alias_id":"ENTERPRISE.BS.29.BAD_DEBT_WRITTEN_OFF","canonical_name":"Nợ khó đòi đã xử lý","aliases":["Nợ khó đòi đã xử lý"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.BS.30.OTHER_DISCLOSURES",
+      "canonical_name": "Các thông tin khác do doanh nghiệp tự thuyết minh, giải trình",
+      "note_ids": ["30"],
+      "titles": ["Các thông tin khác do doanh nghiệp tự thuyết minh, giải trình"],
+      "title_aliases": ["Thông tin khác", "Thông tin so sánh"],
+      "rows": []
+    },
+
+    {
+      "alias_id": "ENTERPRISE.IS.1.REVENUE",
+      "canonical_name": "Tổng doanh thu bán hàng và cung cấp dịch vụ",
+      "note_ids": ["1"],
+      "titles": ["Tổng doanh thu bán hàng và cung cấp dịch vụ"],
+      "title_aliases": ["Doanh thu bán hàng và cung cấp dịch vụ", "Tổng doanh thu từ việc bán hàng và cung cấp dịch vụ", "Doanh thu"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.1.SALES","canonical_name":"Doanh thu bán hàng","aliases":["Doanh thu bán hàng"]},
+        {"alias_id":"ENTERPRISE.IS.1.SERVICES","canonical_name":"Doanh thu cung cấp dịch vụ","aliases":["Doanh thu cung cấp dịch vụ"]},
+        {"alias_id":"ENTERPRISE.IS.1.CONSTRUCTION","canonical_name":"Doanh thu hợp đồng xây dựng","aliases":["Doanh thu hợp đồng xây dựng"]},
+        {"alias_id":"ENTERPRISE.IS.1.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.2.REBATES",
+      "canonical_name": "Các khoản giảm trừ doanh thu",
+      "note_ids": ["2"],
+      "titles": ["Các khoản giảm trừ doanh thu"],
+      "title_aliases": ["Khoản giảm trừ doanh thu"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.2.TRADE_DISCOUNT","canonical_name":"Chiết khấu thương mại","aliases":["Chiết khấu thương mại"]},
+        {"alias_id":"ENTERPRISE.IS.2.SALES_ALLOWANCES","canonical_name":"Giảm giá hàng bán","aliases":["Giảm giá hàng bán"]},
+        {"alias_id":"ENTERPRISE.IS.2.RETURNS","canonical_name":"Hàng bán bị trả lại","aliases":["Hàng bán bị trả lại"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.3.COGS",
+      "canonical_name": "Giá vốn hàng bán",
+      "note_ids": ["3"],
+      "titles": ["Giá vốn hàng bán"],
+      "title_aliases": ["Giá vốn hàng bán và dịch vụ cung cấp"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.3.GOODS","canonical_name":"Giá vốn của hàng hóa đã bán","aliases":["Giá vốn của hàng hóa đã bán"]},
+        {"alias_id":"ENTERPRISE.IS.3.FINISHED_GOODS","canonical_name":"Giá vốn của thành phẩm đã bán","aliases":["Giá vốn của thành phẩm đã bán"]},
+        {"alias_id":"ENTERPRISE.IS.3.SERVICES","canonical_name":"Giá vốn của dịch vụ đã cung cấp","aliases":["Giá vốn của dịch vụ đã cung cấp"]},
+        {"alias_id":"ENTERPRISE.IS.3.INVENTORY_PROVISION","canonical_name":"Dự phòng giảm giá hàng tồn kho","aliases":["Dự phòng giảm giá hàng tồn kho"]},
+        {"alias_id":"ENTERPRISE.IS.3.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.4.FINANCE_REVENUE",
+      "canonical_name": "Doanh thu hoạt động tài chính",
+      "note_ids": ["4"],
+      "titles": ["Doanh thu hoạt động tài chính"],
+      "title_aliases": ["Doanh thu hoạt động tài chính khác", "Thu nhập tài chính"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.4.INTEREST","canonical_name":"Lãi tiền gửi, tiền cho vay","aliases":["Lãi tiền gửi, tiền cho vay"]},
+        {"alias_id":"ENTERPRISE.IS.4.INVESTMENT_GAIN","canonical_name":"Lãi bán các khoản đầu tư","aliases":["Lãi bán các khoản đầu tư"]},
+        {"alias_id":"ENTERPRISE.IS.4.DIVIDENDS","canonical_name":"Cổ tức, lợi nhuận được chia","aliases":["Cổ tức, lợi nhuận được chia"]},
+        {"alias_id":"ENTERPRISE.IS.4.FX_GAIN","canonical_name":"Lãi chênh lệch tỷ giá","aliases":["Lãi chênh lệch tỷ giá"]},
+        {"alias_id":"ENTERPRISE.IS.4.OTHER","canonical_name":"Doanh thu hoạt động tài chính khác","aliases":["Doanh thu hoạt động tài chính khác"]},
+        {"alias_id":"ENTERPRISE.IS.4.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.5.FINANCE_COST",
+      "canonical_name": "Chi phí tài chính",
+      "note_ids": ["5"],
+      "titles": ["Chi phí tài chính"],
+      "title_aliases": ["Chi phí tài chính khác"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.5.INTEREST","canonical_name":"Lãi tiền vay","aliases":["Lãi tiền vay","Chi phí lãi vay"]},
+        {"alias_id":"ENTERPRISE.IS.5.DISCOUNT","canonical_name":"Chiết khấu thanh toán, lãi bán hàng trả chậm","aliases":["Chiết khấu thanh toán, lãi bán hàng trả chậm"]},
+        {"alias_id":"ENTERPRISE.IS.5.INVESTMENT_LOSS","canonical_name":"Lỗ do thanh lý các khoản đầu tư tài chính","aliases":["Lỗ do thanh lý các khoản đầu tư tài chính"]},
+        {"alias_id":"ENTERPRISE.IS.5.FX_LOSS","canonical_name":"Lỗ chênh lệch tỷ giá","aliases":["Lỗ chênh lệch tỷ giá"]},
+        {"alias_id":"ENTERPRISE.IS.5.PROVISION","canonical_name":"Dự phòng giảm giá chứng khoán kinh doanh và tổn thất đầu tư","aliases":["Dự phòng giảm giá chứng khoán kinh doanh và tổn thất đầu tư"]},
+        {"alias_id":"ENTERPRISE.IS.5.OTHER","canonical_name":"Chi phí tài chính khác","aliases":["Chi phí tài chính khác"]},
+        {"alias_id":"ENTERPRISE.IS.5.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.6.OTHER_INCOME",
+      "canonical_name": "Thu nhập khác",
+      "note_ids": ["6"],
+      "titles": ["Thu nhập khác"],
+      "title_aliases": ["Thu nhập khác và chi phí khác"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.6.DISPOSAL","canonical_name":"Thanh lý, nhượng bán TSCĐ","aliases":["Thanh lý, nhượng bán TSCĐ"]},
+        {"alias_id":"ENTERPRISE.IS.6.REVALUATION","canonical_name":"Lãi do đánh giá lại tài sản","aliases":["Lãi do đánh giá lại tài sản"]},
+        {"alias_id":"ENTERPRISE.IS.6.PENALTIES","canonical_name":"Tiền phạt thu được","aliases":["Tiền phạt thu được"]},
+        {"alias_id":"ENTERPRISE.IS.6.TAX_REDUCTION","canonical_name":"Thuế được giảm","aliases":["Thuế được giảm"]},
+        {"alias_id":"ENTERPRISE.IS.6.OTHER","canonical_name":"Các khoản khác","aliases":["Các khoản khác"]},
+        {"alias_id":"ENTERPRISE.IS.6.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.7.OTHER_EXPENSE",
+      "canonical_name": "Chi phí khác",
+      "note_ids": ["7"],
+      "titles": ["Chi phí khác"],
+      "title_aliases": ["Thu nhập và chi phí khác"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.7.DISPOSAL","canonical_name":"Giá trị còn lại TSCĐ và chi phí thanh lý, nhượng bán TSCĐ","aliases":["Giá trị còn lại TSCĐ và chi phí thanh lý, nhượng bán TSCĐ"]},
+        {"alias_id":"ENTERPRISE.IS.7.REVALUATION","canonical_name":"Lỗ do đánh giá lại tài sản","aliases":["Lỗ do đánh giá lại tài sản"]},
+        {"alias_id":"ENTERPRISE.IS.7.PENALTIES","canonical_name":"Các khoản bị phạt","aliases":["Các khoản bị phạt"]},
+        {"alias_id":"ENTERPRISE.IS.7.OTHER","canonical_name":"Các khoản khác","aliases":["Các khoản khác"]},
+        {"alias_id":"ENTERPRISE.IS.7.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.8.SELLING_ADMIN",
+      "canonical_name": "Chi phí bán hàng và chi phí quản lý doanh nghiệp",
+      "note_ids": ["8"],
+      "titles": ["Chi phí bán hàng và chi phí quản lý doanh nghiệp"],
+      "title_aliases": ["Chi phí bán hàng", "Chi phí quản lý doanh nghiệp"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.8.ADMIN","canonical_name":"Các khoản chi phí quản lý doanh nghiệp khác","aliases":["Các khoản chi phí quản lý doanh nghiệp khác"]},
+        {"alias_id":"ENTERPRISE.IS.8.SELLING","canonical_name":"Các khoản chi phí bán hàng khác","aliases":["Các khoản chi phí bán hàng khác"]},
+        {"alias_id":"ENTERPRISE.IS.8.WARRANTY_REVERSAL","canonical_name":"Hoàn nhập dự phòng bảo hành sản phẩm, hàng hóa","aliases":["Hoàn nhập dự phòng bảo hành sản phẩm, hàng hóa"]},
+        {"alias_id":"ENTERPRISE.IS.8.RESTRUCTURING_REVERSAL","canonical_name":"Hoàn nhập dự phòng tái cơ cấu, dự phòng khác","aliases":["Hoàn nhập dự phòng tái cơ cấu, dự phòng khác"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.9.COST_BY_NATURE",
+      "canonical_name": "Chi phí sản xuất, kinh doanh theo yếu tố",
+      "note_ids": ["9"],
+      "titles": ["Chi phí sản xuất, kinh doanh theo yếu tố"],
+      "title_aliases": ["Chi phí sản xuất theo yếu tố", "Chi phí kinh doanh theo yếu tố", "Chi phí sản xuất kinh doanh theo yếu tố"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.9.MATERIALS","canonical_name":"Chi phí nguyên liệu, vật liệu","aliases":["Chi phí nguyên liệu, vật liệu"]},
+        {"alias_id":"ENTERPRISE.IS.9.LABOR","canonical_name":"Chi phí nhân công","aliases":["Chi phí nhân công"]},
+        {"alias_id":"ENTERPRISE.IS.9.DEPRECIATION","canonical_name":"Chi phí khấu hao tài sản cố định","aliases":["Chi phí khấu hao tài sản cố định"]},
+        {"alias_id":"ENTERPRISE.IS.9.OUTSOURCED","canonical_name":"Chi phí dịch vụ mua ngoài","aliases":["Chi phí dịch vụ mua ngoài"]},
+        {"alias_id":"ENTERPRISE.IS.9.OTHER","canonical_name":"Chi phí khác bằng tiền","aliases":["Chi phí khác bằng tiền","Các chi phí khác"]},
+        {"alias_id":"ENTERPRISE.IS.9.TOTAL","canonical_name":"Cộng","aliases":["Cộng","Tổng cộng"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.10.CURRENT_TAX",
+      "canonical_name": "Chi phí thuế thu nhập doanh nghiệp hiện hành",
+      "note_ids": ["10"],
+      "titles": ["Chi phí thuế thu nhập doanh nghiệp hiện hành"],
+      "title_aliases": ["Chi phí thuế TNDN", "Thuế thu nhập doanh nghiệp"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.10.CURRENT_TAXABLE_INCOME","canonical_name":"Chi phí thuế thu nhập doanh nghiệp tính trên thu nhập chịu thuế năm hiện hành","aliases":["Chi phí thuế thu nhập doanh nghiệp tính trên thu nhập chịu thuế năm hiện hành"]},
+        {"alias_id":"ENTERPRISE.IS.10.PRIOR_YEAR_ADJUSTMENT","canonical_name":"Điều chỉnh chi phí thuế thu nhập doanh nghiệp của các năm trước vào chi phí thuế thu nhập hiện hành năm nay","aliases":["Điều chỉnh chi phí thuế thu nhập doanh nghiệp của các năm trước vào chi phí thuế thu nhập hiện hành năm nay"]},
+        {"alias_id":"ENTERPRISE.IS.10.TOTAL","canonical_name":"Tổng chi phí thuế thu nhập doanh nghiệp hiện hành","aliases":["Tổng chi phí thuế thu nhập doanh nghiệp hiện hành"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.IS.11.DEFERRED_TAX",
+      "canonical_name": "Chi phí thuế thu nhập doanh nghiệp hoãn lại",
+      "note_ids": ["11"],
+      "titles": ["Chi phí thuế thu nhập doanh nghiệp hoãn lại"],
+      "title_aliases": ["Thuế thu nhập doanh nghiệp hoãn lại", "Chi phí thuế TNDN hoãn lại"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.IS.11.TAXABLE_TEMPORARY","canonical_name":"Chi phí thuế thu nhập doanh nghiệp hoãn lại phát sinh từ các khoản chênh lệch tạm thời phải chịu thuế","aliases":["Chi phí thuế thu nhập doanh nghiệp hoãn lại phát sinh từ các khoản chênh lệch tạm thời phải chịu thuế"]},
+        {"alias_id":"ENTERPRISE.IS.11.REVERSE_ASSET","canonical_name":"Chi phí thuế thu nhập doanh nghiệp hoãn lại phát sinh từ việc hoàn nhập tài sản thuế thu nhập hoãn lại","aliases":["Chi phí thuế thu nhập doanh nghiệp hoãn lại phát sinh từ việc hoàn nhập tài sản thuế thu nhập hoãn lại"]},
+        {"alias_id":"ENTERPRISE.IS.11.DEDUCTIBLE_TEMPORARY","canonical_name":"Thu nhập thuế thu nhập doanh nghiệp hoãn lại phát sinh từ các khoản chênh lệch tạm thời được khấu trừ","aliases":["Thu nhập thuế thu nhập doanh nghiệp hoãn lại phát sinh từ các khoản chênh lệch tạm thời được khấu trừ"]},
+        {"alias_id":"ENTERPRISE.IS.11.TOTAL","canonical_name":"Tổng chi phí thuế thu nhập doanh nghiệp hoãn lại","aliases":["Tổng chi phí thuế thu nhập doanh nghiệp hoãn lại"]}
+      ]
+    },
+
+    {
+      "alias_id": "ENTERPRISE.CF.1.NON_CASH",
+      "canonical_name": "Các giao dịch không bằng tiền ảnh hưởng đến báo cáo lưu chuyển tiền tệ trong tương lai",
+      "note_ids": ["1"],
+      "titles": ["Các giao dịch không bằng tiền ảnh hưởng đến báo cáo lưu chuyển tiền tệ trong tương lai"],
+      "title_aliases": ["Các giao dịch không bằng tiền"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.CF.1.ASSET_FOR_DEBT","canonical_name":"Mua tài sản bằng cách nhận các khoản nợ liên quan trực tiếp hoặc thông qua nghiệp vụ cho thuê tài chính","aliases":["Mua tài sản bằng cách nhận các khoản nợ liên quan trực tiếp hoặc thông qua nghiệp vụ cho thuê tài chính"]},
+        {"alias_id":"ENTERPRISE.CF.1.BUSINESS_FOR_SHARES","canonical_name":"Mua doanh nghiệp thông qua phát hành cổ phiếu","aliases":["Mua doanh nghiệp thông qua phát hành cổ phiếu"]},
+        {"alias_id":"ENTERPRISE.CF.1.DEBT_TO_EQUITY","canonical_name":"Chuyển nợ thành vốn chủ sở hữu","aliases":["Chuyển nợ thành vốn chủ sở hữu"]},
+        {"alias_id":"ENTERPRISE.CF.1.OTHER","canonical_name":"Các giao dịch phi tiền tệ khác","aliases":["Các giao dịch phi tiền tệ khác"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.CF.2.RESTRICTED_CASH",
+      "canonical_name": "Các khoản tiền do doanh nghiệp nắm giữ nhưng không được sử dụng",
+      "note_ids": ["2"],
+      "titles": ["Các khoản tiền do doanh nghiệp nắm giữ nhưng không được sử dụng"],
+      "title_aliases": ["Tiền và các khoản tương đương tiền không được sử dụng"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.CF.3.BORROWING_PROCEEDS",
+      "canonical_name": "Số tiền đi vay thực thu trong kỳ",
+      "note_ids": ["3"],
+      "titles": ["Số tiền đi vay thực thu trong kỳ"],
+      "title_aliases": ["Tiền thu từ đi vay"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.CF.3.NORMAL_BORROWING","canonical_name":"Tiền thu từ đi vay theo khế ước thông thường","aliases":["Tiền thu từ đi vay theo khế ước thông thường"]},
+        {"alias_id":"ENTERPRISE.CF.3.BONDS","canonical_name":"Tiền thu từ phát hành trái phiếu thường","aliases":["Tiền thu từ phát hành trái phiếu thường"]},
+        {"alias_id":"ENTERPRISE.CF.3.CONVERTIBLE_BONDS","canonical_name":"Tiền thu từ phát hành trái phiếu chuyển đổi","aliases":["Tiền thu từ phát hành trái phiếu chuyển đổi"]},
+        {"alias_id":"ENTERPRISE.CF.3.PREFERRED_SHARES","canonical_name":"Tiền thu từ phát hành cổ phiếu ưu đãi phân loại là nợ phải trả","aliases":["Tiền thu từ phát hành cổ phiếu ưu đãi phân loại là nợ phải trả"]}
+      ]
+    },
+    {
+      "alias_id": "ENTERPRISE.CF.4.BORROWING_REPAYMENTS",
+      "canonical_name": "Số tiền đã thực trả gốc vay trong kỳ",
+      "note_ids": ["4"],
+      "titles": ["Số tiền đã thực trả gốc vay trong kỳ"],
+      "title_aliases": ["Tiền trả nợ gốc vay"],
+      "rows": [
+        {"alias_id":"ENTERPRISE.CF.4.NORMAL_REPAYMENT","canonical_name":"Tiền trả nợ gốc vay theo khế ước thông thường","aliases":["Tiền trả nợ gốc vay theo khế ước thông thường"]},
+        {"alias_id":"ENTERPRISE.CF.4.BOND_REPAYMENT","canonical_name":"Tiền trả nợ gốc trái phiếu thường","aliases":["Tiền trả nợ gốc trái phiếu thường"]},
+        {"alias_id":"ENTERPRISE.CF.4.CONVERTIBLE_REPAYMENT","canonical_name":"Tiền trả nợ gốc trái phiếu chuyển đổi","aliases":["Tiền trả nợ gốc trái phiếu chuyển đổi"]},
+        {"alias_id":"ENTERPRISE.CF.4.OTHER","canonical_name":"Tiền trả nợ vay dưới hình thức khác","aliases":["Tiền trả nợ vay dưới hình thức khác"]}
+      ]
+    },
+
+    {
+      "alias_id": "ENTERPRISE.OTHER.1.CONTINGENCIES",
+      "canonical_name": "Những khoản nợ tiềm tàng, khoản cam kết và những thông tin tài chính khác",
+      "note_ids": ["1"],
+      "titles": ["Những khoản nợ tiềm tàng, khoản cam kết và những thông tin tài chính khác"],
+      "title_aliases": ["Các cam kết và các khoản nợ tiềm tàng", "Các khoản cam kết", "Các cam kết"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.OTHER.2.SUBSEQUENT_EVENTS",
+      "canonical_name": "Những sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm",
+      "note_ids": ["2"],
+      "titles": ["Những sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm"],
+      "title_aliases": ["Sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm", "Các sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.OTHER.3.RELATED_PARTIES",
+      "canonical_name": "Thông tin về các bên liên quan",
+      "note_ids": ["3"],
+      "titles": ["Thông tin về các bên liên quan"],
+      "title_aliases": ["Nghiệp vụ với các bên liên quan", "Nghiệp vụ và số dư với các bên liên quan", "Bên liên quan"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.OTHER.4.SEGMENTS",
+      "canonical_name": "Trình bày tài sản, doanh thu, kết quả kinh doanh theo bộ phận",
+      "note_ids": ["4"],
+      "titles": ["Trình bày tài sản, doanh thu, kết quả kinh doanh theo bộ phận"],
+      "title_aliases": ["Báo cáo bộ phận", "Thông tin theo bộ phận", "Bộ phận theo lĩnh vực kinh doanh và bộ phận theo khu vực địa lý"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.OTHER.5.COMPARATIVES",
+      "canonical_name": "Thông tin so sánh",
+      "note_ids": ["5"],
+      "titles": ["Thông tin so sánh"],
+      "title_aliases": ["Số liệu so sánh"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.OTHER.6.GOING_CONCERN",
+      "canonical_name": "Thông tin về hoạt động liên tục",
+      "note_ids": ["6"],
+      "titles": ["Thông tin về hoạt động liên tục"],
+      "title_aliases": ["Hoạt động liên tục"],
+      "rows": []
+    },
+    {
+      "alias_id": "ENTERPRISE.OTHER.7.OTHER",
+      "canonical_name": "Những thông tin khác",
+      "note_ids": ["7"],
+      "titles": ["Những thông tin khác"],
+      "title_aliases": ["Thông tin khác"],
+      "rows": []
+    }
+  ]
+}

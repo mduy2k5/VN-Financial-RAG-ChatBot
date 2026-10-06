@@ -1,0 +1,20 @@
+{
+  "base_aliases": "financial_position_aliases_v1_11_0.json",
+  "entries_add": {
+    "LIABILITY.OTHER.PROVISION": {
+      "node_id": "LIABILITY.OTHER.PROVISION",
+      "canonical_name": "Dự phòng các khoản nợ khác",
+      "match": {
+        "exact": [
+          "Dự phòng các khoản nợ khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản nợ khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    }
+  }
+}

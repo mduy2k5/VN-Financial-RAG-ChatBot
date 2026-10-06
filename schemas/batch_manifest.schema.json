@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vn-financial-report:batch-manifest:2.0.0",
+  "title": "VN financial report batch manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "report_contract", "generated_at", "input", "options", "report_count", "error_count", "reports"],
+  "properties": {
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "vn_financial_report_batch" },
+        "version": { "const": "2.0.0" }
+      }
+    },
+    "report_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "vn_financial_report_output" },
+        "version": { "const": "2.0.0" }
+      }
+    },
+    "generated_at": { "type": "string" },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "policy"],
+      "properties": {
+        "name": { "type": "string" },
+        "policy": { "const": "markdown_source_only" }
+      }
+    },
+    "options": { "type": "object" },
+    "report_count": { "type": "integer", "minimum": 0 },
+    "error_count": { "type": "integer", "minimum": 0 },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["report_id", "source", "path", "current_year", "previous_year", "status", "statements", "notes_status"],
+        "properties": {
+          "report_id": { "type": ["string", "null"] },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "sha256"],
+            "properties": {
+              "name": { "type": ["string", "null"] },
+              "sha256": { "type": ["string", "null"] }
+            }
+          },
+          "path": { "type": "string" },
+          "current_year": { "type": ["integer", "null"] },
+          "previous_year": { "type": ["integer", "null"] },
+          "status": { "type": ["string", "null"] },
+          "statements": { "type": "object" },
+          "notes_status": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "directory"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "directory": { "type": "string" }
+      }
+    }
+  }
+}

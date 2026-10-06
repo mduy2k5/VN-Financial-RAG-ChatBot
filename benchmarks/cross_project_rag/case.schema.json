@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vn-financial-understanding.local/financial-analysis-case.schema.json",
+  "title": "Financial analysis benchmark case",
+  "type": "object",
+  "required": [
+    "id",
+    "split",
+    "category",
+    "review_status",
+    "query",
+    "answerable",
+    "expected_scope"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "split": { "enum": ["dev", "holdout"] },
+    "category": { "type": "string", "minLength": 1 },
+    "review_status": { "enum": ["draft", "pending", "verified"] },
+    "reviewer_id": { "type": "string", "minLength": 1 },
+    "reviewed_at": { "type": "string", "format": "date-time" },
+    "query": { "type": "string", "minLength": 1 },
+    "answerable": { "type": "boolean" },
+    "expected_scope": {
+      "type": "object",
+      "required": ["company_codes", "fiscal_years", "report_basis"],
+      "properties": {
+        "company_codes": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "fiscal_years": { "type": "array", "minItems": 1, "items": { "type": "integer" } },
+        "report_basis": { "enum": ["separate", "consolidated", "either"] },
+        "report_type": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "expected_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["value", "sources"],
+        "properties": {
+          "label": { "type": "string" },
+          "year": { "type": "integer" },
+          "value": { "type": ["string", "number"] },
+          "unit": { "type": "string" },
+          "sources": { "$ref": "#/$defs/sources" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "expected_calculations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["formula_id", "value"],
+        "properties": {
+          "formula_id": { "type": "string" },
+          "formula_version": { "type": "string" },
+          "value": { "type": ["string", "number"] },
+          "unit": { "type": "string" },
+          "sources": { "$ref": "#/$defs/sources" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sources"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "sources": { "$ref": "#/$defs/sources" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_terms": { "type": "array", "items": { "type": "string" } },
+    "forbidden_terms": { "type": "array", "items": { "type": "string" } },
+    "abstention_markers": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "reviewer_notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "answerable": { "const": false } }, "required": ["answerable"] },
+      "then": {
+        "required": ["abstention_markers"],
+        "properties": {
+          "abstention_markers": { "minItems": 1 },
+          "expected_facts": { "maxItems": 0 },
+          "expected_calculations": { "maxItems": 0 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "review_status": { "const": "verified" } }, "required": ["review_status"] },
+      "then": { "required": ["reviewer_id", "reviewed_at"] }
+    }
+  ],
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["page"],
+      "properties": {
+        "file_name": { "type": "string" },
+        "source": { "type": "string" },
+        "page": { "type": "integer", "minimum": 1 }
+      },
+      "anyOf": [{ "required": ["file_name"] }, { "required": ["source"] }],
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "additionalProperties": false
+}

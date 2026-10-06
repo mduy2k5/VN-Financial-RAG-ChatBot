@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2700" height="1500" viewBox="0 0 2700 1500" role="img" aria-labelledby="title desc">
+<title id="title">Luồng xử lý dữ liệu từ TXT đến câu trả lời</title>
+<desc id="desc">Sơ đồ minh họa quá trình nạp báo cáo TXT, tạo chỉ mục, tìm bằng chứng theo câu hỏi, kiểm tra số liệu và trả lời người dùng kèm trích dẫn.</desc>
+<defs>
+  <marker id="arrow-blue" viewBox="0 0 18 18" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2L15 9L2 16Z" fill="#438fe3"/></marker>
+  <marker id="arrow-violet" viewBox="0 0 18 18" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2L15 9L2 16Z" fill="#8760d3"/></marker>
+  <marker id="arrow-teal" viewBox="0 0 18 18" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2L15 9L2 16Z" fill="#17a99b"/></marker>
+  <style>
+    text{font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .title{font-size:68px;font-weight:800;fill:#172438;letter-spacing:.6px}
+    .subtitle{font-size:31px;font-weight:500;fill:#63748b}
+    .section{font-size:34px;font-weight:800;fill:#172438;letter-spacing:.3px}
+    .section-note{font-size:23px;font-weight:500;fill:#708198}
+    .card-title{font-size:27px;font-weight:750;fill:#172438}
+    .card-copy{font-size:22px;font-weight:450;fill:#617187}
+    .step{font-size:19px;font-weight:800;fill:#438fe3}
+    .qstep{font-size:19px;font-weight:800;fill:#8760d3}
+    .footer{font-size:24px;font-weight:650;fill:#43536a}
+    .icon{fill:none;stroke:#438fe3;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .qicon{fill:none;stroke:#8760d3;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .dbicon{fill:none;stroke:#17a99b;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+</defs>
+
+<rect width="2700" height="1500" fill="#f5f7fb"/>
+<circle cx="110" cy="112" r="40" fill="#e7f1ff"/>
+<path d="M91 108h38M91 120h28M99 95h22v38H99z" class="icon"/>
+<text x="175" y="117" class="title">LUỒNG XỬ LÝ DỮ LIỆU</text>
+<text x="178" y="172" class="subtitle">Từ báo cáo TXT đến câu trả lời có số liệu và trích dẫn nguồn</text>
+<rect x="2092" y="74" width="475" height="98" rx="24" fill="#fff" stroke="#dfe6ef" stroke-width="2"/>
+<path d="M2126 108h68" stroke="#438fe3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<text x="2212" y="116" font-size="21" font-weight="650" fill="#617187">Nạp tài liệu</text>
+<path d="M2126 143h68" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<text x="2212" y="151" font-size="21" font-weight="650" fill="#617187">Hỏi đáp</text>
+
+<!-- Lane 1: ingest and index -->
+<rect x="55" y="220" width="2590" height="455" rx="30" fill="#edf5ff" stroke="#d9e7f7" stroke-width="2"/>
+<circle cx="110" cy="289" r="29" fill="#dcecff"/>
+<text x="110" y="298" text-anchor="middle" font-size="22" font-weight="850" fill="#438fe3">01</text>
+<text x="158" y="300" class="section">NẠP TÀI LIỆU &amp; LẬP CHỈ MỤC</text>
+<text x="715" y="298" class="section-note">Thực hiện khi thêm báo cáo; dữ liệu sẵn sàng sau khi ingestion hoàn tất</text>
+
+<!-- ingest arrows -->
+<path d="M435 500H493" fill="none" stroke="#438fe3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M845 500H903" fill="none" stroke="#438fe3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M1255 500H1313" fill="none" stroke="#438fe3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M1665 500H1723" fill="none" stroke="#438fe3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M2075 500H2133" fill="none" stroke="#438fe3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+
+<!-- ingest card 1 -->
+<rect x="95" y="365" width="340" height="270" rx="24" fill="#fff" stroke="#cfe0f3" stroke-width="2.5"/>
+<circle cx="145" cy="410" r="21" fill="#eaf3ff"/><text x="145" y="417" class="step" text-anchor="middle">1</text>
+<path d="M132 449h37l18 18v47h-55zM169 449v20h18M144 483h31M144 496h26" class="icon"/>
+<text x="205" y="472" class="card-title">Báo cáo .TXT</text>
+<text x="128" y="548" class="card-copy"><tspan x="128">Nội dung tài chính</tspan><tspan x="128" dy="32">được tải lên hệ thống</tspan></text>
+
+<!-- ingest card 2 -->
+<rect x="505" y="365" width="340" height="270" rx="24" fill="#fff" stroke="#cfe0f3" stroke-width="2.5"/>
+<circle cx="555" cy="410" r="21" fill="#eaf3ff"/><text x="555" y="417" class="step" text-anchor="middle">2</text>
+<path d="M622 454v47M604 473l18-19 18 19M590 492v18q0 8 8 8h48q8 0 8-8v-18" class="icon"/>
+<text x="680" y="472" class="card-title">Tiếp nhận</text>
+<text x="538" y="548" class="card-copy"><tspan x="538">API kiểm tra tệp</tspan><tspan x="538" dy="32">và ghi nhận tài liệu</tspan></text>
+
+<!-- ingest card 3 -->
+<rect x="915" y="365" width="340" height="270" rx="24" fill="#fff" stroke="#cfe0f3" stroke-width="2.5"/>
+<circle cx="965" cy="410" r="21" fill="#eaf3ff"/><text x="965" y="417" class="step" text-anchor="middle">3</text>
+<path d="M1000 455h59v18h-59zM1000 483h59v18h-59zM1012 464h21M1012 492h34M1029 473v10" class="icon"/>
+<text x="1075" y="472" class="card-title">Đọc cấu trúc</text>
+<text x="948" y="548" class="card-copy"><tspan x="948">Tách đoạn văn, bảng</tspan><tspan x="948" dy="32">và dòng chỉ tiêu</tspan></text>
+
+<!-- ingest card 4 -->
+<rect x="1325" y="365" width="340" height="270" rx="24" fill="#fff" stroke="#cfe0f3" stroke-width="2.5"/>
+<circle cx="1375" cy="410" r="21" fill="#eaf3ff"/><text x="1375" y="417" class="step" text-anchor="middle">4</text>
+<path d="M1412 451h43l15 15v52h-58zM1455 451v17h15M1423 482h34M1423 495h23M1468 485v27M1460 503l8 9 8-9" class="icon"/>
+<text x="1480" y="472" class="card-title">Chuẩn hóa</text>
+<text x="1358" y="548" class="card-copy"><tspan x="1358">Gắn metadata, chia chunk</tspan><tspan x="1358" dy="32">và giữ vị trí nguồn</tspan></text>
+
+<!-- ingest card 5 -->
+<rect x="1735" y="365" width="340" height="270" rx="24" fill="#fff" stroke="#cfe0f3" stroke-width="2.5"/>
+<circle cx="1785" cy="410" r="21" fill="#eaf3ff"/><text x="1785" y="417" class="step" text-anchor="middle">5</text>
+<ellipse cx="1850" cy="460" rx="30" ry="11" class="dbicon"/><path d="M1820 460v42c0 7 13 12 30 12s30-5 30-12v-42M1820 480c0 7 13 12 30 12s30-5 30-12" class="dbicon"/>
+<text x="1900" y="472" class="card-title">MongoDB</text>
+<text x="1768" y="548" class="card-copy"><tspan x="1768">Lưu văn bản gốc,</tspan><tspan x="1768" dy="32">chunks và metadata</tspan></text>
+
+<!-- ingest card 6 -->
+<rect x="2145" y="365" width="340" height="270" rx="24" fill="#fff" stroke="#cfe0f3" stroke-width="2.5"/>
+<circle cx="2195" cy="410" r="21" fill="#eaf3ff"/><text x="2195" y="417" class="step" text-anchor="middle">6</text>
+<circle cx="2263" cy="479" r="26" class="icon"/><path d="M2283 499l20 20M2248 479h30M2263 464v30" class="icon"/>
+<text x="2315" y="472" class="card-title" font-size="25">Chỉ mục tìm kiếm</text>
+<text x="2178" y="548" class="card-copy"><tspan x="2178">BM25 trong RAM</tspan><tspan x="2178" dy="32">E5 → Qdrant nếu bật</tspan></text>
+
+<!-- published index to query retrieval -->
+<path d="M2315 635V724H1512V884" fill="none" stroke="#17a99b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<rect x="1760" y="688" width="340" height="48" rx="22" fill="#e3f6f2"/>
+<text x="1930" y="720" text-anchor="middle" font-size="21" font-weight="750" fill="#198577">CHỈ MỤC ĐÃ SẴN SÀNG</text>
+
+<!-- Lane 2: query and answer -->
+<rect x="55" y="770" width="2590" height="515" rx="30" fill="#f3effb" stroke="#e2d8f0" stroke-width="2"/>
+<circle cx="110" cy="832" r="29" fill="#e8def8"/>
+<text x="110" y="841" text-anchor="middle" font-size="22" font-weight="850" fill="#8760d3">02</text>
+<text x="158" y="844" class="section">TÌM BẰNG CHỨNG &amp; TRẢ LỜI</text>
+<text x="765" y="842" class="section-note">Lặp lại mỗi lượt hỏi; phạm vi câu hỏi quyết định đoạn nguồn được dùng</text>
+
+<!-- query arrows -->
+<path d="M355 1035H387" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<path d="M680 1035H712" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<path d="M1005 1035H1037" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<path d="M1330 1035H1362" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<path d="M1655 1035H1687" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<path d="M1980 1035H2012" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+<path d="M2305 1035H2337" fill="none" stroke="#8760d3" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-violet)"/>
+
+<!-- query card 1 -->
+<rect x="60" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#dfd4ef" stroke-width="2.5"/>
+<circle cx="105" cy="941" r="20" fill="#f0eafd"/><text x="105" y="948" class="qstep" text-anchor="middle">1</text>
+<path d="M105 982a17 17 0 1 0 0-34 17 17 0 0 0 0 34M77 1021c3-16 14-24 28-24s25 8 28 24M125 1000h37q7 0 7 7v20q0 7-7 7h-20l-12 10v-10h-5" class="qicon"/>
+<text x="78" y="1071" class="card-title" font-size="25">Câu hỏi</text>
+<text x="78" y="1113" class="card-copy"><tspan x="78">“Tổng tài sản MBB</tspan><tspan x="78" dy="30">năm 2025 là bao nhiêu?”</tspan></text>
+
+<!-- query card 2 -->
+<rect x="385" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#dfd4ef" stroke-width="2.5"/>
+<circle cx="430" cy="941" r="20" fill="#f0eafd"/><text x="430" y="948" class="qstep" text-anchor="middle">2</text>
+<rect x="478" y="956" width="65" height="59" rx="9" class="qicon"/><path d="M478 974h65M496 991h10M520 991h10M496 1003h34" class="qicon"/>
+<text x="403" y="1071" class="card-title" font-size="25">API tiếp nhận</text>
+<text x="403" y="1113" class="card-copy"><tspan x="403">FastAPI nhận câu hỏi</tspan><tspan x="403" dy="30">và phiên chat</tspan></text>
+
+<!-- query card 3 -->
+<rect x="710" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#dfd4ef" stroke-width="2.5"/>
+<circle cx="755" cy="941" r="20" fill="#f0eafd"/><text x="755" y="948" class="qstep" text-anchor="middle">3</text>
+<circle cx="821" cy="980" r="24" class="qicon"/><path d="M839 998l20 20M810 980h22M821 969v22" class="qicon"/>
+<text x="728" y="1071" class="card-title" font-size="24">Hiểu yêu cầu</text>
+<text x="728" y="1113" class="card-copy"><tspan x="728">Nhận diện công ty,</tspan><tspan x="728" dy="30">kỳ và chỉ tiêu</tspan></text>
+
+<!-- query card 4 -->
+<rect x="1035" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#dfd4ef" stroke-width="2.5"/>
+<circle cx="1080" cy="941" r="20" fill="#f0eafd"/><text x="1080" y="948" class="qstep" text-anchor="middle">4</text>
+<path d="M1140 954h63l-24 28v27l-15 8v-35z" class="qicon"/>
+<text x="1053" y="1071" class="card-title" font-size="24">Giới hạn phạm vi</text>
+<text x="1053" y="1113" class="card-copy"><tspan x="1053">Đúng công ty, kỳ</tspan><tspan x="1053" dy="30">và loại báo cáo</tspan></text>
+
+<!-- query card 5 -->
+<rect x="1360" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#cfe5e2" stroke-width="3"/>
+<circle cx="1405" cy="941" r="20" fill="#e6f6f3"/><text x="1405" y="948" font-size="19" font-weight="800" fill="#198577" text-anchor="middle">5</text>
+<circle cx="1475" cy="978" r="23" class="dbicon"/><path d="M1492 995l20 20M1463 978h24M1475 966v24" class="dbicon"/>
+<text x="1378" y="1071" class="card-title" font-size="25">Tìm bằng chứng</text>
+<text x="1378" y="1113" class="card-copy"><tspan x="1378">BM25 · E5 tùy chọn</tspan><tspan x="1378" dy="30">hợp nhất thứ hạng</tspan></text>
+
+<!-- query card 6 -->
+<rect x="1685" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#dfd4ef" stroke-width="2.5"/>
+<circle cx="1730" cy="941" r="20" fill="#f0eafd"/><text x="1730" y="948" class="qstep" text-anchor="middle">6</text>
+<path d="M1768 953h55l14 14v51h-69zM1823 953v16h14M1781 984h42M1781 997h27" class="qicon"/><circle cx="1831" cy="1017" r="14" fill="#fff" stroke="#17a99b" stroke-width="4"/><text x="1831" y="1024" text-anchor="middle" font-size="18" font-weight="800" fill="#17a99b">c</text>
+<text x="1703" y="1071" class="card-title" font-size="24">Ghép ngữ cảnh</text>
+<text x="1703" y="1113" class="card-copy"><tspan x="1703">Đoạn liên quan cùng</tspan><tspan x="1703" dy="30">trích dẫn [c1]</tspan></text>
+
+<!-- query card 7 -->
+<rect x="2010" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#dfd4ef" stroke-width="2.5"/>
+<circle cx="2055" cy="941" r="20" fill="#f0eafd"/><text x="2055" y="948" class="qstep" text-anchor="middle">7</text>
+<path d="M2092 953h48l15 15v52h-63zM2140 953v17h15M2105 988l11 11 22-27" class="qicon"/>
+<text x="2028" y="1071" class="card-title" font-size="24">Dựng &amp; kiểm tra</text>
+<text x="2028" y="1113" class="card-copy"><tspan x="2028">Số, đơn vị, trích dẫn</tspan><tspan x="2028" dy="30">LLM diễn giải tùy chọn</tspan></text>
+
+<!-- query card 8 -->
+<rect x="2335" y="900" width="295" height="290" rx="24" fill="#fff" stroke="#cfe5e2" stroke-width="3"/>
+<circle cx="2380" cy="941" r="20" fill="#e6f6f3"/><text x="2380" y="948" font-size="19" font-weight="800" fill="#198577" text-anchor="middle">8</text>
+<path d="M2412 958h60q8 0 8 8v34q0 8-8 8h-25l-16 13v-13h-19q-8 0-8-8v-34q0-8 8-8zM2427 977h38M2427 990h27" class="dbicon"/>
+<text x="2353" y="1071" class="card-title" font-size="24">Trả về người dùng</text>
+<text x="2353" y="1113" class="card-copy"><tspan x="2353">Câu trả lời, nguồn</tspan><tspan x="2353" dy="30">và trích đoạn liên quan</tspan></text>
+
+<!-- footer -->
+<rect x="95" y="1320" width="2510" height="105" rx="24" fill="#fff" stroke="#dfe6ef" stroke-width="2"/>
+<circle cx="147" cy="1372" r="20" fill="#e3f6f2"/>
+<path d="M138 1372l7 7 13-15" fill="none" stroke="#17a99b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="185" y="1381" class="footer">TXT chỉ được truy vấn sau khi xử lý thành công · BM25 hoạt động mặc định · E5/Qdrant là tùy chọn</text>
+</svg>

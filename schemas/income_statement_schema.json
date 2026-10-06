@@ -1,0 +1,904 @@
+{
+  "schema_id": "UNIVERSAL_INCOME_STATEMENT_V1",
+  "schema_version": "1.5.2",
+  "statement_type": "INCOME_STATEMENT",
+  "profiles": {
+    "enterprise": {
+      "forms": [
+        "B02-DN",
+        "B02-DN/HN"
+      ]
+    },
+    "bank": {
+      "forms": [
+        "B03/TCTD",
+        "B03/TCTD-HN"
+      ]
+    },
+    "securities": {
+      "forms": [
+        "B02-CTCK"
+      ]
+    },
+    "insurance": {
+      "forms": [
+        "B02-DN/HN-INSURANCE",
+        "B02-INSURANCE"
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "INCOME.ENTERPRISE.REVENUE_GROSS",
+      "canonical_name": "Doanh thu bán hàng và cung cấp dịch vụ",
+      "sector": "enterprise",
+      "form_code": "01"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.REVENUE_DEDUCTIONS",
+      "canonical_name": "Các khoản giảm trừ doanh thu",
+      "sector": "enterprise",
+      "form_code": "02"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.REVENUE_NET",
+      "canonical_name": "Doanh thu thuần về bán hàng và cung cấp dịch vụ",
+      "sector": "enterprise",
+      "form_code": "10"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.COGS",
+      "canonical_name": "Giá vốn hàng bán",
+      "sector": "enterprise",
+      "form_code": "11"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.GROSS_PROFIT",
+      "canonical_name": "Lợi nhuận gộp về bán hàng và cung cấp dịch vụ",
+      "sector": "enterprise",
+      "form_code": "20"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.FINANCIAL_INCOME",
+      "canonical_name": "Doanh thu hoạt động tài chính",
+      "sector": "enterprise",
+      "form_code": "21"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.FINANCIAL_EXPENSE",
+      "canonical_name": "Chi phí tài chính",
+      "sector": "enterprise",
+      "form_code": "22"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.INTEREST_EXPENSE",
+      "canonical_name": "Chi phí lãi vay",
+      "sector": "enterprise",
+      "form_code": "23"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.SHARE_OF_PROFIT_ASSOCIATES",
+      "canonical_name": "Phần lãi/lỗ trong công ty liên doanh, liên kết",
+      "sector": "enterprise",
+      "form_code": "24"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.SELLING_EXPENSE",
+      "canonical_name": "Chi phí bán hàng",
+      "sector": "enterprise",
+      "form_code": "25"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.GENERAL_ADMIN_EXPENSE",
+      "canonical_name": "Chi phí quản lý doanh nghiệp",
+      "sector": "enterprise",
+      "form_code": "26"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.OPERATING_PROFIT",
+      "canonical_name": "Lợi nhuận thuần từ hoạt động kinh doanh",
+      "sector": "enterprise",
+      "form_code": "30"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.OTHER_INCOME",
+      "canonical_name": "Thu nhập khác",
+      "sector": "enterprise",
+      "form_code": "31"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.OTHER_EXPENSE",
+      "canonical_name": "Chi phí khác",
+      "sector": "enterprise",
+      "form_code": "32"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.OTHER_PROFIT",
+      "canonical_name": "Lợi nhuận khác",
+      "sector": "enterprise",
+      "form_code": "40"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.PROFIT_BEFORE_TAX",
+      "canonical_name": "Tổng lợi nhuận kế toán trước thuế",
+      "sector": "enterprise",
+      "form_code": "50"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.CURRENT_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN hiện hành",
+      "sector": "enterprise",
+      "form_code": "51"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.DEFERRED_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN hoãn lại",
+      "sector": "enterprise",
+      "form_code": "52"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.PROFIT_AFTER_TAX",
+      "canonical_name": "Lợi nhuận sau thuế thu nhập doanh nghiệp",
+      "sector": "enterprise",
+      "form_code": "60"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.PROFIT_ATTRIBUTABLE_PARENT",
+      "canonical_name": "Lợi nhuận sau thuế của cổ đông công ty mẹ",
+      "sector": "enterprise",
+      "form_code": "61"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.PROFIT_ATTRIBUTABLE_NCI",
+      "canonical_name": "Lợi nhuận sau thuế của cổ đông không kiểm soát",
+      "sector": "enterprise",
+      "form_code": "62"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.BASIC_EPS",
+      "canonical_name": "Lãi cơ bản trên cổ phiếu",
+      "sector": "enterprise",
+      "form_code": "70"
+    },
+    {
+      "node_id": "INCOME.ENTERPRISE.DILUTED_EPS",
+      "canonical_name": "Lãi suy giảm trên cổ phiếu",
+      "sector": "enterprise",
+      "form_code": "71"
+    },
+    {
+      "node_id": "INCOME.BANK.INTEREST_INCOME",
+      "canonical_name": "Thu nhập lãi và các khoản thu nhập tương tự",
+      "sector": "bank",
+      "form_code": "1"
+    },
+    {
+      "node_id": "INCOME.BANK.INTEREST_EXPENSE",
+      "canonical_name": "Chi phí lãi và các chi phí tương tự",
+      "sector": "bank",
+      "form_code": "2"
+    },
+    {
+      "node_id": "INCOME.BANK.NET_INTEREST_INCOME",
+      "canonical_name": "Thu nhập lãi thuần",
+      "sector": "bank",
+      "form_code": "I"
+    },
+    {
+      "node_id": "INCOME.BANK.SERVICE_INCOME",
+      "canonical_name": "Thu nhập từ hoạt động dịch vụ",
+      "sector": "bank",
+      "form_code": "3"
+    },
+    {
+      "node_id": "INCOME.BANK.SERVICE_EXPENSE",
+      "canonical_name": "Chi phí hoạt động dịch vụ",
+      "sector": "bank",
+      "form_code": "4"
+    },
+    {
+      "node_id": "INCOME.BANK.NET_SERVICE_INCOME",
+      "canonical_name": "Lãi/lỗ thuần từ hoạt động dịch vụ",
+      "sector": "bank",
+      "form_code": "II"
+    },
+    {
+      "node_id": "INCOME.BANK.NET_FX_TRADING",
+      "canonical_name": "Lãi/lỗ thuần từ hoạt động kinh doanh ngoại hối",
+      "sector": "bank",
+      "form_code": "III"
+    },
+    {
+      "node_id": "INCOME.BANK.NET_TRADING_SECURITIES",
+      "canonical_name": "Lãi/lỗ thuần từ mua bán chứng khoán kinh doanh",
+      "sector": "bank",
+      "form_code": "IV"
+    },
+    {
+      "node_id": "INCOME.BANK.NET_INVESTMENT_SECURITIES",
+      "canonical_name": "Lãi/lỗ thuần từ mua bán chứng khoán đầu tư",
+      "sector": "bank",
+      "form_code": "V"
+    },
+    {
+      "node_id": "INCOME.BANK.OTHER_OPERATING_INCOME",
+      "canonical_name": "Thu nhập từ hoạt động khác",
+      "sector": "bank",
+      "form_code": "5"
+    },
+    {
+      "node_id": "INCOME.BANK.OTHER_OPERATING_EXPENSE",
+      "canonical_name": "Chi phí hoạt động khác",
+      "sector": "bank",
+      "form_code": "6"
+    },
+    {
+      "node_id": "INCOME.BANK.NET_OTHER_OPERATING",
+      "canonical_name": "Lãi/lỗ thuần từ hoạt động khác",
+      "sector": "bank",
+      "form_code": "VI"
+    },
+    {
+      "node_id": "INCOME.BANK.DIVIDEND_EQUITY_INCOME",
+      "canonical_name": "Thu nhập từ góp vốn, mua cổ phần",
+      "sector": "bank",
+      "form_code": "VII"
+    },
+    {
+      "node_id": "INCOME.BANK.TOTAL_OPERATING_INCOME",
+      "canonical_name": "Tổng thu nhập hoạt động",
+      "sector": "bank",
+      "form_code": null,
+      "extension": true
+    },
+    {
+      "node_id": "INCOME.BANK.OPERATING_EXPENSE",
+      "canonical_name": "Chi phí hoạt động",
+      "sector": "bank",
+      "form_code": "VIII"
+    },
+    {
+      "node_id": "INCOME.BANK.PERSONNEL_EXPENSE",
+      "canonical_name": "Chi phí nhân viên",
+      "sector": "bank",
+      "form_code": null,
+      "extension": true
+    },
+    {
+      "node_id": "INCOME.BANK.ASSET_EXPENSE",
+      "canonical_name": "Chi phí về tài sản",
+      "sector": "bank",
+      "form_code": null,
+      "extension": true
+    },
+    {
+      "node_id": "INCOME.BANK.PRE_PROVISION_OPERATING_PROFIT",
+      "canonical_name": "Lợi nhuận thuần từ hoạt động kinh doanh trước chi phí dự phòng rủi ro tín dụng",
+      "sector": "bank",
+      "form_code": "IX"
+    },
+    {
+      "node_id": "INCOME.BANK.CREDIT_RISK_PROVISION_EXPENSE",
+      "canonical_name": "Chi phí dự phòng rủi ro tín dụng",
+      "sector": "bank",
+      "form_code": "X"
+    },
+    {
+      "node_id": "INCOME.BANK.PROFIT_BEFORE_TAX",
+      "canonical_name": "Tổng lợi nhuận trước thuế",
+      "sector": "bank",
+      "form_code": "XI"
+    },
+    {
+      "node_id": "INCOME.BANK.CURRENT_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN hiện hành",
+      "sector": "bank",
+      "form_code": "7"
+    },
+    {
+      "node_id": "INCOME.BANK.DEFERRED_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN hoãn lại",
+      "sector": "bank",
+      "form_code": "8"
+    },
+    {
+      "node_id": "INCOME.BANK.TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN",
+      "sector": "bank",
+      "form_code": "XII"
+    },
+    {
+      "node_id": "INCOME.BANK.PROFIT_AFTER_TAX",
+      "canonical_name": "Lợi nhuận sau thuế",
+      "sector": "bank",
+      "form_code": "XIII"
+    },
+    {
+      "node_id": "INCOME.BANK.MINORITY_INTEREST",
+      "canonical_name": "Lợi ích của cổ đông thiểu số",
+      "sector": "bank",
+      "form_code": "XIV"
+    },
+    {
+      "node_id": "INCOME.BANK.BASIC_EPS",
+      "canonical_name": "Lãi cơ bản trên cổ phiếu",
+      "sector": "bank",
+      "form_code": "XV"
+    },
+    {
+      "node_id": "INCOME.BANK.DILUTED_EPS",
+      "canonical_name": "Lãi suy giảm trên cổ phiếu",
+      "sector": "bank",
+      "form_code": null,
+      "extension": true
+    },
+    {
+      "node_id": "INCOME.BANK.PROFIT_ATTRIBUTABLE_PARENT",
+      "canonical_name": "Lợi nhuận sau thuế của cổ đông công ty mẹ",
+      "sector": "bank",
+      "form_code": null
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_GAIN",
+      "canonical_name": "Lãi từ các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "01"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_SALE_GAIN",
+      "canonical_name": "Lãi bán các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "01.1"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_REVALUATION_GAIN",
+      "canonical_name": "Chênh lệch tăng về đánh giá lại các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "01.2"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_DIVIDEND_INTEREST",
+      "canonical_name": "Cổ tức, tiền lãi phát sinh từ các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "01.3"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.WARRANT_REVALUATION_GAIN",
+      "canonical_name": "Chênh lệch giảm do đánh giá lại phải trả chứng quyền đang lưu hành",
+      "sector": "securities",
+      "form_code": "01.4"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.HTM_INCOME",
+      "canonical_name": "Lãi từ các khoản đầu tư HTM",
+      "sector": "securities",
+      "form_code": "02"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.LOAN_RECEIVABLE_INCOME",
+      "canonical_name": "Lãi từ các khoản cho vay và phải thu",
+      "sector": "securities",
+      "form_code": "03"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.AFS_INCOME",
+      "canonical_name": "Lãi từ tài sản tài chính AFS",
+      "sector": "securities",
+      "form_code": "04"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.BROKERAGE_REVENUE",
+      "canonical_name": "Doanh thu nghiệp vụ môi giới chứng khoán",
+      "sector": "securities",
+      "form_code": "06"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.UNDERWRITING_REVENUE",
+      "canonical_name": "Doanh thu nghiệp vụ bảo lãnh, đại lý phát hành chứng khoán",
+      "sector": "securities",
+      "form_code": "07"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.INVESTMENT_ADVISORY_REVENUE",
+      "canonical_name": "Doanh thu nghiệp vụ tư vấn đầu tư chứng khoán",
+      "sector": "securities",
+      "form_code": "08"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.CUSTODY_REVENUE",
+      "canonical_name": "Doanh thu nghiệp vụ lưu ký chứng khoán",
+      "sector": "securities",
+      "form_code": "09"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FINANCIAL_ADVISORY_REVENUE",
+      "canonical_name": "Doanh thu hoạt động tư vấn tài chính",
+      "sector": "securities",
+      "form_code": "10"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_OPERATING_INCOME",
+      "canonical_name": "Thu nhập hoạt động khác",
+      "sector": "securities",
+      "form_code": "11"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_OPERATING_REVENUE",
+      "canonical_name": "Tổng doanh thu hoạt động",
+      "sector": "securities",
+      "form_code": "20"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_LOSS",
+      "canonical_name": "Lỗ từ các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "21"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_SALE_LOSS",
+      "canonical_name": "Lỗ bán các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "21.1"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_REVALUATION_LOSS",
+      "canonical_name": "Chênh lệch giảm về đánh giá lại các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "21.2"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FVTPL_TRANSACTION_EXPENSE",
+      "canonical_name": "Chi phí giao dịch mua các tài sản tài chính FVTPL",
+      "sector": "securities",
+      "form_code": "21.3"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.WARRANT_REVALUATION_LOSS",
+      "canonical_name": "Chênh lệch tăng do đánh giá lại phải trả chứng quyền đang lưu hành",
+      "sector": "securities",
+      "form_code": "21.4"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.AFS_RECLASSIFICATION_LOSS",
+      "canonical_name": "Lỗ do phân loại lại tài sản tài chính AFS",
+      "sector": "securities",
+      "form_code": "23"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.PROVISION_EXPENSE",
+      "canonical_name": "Chi phí dự phòng tài sản tài chính và tổn thất phải thu",
+      "sector": "securities",
+      "form_code": "24"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.PROPRIETARY_TRADING_EXPENSE",
+      "canonical_name": "Chi phí hoạt động tự doanh",
+      "sector": "securities",
+      "form_code": "26"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.BROKERAGE_EXPENSE",
+      "canonical_name": "Chi phí nghiệp vụ môi giới chứng khoán",
+      "sector": "securities",
+      "form_code": "27"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.UNDERWRITING_EXPENSE",
+      "canonical_name": "Chi phí nghiệp vụ bảo lãnh, đại lý phát hành chứng khoán",
+      "sector": "securities",
+      "form_code": "28"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.CUSTODY_EXPENSE",
+      "canonical_name": "Chi phí nghiệp vụ lưu ký chứng khoán",
+      "sector": "securities",
+      "form_code": "30"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FINANCIAL_ADVISORY_EXPENSE",
+      "canonical_name": "Chi phí nghiệp vụ tư vấn tài chính",
+      "sector": "securities",
+      "form_code": "31"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_SERVICE_EXPENSE",
+      "canonical_name": "Chi phí các dịch vụ khác",
+      "sector": "securities",
+      "form_code": "32"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_OPERATING_EXPENSE",
+      "canonical_name": "Tổng chi phí hoạt động",
+      "sector": "securities",
+      "form_code": "40"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FX_GAIN",
+      "canonical_name": "Chênh lệch lãi tỷ giá hối đoái đã và chưa thực hiện",
+      "sector": "securities",
+      "form_code": "41"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.DIVIDEND_DEPOSIT_INCOME",
+      "canonical_name": "Doanh thu, dự thu cổ tức, lãi tiền gửi không kỳ hạn",
+      "sector": "securities",
+      "form_code": "42"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_INVESTMENT_INCOME",
+      "canonical_name": "Doanh thu khác về đầu tư",
+      "sector": "securities",
+      "form_code": "44"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_FINANCIAL_INCOME",
+      "canonical_name": "Tổng doanh thu hoạt động tài chính",
+      "sector": "securities",
+      "form_code": "50"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.FX_LOSS",
+      "canonical_name": "Chênh lệch lỗ tỷ giá hối đoái đã và chưa thực hiện",
+      "sector": "securities",
+      "form_code": "51"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.INTEREST_EXPENSE",
+      "canonical_name": "Chi phí lãi vay",
+      "sector": "securities",
+      "form_code": "52"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_FINANCIAL_EXPENSE",
+      "canonical_name": "Chi phí tài chính khác",
+      "sector": "securities",
+      "form_code": "55"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_FINANCIAL_EXPENSE",
+      "canonical_name": "Tổng chi phí tài chính",
+      "sector": "securities",
+      "form_code": "60"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.MANAGEMENT_EXPENSE",
+      "canonical_name": "Chi phí quản lý công ty chứng khoán",
+      "sector": "securities",
+      "form_code": "62"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OPERATING_RESULT",
+      "canonical_name": "Kết quả hoạt động",
+      "sector": "securities",
+      "form_code": "70"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_INCOME",
+      "canonical_name": "Thu nhập khác",
+      "sector": "securities",
+      "form_code": "71"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_EXPENSE",
+      "canonical_name": "Chi phí khác",
+      "sector": "securities",
+      "form_code": "72"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_RESULT",
+      "canonical_name": "Tổng kết quả hoạt động khác",
+      "sector": "securities",
+      "form_code": "80"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.PROFIT_BEFORE_TAX",
+      "canonical_name": "Tổng lợi nhuận kế toán trước thuế",
+      "sector": "securities",
+      "form_code": "90"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.REALIZED_PROFIT",
+      "canonical_name": "Lợi nhuận đã thực hiện",
+      "sector": "securities",
+      "form_code": "91"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.UNREALIZED_PROFIT",
+      "canonical_name": "Lợi nhuận chưa thực hiện",
+      "sector": "securities",
+      "form_code": "92"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế thu nhập doanh nghiệp",
+      "sector": "securities",
+      "form_code": "100"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.CURRENT_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN hiện hành",
+      "sector": "securities",
+      "form_code": "100.1"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.DEFERRED_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế TNDN hoãn lại",
+      "sector": "securities",
+      "form_code": "100.2"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.PROFIT_AFTER_TAX",
+      "canonical_name": "Lợi nhuận kế toán sau thuế TNDN",
+      "sector": "securities",
+      "form_code": "200"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_COMPREHENSIVE_INCOME",
+      "canonical_name": "Thu nhập toàn diện khác sau thuế TNDN",
+      "sector": "securities",
+      "form_code": "300"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.AFS_OCI",
+      "canonical_name": "Lãi/lỗ từ đánh giá lại các tài sản tài chính AFS",
+      "sector": "securities",
+      "form_code": "301"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_COMPREHENSIVE_INCOME",
+      "canonical_name": "Tổng thu nhập toàn diện",
+      "sector": "securities",
+      "form_code": "400"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.NET_INCOME_COMMON_SHARES",
+      "canonical_name": "Thu nhập thuần trên cổ phiếu phổ thông",
+      "sector": "securities",
+      "form_code": "500"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.BASIC_EPS",
+      "canonical_name": "Lãi cơ bản trên cổ phiếu",
+      "sector": "securities",
+      "form_code": "501"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.DILUTED_EPS",
+      "canonical_name": "Lãi suy giảm trên cổ phiếu",
+      "sector": "securities",
+      "form_code": "502"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.DIRECT_INSURANCE_OTHER_EXPENSE",
+      "canonical_name": "Chi khác hoạt động bảo hiểm gốc",
+      "sector": "insurance",
+      "form_code": "31"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.COMMISSION_EXPENSE",
+      "canonical_name": "Chi hoa hồng",
+      "sector": "insurance",
+      "form_code": "32"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.OTHER_INSURANCE_BUSINESS_EXPENSE",
+      "canonical_name": "Chi khác hoạt động kinh doanh bảo hiểm",
+      "sector": "insurance",
+      "form_code": "33"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.TOTAL_DIRECT_INSURANCE_EXPENSE",
+      "canonical_name": "Tổng chi trực tiếp hoạt động kinh doanh bảo hiểm",
+      "sector": "insurance",
+      "form_code": "41"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.GROSS_INSURANCE_PROFIT",
+      "canonical_name": "Lợi nhuận (Lỗ) gộp hoạt động kinh doanh bảo hiểm",
+      "sector": "insurance",
+      "form_code": "42"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.NET_OTHER_OPERATIONS",
+      "canonical_name": "(Lỗ)/Lợi nhuận thuần từ các hoạt động khác",
+      "sector": "insurance",
+      "form_code": "43"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.OTHER_OPERATING_REVENUE",
+      "canonical_name": "Doanh thu hoạt động khác",
+      "sector": "insurance",
+      "form_code": "43.1"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.OTHER_OPERATING_EXPENSE",
+      "canonical_name": "Chi phí hoạt động khác",
+      "sector": "insurance",
+      "form_code": "43.2"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.FINANCIAL_PROFIT",
+      "canonical_name": "Lợi nhuận hoạt động tài chính",
+      "sector": "insurance",
+      "form_code": "44"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.FINANCIAL_REVENUE",
+      "canonical_name": "Doanh thu hoạt động tài chính",
+      "sector": "insurance",
+      "form_code": "44.1"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.FINANCIAL_EXPENSE",
+      "canonical_name": "Chi phí hoạt động tài chính",
+      "sector": "insurance",
+      "form_code": "44.2"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.SHARE_OF_PROFIT_ASSOCIATES",
+      "canonical_name": "Phần lợi nhuận trong công ty liên kết, đơn vị kinh doanh đồng kiểm soát",
+      "sector": "insurance",
+      "form_code": "45"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.SELLING_EXPENSE",
+      "canonical_name": "Chi phí bán hàng",
+      "sector": "insurance",
+      "form_code": "46"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.GENERAL_ADMIN_EXPENSE",
+      "canonical_name": "Chi phí quản lý doanh nghiệp",
+      "sector": "insurance",
+      "form_code": "47"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.OTHER_PROFIT",
+      "canonical_name": "Lợi nhuận khác",
+      "sector": "insurance",
+      "form_code": "48"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.OTHER_INCOME",
+      "canonical_name": "Thu nhập khác",
+      "sector": "insurance",
+      "form_code": "48.1"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.OTHER_EXPENSE",
+      "canonical_name": "Chi phí khác",
+      "sector": "insurance",
+      "form_code": "48.2"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.PROFIT_BEFORE_TAX",
+      "canonical_name": "Tổng lợi nhuận kế toán trước thuế",
+      "sector": "insurance",
+      "form_code": "50"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.CURRENT_TAX_EXPENSE",
+      "canonical_name": "Chi phí thuế thu nhập doanh nghiệp hiện hành",
+      "sector": "insurance",
+      "form_code": "51"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.DEFERRED_TAX_EXPENSE",
+      "canonical_name": "Thu nhập (chi phí) thuế thu nhập doanh nghiệp hoãn lại",
+      "sector": "insurance",
+      "form_code": "52"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.PROFIT_AFTER_TAX",
+      "canonical_name": "Lợi nhuận sau thuế thu nhập doanh nghiệp",
+      "sector": "insurance",
+      "form_code": "60"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.PROFIT_ATTRIBUTABLE_PARENT",
+      "canonical_name": "Lợi nhuận sau thuế của chủ sở hữu Tập đoàn",
+      "sector": "insurance",
+      "form_code": "61"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.PROFIT_ATTRIBUTABLE_NCI",
+      "canonical_name": "Lợi nhuận sau thuế của cổ đông không kiểm soát",
+      "sector": "insurance",
+      "form_code": "62"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.BASIC_EPS",
+      "canonical_name": "Lãi cơ bản trên cổ phiếu",
+      "sector": "insurance",
+      "form_code": "70"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.DIRECT_PREMIUM_REVENUE",
+      "canonical_name": "Doanh thu phí bảo hiểm gốc",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.REINSURANCE_ACCEPTED_REVENUE",
+      "canonical_name": "Doanh thu nhận tái bảo hiểm",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.REINSURANCE_CEDED_PREMIUM",
+      "canonical_name": "Phí nhượng tái bảo hiểm",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.NET_PREMIUM_REVENUE",
+      "canonical_name": "Doanh thu phí bảo hiểm thuần",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.DIRECT_CLAIMS_EXPENSE",
+      "canonical_name": "Chi bồi thường bảo hiểm gốc",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.REINSURANCE_RECOVERY",
+      "canonical_name": "Thu bồi thường nhượng tái bảo hiểm",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.RESERVE_CHANGE",
+      "canonical_name": "Tăng/giảm dự phòng nghiệp vụ bảo hiểm",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.LIFE_RESERVE_CHANGE",
+      "canonical_name": "Tăng/giảm dự phòng nghiệp vụ bảo hiểm nhân thọ",
+      "sector": "insurance"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.TOTAL_PREMIUM_REVENUE",
+      "canonical_name": "Doanh thu phí bảo hiểm",
+      "sector": "insurance",
+      "form_code": "01"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.REINSURANCE_COMMISSION_OTHER_REVENUE",
+      "canonical_name": "Hoa hồng nhượng tái bảo hiểm và doanh thu khác hoạt động kinh doanh bảo hiểm",
+      "sector": "insurance",
+      "form_code": "09"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.NET_INSURANCE_BUSINESS_REVENUE",
+      "canonical_name": "Doanh thu thuần từ hoạt động kinh doanh bảo hiểm",
+      "sector": "insurance",
+      "form_code": "15"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.ACCEPTED_REINSURANCE_CLAIMS_EXPENSE",
+      "canonical_name": "Chi bồi thường nhận tái bảo hiểm",
+      "sector": "insurance",
+      "form_code": "17"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.CLAIM_EXPENSE_REDUCTIONS",
+      "canonical_name": "Các khoản giảm trừ chi phí",
+      "sector": "insurance",
+      "form_code": "18"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.THIRD_PARTY_RECOVERY",
+      "canonical_name": "Thu đòi người thứ ba",
+      "sector": "insurance",
+      "form_code": "19"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.SALVAGE_RECOVERY",
+      "canonical_name": "Thu xử lý hàng bồi thường",
+      "sector": "insurance",
+      "form_code": "20"
+    },
+    {
+      "node_id": "INCOME.INSURANCE.TOTAL_CLAIMS_AND_BENEFITS",
+      "canonical_name": "Tổng chi bồi thường và trả tiền bảo hiểm",
+      "sector": "insurance",
+      "form_code": "29"
+    }
+  ]
+}

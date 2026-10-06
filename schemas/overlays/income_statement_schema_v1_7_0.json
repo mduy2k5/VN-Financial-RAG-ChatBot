@@ -1,0 +1,21 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_INCOME_STATEMENT_V1@1.7.0",
+  "base_schema": "income_statement_schema_v1_6_0.json",
+  "schema_id": "UNIVERSAL_INCOME_STATEMENT_V1",
+  "schema_version": "1.7.0",
+  "node_updates": {
+    "INCOME.SECURITIES.CUSTODY_REVENUE": {
+      "form_code": "10",
+      "form_code_variants": ["09", "10"]
+    },
+    "INCOME.SECURITIES.CUSTODY_EXPENSE": {
+      "form_code": "31",
+      "form_code_variants": ["30", "31"]
+    },
+    "INCOME.SECURITIES.AFS_OCI": {
+      "form_code": "302",
+      "form_code_variants": ["301", "302"]
+    }
+  }
+}

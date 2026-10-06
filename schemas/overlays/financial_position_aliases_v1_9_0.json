@@ -1,0 +1,158 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.9.0",
+  "base_aliases": "financial_position_aliases_v1_8_0.json",
+  "alias_schema_version": "1.9.0",
+  "target_schema": "UNIVERSAL_FINANCIAL_POSITION_V1@1.9.0",
+  "entries_update": {
+    "ASSET.RECEIVABLES.CONSTRUCTION_CONTRACT": {
+      "match": {
+        "exact_add": [
+          "Phải thu theo tiến độ kế hoạch hợp đồng xây dựng"
+        ]
+      }
+    },
+    "ASSET.FIN_INV.TRADING_SECURITIES.ALLOWANCE": {
+      "match": {
+        "exact_add": [
+          "Dự phòng giảm giá chứng khoán kinh doanh (*)"
+        ]
+      }
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE.SHORT_TERM": {
+      "match": {
+        "exact_add": [
+          "Dự phòng phải thu ngắn hạn khó đòi (*)"
+        ]
+      }
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE.LONG_TERM": {
+      "match": {
+        "exact_add": [
+          "Dự phòng phải thu dài hạn khó đòi (*)"
+        ]
+      }
+    },
+    "ASSET.INVENTORY.ALLOWANCE": {
+      "match": {
+        "exact_add": [
+          "Dự phòng giảm giá hàng tồn kho (*)"
+        ]
+      }
+    },
+    "ASSET.FIN_INV.ALLOWANCE": {
+      "match": {
+        "exact_add": [
+          "Dự phòng đầu tư tài chính dài hạn (*)"
+        ]
+      }
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR": {
+      "match": {
+        "aliases_add": [
+          "GIÁ TRỊ HAO MÒN LŨY KẾ (*)"
+        ]
+      }
+    },
+    "ASSET.FIXED_ASSETS.FINANCE_LEASE.ACCUM_DEPR": {
+      "match": {
+        "aliases_add": [
+          "GIÁ TRỊ HAO MÒN LŨY KẾ (*)"
+        ]
+      }
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR": {
+      "match": {
+        "aliases_add": [
+          "GIÁ TRỊ HAO MÒN LŨY KẾ (*)"
+        ]
+      }
+    },
+    "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR": {
+      "match": {
+        "aliases_add": [
+          "GIÁ TRỊ HAO MÒN LŨY KẾ (*)"
+        ]
+      }
+    },
+    "LIABILITY.PREFERRED_SHARES_LIABILITY": {
+      "match": {
+        "exact_add": [
+          "Cổ phiếu ưu đãi"
+        ],
+        "parent_context_add": [
+          "Nợ dài hạn"
+        ]
+      }
+    },
+    "EQUITY.OWNER_CAPITAL.PREFERRED": {
+      "match": {
+        "exact_add": [
+          "Cổ phiếu ưu đãi"
+        ]
+      }
+    },
+    "EQUITY.TREASURY_SHARES": {
+      "match": {
+        "exact_add": [
+          "Cổ phiếu quỹ (*)"
+        ]
+      }
+    },
+    "EQUITY.CONSTRUCTION_CAPITAL": {
+      "match": {
+        "exact_add": [
+          "Nguồn vốn đầu tư XDCB"
+        ]
+      }
+    },
+    "EQUITY.FUNDING.FIXED_ASSETS": {
+      "match": {
+        "exact_add": [
+          "Nguồn kinh phí đã hình thành TSCĐ"
+        ]
+      }
+    },
+    "TOTAL_LIABILITIES_AND_EQUITY": {
+      "match": {
+        "aliases_add": [
+          "TỔNG CỘNG NGUỒN VỐN (440 = 300 + 400)"
+        ]
+      }
+    }
+  },
+  "entries_add": {
+    "LIABILITY.INTERNAL.SHORT_TERM": {
+      "node_id": "LIABILITY.INTERNAL.SHORT_TERM",
+      "canonical_name": "Phải trả nội bộ ngắn hạn",
+      "match": {
+        "exact": [
+          "Phải trả nội bộ ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ ngắn hạn",
+          "Phải trả nội bộ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.INTERNAL.LONG_TERM": {
+      "node_id": "LIABILITY.INTERNAL.LONG_TERM",
+      "canonical_name": "Phải trả nội bộ dài hạn",
+      "match": {
+        "exact": [
+          "Phải trả nội bộ dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ dài hạn",
+          "Phải trả nội bộ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    }
+  }
+}

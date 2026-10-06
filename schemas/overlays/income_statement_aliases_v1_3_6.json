@@ -1,0 +1,30 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_INCOME_STATEMENT_V1@1.3.6",
+  "base_aliases": "income_statement_aliases_v1_3_5.json",
+  "alias_schema_version": "1.3.6",
+  "target_schema": "UNIVERSAL_INCOME_STATEMENT_V1@1.7.0",
+  "entries_update": {
+    "INCOME.SECURITIES.CUSTODY_REVENUE": {
+      "exact_add": [
+        "Doanh thu lưu ký chứng khoán"
+      ]
+    },
+    "INCOME.SECURITIES.CUSTODY_EXPENSE": {
+      "exact_add": [
+        "Chi phí lưu ký chứng khoán"
+      ]
+    },
+    "INCOME.SECURITIES.AFS_OCI": {
+      "exact_add": [
+        "Lãi/(Lỗ) từ đánh giá lại các tài sản tài chính sẵn sàng để bán",
+        "Lãi/(lỗ) từ đánh giá lại các tài sản tài chính sẵn sàng để bán"
+      ]
+    },
+    "INCOME.SECURITIES.TRUST_AUCTION_EXPENSE": {
+      "exact_add": [
+        "Chí phí hoạt động đấu giá, ủy thác"
+      ]
+    }
+  }
+}

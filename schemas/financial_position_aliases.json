@@ -1,0 +1,3594 @@
+{
+  "alias_schema_version": "1.6.0",
+  "target_schema": "UNIVERSAL_FINANCIAL_POSITION_V1@1.6.0",
+  "normalization": {
+    "unicode_casefold": true,
+    "strip_accents_for_secondary_match": true,
+    "collapse_whitespace": true,
+    "strip_leading_numbering": true,
+    "strip_markdown": true,
+    "ignore_display_index": true
+  },
+  "matching_priority": [
+    "exact canonical/alias label",
+    "exact label + parent context",
+    "normalized alias + parent context",
+    "contains match only when unambiguous",
+    "fuzzy match only as fallback"
+  ],
+  "ambiguity_policy": {
+    "NGUYÊN GIÁ": {
+      "requires_parent_context": true,
+      "candidate_nodes": [
+        "ASSET.FIXED_ASSETS.TANGIBLE.COST",
+        "ASSET.FIXED_ASSETS.FINANCE_LEASE.COST",
+        "ASSET.FIXED_ASSETS.INTANGIBLE.COST",
+        "ASSET.INVESTMENT_PROPERTY.COST",
+        "ASSET.BIOLOGICAL.COST"
+      ]
+    },
+    "GIÁ TRỊ HAO MÒN LŨY KẾ": {
+      "requires_parent_context": true,
+      "candidate_nodes": [
+        "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR",
+        "ASSET.FIXED_ASSETS.FINANCE_LEASE.ACCUM_DEPR",
+        "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR",
+        "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR"
+      ]
+    },
+    "DỰ PHÒNG": {
+      "requires_parent_context": true,
+      "candidate_rule": "never map generic 'Dự phòng' without semantic parent"
+    },
+    "PHẢI THU KHÁC": {
+      "requires_parent_context": false,
+      "candidate_nodes": [
+        "ASSET.RECEIVABLES.OTHER"
+      ]
+    },
+    "PHẢI TRẢ KHÁC": {
+      "requires_parent_context": false,
+      "candidate_nodes": [
+        "LIABILITY.OTHER_PAYABLES"
+      ]
+    }
+  },
+  "nodes": {
+    "TOTAL_ASSETS": {
+      "node_id": "TOTAL_ASSETS",
+      "canonical_name": "Tổng cộng tài sản",
+      "match": {
+        "exact": [
+          "TỔNG CỘNG TÀI SẢN",
+          "TỔNG TÀI SẢN",
+          "TỔNG CỘNG TÀI SẢN CÓ"
+        ],
+        "aliases": [
+          "TOTAL ASSETS",
+          "Tổng tài sản Có",
+          "Tổng tài sản có"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "TOTAL_LIABILITIES": {
+      "node_id": "TOTAL_LIABILITIES",
+      "canonical_name": "Tổng cộng nợ phải trả",
+      "match": {
+        "exact": [
+          "TỔNG CỘNG NỢ PHẢI TRẢ",
+          "TỔNG NỢ PHẢI TRẢ"
+        ],
+        "aliases": [
+          "TOTAL LIABILITIES",
+          "C - NỢ PHẢI TRẢ",
+          "C. NỢ PHẢI TRẢ"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": [
+          "vốn chủ sở hữu",
+          "nguồn vốn"
+        ]
+      }
+    },
+    "TOTAL_EQUITY": {
+      "node_id": "TOTAL_EQUITY",
+      "canonical_name": "Tổng cộng vốn chủ sở hữu",
+      "match": {
+        "exact": [
+          "TỔNG CỘNG VỐN CHỦ SỞ HỮU",
+          "TỔNG VỐN CHỦ SỞ HỮU"
+        ],
+        "aliases": [
+          "D - VỐN CHỦ SỞ HỮU",
+          "D. VỐN CHỦ SỞ HỮU",
+          "Tổng vốn",
+          "TỔNG VỐN"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "TOTAL_LIABILITIES_AND_EQUITY": {
+      "node_id": "TOTAL_LIABILITIES_AND_EQUITY",
+      "canonical_name": "Tổng cộng nguồn vốn",
+      "match": {
+        "exact": [
+          "TỔNG CỘNG NGUỒN VỐN",
+          "TỔNG NGUỒN VỐN",
+          "TỔNG CỘNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU",
+          "Tổng nợ phải trả và vốn chủ sở hữu",
+          "Tổng cộng nợ phải trả và vốn chủ sở hữu"
+        ],
+        "aliases": [
+          "TOTAL LIABILITIES AND EQUITY",
+          "Tổng nguồn vốn"
+        ],
+        "parent_context": [],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET": {
+      "node_id": "ASSET",
+      "canonical_name": "Tài sản",
+      "match": {
+        "exact": [
+          "Tài sản"
+        ],
+        "aliases": [],
+        "parent_context": [],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY": {
+      "node_id": "LIABILITY",
+      "canonical_name": "Nợ phải trả",
+      "match": {
+        "exact": [
+          "Nợ phải trả"
+        ],
+        "aliases": [
+          "NỢ PHẢI TRẢ",
+          "NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU"
+        ],
+        "parent_context": [],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY": {
+      "node_id": "EQUITY",
+      "canonical_name": "Vốn chủ sở hữu",
+      "match": {
+        "exact": [
+          "Vốn chủ sở hữu"
+        ],
+        "aliases": [],
+        "parent_context": [],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CURRENT": {
+      "node_id": "ASSET.CURRENT",
+      "canonical_name": "Tài sản ngắn hạn",
+      "match": {
+        "exact": [
+          "Tài sản ngắn hạn"
+        ],
+        "aliases": [
+          "A - TÀI SẢN NGẮN HẠN",
+          "A. TÀI SẢN NGẮN HẠN"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.NON_CURRENT": {
+      "node_id": "ASSET.NON_CURRENT",
+      "canonical_name": "Tài sản dài hạn",
+      "match": {
+        "exact": [
+          "Tài sản dài hạn"
+        ],
+        "aliases": [
+          "B - TÀI SẢN DÀI HẠN",
+          "B. TÀI SẢN DÀI HẠN"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CASH_EQUIV": {
+      "node_id": "ASSET.CASH_EQUIV",
+      "canonical_name": "Tiền và các khoản tương đương tiền",
+      "match": {
+        "exact": [
+          "Tiền và các khoản tương đương tiền"
+        ],
+        "aliases": [
+          "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN",
+          "TIỀN, CÁC KHOẢN TƯƠNG ĐƯƠNG TIỀN"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CASH_EQUIV.CASH": {
+      "node_id": "ASSET.CASH_EQUIV.CASH",
+      "canonical_name": "Tiền",
+      "match": {
+        "exact": [
+          "Tiền"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tiền và các khoản tương đương tiền"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CASH_EQUIV.CASH_ON_HAND": {
+      "node_id": "ASSET.CASH_EQUIV.CASH_ON_HAND",
+      "canonical_name": "Tiền mặt, vàng bạc, đá quý",
+      "match": {
+        "exact": [
+          "Tiền mặt, vàng bạc, đá quý"
+        ],
+        "aliases": [
+          "TIỀN MẶT, VÀNG BẠC, ĐÁ QUÝ",
+          "TIỀN MẶT VÀNG BẠC ĐÁ QUÝ",
+          "TIỀN MẶT VÀNG BẠC ĐÁ QUÝ TẠI QUỸ",
+          "Tiền mặt"
+        ],
+        "parent_context": [
+          "Tiền và các khoản tương đương tiền",
+          "TÀI SẢN"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CASH_EQUIV.CASH_EQUIVALENTS": {
+      "node_id": "ASSET.CASH_EQUIV.CASH_EQUIVALENTS",
+      "canonical_name": "Các khoản tương đương tiền",
+      "match": {
+        "exact": [
+          "Các khoản tương đương tiền"
+        ],
+        "aliases": [
+          "Các khoản tương đương tiền"
+        ],
+        "parent_context": [
+          "Tiền và các khoản tương đương tiền"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CENTRAL_BANK_BALANCES": {
+      "node_id": "ASSET.CENTRAL_BANK_BALANCES",
+      "canonical_name": "Tiền gửi tại Ngân hàng Nhà nước",
+      "match": {
+        "exact": [
+          "Tiền gửi tại Ngân hàng Nhà nước"
+        ],
+        "aliases": [
+          "TIỀN GỬI TẠI NHNN",
+          "TIỀN GỬI TẠI NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+          "Tiền gửi tại Ngân hàng Nhà nước Việt Nam (\"NHNN\")",
+          "Tiền gửi tại Ngân hàng Nhà nước Việt Nam",
+          "Tiền gửi tại Ngân hàng Nhà nước (\"NHNN\")",
+          "Tiền gửi tại Ngân hàng Nhà nước Việt Nam ('NHNN')"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INTERBANK": {
+      "node_id": "ASSET.INTERBANK",
+      "canonical_name": "Tiền gửi và cho vay các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Tiền gửi và cho vay các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "TIỀN GỬI VÀ CHO VAY CÁC TCTD KHÁC",
+          "TIỀN, VÀNG GỬI TẠI CÁC TCTD KHÁC VÀ CHO VAY CÁC TCTD KHÁC",
+          "TIỀN GỬI TẠI VÀ CHO VAY CÁC TỔ CHỨC TÍN DỤNG KHÁC",
+          "Tiền gửi và cấp tín dụng cho các tổ chức tín dụng khác",
+          "Tiền gửi và cấp tín dụng cho các TCTD khác",
+          "Tiền gửi và cho vay các tổ chức tín dụng (\"TCTD\") khác",
+          "Tiền gửi tại và cho vay các tổ chức tín dụng khác"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INTERBANK.DEPOSITS": {
+      "node_id": "ASSET.INTERBANK.DEPOSITS",
+      "canonical_name": "Tiền gửi tại các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Tiền gửi tại các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "TIỀN GỬI TẠI CÁC TCTD KHÁC",
+          "TIỀN GỬI CÁC TỔ CHỨC TÍN DỤNG KHÁC",
+          "Tiền gửi tại các tổ chức tín dụng (“TCTD”) khác"
+        ],
+        "parent_context": [
+          "Tiền gửi và cho vay các tổ chức tín dụng khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INTERBANK.LOANS": {
+      "node_id": "ASSET.INTERBANK.LOANS",
+      "canonical_name": "Cho vay các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Cho vay các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "CHO VAY CÁC TCTD KHÁC",
+          "CHO VAY CÁC TỔ CHỨC TÍN DỤNG KHÁC",
+          "Cấp tín dụng cho các tổ chức tín dụng khác",
+          "Cấp tín dụng cho các TCTD khác"
+        ],
+        "parent_context": [
+          "Tiền gửi và cho vay các tổ chức tín dụng khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INTERBANK.ALLOWANCE": {
+      "node_id": "ASSET.INTERBANK.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro tiền gửi và cho vay các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Dự phòng rủi ro tiền gửi và cho vay các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "Dự phòng rủi ro",
+          "Dự phòng rủi ro tiền gửi và cho vay các tổ chức tín dụng khác",
+          "Dự phòng tiền gửi và cho vay các TCTD khác"
+        ],
+        "parent_context": [
+          "Tiền gửi và cho vay các tổ chức tín dụng khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV": {
+      "node_id": "ASSET.FIN_INV",
+      "canonical_name": "Đầu tư tài chính",
+      "match": {
+        "exact": [
+          "Đầu tư tài chính"
+        ],
+        "aliases": [
+          "CHỨNG KHOÁN ĐẦU TƯ",
+          "Chứng khoán đầu tư"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.SHORT_TERM": {
+      "node_id": "ASSET.FIN_INV.SHORT_TERM",
+      "canonical_name": "Đầu tư tài chính ngắn hạn",
+      "match": {
+        "exact": [
+          "Đầu tư tài chính ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Đầu tư tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.LONG_TERM": {
+      "node_id": "ASSET.FIN_INV.LONG_TERM",
+      "canonical_name": "Đầu tư tài chính dài hạn",
+      "match": {
+        "exact": [
+          "Đầu tư tài chính dài hạn"
+        ],
+        "aliases": [
+          "Góp vốn, đầu tư dài hạn",
+          "Góp vốn đầu tư dài hạn",
+          "Góp vốn và đầu tư dài hạn",
+          "Các khoản góp vốn, đầu tư dài hạn"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.TRADING_SECURITIES": {
+      "node_id": "ASSET.FIN_INV.TRADING_SECURITIES",
+      "canonical_name": "Chứng khoán kinh doanh",
+      "match": {
+        "exact": [
+          "Chứng khoán kinh doanh"
+        ],
+        "aliases": [
+          "Chứng khoán kinh doanh",
+          "Chứng khoán thương mại"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.TRADING_SECURITIES.ALLOWANCE": {
+      "node_id": "ASSET.FIN_INV.TRADING_SECURITIES.ALLOWANCE",
+      "canonical_name": "Dự phòng giảm giá chứng khoán kinh doanh",
+      "match": {
+        "exact": [
+          "Dự phòng giảm giá chứng khoán kinh doanh"
+        ],
+        "aliases": [
+          "Dự phòng giảm giá chứng khoán kinh doanh",
+          "Dự phòng rủi ro chứng khoán kinh doanh",
+          "Dự phòng chứng khoán kinh doanh"
+        ],
+        "parent_context": [
+          "Chứng khoán kinh doanh"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.HTM": {
+      "node_id": "ASSET.FIN_INV.HTM",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn",
+      "match": {
+        "exact": [
+          "Đầu tư nắm giữ đến ngày đáo hạn"
+        ],
+        "aliases": [
+          "ĐẦU TƯ NẮM GIỮ ĐẾN NGÀY ĐÁO HẠN",
+          "CHỨNG KHOÁN ĐẦU TƯ GIỮ ĐẾN NGÀY ĐÁO HẠN",
+          "ĐẦU TƯ GIỮ ĐẾN NGÀY ĐÁO HẠN"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.HTM.SHORT_TERM": {
+      "node_id": "ASSET.FIN_INV.HTM.SHORT_TERM",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn ngắn hạn",
+      "match": {
+        "exact": [
+          "Đầu tư nắm giữ đến ngày đáo hạn ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Đầu tư nắm giữ đến ngày đáo hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.HTM.LONG_TERM": {
+      "node_id": "ASSET.FIN_INV.HTM.LONG_TERM",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn dài hạn",
+      "match": {
+        "exact": [
+          "Đầu tư nắm giữ đến ngày đáo hạn dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Đầu tư nắm giữ đến ngày đáo hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.HTM.ALLOWANCE": {
+      "node_id": "ASSET.FIN_INV.HTM.ALLOWANCE",
+      "canonical_name": "Dự phòng đầu tư nắm giữ đến ngày đáo hạn",
+      "match": {
+        "exact": [
+          "Dự phòng đầu tư nắm giữ đến ngày đáo hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Đầu tư nắm giữ đến ngày đáo hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.AFS": {
+      "node_id": "ASSET.FIN_INV.AFS",
+      "canonical_name": "Chứng khoán đầu tư sẵn sàng để bán",
+      "match": {
+        "exact": [
+          "Chứng khoán đầu tư sẵn sàng để bán"
+        ],
+        "aliases": [
+          "CHỨNG KHOÁN ĐẦU TƯ SẴN SÀNG ĐỂ BÁN",
+          "CHỨNG KHOÁN SẴN SÀNG ĐỂ BÁN"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.AFS.ALLOWANCE": {
+      "node_id": "ASSET.FIN_INV.AFS.ALLOWANCE",
+      "canonical_name": "Dự phòng giảm giá chứng khoán đầu tư sẵn sàng để bán",
+      "match": {
+        "exact": [
+          "Dự phòng giảm giá chứng khoán đầu tư sẵn sàng để bán"
+        ],
+        "aliases": [
+          "Dư phòng rủi ro chứng khoán đầu tư",
+          "Dự phòng rủi ro chứng khoán đầu tư",
+          "Dự phòng chứng khoán đầu tư",
+          "Dự phòng giảm giá chứng khoán đầu tư"
+        ],
+        "parent_context": [
+          "Chứng khoán đầu tư sẵn sàng để bán"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.SUBSIDIARY": {
+      "node_id": "ASSET.FIN_INV.SUBSIDIARY",
+      "canonical_name": "Đầu tư vào công ty con",
+      "match": {
+        "exact": [
+          "Đầu tư vào công ty con"
+        ],
+        "aliases": [
+          "Đầu tư vào công ty con"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính",
+          "Đầu tư tài chính dài hạn",
+          "Góp vốn, đầu tư dài hạn",
+          "Góp vốn đầu tư dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.ASSOC_JV": {
+      "node_id": "ASSET.FIN_INV.ASSOC_JV",
+      "canonical_name": "Đầu tư vào công ty liên doanh, liên kết",
+      "match": {
+        "exact": [
+          "Đầu tư vào công ty liên doanh, liên kết"
+        ],
+        "aliases": [
+          "Đầu tư vào công ty liên doanh, liên kết",
+          "ĐẦU TƯ VÀO CÔNG TY LIÊN KẾT",
+          "Đầu tư vào công ty liên kết"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính",
+          "Đầu tư tài chính dài hạn",
+          "Góp vốn, đầu tư dài hạn",
+          "Góp vốn đầu tư dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.OTHER_EQUITY": {
+      "node_id": "ASSET.FIN_INV.OTHER_EQUITY",
+      "canonical_name": "Đầu tư góp vốn vào đơn vị khác",
+      "match": {
+        "exact": [
+          "Đầu tư góp vốn vào đơn vị khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Đầu tư tài chính",
+          "Đầu tư tài chính dài hạn",
+          "Góp vốn, đầu tư dài hạn",
+          "Góp vốn đầu tư dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.OTHER": {
+      "node_id": "ASSET.FIN_INV.OTHER",
+      "canonical_name": "Đầu tư tài chính khác",
+      "match": {
+        "exact": [
+          "Đầu tư tài chính khác"
+        ],
+        "aliases": [
+          "Đầu tư dài hạn khác",
+          "Đầu tư tài chính khác"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính",
+          "Đầu tư tài chính dài hạn",
+          "Góp vốn, đầu tư dài hạn",
+          "Góp vốn đầu tư dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.ALLOWANCE": {
+      "node_id": "ASSET.FIN_INV.ALLOWANCE",
+      "canonical_name": "Dự phòng tổn thất đầu tư tài chính",
+      "match": {
+        "exact": [
+          "Dự phòng tổn thất đầu tư tài chính"
+        ],
+        "aliases": [
+          "Dự phòng đầu tư tài chính dài hạn",
+          "Dự phòng giảm giá đầu tư dài hạn",
+          "Dự phòng tổn thất đầu tư dài hạn"
+        ],
+        "parent_context": [
+          "Đầu tư tài chính",
+          "Đầu tư tài chính dài hạn",
+          "Góp vốn, đầu tư dài hạn",
+          "Góp vốn đầu tư dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.DERIVATIVES": {
+      "node_id": "ASSET.DERIVATIVES",
+      "canonical_name": "Công cụ tài chính phái sinh và các tài sản tài chính khác",
+      "match": {
+        "exact": [
+          "Công cụ tài chính phái sinh và các tài sản tài chính khác"
+        ],
+        "aliases": [
+          "CÔNG CỤ TÀI CHÍNH PHÁI SINH VÀ CÁC TÀI SẢN TÀI CHÍNH KHÁC",
+          "CÁC CÔNG CỤ TÀI CHÍNH PHÁI SINH VÀ TÀI SẢN TÀI CHÍNH KHÁC",
+          "CÁC CÔNG CỤ TÀI CHÍNH PHÁI SINH VÀ CÁC TÀI SẢN TÀI CHÍNH KHÁC",
+          "Các công cụ tài chính phái sinh và các tài sản tài chính khác"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CUSTOMER_LOANS": {
+      "node_id": "ASSET.CUSTOMER_LOANS",
+      "canonical_name": "Cho vay khách hàng",
+      "match": {
+        "exact": [
+          "Cho vay khách hàng"
+        ],
+        "aliases": [
+          "CHO VAY KHÁCH HÀNG",
+          "CÁC KHOẢN CHO VAY KHÁCH HÀNG"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CUSTOMER_LOANS.GROSS": {
+      "node_id": "ASSET.CUSTOMER_LOANS.GROSS",
+      "canonical_name": "Cho vay khách hàng trước dự phòng",
+      "match": {
+        "exact": [
+          "Cho vay khách hàng trước dự phòng"
+        ],
+        "aliases": [
+          "Cho vay khách hàng",
+          "Cho vay khách hàng trước dự phòng"
+        ],
+        "parent_context": [
+          "Cho vay khách hàng"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 240,
+          "penalty_without_repeated_parent": 260
+        }
+      }
+    },
+    "ASSET.CUSTOMER_LOANS.ALLOWANCE": {
+      "node_id": "ASSET.CUSTOMER_LOANS.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro cho vay khách hàng",
+      "match": {
+        "exact": [
+          "Dự phòng rủi ro cho vay khách hàng"
+        ],
+        "aliases": [
+          "DỰ PHÒNG RỦI RO CHO VAY KHÁCH HÀNG",
+          "DỰ PHÒNG CHO VAY KHÁCH HÀNG"
+        ],
+        "parent_context": [
+          "Cho vay khách hàng"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.DEBT_PURCHASE": {
+      "node_id": "ASSET.DEBT_PURCHASE",
+      "canonical_name": "Hoạt động mua nợ",
+      "match": {
+        "exact": [
+          "Hoạt động mua nợ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.DEBT_PURCHASE.GROSS": {
+      "node_id": "ASSET.DEBT_PURCHASE.GROSS",
+      "canonical_name": "Mua nợ",
+      "match": {
+        "exact": [
+          "Mua nợ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Hoạt động mua nợ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.DEBT_PURCHASE.ALLOWANCE": {
+      "node_id": "ASSET.DEBT_PURCHASE.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro hoạt động mua nợ",
+      "match": {
+        "exact": [
+          "Dự phòng rủi ro hoạt động mua nợ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Hoạt động mua nợ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES": {
+      "node_id": "ASSET.RECEIVABLES",
+      "canonical_name": "Các khoản phải thu",
+      "match": {
+        "exact": [
+          "Các khoản phải thu"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.SHORT_TERM",
+      "canonical_name": "Các khoản phải thu ngắn hạn",
+      "match": {
+        "exact": [
+          "Các khoản phải thu ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.LONG_TERM",
+      "canonical_name": "Các khoản phải thu dài hạn",
+      "match": {
+        "exact": [
+          "Các khoản phải thu dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.CUSTOMER": {
+      "node_id": "ASSET.RECEIVABLES.CUSTOMER",
+      "canonical_name": "Phải thu của khách hàng",
+      "match": {
+        "exact": [
+          "Phải thu của khách hàng"
+        ],
+        "aliases": [
+          "PHẢI THU KHÁCH HÀNG",
+          "PHẢI THU CỦA KHÁCH HÀNG"
+        ],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.CUSTOMER.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.CUSTOMER.SHORT_TERM",
+      "canonical_name": "Phải thu ngắn hạn của khách hàng",
+      "match": {
+        "exact": [
+          "Phải thu ngắn hạn của khách hàng"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu của khách hàng"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.CUSTOMER.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.CUSTOMER.LONG_TERM",
+      "canonical_name": "Phải thu dài hạn của khách hàng",
+      "match": {
+        "exact": [
+          "Phải thu dài hạn của khách hàng"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu của khách hàng"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.SUPPLIER_ADVANCE": {
+      "node_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE",
+      "canonical_name": "Trả trước cho người bán",
+      "match": {
+        "exact": [
+          "Trả trước cho người bán"
+        ],
+        "aliases": [
+          "TRẢ TRƯỚC CHO NGƯỜI BÁN",
+          "TRẢ TRƯỚC NGƯỜI BÁN"
+        ],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.INTERNAL_CAPITAL": {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL_CAPITAL",
+      "canonical_name": "Vốn kinh doanh ở đơn vị trực thuộc",
+      "match": {
+        "exact": [
+          "Vốn kinh doanh ở đơn vị trực thuộc"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.INTERNAL": {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL",
+      "canonical_name": "Phải thu nội bộ",
+      "match": {
+        "exact": [
+          "Phải thu nội bộ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.CONSTRUCTION_CONTRACT": {
+      "node_id": "ASSET.RECEIVABLES.CONSTRUCTION_CONTRACT",
+      "canonical_name": "Phải thu theo tiến độ hợp đồng xây dựng",
+      "match": {
+        "exact": [
+          "Phải thu theo tiến độ hợp đồng xây dựng"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.LOANS": {
+      "node_id": "ASSET.RECEIVABLES.LOANS",
+      "canonical_name": "Phải thu về cho vay",
+      "match": {
+        "exact": [
+          "Phải thu về cho vay"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.OTHER": {
+      "node_id": "ASSET.RECEIVABLES.OTHER",
+      "canonical_name": "Phải thu khác",
+      "match": {
+        "exact": [
+          "Phải thu khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE": {
+      "node_id": "ASSET.RECEIVABLES.ALLOWANCE",
+      "canonical_name": "Dự phòng phải thu khó đòi",
+      "match": {
+        "exact": [
+          "Dự phòng phải thu khó đòi"
+        ],
+        "aliases": [
+          "DỰ PHÒNG PHẢI THU KHÓ ĐÒI"
+        ],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.SHORTAGE_PENDING": {
+      "node_id": "ASSET.RECEIVABLES.SHORTAGE_PENDING",
+      "canonical_name": "Tài sản thiếu chờ xử lý",
+      "match": {
+        "exact": [
+          "Tài sản thiếu chờ xử lý"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Các khoản phải thu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INVENTORY": {
+      "node_id": "ASSET.INVENTORY",
+      "canonical_name": "Hàng tồn kho",
+      "match": {
+        "exact": [
+          "Hàng tồn kho"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "preserve_parent_when_same_label_rows_split": true
+        }
+      }
+    },
+    "ASSET.INVENTORY.ALLOWANCE": {
+      "node_id": "ASSET.INVENTORY.ALLOWANCE",
+      "canonical_name": "Dự phòng giảm giá hàng tồn kho",
+      "match": {
+        "exact": [
+          "Dự phòng giảm giá hàng tồn kho"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Hàng tồn kho"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL": {
+      "node_id": "ASSET.BIOLOGICAL",
+      "canonical_name": "Tài sản sinh học",
+      "match": {
+        "exact": [
+          "Tài sản sinh học"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.CURRENT": {
+      "node_id": "ASSET.BIOLOGICAL.CURRENT",
+      "canonical_name": "Tài sản sinh học ngắn hạn",
+      "match": {
+        "exact": [
+          "Tài sản sinh học ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.NON_CURRENT": {
+      "node_id": "ASSET.BIOLOGICAL.NON_CURRENT",
+      "canonical_name": "Tài sản sinh học dài hạn",
+      "match": {
+        "exact": [
+          "Tài sản sinh học dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.ANIMALS_PERIODIC": {
+      "node_id": "ASSET.BIOLOGICAL.ANIMALS_PERIODIC",
+      "canonical_name": "Súc vật nuôi cho sản phẩm định kỳ",
+      "match": {
+        "exact": [
+          "Súc vật nuôi cho sản phẩm định kỳ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.ANIMALS_ONE_TIME": {
+      "node_id": "ASSET.BIOLOGICAL.ANIMALS_ONE_TIME",
+      "canonical_name": "Súc vật nuôi lấy sản phẩm một lần",
+      "match": {
+        "exact": [
+          "Súc vật nuôi lấy sản phẩm một lần"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.SEASONAL_CROPS": {
+      "node_id": "ASSET.BIOLOGICAL.SEASONAL_CROPS",
+      "canonical_name": "Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần",
+      "match": {
+        "exact": [
+          "Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.COST": {
+      "node_id": "ASSET.BIOLOGICAL.COST",
+      "canonical_name": "Nguyên giá tài sản sinh học",
+      "match": {
+        "exact": [
+          "Nguyên giá tài sản sinh học"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.ACCUM_DEPR": {
+      "node_id": "ASSET.BIOLOGICAL.ACCUM_DEPR",
+      "canonical_name": "Giá trị khấu hao lũy kế tài sản sinh học",
+      "match": {
+        "exact": [
+          "Giá trị khấu hao lũy kế tài sản sinh học"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.BIOLOGICAL.ALLOWANCE": {
+      "node_id": "ASSET.BIOLOGICAL.ALLOWANCE",
+      "canonical_name": "Dự phòng tổn thất tài sản sinh học",
+      "match": {
+        "exact": [
+          "Dự phòng tổn thất tài sản sinh học"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản sinh học"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS": {
+      "node_id": "ASSET.FIXED_ASSETS",
+      "canonical_name": "Tài sản cố định",
+      "match": {
+        "exact": [
+          "Tài sản cố định"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE": {
+      "node_id": "ASSET.FIXED_ASSETS.TANGIBLE",
+      "canonical_name": "Tài sản cố định hữu hình",
+      "match": {
+        "exact": [
+          "Tài sản cố định hữu hình"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản cố định"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE.COST": {
+      "node_id": "ASSET.FIXED_ASSETS.TANGIBLE.COST",
+      "canonical_name": "Nguyên giá tài sản cố định hữu hình",
+      "match": {
+        "exact": [
+          "Nguyên giá tài sản cố định hữu hình"
+        ],
+        "aliases": [
+          "NGUYÊN GIÁ TSCĐ HỮU HÌNH",
+          "NGUYÊN GIÁ TÀI SẢN CỐ ĐỊNH HỮU HÌNH",
+          "NGUYÊN GIÁ",
+          "Nguyên giá tài sản cố định",
+          "NGUYÊN GIÁ TSCĐ",
+          "Nguyên giá TSCĐ"
+        ],
+        "parent_context": [
+          "TÀI SẢN CỐ ĐỊNH HỮU HÌNH",
+          "TSCĐ HỮU HÌNH",
+          "Tài sản cố định hữu hình"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR": {
+      "node_id": "ASSET.FIXED_ASSETS.TANGIBLE.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế tài sản cố định hữu hình",
+      "match": {
+        "exact": [
+          "Giá trị hao mòn lũy kế tài sản cố định hữu hình"
+        ],
+        "aliases": [
+          "HAO MÒN LŨY KẾ TSCĐ HỮU HÌNH",
+          "GIÁ TRỊ HAO MÒN LŨY KẾ",
+          "Hao mòn tài sản cố định",
+          "KHẤU HAO LŨY KẾ",
+          "Khấu hao tài sản cố định",
+          "HAO MÒN TSCĐ",
+          "Hao mòn TSCĐ",
+          "GIÁ TRỊ KHẤU HAO LŨY KẾ",
+          "Giá trị khấu hao lũy kế"
+        ],
+        "parent_context": [
+          "TÀI SẢN CỐ ĐỊNH HỮU HÌNH",
+          "TSCĐ HỮU HÌNH",
+          "Tài sản cố định hữu hình"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.FINANCE_LEASE": {
+      "node_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE",
+      "canonical_name": "Tài sản cố định thuê tài chính",
+      "match": {
+        "exact": [
+          "Tài sản cố định thuê tài chính"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản cố định"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.FINANCE_LEASE.COST": {
+      "node_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE.COST",
+      "canonical_name": "Nguyên giá tài sản cố định thuê tài chính",
+      "match": {
+        "exact": [
+          "Nguyên giá tài sản cố định thuê tài chính"
+        ],
+        "aliases": [
+          "NGUYÊN GIÁ TSCĐ THUÊ TÀI CHÍNH",
+          "NGUYÊN GIÁ TÀI SẢN CỐ ĐỊNH THUÊ TÀI CHÍNH",
+          "NGUYÊN GIÁ",
+          "Nguyên giá tài sản cố định"
+        ],
+        "parent_context": [
+          "TÀI SẢN CỐ ĐỊNH THUÊ TÀI CHÍNH",
+          "TSCĐ THUÊ TÀI CHÍNH",
+          "Tài sản cố định thuê tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.FINANCE_LEASE.ACCUM_DEPR": {
+      "node_id": "ASSET.FIXED_ASSETS.FINANCE_LEASE.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế tài sản cố định thuê tài chính",
+      "match": {
+        "exact": [
+          "Giá trị hao mòn lũy kế tài sản cố định thuê tài chính"
+        ],
+        "aliases": [
+          "HAO MÒN LŨY KẾ TSCĐ THUÊ TÀI CHÍNH",
+          "GIÁ TRỊ HAO MÒN LŨY KẾ",
+          "Hao mòn tài sản cố định",
+          "KHẤU HAO LŨY KẾ",
+          "GIÁ TRỊ KHẤU HAO LŨY KẾ",
+          "Giá trị khấu hao lũy kế"
+        ],
+        "parent_context": [
+          "TÀI SẢN CỐ ĐỊNH THUÊ TÀI CHÍNH",
+          "TSCĐ THUÊ TÀI CHÍNH",
+          "Tài sản cố định thuê tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE": {
+      "node_id": "ASSET.FIXED_ASSETS.INTANGIBLE",
+      "canonical_name": "Tài sản cố định vô hình",
+      "match": {
+        "exact": [
+          "Tài sản cố định vô hình"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản cố định"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE.COST": {
+      "node_id": "ASSET.FIXED_ASSETS.INTANGIBLE.COST",
+      "canonical_name": "Nguyên giá tài sản cố định vô hình",
+      "match": {
+        "exact": [
+          "Nguyên giá tài sản cố định vô hình"
+        ],
+        "aliases": [
+          "NGUYÊN GIÁ TSCĐ VÔ HÌNH",
+          "NGUYÊN GIÁ TÀI SẢN CỐ ĐỊNH VÔ HÌNH",
+          "NGUYÊN GIÁ",
+          "Nguyên giá tài sản cố định",
+          "NGUYÊN GIÁ TSCĐ",
+          "Nguyên giá TSCĐ"
+        ],
+        "parent_context": [
+          "TÀI SẢN CỐ ĐỊNH VÔ HÌNH",
+          "TSCĐ VÔ HÌNH",
+          "Tài sản cố định vô hình"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR": {
+      "node_id": "ASSET.FIXED_ASSETS.INTANGIBLE.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế tài sản cố định vô hình",
+      "match": {
+        "exact": [
+          "Giá trị hao mòn lũy kế tài sản cố định vô hình"
+        ],
+        "aliases": [
+          "HAO MÒN LŨY KẾ TSCĐ VÔ HÌNH",
+          "GIÁ TRỊ HAO MÒN LŨY KẾ",
+          "Hao mòn tài sản cố định",
+          "KHẤU HAO LŨY KẾ",
+          "HAO MÒN TSCĐ",
+          "Hao mòn TSCĐ",
+          "GIÁ TRỊ KHẤU HAO LŨY KẾ",
+          "Giá trị khấu hao lũy kế"
+        ],
+        "parent_context": [
+          "TÀI SẢN CỐ ĐỊNH VÔ HÌNH",
+          "TSCĐ VÔ HÌNH",
+          "Tài sản cố định vô hình"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INVESTMENT_PROPERTY": {
+      "node_id": "ASSET.INVESTMENT_PROPERTY",
+      "canonical_name": "Bất động sản đầu tư",
+      "match": {
+        "exact": [
+          "Bất động sản đầu tư"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INVESTMENT_PROPERTY.COST": {
+      "node_id": "ASSET.INVESTMENT_PROPERTY.COST",
+      "canonical_name": "Nguyên giá bất động sản đầu tư",
+      "match": {
+        "exact": [
+          "Nguyên giá bất động sản đầu tư"
+        ],
+        "aliases": [
+          "NGUYÊN GIÁ BẤT ĐỘNG SẢN ĐẦU TƯ",
+          "NGUYÊN GIÁ",
+          "Nguyên giá BĐSĐT"
+        ],
+        "parent_context": [
+          "BẤT ĐỘNG SẢN ĐẦU TƯ",
+          "BĐS ĐẦU TƯ",
+          "Bất động sản đầu tư"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR": {
+      "node_id": "ASSET.INVESTMENT_PROPERTY.ACCUM_DEPR",
+      "canonical_name": "Giá trị hao mòn lũy kế bất động sản đầu tư",
+      "match": {
+        "exact": [
+          "Giá trị hao mòn lũy kế bất động sản đầu tư"
+        ],
+        "aliases": [
+          "GIÁ TRỊ HAO MÒN LŨY KẾ BẤT ĐỘNG SẢN ĐẦU TƯ",
+          "GIÁ TRỊ HAO MÒN LŨY KẾ",
+          "Hao mòn bất động sản đầu tư",
+          "KHẤU HAO LŨY KẾ",
+          "GIÁ TRỊ KHẤU HAO LŨY KẾ",
+          "Giá trị khấu hao lũy kế"
+        ],
+        "parent_context": [
+          "BẤT ĐỘNG SẢN ĐẦU TƯ",
+          "BĐS ĐẦU TƯ",
+          "Bất động sản đầu tư"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CIP": {
+      "node_id": "ASSET.CIP",
+      "canonical_name": "Tài sản dở dang dài hạn",
+      "match": {
+        "exact": [
+          "Tài sản dở dang dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CIP.PRODUCTION": {
+      "node_id": "ASSET.CIP.PRODUCTION",
+      "canonical_name": "Chi phí sản xuất, kinh doanh dở dang dài hạn",
+      "match": {
+        "exact": [
+          "Chi phí sản xuất, kinh doanh dở dang dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản dở dang dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CIP.CONSTRUCTION": {
+      "node_id": "ASSET.CIP.CONSTRUCTION",
+      "canonical_name": "Chi phí xây dựng cơ bản dở dang",
+      "match": {
+        "exact": [
+          "Chi phí xây dựng cơ bản dở dang"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản dở dang dài hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.CONSTRUCTION_IN_PROGRESS": {
+      "node_id": "ASSET.CONSTRUCTION_IN_PROGRESS",
+      "canonical_name": "Xây dựng cơ bản dở dang",
+      "match": {
+        "exact": [
+          "Xây dựng cơ bản dở dang"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER": {
+      "node_id": "ASSET.OTHER",
+      "canonical_name": "Tài sản khác",
+      "match": {
+        "exact": [
+          "Tài sản khác"
+        ],
+        "aliases": [
+          "Tài sản Có khác"
+        ],
+        "parent_context": [
+          "Tài sản"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.CURRENT": {
+      "node_id": "ASSET.OTHER.CURRENT",
+      "canonical_name": "Tài sản ngắn hạn khác",
+      "match": {
+        "exact": [
+          "Tài sản ngắn hạn khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "preserve_parent_when_same_label_rows_split": true
+        }
+      }
+    },
+    "ASSET.OTHER.NON_CURRENT": {
+      "node_id": "ASSET.OTHER.NON_CURRENT",
+      "canonical_name": "Tài sản dài hạn khác",
+      "match": {
+        "exact": [
+          "Tài sản dài hạn khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.PREPAID_EXPENSE": {
+      "node_id": "ASSET.OTHER.PREPAID_EXPENSE",
+      "canonical_name": "Chi phí trả trước / chờ phân bổ",
+      "match": {
+        "exact": [
+          "Chi phí trả trước / chờ phân bổ"
+        ],
+        "aliases": [
+          "CHI PHÍ TRẢ TRƯỚC",
+          "CHI PHÍ CHỜ PHÂN BỔ"
+        ],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.VAT_DEDUCTIBLE": {
+      "node_id": "ASSET.OTHER.VAT_DEDUCTIBLE",
+      "canonical_name": "Thuế GTGT được khấu trừ",
+      "match": {
+        "exact": [
+          "Thuế GTGT được khấu trừ"
+        ],
+        "aliases": [
+          "Thuế giá trị gia tăng được khấu trừ"
+        ],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.TAX_RECEIVABLE": {
+      "node_id": "ASSET.OTHER.TAX_RECEIVABLE",
+      "canonical_name": "Thuế và các khoản khác phải thu Nhà nước",
+      "match": {
+        "exact": [
+          "Thuế và các khoản khác phải thu Nhà nước"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.GOV_BOND_REPO": {
+      "node_id": "ASSET.OTHER.GOV_BOND_REPO",
+      "canonical_name": "Giao dịch mua bán lại trái phiếu Chính phủ",
+      "match": {
+        "exact": [
+          "Giao dịch mua bán lại trái phiếu Chính phủ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.DEFERRED_TAX": {
+      "node_id": "ASSET.OTHER.DEFERRED_TAX",
+      "canonical_name": "Tài sản thuế thu nhập hoãn lại",
+      "match": {
+        "exact": [
+          "Tài sản thuế thu nhập hoãn lại"
+        ],
+        "aliases": [
+          "Tài sản thuế thu nhập doanh nghiệp hoãn lại",
+          "Tài sản thuế TNDN hoãn lại"
+        ],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.REPLACEMENT_PARTS": {
+      "node_id": "ASSET.OTHER.REPLACEMENT_PARTS",
+      "canonical_name": "Thiết bị, vật tư, phụ tùng thay thế dài hạn",
+      "match": {
+        "exact": [
+          "Thiết bị, vật tư, phụ tùng thay thế dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.GOODWILL": {
+      "node_id": "ASSET.OTHER.GOODWILL",
+      "canonical_name": "Lợi thế thương mại",
+      "match": {
+        "exact": [
+          "Lợi thế thương mại"
+        ],
+        "aliases": [
+          "LỢI THẾ THƯƠNG MẠI",
+          "TRONG ĐÓ: LỢI THẾ THƯƠNG MẠI"
+        ],
+        "parent_context": [
+          "Tài sản khác",
+          "Tài sản Có khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.OTHER": {
+      "node_id": "ASSET.OTHER.OTHER",
+      "canonical_name": "Tài sản khác",
+      "match": {
+        "exact": [
+          "Tài sản khác"
+        ],
+        "aliases": [
+          "Tài sản Có khác"
+        ],
+        "parent_context": [
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 210,
+          "penalty_without_repeated_parent": 230
+        }
+      }
+    },
+    "LIABILITY.CURRENT": {
+      "node_id": "LIABILITY.CURRENT",
+      "canonical_name": "Nợ ngắn hạn",
+      "match": {
+        "exact": [
+          "Nợ ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.NON_CURRENT": {
+      "node_id": "LIABILITY.NON_CURRENT",
+      "canonical_name": "Nợ dài hạn",
+      "match": {
+        "exact": [
+          "Nợ dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.GOV_CENTRAL_BANK": {
+      "node_id": "LIABILITY.GOV_CENTRAL_BANK",
+      "canonical_name": "Các khoản nợ Chính phủ và Ngân hàng Nhà nước",
+      "match": {
+        "exact": [
+          "Các khoản nợ Chính phủ và Ngân hàng Nhà nước"
+        ],
+        "aliases": [
+          "CÁC KHOẢN NỢ CHÍNH PHỦ VÀ NHNN",
+          "CÁC KHOẢN NỢ CHÍNH PHỦ VÀ NGÂN HÀNG NHÀ NƯỚC",
+          "NỢ CHÍNH PHỦ VÀ NHNN",
+          "Các khoản nợ Chính phủ và NHNN",
+          "Nợ Chính phủ và NHNN",
+          "Các khoản nợ chính phủ và Ngân hàng Nhà nước Việt Nam",
+          "Các khoản nợ chính phủ và ngân hàng nhà nước Việt Nam (\"NHNN\")",
+          "Các khoản nợ Chính phủ và NHNN Việt Nam",
+          "Các khoản nợ NHNN",
+          "Tiền gửi và vay Chính phủ và Ngân hàng Nhà nước"
+        ],
+        "parent_context": [
+          "Nợ phải trả",
+          "Nợ phải trả và vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "synthesize_from_direct_children": true
+        }
+      }
+    },
+    "LIABILITY.INTERBANK": {
+      "node_id": "LIABILITY.INTERBANK",
+      "canonical_name": "Tiền gửi và vay các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Tiền gửi và vay các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "TIỀN GỬI VÀ VAY CÁC TCTD KHÁC",
+          "TIỀN GỬI VÀ VAY CÁC TỔ CHỨC TÍN DỤNG KHÁC",
+          "Tiền gửi và vay các TCTD khác"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "subtotal_owner_reassignment": true
+        }
+      }
+    },
+    "LIABILITY.INTERBANK.DEPOSITS": {
+      "node_id": "LIABILITY.INTERBANK.DEPOSITS",
+      "canonical_name": "Tiền gửi của các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Tiền gửi của các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "Tiền gửi của các TCTD khác",
+          "Tiền gửi của các TCTC, TCTD khác"
+        ],
+        "parent_context": [
+          "Tiền gửi và vay các tổ chức tín dụng khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.INTERBANK.BORROWINGS": {
+      "node_id": "LIABILITY.INTERBANK.BORROWINGS",
+      "canonical_name": "Vay các tổ chức tín dụng khác",
+      "match": {
+        "exact": [
+          "Vay các tổ chức tín dụng khác"
+        ],
+        "aliases": [
+          "Vay các TCTD khác"
+        ],
+        "parent_context": [
+          "Tiền gửi và vay các tổ chức tín dụng khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CUSTOMER_DEPOSITS": {
+      "node_id": "LIABILITY.CUSTOMER_DEPOSITS",
+      "canonical_name": "Tiền gửi của khách hàng",
+      "match": {
+        "exact": [
+          "Tiền gửi của khách hàng"
+        ],
+        "aliases": [
+          "TIỀN GỬI KHÁCH HÀNG",
+          "TIỀN GỬI CỦA KHÁCH HÀNG"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.DERIVATIVES": {
+      "node_id": "LIABILITY.DERIVATIVES",
+      "canonical_name": "Công cụ tài chính phái sinh và các khoản nợ tài chính khác",
+      "match": {
+        "exact": [
+          "Công cụ tài chính phái sinh và các khoản nợ tài chính khác"
+        ],
+        "aliases": [
+          "CÁC CÔNG CỤ TÀI CHÍNH PHÁI SINH VÀ CÁC KHOẢN NỢ TÀI CHÍNH KHÁC",
+          "Các công cụ tài chính phái sinh và các khoản nợ tài chính khác",
+          "Các công cụ tài chính phái sinh và nợ phải trả khác"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.ENTRUSTED_FUNDS": {
+      "node_id": "LIABILITY.ENTRUSTED_FUNDS",
+      "canonical_name": "Vốn tài trợ, ủy thác đầu tư, cho vay mà tổ chức tín dụng chịu rủi ro",
+      "match": {
+        "exact": [
+          "Vốn tài trợ, ủy thác đầu tư, cho vay mà tổ chức tín dụng chịu rủi ro"
+        ],
+        "aliases": [
+          "Vốn tài trợ, ủy thác đầu tư, cho vay TCTD chịu rủi ro",
+          "Vốn tài trợ ủy thác đầu tư cho vay TCTD chịu rủi ro",
+          "Vốn tài trợ, ủy thác đầu tư, cho vay tổ chức tín dụng chịu rủi ro"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.ISSUED_SECURITIES": {
+      "node_id": "LIABILITY.ISSUED_SECURITIES",
+      "canonical_name": "Phát hành giấy tờ có giá",
+      "match": {
+        "exact": [
+          "Phát hành giấy tờ có giá"
+        ],
+        "aliases": [
+          "PHÁT HÀNH GIẤY TỜ CÓ GIÁ",
+          "GIẤY TỜ CÓ GIÁ ĐÃ PHÁT HÀNH"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.TRADE_PAYABLES": {
+      "node_id": "LIABILITY.TRADE_PAYABLES",
+      "canonical_name": "Phải trả người bán",
+      "match": {
+        "exact": [
+          "Phải trả người bán"
+        ],
+        "aliases": [
+          "PHẢI TRẢ NGƯỜI BÁN"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CUSTOMER_ADVANCES": {
+      "node_id": "LIABILITY.CUSTOMER_ADVANCES",
+      "canonical_name": "Người mua trả tiền trước",
+      "match": {
+        "exact": [
+          "Người mua trả tiền trước"
+        ],
+        "aliases": [
+          "NGƯỜI MUA TRẢ TIỀN TRƯỚC"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.DIVIDEND_PAYABLE": {
+      "node_id": "LIABILITY.DIVIDEND_PAYABLE",
+      "canonical_name": "Phải trả cổ tức, lợi nhuận",
+      "match": {
+        "exact": [
+          "Phải trả cổ tức, lợi nhuận"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.TAX_PAYABLE": {
+      "node_id": "LIABILITY.TAX_PAYABLE",
+      "canonical_name": "Thuế và các khoản phải nộp Nhà nước",
+      "match": {
+        "exact": [
+          "Thuế và các khoản phải nộp Nhà nước"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.EMPLOYEE_PAYABLE": {
+      "node_id": "LIABILITY.EMPLOYEE_PAYABLE",
+      "canonical_name": "Phải trả người lao động",
+      "match": {
+        "exact": [
+          "Phải trả người lao động"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.ACCRUED_EXPENSES": {
+      "node_id": "LIABILITY.ACCRUED_EXPENSES",
+      "canonical_name": "Chi phí phải trả",
+      "match": {
+        "exact": [
+          "Chi phí phải trả"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.INTERNAL_CAPITAL": {
+      "node_id": "LIABILITY.INTERNAL_CAPITAL",
+      "canonical_name": "Phải trả nội bộ về vốn kinh doanh",
+      "match": {
+        "exact": [
+          "Phải trả nội bộ về vốn kinh doanh"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.INTERNAL": {
+      "node_id": "LIABILITY.INTERNAL",
+      "canonical_name": "Phải trả nội bộ",
+      "match": {
+        "exact": [
+          "Phải trả nội bộ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CONSTRUCTION_CONTRACT": {
+      "node_id": "LIABILITY.CONSTRUCTION_CONTRACT",
+      "canonical_name": "Phải trả theo tiến độ hợp đồng xây dựng",
+      "match": {
+        "exact": [
+          "Phải trả theo tiến độ hợp đồng xây dựng"
+        ],
+        "aliases": [
+          "Phải trả theo tiến độ kế hoạch hợp đồng xây dựng"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.DEFERRED_REVENUE": {
+      "node_id": "LIABILITY.DEFERRED_REVENUE",
+      "canonical_name": "Doanh thu chưa thực hiện / chờ phân bổ",
+      "match": {
+        "exact": [
+          "Doanh thu chưa thực hiện / chờ phân bổ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.OTHER_PAYABLES": {
+      "node_id": "LIABILITY.OTHER_PAYABLES",
+      "canonical_name": "Phải trả khác",
+      "match": {
+        "exact": [
+          "Phải trả khác"
+        ],
+        "aliases": [
+          "Các khoản phải trả và công nợ khác",
+          "Các khoản phải trả khác",
+          "Phải trả và công nợ khác",
+          "Công nợ khác"
+        ],
+        "parent_context": [
+          "Nợ phải trả",
+          "Các khoản nợ khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.BORROWINGS": {
+      "node_id": "LIABILITY.BORROWINGS",
+      "canonical_name": "Vay và nợ thuê tài chính",
+      "match": {
+        "exact": [
+          "Vay và nợ thuê tài chính"
+        ],
+        "aliases": [
+          "VAY VÀ NỢ THUÊ TÀI CHÍNH"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CONVERTIBLE_BONDS": {
+      "node_id": "LIABILITY.CONVERTIBLE_BONDS",
+      "canonical_name": "Trái phiếu chuyển đổi",
+      "match": {
+        "exact": [
+          "Trái phiếu chuyển đổi"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.PREFERRED_SHARES_LIABILITY": {
+      "node_id": "LIABILITY.PREFERRED_SHARES_LIABILITY",
+      "canonical_name": "Cổ phiếu ưu đãi được phân loại là nợ phải trả",
+      "match": {
+        "exact": [
+          "Cổ phiếu ưu đãi được phân loại là nợ phải trả"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.DEFERRED_TAX": {
+      "node_id": "LIABILITY.DEFERRED_TAX",
+      "canonical_name": "Thuế thu nhập hoãn lại phải trả",
+      "match": {
+        "exact": [
+          "Thuế thu nhập hoãn lại phải trả"
+        ],
+        "aliases": [
+          "Thuế thu nhập doanh nghiệp hoãn lại phải trả",
+          "Thuế TNDN hoãn lại phải trả"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.PROVISIONS": {
+      "node_id": "LIABILITY.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả",
+      "match": {
+        "exact": [
+          "Dự phòng phải trả"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": [
+          "ngắn hạn",
+          "dài hạn"
+        ]
+      }
+    },
+    "LIABILITY.BONUS_WELFARE_FUND": {
+      "node_id": "LIABILITY.BONUS_WELFARE_FUND",
+      "canonical_name": "Quỹ khen thưởng, phúc lợi",
+      "match": {
+        "exact": [
+          "Quỹ khen thưởng, phúc lợi"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.SCI_TECH_FUND": {
+      "node_id": "LIABILITY.SCI_TECH_FUND",
+      "canonical_name": "Quỹ phát triển khoa học và công nghệ",
+      "match": {
+        "exact": [
+          "Quỹ phát triển khoa học và công nghệ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.PRICE_STABILIZATION_FUND": {
+      "node_id": "LIABILITY.PRICE_STABILIZATION_FUND",
+      "canonical_name": "Quỹ bình ổn giá",
+      "match": {
+        "exact": [
+          "Quỹ bình ổn giá"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.GOV_BOND_REPO": {
+      "node_id": "LIABILITY.GOV_BOND_REPO",
+      "canonical_name": "Giao dịch mua bán lại trái phiếu Chính phủ",
+      "match": {
+        "exact": [
+          "Giao dịch mua bán lại trái phiếu Chính phủ"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.OWNER_CAPITAL": {
+      "node_id": "EQUITY.OWNER_CAPITAL",
+      "canonical_name": "Vốn góp của chủ sở hữu",
+      "match": {
+        "exact": [
+          "Vốn góp của chủ sở hữu"
+        ],
+        "aliases": [
+          "VỐN GÓP CỦA CHỦ SỞ HỮU",
+          "VỐN ĐẦU TƯ CỦA CHỦ SỞ HỮU",
+          "VỐN ĐIỀU LỆ",
+          "Vốn của TCTD",
+          "Vốn của tổ chức tín dụng"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.OWNER_CAPITAL.COMMON": {
+      "node_id": "EQUITY.OWNER_CAPITAL.COMMON",
+      "canonical_name": "Cổ phiếu phổ thông có quyền biểu quyết",
+      "match": {
+        "exact": [
+          "Cổ phiếu phổ thông có quyền biểu quyết"
+        ],
+        "aliases": [
+          "411a. Cổ phiếu phổ thông có quyền biểu quyết",
+          "411.1a. Cổ phiếu phổ thông có quyền biểu quyết",
+          "1a. Cổ phiếu phổ thông có quyền biểu quyết"
+        ],
+        "parent_context": [
+          "Vốn góp của chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.OWNER_CAPITAL.PREFERRED": {
+      "node_id": "EQUITY.OWNER_CAPITAL.PREFERRED",
+      "canonical_name": "Cổ phiếu ưu đãi thuộc vốn chủ sở hữu",
+      "match": {
+        "exact": [
+          "Cổ phiếu ưu đãi thuộc vốn chủ sở hữu"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn góp của chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.SHARE_PREMIUM": {
+      "node_id": "EQUITY.SHARE_PREMIUM",
+      "canonical_name": "Thặng dư vốn cổ phần",
+      "match": {
+        "exact": [
+          "Thặng dư vốn cổ phần"
+        ],
+        "aliases": [
+          "THẶNG DƯ VỐN CỔ PHẦN",
+          "THẶNG DƯ VỐN"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.CONVERTIBLE_OPTION": {
+      "node_id": "EQUITY.CONVERTIBLE_OPTION",
+      "canonical_name": "Quyền chọn chuyển đổi trái phiếu",
+      "match": {
+        "exact": [
+          "Quyền chọn chuyển đổi trái phiếu"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.OTHER_CAPITAL": {
+      "node_id": "EQUITY.OTHER_CAPITAL",
+      "canonical_name": "Vốn khác của chủ sở hữu",
+      "match": {
+        "exact": [
+          "Vốn khác của chủ sở hữu"
+        ],
+        "aliases": [
+          "Vốn khác"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.TREASURY_SHARES": {
+      "node_id": "EQUITY.TREASURY_SHARES",
+      "canonical_name": "Cổ phiếu quỹ / cổ phiếu mua lại của chính mình",
+      "match": {
+        "exact": [
+          "Cổ phiếu quỹ / cổ phiếu mua lại của chính mình"
+        ],
+        "aliases": [
+          "CỔ PHIẾU QUỸ",
+          "CỔ PHIẾU MUA LẠI CỦA CHÍNH MÌNH",
+          "CỔ PHIẾU DO TỔ CHỨC TÍN DỤNG PHÁT HÀNH"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.REVALUATION_RESERVE": {
+      "node_id": "EQUITY.REVALUATION_RESERVE",
+      "canonical_name": "Chênh lệch đánh giá lại tài sản",
+      "match": {
+        "exact": [
+          "Chênh lệch đánh giá lại tài sản"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.FX_RESERVE": {
+      "node_id": "EQUITY.FX_RESERVE",
+      "canonical_name": "Chênh lệch tỷ giá hối đoái",
+      "match": {
+        "exact": [
+          "Chênh lệch tỷ giá hối đoái"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.DEVELOPMENT_FUND": {
+      "node_id": "EQUITY.DEVELOPMENT_FUND",
+      "canonical_name": "Quỹ đầu tư phát triển",
+      "match": {
+        "exact": [
+          "Quỹ đầu tư phát triển"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.RESTRUCTURING_FUND": {
+      "node_id": "EQUITY.RESTRUCTURING_FUND",
+      "canonical_name": "Quỹ hỗ trợ sắp xếp doanh nghiệp",
+      "match": {
+        "exact": [
+          "Quỹ hỗ trợ sắp xếp doanh nghiệp"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.OTHER_FUNDS": {
+      "node_id": "EQUITY.OTHER_FUNDS",
+      "canonical_name": "Các quỹ khác thuộc vốn chủ sở hữu",
+      "match": {
+        "exact": [
+          "Các quỹ khác thuộc vốn chủ sở hữu"
+        ],
+        "aliases": [
+          "CÁC QUỸ THUỘC VỐN CHỦ SỞ HỮU",
+          "QUỸ KHÁC THUỘC VỐN CHỦ SỞ HỮU",
+          "CÁC QUỸ KHÁC"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.RETAINED_EARNINGS": {
+      "node_id": "EQUITY.RETAINED_EARNINGS",
+      "canonical_name": "Lợi nhuận sau thuế chưa phân phối / Lỗ lũy kế",
+      "match": {
+        "exact": [
+          "Lợi nhuận sau thuế chưa phân phối / Lỗ lũy kế"
+        ],
+        "aliases": [
+          "LỢI NHUẬN SAU THUẾ CHƯA PHÂN PHỐI",
+          "LỢI NHUẬN CHƯA PHÂN PHỐI",
+          "LỢI NHUẬN CHƯA PHÂN PHỐI/LỖ LŨY KẾ",
+          "LỢI NHUẬN CHƯA PHÂN PHỐI VÀ CÁC QUỸ"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.RETAINED_EARNINGS.PRIOR": {
+      "node_id": "EQUITY.RETAINED_EARNINGS.PRIOR",
+      "canonical_name": "Lợi nhuận chưa phân phối lũy kế đến cuối kỳ trước",
+      "match": {
+        "exact": [
+          "Lợi nhuận chưa phân phối lũy kế đến cuối kỳ trước"
+        ],
+        "aliases": [
+          "LNST CHƯA PHÂN PHỐI LŨY KẾ ĐẾN CUỐI KỲ TRƯỚC",
+          "LỢI NHUẬN/LỖ LŨY KẾ NĂM TRƯỚC",
+          "LỢI NHUẬN SAU THUẾ CHƯA PHÂN PHỐI LŨY KẾ ĐẾN CUỐI NĂM TRƯỚC",
+          "Lợi nhuận sau thuế chưa phân phối lũy kế đến cuối năm trước",
+          "421a. LNST chưa phân phối lũy kế đến cuối năm trước"
+        ],
+        "parent_context": [
+          "Lợi nhuận sau thuế chưa phân phối / Lỗ lũy kế"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.RETAINED_EARNINGS.CURRENT": {
+      "node_id": "EQUITY.RETAINED_EARNINGS.CURRENT",
+      "canonical_name": "Lợi nhuận sau thuế chưa phân phối kỳ này",
+      "match": {
+        "exact": [
+          "Lợi nhuận chưa phân phối kỳ này / năm nay",
+          "Lợi nhuận sau thuế chưa phân phối kỳ này"
+        ],
+        "aliases": [
+          "LNST CHƯA PHÂN PHỐI KỲ NÀY",
+          "LỢI NHUẬN/LỖ NĂM NAY",
+          "LỢI NHUẬN CHƯA PHÂN PHỐI KỲ NÀY",
+          "Lợi nhuận năm nay",
+          "Lợi nhuận chưa phân phối kỳ này",
+          "LỢI NHUẬN SAU THUẾ CHƯA PHÂN PHỐI NĂM NAY",
+          "Lợi nhuận sau thuế chưa phân phối năm nay",
+          "421b. LNST chưa phân phối năm nay"
+        ],
+        "parent_context": [
+          "Lợi nhuận sau thuế chưa phân phối / Lỗ lũy kế",
+          "Lợi nhuận sau thuế chưa phân phối",
+          "Lợi nhuận chưa phân phối"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.CONSTRUCTION_CAPITAL": {
+      "node_id": "EQUITY.CONSTRUCTION_CAPITAL",
+      "canonical_name": "Nguồn vốn đầu tư xây dựng cơ bản",
+      "match": {
+        "exact": [
+          "Nguồn vốn đầu tư xây dựng cơ bản"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.FUNDING": {
+      "node_id": "EQUITY.FUNDING",
+      "canonical_name": "Nguồn kinh phí và quỹ khác",
+      "match": {
+        "exact": [
+          "Nguồn kinh phí và quỹ khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.FUNDING.SOURCE": {
+      "node_id": "EQUITY.FUNDING.SOURCE",
+      "canonical_name": "Nguồn kinh phí",
+      "match": {
+        "exact": [
+          "Nguồn kinh phí"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nguồn kinh phí và quỹ khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.FUNDING.FIXED_ASSETS": {
+      "node_id": "EQUITY.FUNDING.FIXED_ASSETS",
+      "canonical_name": "Nguồn kinh phí đã hình thành tài sản cố định",
+      "match": {
+        "exact": [
+          "Nguồn kinh phí đã hình thành tài sản cố định"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Nguồn kinh phí và quỹ khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.NON_CONTROLLING_INTEREST": {
+      "node_id": "EQUITY.NON_CONTROLLING_INTEREST",
+      "canonical_name": "Lợi ích của cổ đông không kiểm soát / cổ đông thiểu số",
+      "match": {
+        "exact": [
+          "Lợi ích của cổ đông không kiểm soát / cổ đông thiểu số"
+        ],
+        "aliases": [
+          "LỢI ÍCH CỦA CỔ ĐÔNG THIỂU SỐ",
+          "LỢI ÍCH CỔ ĐÔNG THIỂU SỐ",
+          "LỢI ÍCH CỦA CỔ ĐÔNG KHÔNG KIỂM SOÁT",
+          "LỢI ÍCH CỔ ĐÔNG KHÔNG KIỂM SOÁT"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "EQUITY.BANK_RESERVES": {
+      "node_id": "EQUITY.BANK_RESERVES",
+      "canonical_name": "Các quỹ của tổ chức tín dụng",
+      "match": {
+        "exact": [
+          "Các quỹ của tổ chức tín dụng"
+        ],
+        "aliases": [
+          "CÁC QUỸ CỦA TỔ CHỨC TÍN DỤNG",
+          "CÁC QUỸ DỰ TRỮ",
+          "QUỸ DỰ TRỮ BỔ SUNG VỐN ĐIỀU LỆ",
+          "QUỸ DỰ PHÒNG TÀI CHÍNH",
+          "Các quỹ của TCTD",
+          "Quỹ của TCTD",
+          "Các quỹ của tổ chức tín dụng",
+          "Quỹ của tổ chức tín dụng"
+        ],
+        "parent_context": [
+          "Vốn chủ sở hữu"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.FIN_INV.TRADING_SECURITIES.GROSS": {
+      "node_id": "ASSET.FIN_INV.TRADING_SECURITIES.GROSS",
+      "canonical_name": "Chứng khoán kinh doanh trước dự phòng",
+      "match": {
+        "exact": [
+          "Chứng khoán kinh doanh trước dự phòng"
+        ],
+        "aliases": [
+          "Chứng khoán kinh doanh",
+          "Chứng khoán kinh doanh trước dự phòng",
+          "Giá trị chứng khoán kinh doanh trước dự phòng"
+        ],
+        "parent_context": [
+          "Chứng khoán kinh doanh"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 240,
+          "penalty_without_repeated_parent": 260
+        }
+      }
+    },
+    "ASSET.FIN_INV.HTM.GROSS": {
+      "node_id": "ASSET.FIN_INV.HTM.GROSS",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn trước dự phòng",
+      "match": {
+        "exact": [],
+        "aliases": [
+          "Đầu tư nắm giữ đến ngày đáo hạn",
+          "Chứng khoán đầu tư giữ đến ngày đáo hạn",
+          "Đầu tư nắm giữ đến ngày đáo hạn trước dự phòng"
+        ],
+        "parent_context": [
+          "Đầu tư nắm giữ đến ngày đáo hạn",
+          "Chứng khoán đầu tư giữ đến ngày đáo hạn"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 240,
+          "penalty_without_repeated_parent": 260
+        }
+      }
+    },
+    "ASSET.FIN_INV.AFS.GROSS": {
+      "node_id": "ASSET.FIN_INV.AFS.GROSS",
+      "canonical_name": "Chứng khoán đầu tư sẵn sàng để bán trước dự phòng",
+      "match": {
+        "exact": [],
+        "aliases": [
+          "Chứng khoán đầu tư sẵn sàng để bán",
+          "Chứng khoán sẵn sàng để bán",
+          "Chứng khoán đầu tư sẵn sàng để bán trước dự phòng"
+        ],
+        "parent_context": [
+          "Chứng khoán đầu tư sẵn sàng để bán",
+          "Chứng khoán sẵn sàng để bán"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 240,
+          "penalty_without_repeated_parent": 260
+        }
+      }
+    },
+    "ASSET.OTHER.ACCRUED_INTEREST_FEES": {
+      "node_id": "ASSET.OTHER.ACCRUED_INTEREST_FEES",
+      "canonical_name": "Các khoản lãi, phí phải thu",
+      "match": {
+        "exact": [
+          "Các khoản lãi, phí phải thu"
+        ],
+        "aliases": [
+          "Lãi, phí phải thu",
+          "Lãi và phí phải thu"
+        ],
+        "parent_context": [
+          "Tài sản Có khác",
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.ALLOWANCE": {
+      "node_id": "ASSET.OTHER.ALLOWANCE",
+      "canonical_name": "Dự phòng rủi ro cho các tài sản Có nội bảng khác",
+      "match": {
+        "exact": [
+          "Dự phòng rủi ro cho các tài sản Có nội bảng khác",
+          "Các khoản dự phòng rủi ro cho các tài sản Có nội bảng khác",
+          "Dự phòng cho tài sản Có khác"
+        ],
+        "aliases": [
+          "Dự phòng rủi ro tài sản Có nội bảng khác",
+          "Dự phòng cho các tài sản Có nội bảng khác",
+          "Dự phòng rủi ro tài sản Có khác"
+        ],
+        "parent_context": [
+          "Tài sản Có khác",
+          "Tài sản khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.ACCRUED_INTEREST_FEES": {
+      "node_id": "LIABILITY.ACCRUED_INTEREST_FEES",
+      "canonical_name": "Các khoản lãi, phí phải trả",
+      "match": {
+        "exact": [
+          "Các khoản lãi, phí phải trả"
+        ],
+        "aliases": [
+          "Lãi, phí phải trả",
+          "Lãi và phí phải trả"
+        ],
+        "parent_context": [
+          "Nợ phải trả",
+          "Các khoản phải trả",
+          "Các khoản nợ khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.GOV_CENTRAL_BANK.DEPOSITS_BORROWINGS": {
+      "node_id": "LIABILITY.GOV_CENTRAL_BANK.DEPOSITS_BORROWINGS",
+      "canonical_name": "Tiền gửi và vay Chính phủ, Ngân hàng Nhà nước",
+      "match": {
+        "exact": [
+          "Tiền gửi và vay Chính phủ, Ngân hàng Nhà nước"
+        ],
+        "aliases": [
+          "Tiền gửi và vay Chính phủ, NHNN",
+          "Tiền gửi và vay Chính phủ và NHNN"
+        ],
+        "parent_context": [
+          "Các khoản nợ Chính phủ và Ngân hàng Nhà nước"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.GOV_CENTRAL_BANK.REPO": {
+      "node_id": "LIABILITY.GOV_CENTRAL_BANK.REPO",
+      "canonical_name": "Giao dịch bán và mua lại trái phiếu Chính phủ với Kho bạc Nhà nước",
+      "match": {
+        "exact": [
+          "Giao dịch bán và mua lại trái phiếu Chính phủ với Kho bạc Nhà nước"
+        ],
+        "aliases": [
+          "Giao dịch bán và mua lại trái phiếu Chính phủ với Kho bạc Nhà nước",
+          "Giao dịch repo trái phiếu Chính phủ với Kho bạc Nhà nước",
+          "Giao dịch mua bán lại trái phiếu Chính phủ với Kho bạc Nhà nước"
+        ],
+        "parent_context": [
+          "Các khoản nợ Chính phủ và Ngân hàng Nhà nước"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.OTHER": {
+      "node_id": "LIABILITY.OTHER",
+      "canonical_name": "Các khoản nợ khác",
+      "match": {
+        "exact": [
+          "Các khoản nợ khác"
+        ],
+        "aliases": [
+          "Nợ khác",
+          "Các khoản nợ phải trả khác"
+        ],
+        "parent_context": [
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "subtotal_owner_reassignment": true
+        }
+      }
+    },
+    "LIABILITY.BORROWINGS.SHORT_TERM": {
+      "node_id": "LIABILITY.BORROWINGS.SHORT_TERM",
+      "canonical_name": "Vay và nợ thuê tài chính ngắn hạn",
+      "match": {
+        "exact": [
+          "Vay và nợ thuê tài chính ngắn hạn",
+          "Vay ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vay và nợ thuê tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.BORROWINGS.LONG_TERM": {
+      "node_id": "LIABILITY.BORROWINGS.LONG_TERM",
+      "canonical_name": "Vay và nợ thuê tài chính dài hạn",
+      "match": {
+        "exact": [
+          "Vay và nợ thuê tài chính dài hạn",
+          "Vay dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Vay và nợ thuê tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.TRADE_PAYABLES.SHORT_TERM": {
+      "node_id": "LIABILITY.TRADE_PAYABLES.SHORT_TERM",
+      "canonical_name": "Phải trả người bán ngắn hạn",
+      "match": {
+        "exact": [
+          "Phải trả người bán ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải trả người bán"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.TRADE_PAYABLES.LONG_TERM": {
+      "node_id": "LIABILITY.TRADE_PAYABLES.LONG_TERM",
+      "canonical_name": "Phải trả người bán dài hạn",
+      "match": {
+        "exact": [
+          "Phải trả người bán dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải trả người bán"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CUSTOMER_ADVANCES.SHORT_TERM": {
+      "node_id": "LIABILITY.CUSTOMER_ADVANCES.SHORT_TERM",
+      "canonical_name": "Người mua trả tiền trước ngắn hạn",
+      "match": {
+        "exact": [
+          "Người mua trả tiền trước ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Người mua trả tiền trước"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CUSTOMER_ADVANCES.LONG_TERM": {
+      "node_id": "LIABILITY.CUSTOMER_ADVANCES.LONG_TERM",
+      "canonical_name": "Người mua trả tiền trước dài hạn",
+      "match": {
+        "exact": [
+          "Người mua trả tiền trước dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Người mua trả tiền trước"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.ACCRUED_EXPENSES.SHORT_TERM": {
+      "node_id": "LIABILITY.ACCRUED_EXPENSES.SHORT_TERM",
+      "canonical_name": "Chi phí phải trả ngắn hạn",
+      "match": {
+        "exact": [
+          "Chi phí phải trả ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Chi phí phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.ACCRUED_EXPENSES.LONG_TERM": {
+      "node_id": "LIABILITY.ACCRUED_EXPENSES.LONG_TERM",
+      "canonical_name": "Chi phí phải trả dài hạn",
+      "match": {
+        "exact": [
+          "Chi phí phải trả dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Chi phí phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.DEFERRED_REVENUE.SHORT_TERM": {
+      "node_id": "LIABILITY.DEFERRED_REVENUE.SHORT_TERM",
+      "canonical_name": "Doanh thu chưa thực hiện ngắn hạn",
+      "match": {
+        "exact": [
+          "Doanh thu chưa thực hiện ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Doanh thu chưa thực hiện / chờ phân bổ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.DEFERRED_REVENUE.LONG_TERM": {
+      "node_id": "LIABILITY.DEFERRED_REVENUE.LONG_TERM",
+      "canonical_name": "Doanh thu chưa thực hiện dài hạn",
+      "match": {
+        "exact": [
+          "Doanh thu chưa thực hiện dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Doanh thu chưa thực hiện / chờ phân bổ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.OTHER_PAYABLES.SHORT_TERM": {
+      "node_id": "LIABILITY.OTHER_PAYABLES.SHORT_TERM",
+      "canonical_name": "Phải trả ngắn hạn khác",
+      "match": {
+        "exact": [
+          "Phải trả ngắn hạn khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải trả khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.OTHER_PAYABLES.LONG_TERM": {
+      "node_id": "LIABILITY.OTHER_PAYABLES.LONG_TERM",
+      "canonical_name": "Phải trả dài hạn khác",
+      "match": {
+        "exact": [
+          "Phải trả dài hạn khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải trả khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.SHORT_TERM",
+      "canonical_name": "Trả trước cho người bán ngắn hạn",
+      "match": {
+        "exact": [
+          "Trả trước cho người bán ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Trả trước cho người bán"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.SUPPLIER_ADVANCE.LONG_TERM",
+      "canonical_name": "Trả trước cho người bán dài hạn",
+      "match": {
+        "exact": [
+          "Trả trước cho người bán dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Trả trước cho người bán"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.INTERNAL.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL.SHORT_TERM",
+      "canonical_name": "Phải thu nội bộ ngắn hạn",
+      "match": {
+        "exact": [
+          "Phải thu nội bộ ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu nội bộ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.INTERNAL.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.INTERNAL.LONG_TERM",
+      "canonical_name": "Phải thu nội bộ dài hạn",
+      "match": {
+        "exact": [
+          "Phải thu nội bộ dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu nội bộ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.LOANS.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.LOANS.SHORT_TERM",
+      "canonical_name": "Phải thu về cho vay ngắn hạn",
+      "match": {
+        "exact": [
+          "Phải thu về cho vay ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu về cho vay"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.LOANS.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.LOANS.LONG_TERM",
+      "canonical_name": "Phải thu về cho vay dài hạn",
+      "match": {
+        "exact": [
+          "Phải thu về cho vay dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu về cho vay"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.OTHER.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.OTHER.SHORT_TERM",
+      "canonical_name": "Phải thu ngắn hạn khác",
+      "match": {
+        "exact": [
+          "Phải thu ngắn hạn khác"
+        ],
+        "aliases": [
+          "Các khoản phải thu khác"
+        ],
+        "parent_context": [
+          "Phải thu khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.OTHER.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.OTHER.LONG_TERM",
+      "canonical_name": "Phải thu dài hạn khác",
+      "match": {
+        "exact": [
+          "Phải thu dài hạn khác"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Phải thu khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE.SHORT_TERM": {
+      "node_id": "ASSET.RECEIVABLES.ALLOWANCE.SHORT_TERM",
+      "canonical_name": "Dự phòng phải thu ngắn hạn khó đòi",
+      "match": {
+        "exact": [
+          "Dự phòng phải thu ngắn hạn khó đòi"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Dự phòng phải thu khó đòi"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.RECEIVABLES.ALLOWANCE.LONG_TERM": {
+      "node_id": "ASSET.RECEIVABLES.ALLOWANCE.LONG_TERM",
+      "canonical_name": "Dự phòng phải thu dài hạn khó đòi",
+      "match": {
+        "exact": [
+          "Dự phòng phải thu dài hạn khó đòi"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Dự phòng phải thu khó đòi"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.PREPAID_EXPENSE.SHORT_TERM": {
+      "node_id": "ASSET.OTHER.PREPAID_EXPENSE.SHORT_TERM",
+      "canonical_name": "Chi phí trả trước ngắn hạn",
+      "match": {
+        "exact": [
+          "Chi phí trả trước ngắn hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Chi phí trả trước / chờ phân bổ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.OTHER.PREPAID_EXPENSE.LONG_TERM": {
+      "node_id": "ASSET.OTHER.PREPAID_EXPENSE.LONG_TERM",
+      "canonical_name": "Chi phí trả trước dài hạn",
+      "match": {
+        "exact": [
+          "Chi phí trả trước dài hạn"
+        ],
+        "aliases": [],
+        "parent_context": [
+          "Chi phí trả trước / chờ phân bổ"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "ASSET.INVENTORY.GROSS": {
+      "node_id": "ASSET.INVENTORY.GROSS",
+      "canonical_name": "Hàng tồn kho trước dự phòng",
+      "match": {
+        "exact": [
+          "Hàng tồn kho trước dự phòng"
+        ],
+        "aliases": [
+          "Hàng tồn kho"
+        ],
+        "parent_context": [
+          "Hàng tồn kho"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 260,
+          "penalty_without_repeated_parent": 280
+        }
+      }
+    },
+    "ASSET.OTHER.CURRENT.OTHER": {
+      "node_id": "ASSET.OTHER.CURRENT.OTHER",
+      "canonical_name": "Tài sản ngắn hạn khác - khoản khác",
+      "match": {
+        "exact": [
+          "Tài sản ngắn hạn khác - khoản khác"
+        ],
+        "aliases": [
+          "Tài sản ngắn hạn khác"
+        ],
+        "parent_context": [
+          "Tài sản ngắn hạn khác"
+        ],
+        "contains": [],
+        "exclude_if_contains": [],
+        "structural": {
+          "same_label_as_parent_required": true,
+          "boost_when_repeated_parent": 260,
+          "penalty_without_repeated_parent": 280
+        }
+      }
+    },
+    "OFF_BALANCE": {
+      "node_id": "OFF_BALANCE",
+      "canonical_name": "Các chỉ tiêu ngoài báo cáo tình hình tài chính",
+      "match": {
+        "exact": [
+          "CÁC CHỈ TIÊU NGOÀI BÁO CÁO TÌNH HÌNH TÀI CHÍNH",
+          "CÁC CHỈ TIÊU NGOÀI BÁO CÁO TÌNH HÌNH TÀI CHÍNH HỢP NHẤT"
+        ],
+        "aliases": [
+          "Các chỉ tiêu ngoài bảng cân đối kế toán",
+          "CÁC CHỈ TIÊU NGOÀI BẢNG CÂN ĐỐI KẾ TOÁN"
+        ],
+        "parent_context": [],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.GUARANTEES": {
+      "node_id": "OFF_BALANCE.GUARANTEES",
+      "canonical_name": "Bảo lãnh",
+      "match": {
+        "exact": [
+          "Bảo lãnh"
+        ],
+        "aliases": [
+          "BẢO LÃNH"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.GUARANTEES.LOAN": {
+      "node_id": "OFF_BALANCE.GUARANTEES.LOAN",
+      "canonical_name": "Bảo lãnh vay vốn",
+      "match": {
+        "exact": [
+          "Bảo lãnh vay vốn"
+        ],
+        "aliases": [
+          "BẢO LÃNH VAY VỐN"
+        ],
+        "parent_context": [
+          "Bảo lãnh",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.GUARANTEES.OTHER": {
+      "node_id": "OFF_BALANCE.GUARANTEES.OTHER",
+      "canonical_name": "Bảo lãnh khác",
+      "match": {
+        "exact": [
+          "Bảo lãnh khác"
+        ],
+        "aliases": [
+          "BẢO LÃNH KHÁC"
+        ],
+        "parent_context": [
+          "Bảo lãnh",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS",
+      "canonical_name": "Cam kết giao dịch",
+      "match": {
+        "exact": [
+          "Cam kết giao dịch"
+        ],
+        "aliases": [
+          "CAM KẾT GIAO DỊCH"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.FX_TRANSACTION": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.FX_TRANSACTION",
+      "canonical_name": "Cam kết giao dịch hối đoái",
+      "match": {
+        "exact": [
+          "Cam kết giao dịch hối đoái"
+        ],
+        "aliases": [
+          "CAM KẾT GIAO DỊCH HỐI ĐOÁI"
+        ],
+        "parent_context": [
+          "Cam kết giao dịch",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.BUY_FX": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.BUY_FX",
+      "canonical_name": "Cam kết mua ngoại tệ",
+      "match": {
+        "exact": [
+          "Cam kết mua ngoại tệ"
+        ],
+        "aliases": [
+          "CAM KẾT MUA NGOẠI TỆ",
+          "Cam kết mua ngoại tệ giao ngay"
+        ],
+        "parent_context": [
+          "Cam kết giao dịch",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SELL_FX": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SELL_FX",
+      "canonical_name": "Cam kết bán ngoại tệ",
+      "match": {
+        "exact": [
+          "Cam kết bán ngoại tệ"
+        ],
+        "aliases": [
+          "CAM KẾT BÁN NGOẠI TỆ",
+          "Cam kết bán ngoại tệ giao ngay"
+        ],
+        "parent_context": [
+          "Cam kết giao dịch",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP",
+      "canonical_name": "Cam kết giao dịch hoán đổi",
+      "match": {
+        "exact": [
+          "Cam kết giao dịch hoán đổi"
+        ],
+        "aliases": [
+          "CAM KẾT GIAO DỊCH HOÁN ĐỔI",
+          "Cam kết giao dịch hoán đổi tiền tệ"
+        ],
+        "parent_context": [
+          "Cam kết giao dịch",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP_BUY",
+      "canonical_name": "Cam kết mua - giao dịch hoán đổi tiền tệ",
+      "match": {
+        "exact": [
+          "Cam kết mua - giao dịch hoán đổi tiền tệ"
+        ],
+        "aliases": [
+          "CAM KẾT MUA - GIAO DỊCH HOÁN ĐỔI TIỀN TỆ"
+        ],
+        "parent_context": [
+          "Cam kết giao dịch hoán đổi",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL": {
+      "node_id": "OFF_BALANCE.FX_COMMITMENTS.SWAP_SELL",
+      "canonical_name": "Cam kết bán - giao dịch hoán đổi tiền tệ",
+      "match": {
+        "exact": [
+          "Cam kết bán - giao dịch hoán đổi tiền tệ"
+        ],
+        "aliases": [
+          "CAM KẾT BÁN - GIAO DỊCH HOÁN ĐỔI TIỀN TỆ"
+        ],
+        "parent_context": [
+          "Cam kết giao dịch hoán đổi",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.CREDIT_COMMITMENTS": {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS",
+      "canonical_name": "Cam kết tín dụng",
+      "match": {
+        "exact": [
+          "Cam kết tín dụng"
+        ],
+        "aliases": [
+          "CAM KẾT TÍN DỤNG"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.CREDIT_COMMITMENTS.LC": {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.LC",
+      "canonical_name": "Cam kết trong nghiệp vụ L/C",
+      "match": {
+        "exact": [
+          "Cam kết trong nghiệp vụ L/C"
+        ],
+        "aliases": [
+          "CAM KẾT TRONG NGHIỆP VỤ L/C",
+          "Cam kết trong nghiệp vụ thư tín dụng",
+          "Cam kết trong nghiệp vụ thư tín dụng (L/C)"
+        ],
+        "parent_context": [
+          "Cam kết tín dụng",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.CREDIT_COMMITMENTS.IRREVOCABLE_LOAN": {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.IRREVOCABLE_LOAN",
+      "canonical_name": "Cam kết cho vay không hủy ngang",
+      "match": {
+        "exact": [
+          "Cam kết cho vay không hủy ngang"
+        ],
+        "aliases": [
+          "CAM KẾT CHO VAY KHÔNG HỦY NGANG"
+        ],
+        "parent_context": [
+          "Cam kết tín dụng",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.CREDIT_COMMITMENTS.UNUSED_LIMIT": {
+      "node_id": "OFF_BALANCE.CREDIT_COMMITMENTS.UNUSED_LIMIT",
+      "canonical_name": "Hạn mức tín dụng chưa sử dụng",
+      "match": {
+        "exact": [
+          "Hạn mức tín dụng chưa sử dụng"
+        ],
+        "aliases": [
+          "HẠN MỨC TÍN DỤNG CHƯA SỬ DỤNG"
+        ],
+        "parent_context": [
+          "Cam kết tín dụng",
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.OTHER_COMMITMENTS": {
+      "node_id": "OFF_BALANCE.OTHER_COMMITMENTS",
+      "canonical_name": "Các cam kết khác",
+      "match": {
+        "exact": [
+          "Các cam kết khác"
+        ],
+        "aliases": [
+          "CÁC CAM KẾT KHÁC",
+          "Cam kết khác"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES": {
+      "node_id": "OFF_BALANCE.UNCOLLECTED_INTEREST_FEES",
+      "canonical_name": "Lãi cho vay và phí phải thu chưa thu được",
+      "match": {
+        "exact": [
+          "Lãi cho vay và phí phải thu chưa thu được"
+        ],
+        "aliases": [
+          "LÃI CHO VAY VÀ PHÍ PHẢI THU CHƯA THU ĐƯỢC"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT": {
+      "node_id": "OFF_BALANCE.WRITTEN_OFF_BAD_DEBT",
+      "canonical_name": "Nợ khó đòi đã xử lý",
+      "match": {
+        "exact": [
+          "Nợ khó đòi đã xử lý"
+        ],
+        "aliases": [
+          "NỢ KHÓ ĐÒI ĐÃ XỬ LÝ"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.OTHER_ASSETS_DOCUMENTS": {
+      "node_id": "OFF_BALANCE.OTHER_ASSETS_DOCUMENTS",
+      "canonical_name": "Tài sản và chứng từ khác",
+      "match": {
+        "exact": [
+          "Tài sản và chứng từ khác"
+        ],
+        "aliases": [
+          "TÀI SẢN VÀ CHỨNG TỪ KHÁC"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "OFF_BALANCE.OTHER_ITEMS": {
+      "node_id": "OFF_BALANCE.OTHER_ITEMS",
+      "canonical_name": "Các khoản mục ngoài bảng khác",
+      "match": {
+        "exact": [
+          "Các khoản mục ngoài bảng khác"
+        ],
+        "aliases": [
+          "CÁC KHOẢN MỤC NGOÀI BẢNG KHÁC",
+          "Nghĩa vụ nợ tiềm ẩn và các cam kết đưa ra"
+        ],
+        "parent_context": [
+          "Các chỉ tiêu ngoài báo cáo tình hình tài chính"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.CURRENT.PROVISIONS": {
+      "node_id": "LIABILITY.CURRENT.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả ngắn hạn",
+      "match": {
+        "exact": [
+          "Dự phòng phải trả ngắn hạn"
+        ],
+        "aliases": [
+          "DỰ PHÒNG PHẢI TRẢ NGẮN HẠN"
+        ],
+        "parent_context": [
+          "Nợ ngắn hạn",
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    },
+    "LIABILITY.NON_CURRENT.PROVISIONS": {
+      "node_id": "LIABILITY.NON_CURRENT.PROVISIONS",
+      "canonical_name": "Dự phòng phải trả dài hạn",
+      "match": {
+        "exact": [
+          "Dự phòng phải trả dài hạn"
+        ],
+        "aliases": [
+          "DỰ PHÒNG PHẢI TRẢ DÀI HẠN"
+        ],
+        "parent_context": [
+          "Nợ dài hạn",
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    }
+  },
+  "resource_patch_version": "0.4.14"
+}

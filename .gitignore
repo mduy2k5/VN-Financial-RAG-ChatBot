@@ -1,0 +1,64 @@
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+.venv/
+venv/
+.coverage
+
+# Local configuration and runtime data
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.db
+*.db-shm
+*.db-wal
+
+# Large local source corpus
+/dataset/ocr_annual_financials_all/
+
+# Local-only real corpora, benchmark artifacts, and screenshots
+/financial_python/local_data/
+/financial_python/sample_data/*
+!/financial_python/sample_data/DEMO_SYNTHETIC_2025.md
+/financial_python/sample_data/ABB_BCTC_2025.md
+/financial_python/sample_data/ACV_BCTC_2019.txt
+/financial_python/evaluation/results/
+/financial_python/evaluation/review/
+/financial_python/evaluation/sources/
+/financial_python/evaluation/*.jsonl
+!/financial_python/evaluation/demo_cases.jsonl
+/financial_python/evaluation/*.csv
+/docs/assets/qa/
+/docs/plans/
+/docs/benchmarks/
+
+# Cross-project benchmark inputs and generated local artifacts
+/benchmarks/cross_project_rag/corpus_manifest.json
+/benchmarks/cross_project_rag/readiness_snapshot_*.json
+/benchmarks/cross_project_rag/cases.*.jsonl
+/benchmarks/cross_project_rag/results/
+/benchmarks/cross_project_rag/run_manifest.json
+
+# Build output and editor files
+/dist/
+/build/
+**/*.egg-info/
+node_modules/
+.idea/
+.vscode/
+*.log
+
+# Local scratch and legacy repository metadata
+
+# Local remnants and source corpus from the previous workspace
+/config/
+/dataset/
+/evaluation/
+/skills/
+/tmp/

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f6f3" />
+    <meta name="description" content="Cấu hình và kiểm tra kết nối mô hình AI cho Financial RAG." />
+    <title>Cấu hình AI — Financial RAG</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260928-white-background" />
+    <link rel="stylesheet" href="/styles.css?v=20260929-llm-config-page" />
+    <link rel="stylesheet" href="/settings.css?v=20260929-llm-config-page" />
+    <script src="/settings.js?v=20260929-llm-config-page" defer></script>
+  </head>
+  <body>
+    <div class="app-shell settings-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Financial RAG, trang chủ">
+          <img class="brand-mark" src="/icon.png?v=20260928" alt="" aria-hidden="true" />
+          <span class="brand-copy">
+            <strong>Financial <span class="brand-accent">RAG</span></strong>
+            <small>Cấu hình mô hình AI</small>
+          </span>
+        </a>
+        <div class="topbar-right">
+          <a class="settings-back-link" href="/">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg>
+            <span>Quay lại chat</span>
+          </a>
+        </div>
+      </header>
+
+      <main class="settings-main">
+        <header class="settings-intro">
+          <p class="eyebrow"><span class="eyebrow-line"></span> CẤU HÌNH LLM</p>
+          <h1>Kết nối mô hình AI</h1>
+          <p>Thêm mô hình Ollama trên máy hoặc API tương thích OpenAI, rồi kiểm tra kết nối trước khi dùng.</p>
+        </header>
+
+        <div class="settings-layout">
+          <section class="settings-card connection-card" aria-labelledby="connection-heading">
+            <div class="settings-section-heading">
+              <div>
+                <h2 id="connection-heading">Nguồn mô hình</h2>
+                <p>Chọn cách bạn muốn cấu hình.</p>
+              </div>
+            </div>
+
+            <div class="provider-switch" role="group" aria-label="Chọn loại mô hình">
+              <button class="provider-option is-selected" type="button" data-provider="ollama" aria-pressed="true">
+                <span class="provider-option-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2" /><path d="M8 21h8m-4-4v4M8 10h.01M12 10h.01M16 10h.01" /></svg>
+                </span>
+                <span><strong>Trên máy</strong><small>Ollama · riêng tư</small></span>
+                <span class="provider-check" aria-hidden="true">✓</span>
+              </button>
+              <button class="provider-option" type="button" data-provider="openai_compatible" aria-pressed="false">
+                <span class="provider-option-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 17.5 4 20v-4.5a7.5 7.5 0 1 1 3 2Z" /><path d="M9 10h6m-6 4h4" /></svg>
+                </span>
+                <span><strong>API</strong><small>OpenAI · OpenRouter · DeepSeek</small></span>
+                <span class="provider-check" aria-hidden="true">✓</span>
+              </button>
+            </div>
+
+            <section id="ollama-panel" class="provider-panel" aria-label="Cấu hình Ollama">
+              <label class="settings-label" for="ollama-url">Địa chỉ Ollama</label>
+              <input id="ollama-url" class="settings-input" type="url" value="http://host.docker.internal:11434" spellcheck="false" autocomplete="url" />
+              <p class="field-hint">Mặc định cho ứng dụng đang chạy trong Docker. Ollama cần cho phép kết nối từ container.</p>
+
+              <label class="settings-label" for="ollama-model">Mô hình</label>
+              <select id="ollama-model" class="settings-input">
+                <option value="qwen3.5:4b">qwen3.5:4b</option>
+                <option value="qwen3.5:2b">qwen3.5:2b</option>
+              </select>
+              <p class="field-hint">Kiểm tra kết nối sẽ tải danh sách các model Ollama đang có.</p>
+            </section>
+
+            <section id="api-panel" class="provider-panel" aria-label="Cấu hình API" hidden>
+              <label class="settings-label" for="api-preset">Nhà cung cấp</label>
+              <select id="api-preset" class="settings-input">
+                <option value="openai">OpenAI</option>
+                <option value="openrouter">OpenRouter</option>
+                <option value="deepseek">DeepSeek</option>
+                <option value="custom">API tương thích OpenAI khác</option>
+              </select>
+
+              <label class="settings-label" for="api-url">Địa chỉ API</label>
+              <input id="api-url" class="settings-input" type="url" value="https://api.openai.com/v1" spellcheck="false" autocomplete="url" />
+              <p class="field-hint">Nhập địa chỉ gốc, ví dụ https://api.openai.com/v1. Không thêm /models ở cuối.</p>
+
+              <label class="settings-label" for="api-model">Tên mô hình</label>
+              <input id="api-model" class="settings-input" type="text" list="api-model-options" placeholder="Ví dụ: gpt-4.1-mini" autocomplete="off" spellcheck="false" />
+              <datalist id="api-model-options"></datalist>
+
+              <label class="settings-label" for="api-key">API key <span class="optional-label">nếu nhà cung cấp yêu cầu</span></label>
+              <div class="secret-input-wrap">
+                <input id="api-key" class="settings-input" type="password" placeholder="Nhập API key để kiểm tra" autocomplete="new-password" spellcheck="false" />
+                <button id="toggle-api-key" class="secret-toggle" type="button" aria-pressed="false">Hiện</button>
+              </div>
+              <p class="field-hint">API key chỉ gửi khi kiểm tra kết nối; không được lưu vào cấu hình trình duyệt.</p>
+            </section>
+
+            <div class="connection-actions">
+              <p id="connection-status" class="connection-status" role="status" aria-live="polite">
+                <span class="connection-status-dot" aria-hidden="true"></span>
+                <span>Chưa kiểm tra kết nối.</span>
+              </p>
+              <div class="settings-buttons">
+                <button id="test-connection" class="settings-button settings-button-secondary" type="button">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5" /><path d="M5.6 9a7 7 0 0 1 11.8-2L20 12M4 12l2.6 5a7 7 0 0 0 11.8-2" /></svg>
+                  Kiểm tra kết nối
+                </button>
+                <button id="save-profile" class="settings-button settings-button-primary" type="button">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l3 3v13H4V4h1Z" /><path d="M8 4v6h8V4M8 20v-7h8v7" /></svg>
+                  Lưu cấu hình
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="settings-sidebar">
+            <section class="settings-card saved-card" aria-labelledby="saved-heading">
+              <div class="saved-heading">
+                <div>
+                  <h2 id="saved-heading">Cấu hình đã lưu</h2>
+                  <p id="profile-count">0 cấu hình</p>
+                </div>
+              </div>
+              <div id="saved-profiles" class="saved-profiles" aria-live="polite"></div>
+            </section>
+
+            <section class="settings-info-card">
+              <span class="info-mark" aria-hidden="true">i</span>
+              <div>
+                <h3>Chưa đổi mô hình chat</h3>
+                <p>Trang này chỉ lưu cấu hình trên trình duyệt và kiểm tra endpoint. Lựa chọn cạnh nút gửi hiện chưa thay đổi mô hình đang xử lý câu trả lời.</p>
+                <p>API key không được lưu. Nếu rời trang, bạn cần nhập lại key để kiểm tra lần sau.</p>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="page-footer">
+        <span>Financial RAG</span>
+        <span>Cấu hình lưu riêng trên trình duyệt này</span>
+      </footer>
+    </div>
+  </body>
+</html>

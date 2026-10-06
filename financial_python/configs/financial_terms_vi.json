@@ -1,0 +1,142 @@
+{
+  "statement_types": {
+    "balance_sheet": {
+      "canonical_name": "Báo cáo tình hình tài chính / Bảng cân đối kế toán",
+      "keywords": [
+        "bảng cân đối kế toán",
+        "báo cáo tình hình tài chính",
+        "bcđkt",
+        "tình hình tài chính",
+        "cân đối kế toán"
+      ],
+      "primary_metrics": [
+        {
+          "canonical": "TỔNG NỢ PHẢI TRẢ",
+          "aliases": ["tổng nợ phải trả", "nợ phải trả", "tổng nợ", "các khoản nợ phải trả"],
+          "section": "liabilities"
+        },
+        {
+          "canonical": "TỔNG TÀI SẢN",
+          "aliases": ["tổng tài sản", "tổng cộng tài sản", "quy mô tài sản"],
+          "section": "assets"
+        },
+        {
+          "canonical": "TÀI SẢN NGẮN HẠN",
+          "aliases": ["tài sản ngắn hạn", "tổng tài sản ngắn hạn"],
+          "section": "assets"
+        },
+        {
+          "canonical": "TIỀN VÀ TƯƠNG ĐƯƠNG TIỀN",
+          "aliases": ["tiền và tương đương tiền", "tiền và các khoản tương đương tiền", "tiền mặt và tương đương tiền"],
+          "section": "assets"
+        },
+        {
+          "canonical": "HÀNG TỒN KHO",
+          "aliases": ["hàng tồn kho", "giá trị hàng tồn kho"],
+          "section": "assets"
+        },
+        {
+          "canonical": "TỔNG VỐN CHỦ SỞ HỮU",
+          "aliases": ["tổng vốn chủ sở hữu", "vốn chủ sở hữu", "vcsh", "nguồn vốn chủ sở hữu"],
+          "section": "equity"
+        },
+        {
+          "canonical": "NỢ NGẮN HẠN",
+          "aliases": ["nợ ngắn hạn", "tổng nợ ngắn hạn", "các khoản nợ ngắn hạn"],
+          "section": "liabilities"
+        },
+        {
+          "canonical": "VỐN ĐIỀU LỆ",
+          "aliases": ["vốn điều lệ"],
+          "section": "equity"
+        },
+        {
+          "canonical": "TIỀN GỬI CỦA KHÁCH HÀNG",
+          "aliases": ["tiền gửi của khách hàng", "tiền gửi khách hàng", "tiền gửi"],
+          "section": "liabilities"
+        },
+        {
+          "canonical": "CHO VAY KHÁCH HÀNG",
+          "aliases": ["cho vay khách hàng", "dư nợ cho vay", "cho vay"],
+          "section": "assets"
+        },
+        {
+          "canonical": "LỢI NHUẬN CHƯA PHÂN PHỐI",
+          "aliases": ["lợi nhuận chưa phân phối", "lãi chưa phân phối", "lncpp"],
+          "section": "equity"
+        }
+      ]
+    },
+    "income_statement": {
+      "canonical_name": "Báo cáo kết quả hoạt động kinh doanh",
+      "keywords": [
+        "kết quả hoạt động kinh doanh",
+        "kết quả hoạt động",
+        "báo cáo kết quả kinh doanh",
+        "kqkd",
+        "kết quả kinh doanh"
+      ],
+      "primary_metrics": [
+        {
+          "canonical": "DOANH THU THUẦN",
+          "aliases": ["doanh thu thuần", "doanh thu", "dtt", "doanh thu bán hàng và cung cấp dịch vụ"]
+        },
+        {
+          "canonical": "TỔNG THU NHẬP HOẠT ĐỘNG",
+          "aliases": ["tổng thu nhập hoạt động", "thu nhập hoạt động"]
+        },
+        {
+          "canonical": "THU NHẬP TỪ HOẠT ĐỘNG KHÁC",
+          "aliases": ["thu nhập từ hoạt động khác", "thu nhập hoạt động khác", "other operating income"]
+        },
+        {
+          "canonical": "THU NHẬP LÃI THUẦN",
+          "aliases": ["thu nhập lãi thuần", "lãi thuần", "thu nhập lãi"]
+        },
+        {
+          "canonical": "LỢI NHUẬN TRƯỚC THUẾ",
+          "aliases": ["lợi nhuận trước thuế", "lntt", "tổng lợi nhuận trước thuế", "lãi trước thuế"]
+        },
+        {
+          "canonical": "LỢI NHUẬN SAU THUẾ",
+          "aliases": ["lợi nhuận sau thuế", "lnst", "lãi sau thuế", "lợi nhuận ròng", "lợi nhuận thuần sau thuế"]
+        },
+        {
+          "canonical": "LÃI CƠ BẢN TRÊN CỔ PHIẾU",
+          "aliases": ["lãi cơ bản trên cổ phiếu", "eps", "thu nhập trên mỗi cổ phiếu"]
+        }
+      ]
+    },
+    "cash_flow": {
+      "canonical_name": "Báo cáo lưu chuyển tiền tệ",
+      "keywords": [
+        "lưu chuyển tiền tệ",
+        "báo cáo lưu chuyển tiền tệ",
+        "lctt"
+      ],
+      "primary_metrics": [
+        {
+          "canonical": "LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG KINH DOANH",
+          "aliases": ["lưu chuyển tiền thuần từ hoạt động kinh doanh", "lưu chuyển tiền thuần sử dụng từ hoạt động kinh doanh", "tiền thuần từ hoạt động kinh doanh", "tiền từ hđkd"]
+        }
+      ]
+    },
+    "notes": {
+      "canonical_name": "Thuyết minh báo cáo tài chính",
+      "keywords": [
+        "thuyết minh",
+        "chính sách kế toán",
+        "thuyết minh bctc"
+      ],
+      "primary_metrics": []
+    }
+  },
+  "period_types": {
+    "beginning_of_year": ["đầu năm", "đầu kỳ", "số đầu năm", "bắt đầu năm"],
+    "end_of_year": ["cuối năm", "cuối kỳ", "số cuối năm", "kết thúc năm"],
+    "quarter_1": ["quý 1", "quý i", "q1"],
+    "quarter_2": ["quý 2", "quý ii", "q2", "bán niên", "6 tháng"],
+    "quarter_3": ["quý 3", "quý iii", "q3", "9 tháng"],
+    "quarter_4": ["quý 4", "quý iv", "q4", "cả năm", "năm"]
+  }
+}

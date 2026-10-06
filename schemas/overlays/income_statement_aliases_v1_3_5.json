@@ -1,0 +1,174 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_INCOME_STATEMENT_V1@1.3.5",
+  "base_aliases": "income_statement_aliases_v1_3_4.json",
+  "alias_schema_version": "1.3.5",
+  "target_schema": "UNIVERSAL_INCOME_STATEMENT_V1@1.6.0",
+  "entries_update": {
+    "INCOME.SECURITIES.FVTPL_SALE_GAIN": {
+      "exact_add": [
+        "Lãi bán các tài sản tài chính PVTPL"
+      ]
+    },
+    "INCOME.SECURITIES.FVTPL_REVALUATION_GAIN": {
+      "exact_add": [
+        "Chênh lệch tăng đánh giá lại các TSTC thông qua lãi/lỗ"
+      ]
+    },
+    "INCOME.SECURITIES.FVTPL_DIVIDEND_INTEREST": {
+      "exact_add": [
+        "Cổ tức, tiền lãi phát sinh từ tài sản tài chính PVTPL"
+      ]
+    },
+    "INCOME.SECURITIES.FVTPL_SALE_LOSS": {
+      "exact_add": [
+        "Lỗ bán các tài sản tài chính"
+      ]
+    },
+    "INCOME.SECURITIES.FVTPL_REVALUATION_LOSS": {
+      "exact_add": [
+        "Chênh lệch giảm đánh giá lại các TSTC thông qua lãi/lỗ"
+      ]
+    },
+    "INCOME.SECURITIES.CUSTODY_REVENUE": {
+      "exact_add": [
+        "Doanh thu lưu ký chứng khoán"
+      ]
+    },
+    "INCOME.SECURITIES.CUSTODY_EXPENSE": {
+      "exact_add": [
+        "Chi phí lưu ký chứng khoán"
+      ]
+    },
+    "INCOME.SECURITIES.AFS_OCI": {
+      "exact_add": [
+        "Lãi/(Lỗ) từ đánh giá lại các tài sản tài chính sẵn sàng để bán"
+      ]
+    },
+    "INCOME.INSURANCE.TOTAL_PREMIUM_REVENUE": {
+      "exact_add": [
+        "Doanh thu phí bảo hiểm (01 = 01.1 + 01.2 - 01.3)"
+      ]
+    },
+    "INCOME.INSURANCE.DIRECT_INSURANCE_OTHER_EXPENSE": {
+      "exact_add": [
+        "Chi phí khác hoạt động kinh doanh bảo hiểm"
+      ]
+    },
+    "INCOME.INSURANCE.RESERVE_CHANGE": {
+      "exact_add": [
+        "Tăng (giảm) dự phòng phí bảo hiểm gốc và nhận tái bảo hiểm",
+        "Tăng (giảm) dự phòng phí nhượng tái bảo hiểm",
+        "Tăng (giảm) dự phòng bồi thường bảo hiểm gốc và nhận tái bảo hiểm"
+      ]
+    }
+  },
+  "entries_add": {
+    "INCOME.SECURITIES.HEDGING_DERIVATIVE_REVENUE": {
+      "exact": [
+        "Lãi từ các công cụ phái sinh phòng ngừa rủi ro"
+      ]
+    },
+    "INCOME.SECURITIES.TRUST_AUCTION_REVENUE": {
+      "exact": [
+        "Doanh thu hoạt động nhận ủy thác, đấu giá"
+      ]
+    },
+    "INCOME.SECURITIES.HEDGING_DERIVATIVE_LOSS": {
+      "exact": [
+        "Lỗ từ các tài sản tài chính phái sinh phòng ngừa rủi ro"
+      ]
+    },
+    "INCOME.SECURITIES.INVESTMENT_ADVISORY_EXPENSE": {
+      "exact": [
+        "Chi phí tư vấn"
+      ]
+    },
+    "INCOME.SECURITIES.TRUST_AUCTION_EXPENSE": {
+      "exact": [
+        "Chi phí hoạt động đấu giá, ủy thác"
+      ]
+    },
+    "INCOME.SECURITIES.TRADE_ERROR_EXPENSE": {
+      "exact": [
+        "Chi phí sửa lỗi giao dịch chứng khoán, lỗi khác"
+      ]
+    },
+    "INCOME.SECURITIES.INVESTMENT_DISPOSAL_GAIN": {
+      "exact": [
+        "Lãi bán, thanh lý các khoản đầu tư vào công ty con, liên kết, liên doanh"
+      ]
+    },
+    "INCOME.SECURITIES.OTHER_INVESTMENT_EXPENSE": {
+      "exact": [
+        "Chi phí đầu tư khác"
+      ]
+    },
+    "INCOME.SECURITIES.INVESTMENT_DISPOSAL_LOSS": {
+      "exact": [
+        "Lỗ bán, thanh lý các khoản đầu tư vào công ty con, liên kết, liên doanh"
+      ]
+    },
+    "INCOME.SECURITIES.SELLING_EXPENSE": {
+      "exact": [
+        "Chi phí bán hàng"
+      ]
+    },
+    "INCOME.SECURITIES.PROFIT_AFTER_TAX_ALLOCATED_OWNER": {
+      "exact": [
+        "Lợi nhuận sau thuế phân bổ cho chủ sở hữu"
+      ]
+    },
+    "INCOME.SECURITIES.PROFIT_AFTER_TAX_ALLOCATED_FUNDS": {
+      "exact": [
+        "Lợi nhuận sau thuế trích các quỹ",
+        "Lợi nhuận sau thuế trích các Quỹ"
+      ]
+    },
+    "INCOME.SECURITIES.HTM_OCI": {
+      "exact": [
+        "Lãi/(Lỗ) từ đánh giá lại các khoản đầu tư giữ đến ngày đáo hạn"
+      ]
+    },
+    "INCOME.SECURITIES.OCI_ASSOCIATES": {
+      "exact": [
+        "Lãi (lỗ) toàn diện khác được chia từ hoạt động đầu tư vào công ty con, đầu tư liên doanh, liên kết"
+      ]
+    },
+    "INCOME.SECURITIES.OCI_DERIVATIVES": {
+      "exact": [
+        "Lãi/(Lỗ) từ đánh giá lại các công cụ tài chính phái sinh"
+      ]
+    },
+    "INCOME.SECURITIES.OCI_FX_FOREIGN_OPERATION": {
+      "exact": [
+        "Lãi/(lỗ) chênh lệch tỷ giá của hoạt động tại nước ngoài"
+      ]
+    },
+    "INCOME.SECURITIES.OCI_INVESTMENTS_UNDISTRIBUTED": {
+      "exact": [
+        "Lãi, lỗ từ các khoản đầu tư vào công ty con, công ty liên kết, liên doanh chưa chia"
+      ]
+    },
+    "INCOME.SECURITIES.OCI_DERIVATIVE_REVALUATION": {
+      "exact": [
+        "Lãi, lỗ đánh giá công cụ phái sinh"
+      ]
+    },
+    "INCOME.SECURITIES.OCI_FIXED_ASSET_REVALUATION": {
+      "exact": [
+        "Lãi, lỗ đánh giá lại tài sản cố định theo mô hình giá trị hợp lý"
+      ]
+    },
+    "INCOME.SECURITIES.TOTAL_COMPREHENSIVE_INCOME_OWNER": {
+      "exact": [
+        "Thu nhập toàn diện phân bổ cho chủ sở hữu"
+      ]
+    },
+    "INCOME.SECURITIES.TOTAL_COMPREHENSIVE_INCOME_OTHER": {
+      "exact": [
+        "Thu nhập toàn diện phân bổ cho đối tượng khác"
+      ]
+    }
+  }
+}

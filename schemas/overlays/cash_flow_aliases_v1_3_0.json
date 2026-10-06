@@ -1,0 +1,85 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_CASH_FLOW_V1@1.3.0",
+  "base_aliases": "cash_flow_aliases_v1_2_0.json",
+  "alias_schema_version": "1.3.0",
+  "target_schema": "UNIVERSAL_CASH_FLOW_V1@1.2.0",
+  "entries_update": {
+    "CASHFLOW.ENTERPRISE.INDIRECT.INVESTING_GAIN_LOSS": [
+      "Lãi từ hoạt động đầu tư"
+    ],
+    "CASHFLOW.ENTERPRISE.CASH_BEGINNING": [
+      "Tiền và tương đương tiền đầu năm",
+      "Tiền và các khoản tương đương tiền đầu năm"
+    ],
+    "CASHFLOW.ENTERPRISE.CASH_ENDING": [
+      "Tiền và tương đương tiền cuối năm",
+      "Tiền và các khoản tương đương tiền cuối năm"
+    ],
+    "CASHFLOW.ENTERPRISE.INVESTING.LOANS_ADVANCED": [
+      "Tiền chi cho vay, mua công cụ nợ của đơn vị khác"
+    ],
+    "CASHFLOW.ENTERPRISE.INVESTING.PURCHASE_PPE": [
+      "Tiền chi mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác",
+      "Tiền chi để mua sắm, xây dựng tài sản cố định và các tài sản dài hạn khác"
+    ],
+    "CASHFLOW.ENTERPRISE.INDIRECT.UNREALIZED_FX": [
+      "Lãi chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ",
+      "Lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ"
+    ],
+    "CASHFLOW.BANK.OPERATING.CHANGE_DERIVATIVE_LIABILITIES": [
+      "(Giảm)/tăng các công cụ tài chính phái sinh và các khoản nợ tài chính khác"
+    ],
+    "CASHFLOW.ENTERPRISE.INVESTING.PROCEEDS_PPE": [
+      "Tiền thu từ thanh lý, nhượng bán tài sản cố định và các tài sản dài hạn khác",
+      "Tiền thu do thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác"
+    ],
+    "CASHFLOW.BANK.OPERATING.FUND_PAYMENTS": [
+      "Chỉ từ quỹ của tổ chức tín dụng",
+      "Chi từ quỹ của tổ chức tín dụng"
+    ],
+    "CASHFLOW.BANK.DIRECT.RECOVERED_WRITTEN_OFF_DEBT": [
+      "Tiền thu các khoản nợ đã được xử lý xóa, bù đắp bằng nguồn dự phòng rủi ro",
+      "Tiền thu các khoản nợ đã được xử lý xoá, bù đắp bằng nguồn dự phòng rủi ro",
+      "Tiền thu các khoản nợ đã được xử lý, bù đắp bằng nguồn dự phòng rủi ro"
+    ],
+    "CASHFLOW.ENTERPRISE.INDIRECT.PROFIT_BEFORE_TAX": [
+      "Tổng lợi nhuận kế toán trước thuế"
+    ],
+    "CASHFLOW.BANK.OPERATING.CHANGE_INTERBANK_PLACEMENTS": [
+      "(Tăng)/Giảm các khoản tiền và cho vay các TCTD khác",
+      "(Tăng)/giảm các khoản tiền gửi và cho vay các TCTD khác"
+    ],
+    "CASHFLOW.ENTERPRISE.FINANCING.DIVIDENDS_PAID": [
+      "Cổ tức, lợi nhuận đã trả cho chủ sở hữu và cổ đông không kiểm soát"
+    ],
+    "CASHFLOW.ENTERPRISE.INDIRECT.DEPRECIATION": [
+      "Khấu hao tài sản cố định, bất động sản đầu tư và lợi thế thương mại",
+      "Khấu hao và phân bổ"
+    ],
+    "CASHFLOW.ENTERPRISE.INVESTING.LOANS_COLLECTED": [
+      "Tiền thu hồi cho vay, bán lại công cụ nợ của đơn vị khác"
+    ],
+    "CASHFLOW.BANK.DIRECT.EMPLOYEE_ADMIN_PAYMENTS": [
+      "Tiền chi trả cho nhân viên và hoạt động quản lý, công vụ",
+      "Tiền chi trả cho nhân viên và hoạt động quản lý công vụ"
+    ],
+    "CASHFLOW.BANK.OPERATING.CHANGE_DERIVATIVE_ASSETS": [
+      "Giảm/(Tăng) các công cụ tài chính phái sinh và các tài sản tài chính khác"
+    ],
+    "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_PAYABLES": [
+      "Biến động các khoản phải trả và nợ phải trả khác"
+    ]
+  },
+  "entries_add": {
+    "CASHFLOW.BANK.DIRECT.INTEREST_PAID": [
+      "Chi phí lãi và các khoản chi phí tương tự đã trả"
+    ],
+    "CASHFLOW.ENTERPRISE.INDIRECT.OPERATING_BEFORE_WORKING_CAPITAL": [
+      "Lợi nhuận từ hoạt động kinh doanh trước những thay đổi vốn lưu động"
+    ],
+    "CASHFLOW.ENTERPRISE.INDIRECT.CHANGE_TRADING_SECURITIES": [
+      "Tăng chứng khoán kinh doanh"
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "overlay_type": "schema",
+  "overlay_id": "UNIVERSAL_INCOME_STATEMENT_V1@1.6.0",
+  "base_schema": "../income_statement_schema.json",
+  "schema_id": "UNIVERSAL_INCOME_STATEMENT_V1",
+  "schema_version": "1.6.0",
+  "nodes_add": [
+    {
+      "node_id": "INCOME.SECURITIES.HEDGING_DERIVATIVE_REVENUE",
+      "canonical_name": "Lãi từ các công cụ phái sinh phòng ngừa rủi ro",
+      "sector": "securities",
+      "form_code": "05"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TRUST_AUCTION_REVENUE",
+      "canonical_name": "Doanh thu hoạt động nhận ủy thác, đấu giá",
+      "sector": "securities",
+      "form_code": "09"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.HEDGING_DERIVATIVE_LOSS",
+      "canonical_name": "Lỗ từ các tài sản tài chính phái sinh phòng ngừa rủi ro",
+      "sector": "securities",
+      "form_code": "25"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.INVESTMENT_ADVISORY_EXPENSE",
+      "canonical_name": "Chi phí tư vấn",
+      "sector": "securities",
+      "form_code": "29"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TRUST_AUCTION_EXPENSE",
+      "canonical_name": "Chi phí hoạt động đấu giá, ủy thác",
+      "sector": "securities",
+      "form_code": "30"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TRADE_ERROR_EXPENSE",
+      "canonical_name": "Chi phí sửa lỗi giao dịch chứng khoán, lỗi khác",
+      "sector": "securities",
+      "form_code": "33"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.INVESTMENT_DISPOSAL_GAIN",
+      "canonical_name": "Lãi bán, thanh lý các khoản đầu tư vào công ty con, liên kết, liên doanh",
+      "sector": "securities",
+      "form_code": "43"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OTHER_INVESTMENT_EXPENSE",
+      "canonical_name": "Chi phí đầu tư khác",
+      "sector": "securities",
+      "form_code": "54"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.INVESTMENT_DISPOSAL_LOSS",
+      "canonical_name": "Lỗ bán, thanh lý các khoản đầu tư vào công ty con, liên kết, liên doanh",
+      "sector": "securities",
+      "form_code": "53"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.SELLING_EXPENSE",
+      "canonical_name": "Chi phí bán hàng",
+      "sector": "securities",
+      "form_code": "61"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.PROFIT_AFTER_TAX_ALLOCATED_OWNER",
+      "canonical_name": "Lợi nhuận sau thuế phân bổ cho chủ sở hữu",
+      "sector": "securities",
+      "form_code": "201"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.PROFIT_AFTER_TAX_ALLOCATED_FUNDS",
+      "canonical_name": "Lợi nhuận sau thuế trích các quỹ",
+      "sector": "securities",
+      "form_code": "202"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.HTM_OCI",
+      "canonical_name": "Lãi/(Lỗ) từ đánh giá lại các khoản đầu tư giữ đến ngày đáo hạn",
+      "sector": "securities",
+      "form_code": "301"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OCI_ASSOCIATES",
+      "canonical_name": "Lãi (lỗ) toàn diện khác được chia từ hoạt động đầu tư vào công ty con, đầu tư liên doanh, liên kết",
+      "sector": "securities",
+      "form_code": "303"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OCI_DERIVATIVES",
+      "canonical_name": "Lãi/(Lỗ) từ đánh giá lại các công cụ tài chính phái sinh",
+      "sector": "securities",
+      "form_code": "304"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OCI_FX_FOREIGN_OPERATION",
+      "canonical_name": "Lãi/(lỗ) chênh lệch tỷ giá của hoạt động tại nước ngoài",
+      "sector": "securities",
+      "form_code": "305"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OCI_INVESTMENTS_UNDISTRIBUTED",
+      "canonical_name": "Lãi, lỗ từ các khoản đầu tư vào công ty con, công ty liên kết, liên doanh chưa chia",
+      "sector": "securities",
+      "form_code": "306"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OCI_DERIVATIVE_REVALUATION",
+      "canonical_name": "Lãi, lỗ đánh giá công cụ phái sinh",
+      "sector": "securities",
+      "form_code": "307"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.OCI_FIXED_ASSET_REVALUATION",
+      "canonical_name": "Lãi, lỗ đánh giá lại tài sản cố định theo mô hình giá trị hợp lý",
+      "sector": "securities",
+      "form_code": "308"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_COMPREHENSIVE_INCOME_OWNER",
+      "canonical_name": "Thu nhập toàn diện phân bổ cho chủ sở hữu",
+      "sector": "securities",
+      "form_code": "401"
+    },
+    {
+      "node_id": "INCOME.SECURITIES.TOTAL_COMPREHENSIVE_INCOME_OTHER",
+      "canonical_name": "Thu nhập toàn diện phân bổ cho đối tượng khác",
+      "sector": "securities",
+      "form_code": "402"
+    }
+  ]
+}

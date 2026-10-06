@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0.0",
+  "groups": {
+    "TOTAL_ASSETS": {
+      "component_node_ids": [
+        "ASSET.CURRENT",
+        "ASSET.NON_CURRENT"
+      ],
+      "complete": false
+    },
+    "ASSET.CURRENT": {
+      "component_node_ids": [
+        "ASSET.CASH_EQUIV",
+        "ASSET.CENTRAL_BANK_BALANCES",
+        "ASSET.INTERBANK",
+        "ASSET.FIN_INV.SHORT_TERM",
+        "ASSET.FIN_INV.TRADING_SECURITIES",
+        "ASSET.CUSTOMER_LOANS",
+        "ASSET.DEBT_PURCHASE",
+        "ASSET.RECEIVABLES.SHORT_TERM",
+        "ASSET.INVENTORY",
+        "ASSET.BIOLOGICAL",
+        "ASSET.OTHER.CURRENT"
+      ],
+      "complete": false
+    },
+    "TOTAL_LIABILITIES": {
+      "component_node_ids": [
+        "LIABILITY.CURRENT",
+        "LIABILITY.NON_CURRENT"
+      ],
+      "variants": {
+        "bank": {
+          "component_node_ids": [
+            "LIABILITY.GOV_CENTRAL_BANK",
+            "LIABILITY.INTERBANK",
+            "LIABILITY.CUSTOMER_DEPOSITS",
+            "LIABILITY.DERIVATIVES",
+            "LIABILITY.ENTRUSTED_FUNDS",
+            "LIABILITY.ISSUED_SECURITIES",
+            "LIABILITY.OTHER"
+          ]
+        }
+      },
+      "complete": false
+    },
+    "LIABILITY.OTHER": {
+      "component_node_ids": [
+        "LIABILITY.ACCRUED_INTEREST_FEES",
+        "LIABILITY.OTHER_PAYABLES",
+        "LIABILITY.OTHER.PROVISION"
+      ],
+      "complete": false
+    },
+    "TOTAL_EQUITY": {
+      "component_node_ids": [
+        "EQUITY.OWNER_CAPITAL",
+        "EQUITY.SHARE_PREMIUM",
+        "EQUITY.CONVERTIBLE_OPTION",
+        "EQUITY.OTHER_CAPITAL",
+        "EQUITY.TREASURY_SHARES",
+        "EQUITY.REVALUATION_RESERVE",
+        "EQUITY.FX_RESERVE",
+        "EQUITY.DEVELOPMENT_FUND",
+        "EQUITY.RESTRUCTURING_FUND",
+        "EQUITY.OTHER_FUNDS",
+        "EQUITY.RETAINED_EARNINGS",
+        "EQUITY.CONSTRUCTION_CAPITAL",
+        "EQUITY.FUNDING",
+        "EQUITY.NON_CONTROLLING_INTEREST",
+        "EQUITY.BANK_RESERVES",
+        "EQUITY.FAIR_VALUE_RESERVE",
+        "EQUITY.FINANCIAL_RISK_RESERVE"
+      ],
+      "complete": false
+    },
+    "ASSET.FIN_INV.SHORT_TERM": {
+      "component_node_ids": [
+        "ASSET.FIN_INV.HTM"
+      ],
+      "complete": false
+    },
+    "INCOME.BANK.TOTAL_OPERATING_INCOME": {
+      "component_node_ids": [
+        "INCOME.BANK.NET_INTEREST_INCOME",
+        "INCOME.BANK.NET_SERVICE_INCOME",
+        "INCOME.BANK.NET_FX_TRADING",
+        "INCOME.BANK.NET_TRADING_SECURITIES",
+        "INCOME.BANK.NET_INVESTMENT_SECURITIES",
+        "INCOME.BANK.NET_OTHER_OPERATING",
+        "INCOME.BANK.DIVIDEND_EQUITY_INCOME"
+      ],
+      "complete": true,
+      "sum_components_if_total_missing": true
+    },
+    "INCOME.ENTERPRISE.REVENUE_GROSS": {
+      "component_node_ids": [
+        "ENTERPRISE.IS.1.SALES",
+        "ENTERPRISE.IS.1.SERVICES",
+        "ENTERPRISE.IS.1.CONSTRUCTION"
+      ],
+      "total_node_id": "ENTERPRISE.IS.1.TOTAL",
+      "complete": true
+    },
+    "INCOME.ENTERPRISE.COGS": {
+      "component_node_ids": [
+        "ENTERPRISE.IS.3.GOODS",
+        "ENTERPRISE.IS.3.FINISHED_GOODS",
+        "ENTERPRISE.IS.3.SERVICES",
+        "ENTERPRISE.IS.3.INVENTORY_PROVISION"
+      ],
+      "total_node_id": "ENTERPRISE.IS.3.TOTAL",
+      "complete": true
+    },
+    "INCOME.ENTERPRISE.FINANCIAL_EXPENSE": {
+      "component_node_ids": [
+        "ENTERPRISE.IS.5.INTEREST",
+        "ENTERPRISE.IS.5.DISCOUNT",
+        "ENTERPRISE.IS.5.INVESTMENT_LOSS",
+        "ENTERPRISE.IS.5.FX_LOSS",
+        "ENTERPRISE.IS.5.PROVISION",
+        "ENTERPRISE.IS.5.OTHER"
+      ],
+      "total_node_id": "ENTERPRISE.IS.5.TOTAL",
+      "complete": true
+    },
+    "INCOME.SECURITIES.TOTAL_OPERATING_REVENUE": {
+      "component_node_ids": [
+        "INCOME.SECURITIES.FVTPL_GAIN",
+        "INCOME.SECURITIES.HTM_INCOME",
+        "INCOME.SECURITIES.LOAN_RECEIVABLE_INCOME",
+        "INCOME.SECURITIES.AFS_INCOME",
+        "INCOME.SECURITIES.BROKERAGE_REVENUE",
+        "INCOME.SECURITIES.UNDERWRITING_REVENUE",
+        "INCOME.SECURITIES.INVESTMENT_ADVISORY_REVENUE",
+        "INCOME.SECURITIES.CUSTODY_REVENUE",
+        "INCOME.SECURITIES.FINANCIAL_ADVISORY_REVENUE",
+        "INCOME.SECURITIES.OTHER_OPERATING_INCOME"
+      ],
+      "complete": true
+    },
+    "SPECIAL.FUNDING_STRUCTURE": {
+      "statement_type": "balance_sheet",
+      "display_name": "Nguồn vốn",
+      "component_node_ids": ["TOTAL_LIABILITIES", "TOTAL_EQUITY"],
+      "total_node_id": "TOTAL_LIABILITIES_AND_EQUITY",
+      "complete": true
+    },
+    "SPECIAL.CASH_FLOW_STRUCTURE": {
+      "statement_type": "cash_flow",
+      "display_name": "Lưu chuyển tiền theo hoạt động",
+      "variants": {
+        "enterprise": {
+          "component_node_ids": [
+            "CASHFLOW.ENTERPRISE.OPERATING.NET_CASH",
+            "CASHFLOW.ENTERPRISE.INVESTING.NET_CASH",
+            "CASHFLOW.ENTERPRISE.FINANCING.NET_CASH"
+          ],
+          "total_node_id": "CASHFLOW.ENTERPRISE.NET_CHANGE_IN_CASH"
+        },
+        "bank": {
+          "component_node_ids": [
+            "CASHFLOW.BANK.OPERATING.NET_CASH",
+            "CASHFLOW.BANK.INVESTING.NET_CASH",
+            "CASHFLOW.BANK.FINANCING.NET_CASH"
+          ],
+          "total_node_id": "CASHFLOW.BANK.NET_CHANGE_IN_CASH"
+        },
+        "securities": {
+          "component_node_ids": [
+            "CASHFLOW.SECURITIES.INDIRECT.NET_OPERATING_CASH",
+            "CASHFLOW.SECURITIES.INDIRECT.NET_INVESTING_CASH",
+            "CASHFLOW.SECURITIES.INDIRECT.NET_FINANCING_CASH"
+          ],
+          "total_node_id": "CASHFLOW.SECURITIES.INDIRECT.NET_CHANGE_IN_CASH"
+        }
+      },
+      "complete": true
+    },
+    "SPECIAL.INCOME_EXPENSES": {
+      "statement_type": "income_statement",
+      "display_name": "Các khoản chi phí",
+      "variants": {
+        "enterprise": {
+          "component_node_ids": [
+            "INCOME.ENTERPRISE.COGS",
+            "INCOME.ENTERPRISE.FINANCIAL_EXPENSE",
+            "INCOME.ENTERPRISE.SELLING_EXPENSE",
+            "INCOME.ENTERPRISE.GENERAL_ADMIN_EXPENSE",
+            "INCOME.ENTERPRISE.OTHER_EXPENSE",
+            "INCOME.ENTERPRISE.CURRENT_TAX_EXPENSE",
+            "INCOME.ENTERPRISE.DEFERRED_TAX_EXPENSE"
+          ]
+        },
+        "bank": {
+          "component_node_ids": [
+            "INCOME.BANK.INTEREST_EXPENSE",
+            "INCOME.BANK.SERVICE_EXPENSE",
+            "INCOME.BANK.OPERATING_EXPENSE",
+            "INCOME.BANK.CREDIT_RISK_PROVISION_EXPENSE",
+            "INCOME.BANK.TAX_EXPENSE"
+          ]
+        },
+        "securities": {
+          "component_node_ids": [
+            "INCOME.SECURITIES.TOTAL_OPERATING_EXPENSE",
+            "INCOME.SECURITIES.TOTAL_FINANCIAL_EXPENSE",
+            "INCOME.SECURITIES.OTHER_EXPENSE",
+            "INCOME.SECURITIES.TAX_EXPENSE"
+          ]
+        },
+        "insurance": {
+          "component_node_ids": [
+            "INCOME.INSURANCE.TOTAL_DIRECT_INSURANCE_EXPENSE",
+            "INCOME.INSURANCE.FINANCIAL_EXPENSE",
+            "INCOME.INSURANCE.SELLING_EXPENSE",
+            "INCOME.INSURANCE.GENERAL_ADMIN_EXPENSE",
+            "INCOME.INSURANCE.OTHER_OPERATING_EXPENSE",
+            "INCOME.INSURANCE.OTHER_EXPENSE",
+            "INCOME.INSURANCE.CURRENT_TAX_EXPENSE"
+          ]
+        }
+      },
+      "complete": false
+    }
+  }
+}

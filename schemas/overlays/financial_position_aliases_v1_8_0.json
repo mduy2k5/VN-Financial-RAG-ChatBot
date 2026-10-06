@@ -1,0 +1,114 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.8.0",
+  "base_aliases": "financial_position_aliases_v1_7_0.json",
+  "alias_schema_version": "1.8.0",
+  "target_schema": "UNIVERSAL_FINANCIAL_POSITION_V1@1.7.0",
+  "entries_update": {
+    "ASSET.INTERBANK.DEPOSITS": {
+      "match": {
+        "aliases_add": [
+          "Tiền gửi tại TCTD khác"
+        ]
+      }
+    },
+    "ASSET.INTERBANK": {
+      "match": {
+        "aliases_add": [
+          "Tiền gửi và cấp tín dụng cho các tổ chức tín dụng (\"TCTD\") khác",
+          "Tiền gửi tại và cho vay các tổ chức tín dụng (\"TCTD\") khác"
+        ]
+      }
+    },
+    "ASSET.CASH_EQUIV.CASH_ON_HAND": {
+      "match": {
+        "aliases_add": [
+          "Tiền mặt, vàng",
+          "Tiền mặt và vàng",
+          "Tiền, vàng bạc, đá quý"
+        ]
+      }
+    },
+    "ASSET.FIXED_ASSETS": {
+      "match": {
+        "aliases_add": [
+          "Tài sản cố định (\"TSCĐ\")"
+        ]
+      }
+    },
+    "ASSET.FIN_INV.ASSOC_JV": {
+      "match": {
+        "aliases_add": [
+          "Đầu tư vào các công ty liên doanh, liên kết",
+          "Đầu tư vào các công ty liên kết",
+          "Đầu tư vào công ty liên doanh"
+        ]
+      }
+    },
+    "ASSET.FIN_INV.OTHER_EQUITY": {
+      "match": {
+        "aliases_add": [
+          "Đầu tư góp vốn vào các đơn vị khác"
+        ]
+      }
+    },
+    "EQUITY.OTHER_CAPITAL": {
+      "match": {
+        "aliases_add": [
+          "Vốn khác thuộc chủ sở hữu"
+        ]
+      }
+    },
+    "EQUITY.CONSTRUCTION_CAPITAL": {
+      "match": {
+        "aliases_add": [
+          "Vốn đầu tư xây dựng cơ bản",
+          "b. Vốn đầu tư xây dựng cơ bản"
+        ]
+      }
+    },
+    "ASSET.OTHER.DEFERRED_TAX": {
+      "match": {
+        "aliases_add": [
+          "Tài sản thuế thu nhập doanh nghiệp (\"TNDN\") hoãn lại"
+        ]
+      }
+    },
+    "ASSET.OTHER.VAT_DEDUCTIBLE": {
+      "match": {
+        "aliases_add": [
+          "Thuế giá trị gia tăng (\"GTGT”) được khấu trừ"
+        ]
+      }
+    },
+    "ASSET.CENTRAL_BANK_BALANCES": {
+      "match": {
+        "aliases_add": [
+          "Tiền gửi tại Ngân hàng Trung ương",
+          "Tiền gửi tại Ngân hàng Nhà nước Việt Nam (\"NHNNVN\")"
+        ]
+      }
+    },
+    "LIABILITY.DERIVATIVES": {
+      "match": {
+        "aliases_add": [
+          "Các công cụ tài chính phái sinh và các khoản nợ tài chính khác (8)"
+        ]
+      }
+    },
+    "LIABILITY.INTERBANK.BORROWINGS": {
+      "match": {
+        "aliases_add": [
+          "Vay các TCTC, TCTD khác"
+        ]
+      }
+    },
+    "LIABILITY.GOV_CENTRAL_BANK.DEPOSITS_BORROWINGS": {
+      "match": {
+        "aliases_add": [
+          "Tiền gửi và vay Chính phủ, NHNNVN"
+        ]
+      }
+    }
+  }
+}

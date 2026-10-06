@@ -1,0 +1,338 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_CASH_FLOW_V1@1.5.0",
+  "base_aliases": "cash_flow_aliases_v1_4_0.json",
+  "alias_schema_version": "1.5.0",
+  "target_schema": "UNIVERSAL_CASH_FLOW_V1@1.4.0",
+  "entries_update": {
+    "CASHFLOW.BANK.DIRECT.INTEREST_PAID": {
+      "add": [
+        "Chi phí lãi và các chi phí tương tự đã trả",
+        "Chi phí lãi và các khoản chi phí tương tự đã trả"
+      ]
+    },
+    "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_LOSS": [
+      "Lỗ đánh giá giá trị các tài sản tài chính ghi nhận thông qua kết quả kinh doanh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_REVENUE_REDUCTION": [
+      "Giảm các doanh thu phi tiền tệ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.FVTPL_REVALUATION_GAIN": [
+      "Lãi đánh giá giá trị các tài sản tài chính ghi nhận thông qua kết quả kinh doanh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.WORKING_CAPITAL_CHANGE": [
+      "Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_FVTPL": [
+      "Tăng (giảm) tài sản tài chính ghi nhận thông qua lãi lỗ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_ASSETS": [
+      "Tăng (giảm) các tài sản khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_RECEIVABLES": [
+      "(-) Tăng, (+) giảm các khoản phải thu khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_TRADE_PAYABLES": [
+      "(+) Tăng, (-) giảm phải trả cho người bán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_TAX_PAYABLES": [
+      "(+) Tăng, (-) giảm thuế và các khoản phải nộp Nhà nước"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_OTHER_PAYABLES": [
+      "(+) Tăng, (-) giảm phải trả, phải nộp khác"
+    ]
+  },
+  "entries_add": {
+    "CASHFLOW.BANK.DIRECT.INTEREST_RECEIVED": [
+      "Thu nhập lãi và các khoản thu nhập tương tự nhận được",
+      "Thu nhập lãi và các thu nhập tương tự nhận được",
+      "Thu nhập lãi và các khoản thu nhập tương tự"
+    ],
+    "CASHFLOW.BANK.DIRECT.SERVICE_CASH_RECEIVED": [
+      "Thu nhập từ hoạt động dịch vụ nhận được",
+      "Thu nhập hoạt động dịch vụ nhận được"
+    ],
+    "CASHFLOW.BANK.INDIRECT.PROFIT_BEFORE_TAX": [
+      "Lợi nhuận kế toán trước thuế"
+    ],
+    "CASHFLOW.BANK.INDIRECT.DEPRECIATION": [
+      "Khấu hao tài sản cố định, bất động sản đầu tư",
+      "Khấu hao TSCĐ và BĐSĐT"
+    ],
+    "CASHFLOW.BANK.INDIRECT.PROVISIONS": [
+      "Dự phòng rủi ro tín dụng, giảm giá chứng khoán, đầu tư tăng thêm/(hoàn nhập) trong năm",
+      "Dự phòng rủi ro tín dụng, giảm giá, đầu tư tăng thêm (hoàn nhập) trong năm"
+    ],
+    "CASHFLOW.BANK.INDIRECT.ACCRUED_INTEREST_RECEIVABLE": [
+      "Lãi, phí phải thu trong kỳ (thực tế chưa thu)"
+    ],
+    "CASHFLOW.BANK.INDIRECT.ACCRUED_INTEREST_PAYABLE": [
+      "Lãi, phí phải trả trong kỳ (thực tế chưa trả)"
+    ],
+    "CASHFLOW.BANK.INDIRECT.DISPOSAL_PPE_GAIN_LOSS": [
+      "Lãi/lỗ do thanh lý TSCĐ",
+      "(Lãi)/lỗ do thanh lý tài sản cố định"
+    ],
+    "CASHFLOW.BANK.INDIRECT.DISPOSAL_INVESTMENT_PROPERTY_GAIN_LOSS": [
+      "Lãi/lỗ do bán, thanh lý bất động sản đầu tư",
+      "(Lãi)/lỗ do bán, thanh lý BĐSĐT"
+    ],
+    "CASHFLOW.BANK.INDIRECT.INVESTMENT_GAIN_LOSS": [
+      "Lãi/lỗ do thanh lý các khoản đầu tư, góp vốn dài hạn vào đơn vị khác",
+      "Lãi, cổ tức nhận được, lợi nhuận được chia từ hoạt động đầu tư, góp vốn dài hạn"
+    ],
+    "CASHFLOW.BANK.INDIRECT.UNREALIZED_FX": [
+      "Lãi/lỗ chênh lệch tỷ giá hối đoái chưa thực hiện"
+    ],
+    "CASHFLOW.BANK.INDIRECT.OTHER_ADJUSTMENTS": [
+      "Điều chỉnh khác"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_INTERBANK_PLACEMENTS": [
+      "(Tăng)/Giảm các khoản tiền gửi và cho vay các tổ chức tín dụng khác",
+      "(Tăng)/giảm các khoản tiền gửi và cho vay các TCTD khác"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_SECURITIES": [
+      "(Tăng)/Giảm các khoản về kinh doanh chứng khoán",
+      "(Tăng)/giảm các khoản về kinh doanh chứng khoán"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_DERIVATIVE_ASSETS": [
+      "(Tăng)/Giảm các công cụ tài chính phái sinh và các tài sản tài chính khác",
+      "(Tăng)/giảm các công cụ tài chính phái sinh và các tài sản tài chính khác"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_CUSTOMER_LOANS": [
+      "(Tăng)/Giảm các khoản cho vay khách hàng",
+      "(Tăng)/giảm các khoản cho vay khách hàng"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_INTEREST_RECEIVABLE": [
+      "(Tăng)/Giảm lãi, phí phải thu",
+      "(Tăng)/giảm lãi, phí phải thu"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_PROVISIONS": [
+      "(Giảm)/Tăng nguồn dự phòng để bù đắp tổn thất các khoản",
+      "(Giảm)/tăng nguồn dự phòng để bù đắp tổn thất các khoản"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_OTHER_ASSETS": [
+      "(Tăng)/Giảm khác về tài sản hoạt động",
+      "(Tăng)/giảm khác về tài sản hoạt động"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_GOVERNMENT_CENTRAL_BANK_LIABILITIES": [
+      "Tăng/(Giảm) các khoản nợ chính phủ và NHNN",
+      "Tăng/(giảm) các khoản nợ chính phủ và NHNN"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_INTERBANK_FUNDING": [
+      "Tăng/(Giảm) các khoản tiền gửi và vay các TCTD",
+      "Tăng/(giảm) các khoản tiền gửi và vay các TCTD"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_CUSTOMER_DEPOSITS": [
+      "Tăng/(Giảm) tiền gửi của khách hàng (bao gồm cả Kho bạc Nhà nước)",
+      "Tăng/(giảm) tiền gửi của khách hàng (bao gồm cả Kho bạc Nhà nước)"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_DERIVATIVE_LIABILITIES": [
+      "Tăng/(Giảm) các công cụ TC phái sinh và các khoản nợ tài chính khác",
+      "Tăng/(giảm) các công cụ tài chính phái sinh và các khoản nợ tài chính khác"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_TRUST_FUNDS": [
+      "Tăng/(Giảm) vốn tài trợ, ủy thác đầu tư, cho vay mà TCTD phải chịu rủi ro",
+      "Tăng/(giảm) vốn tài trợ, ủy thác đầu tư, cho vay mà TCTD phải chịu rủi ro"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_DEBT_SECURITIES": [
+      "Tăng/(Giảm) phát hành giấy tờ có giá (ngoại trừ GTCG được tính vào hoạt động tài chính)",
+      "Tăng/(giảm) phát hành giấy tờ có giá (ngoại trừ GTCG được tính vào hoạt động tài chính)"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_INTEREST_PAYABLE": [
+      "Tăng/(Giảm) lãi, phí phải trả",
+      "Tăng/(giảm) lãi, phí phải trả"
+    ],
+    "CASHFLOW.BANK.INDIRECT.CHANGE_OTHER_LIABILITIES": [
+      "Tăng/(Giảm) khác về công nợ hoạt động",
+      "Tăng/(giảm) khác về công nợ hoạt động"
+    ],
+    "CASHFLOW.BANK.INDIRECT.INCOME_TAX_PAID": [
+      "Thuế TNDN đã nộp",
+      "Thuế thu nhập doanh nghiệp đã nộp"
+    ],
+    "CASHFLOW.BANK.INDIRECT.FUND_PAYMENTS": [
+      "Chi từ các quỹ của TCTD",
+      "Chi từ các quỹ của tổ chức tín dụng"
+    ],
+    "CASHFLOW.BANK.INVESTING.COSTS_DISPOSAL_INVESTMENT_PROPERTY": [
+      "Tiền chi ra do bán, thanh lý bất động sản đầu tư",
+      "Tiền chi từ bán, thanh lý bất động sản đầu tư"
+    ],
+    "CASHFLOW.BANK.FINANCING.LONG_TERM_DEBT_ISSUANCE": [
+      "Tiền thu từ phát hành giấy tờ có giá dài hạn đủ điều kiện tính vào vốn tự có và các khoản vốn vay dài hạn khác"
+    ],
+    "CASHFLOW.BANK.FINANCING.LONG_TERM_DEBT_REPAYMENT": [
+      "Tiền chi thanh toán giấy tờ có giá dài hạn đủ điều kiện tính vào vốn tự có và các khoản vốn vay dài hạn khác"
+    ],
+    "CASHFLOW.BANK.FINANCING.TREASURY_SHARES_SOLD": [
+      "Tiền thu do bán cổ phiếu quỹ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.UNREALIZED_FX": [
+      "(-) Lãi hoặc (+) lỗ chênh lệch tỷ giá hối đoái chưa thực hiện",
+      "Lãi, lỗ chênh lệch tỷ giá hối đoái chưa thực hiện"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ACCRUED_PAYABLES_PREPAID": [
+      "Chi phí phải trả, chi phí trả trước"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.OTHER_ADJUSTMENTS": [
+      "Các khoản điều chỉnh khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES_FINANCIAL_LIABILITIES": [
+      "Lỗ đánh giá giá trị các công nợ tài chính ghi nhận thông qua kết quả kinh doanh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.NON_CASH_EXPENSES_DERIVATIVES": [
+      "Lỗ đánh giá giá trị các công cụ tài chính phái sinh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.AFS_DISPOSAL_LOSS": [
+      "Lỗ từ thanh lý các tài sản tài chính sẵn sàng để bán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.AFS_IMPAIRMENT_LOSS": [
+      "Suy giảm giá trị của các tài sản tài chính sẵn sàng để bán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.HEDGING_DERIVATIVE_LOSS": [
+      "Lỗ đánh giá giá trị các công cụ tài chính phái sinh cho mục đích phòng ngừa rủi ro"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.PPE_DISPOSAL_LOSS": [
+      "Lỗ từ thanh lý tài sản cố định"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.PPE_IMPAIRMENT_LOSS": [
+      "Suy giảm giá trị của các tài sản cố định"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENT_DISPOSAL_LOSS": [
+      "Lỗ từ thanh lý các khoản đầu tư vào công ty con và công ty liên doanh, liên kết"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.FINANCIAL_LIABILITY_REVALUATION_GAIN": [
+      "Lãi đánh giá giá trị các công nợ tài chính thông qua kết quả kinh doanh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.AFS_DISPOSAL_GAIN": [
+      "Lãi từ thanh lý các tài sản tài chính sẵn sàng để bán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.AFS_IMPAIRMENT_REVERSAL": [
+      "Hoàn nhập suy giảm giá trị của các tài sản tài chính sẵn sàng để bán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.HEDGING_DERIVATIVE_GAIN": [
+      "Lãi đánh giá giá trị các công cụ tài chính phái sinh cho mục đích phòng ngừa"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.LOAN_RECEIVABLE_DISPOSAL_GAIN": [
+      "Lãi từ thanh lý các khoản cho vay và phải thu"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.PROVISION_REVERSAL": [
+      "Hoàn nhập chi phí dự phòng"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.PPE_INVESTMENT_PROPERTY_DISPOSAL_GAIN": [
+      "Lãi từ thanh lý tài sản cố định, BĐSĐT"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENT_DISPOSAL_GAIN": [
+      "Lãi từ thanh lý các khoản đầu tư vào công ty con và công ty liên doanh, liên kết"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_FINANCIAL_LIABILITIES": [
+      "Tăng (giảm) vay và nợ thuê tài sản tài chính"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_BORROWED_FINANCIAL_ASSETS": [
+      "Tăng (giảm) vay tài sản tài chính"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_CONVERTIBLE_BONDS": [
+      "Tăng (giảm) Trái phiếu chuyển đổi - Cấu phần nợ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ISSUED_BONDS": [
+      "Tăng (giảm) Trái phiếu phát hành"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_SETTLEMENT_FUND_BORROWINGS": [
+      "Tăng (giảm) vay Quỹ Hỗ trợ thanh toán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ERROR_RECEIVABLES": [
+      "Tăng (giảm) các khoản phải thu về lỗi giao dịch chứng khoán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CHANGE_ISSUER_PAYABLES": [
+      "Tăng (giảm) phải trả Tổ chức phát hành chứng khoán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.EQUITY_INVESTMENTS": [
+      "Tiền chi đầu tư vốn vào công ty con, công ty liên doanh, liên kết và đầu tư khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.EQUITY_DIVESTMENTS": [
+      "Tiền thu hồi đầu tư góp vốn vào công ty con, công ty liên doanh, liên kết và đầu tư khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CAPITAL_REPAYMENT": [
+      "Tiền chi trả vốn góp cho chủ sở hữu, mua lại cổ phiếu quỹ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED_SETTLEMENT_FUND": [
+      "Tiền vay Quỹ Hỗ trợ thanh toán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_RECEIVED_OTHER": [
+      "Tiền vay khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_SETTLEMENT_FUND": [
+      "Tiền chi trả gốc vay Quỹ Hỗ trợ thanh toán"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_FINANCIAL_ASSETS": [
+      "Tiền chi trả gốc vay tài sản tài chính"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BORROWINGS_REPAID_OTHER": [
+      "Tiền chi trả gốc nợ vay khác"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.FINANCE_LEASE_REPAID": [
+      "Tiền chi trả nợ thuê tài chính"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.DIVIDENDS_PAID": [
+      "Cổ tức, lợi nhuận đã trả cho chủ sở hữu"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.OTHER_OPERATING_RECEIPTS": [
+      "Tiền thu khác từ hoạt động kinh doanh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.OTHER_OPERATING_PAYMENTS": [
+      "Tiền chi khác cho hoạt động kinh doanh"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.INCOME_TAX_PAID": [
+      "(+) Tăng, (-) giảm Thuế TNDN CTCK đã nộp"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.ACCRUED_INTEREST": [
+      "Dự thu tiền lãi"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.ADJUSTMENTS_TOTAL": [
+      "Điều chỉnh cho các khoản"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.DIVIDENDS_RECEIVED": [
+      "Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.INTEREST_EXPENSE": [
+      "Chi phí lãi vay"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.INTEREST_PAID": [
+      "Lãi vay đã trả"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.INVESTING_GAIN": [
+      "Lãi, lỗ từ hoạt động đầu tư"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.NET_FINANCING_CASH": [
+      "Lưu chuyển tiền thuần từ hoạt động tài chính"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.NET_INVESTING_CASH": [
+      "Lưu chuyển tiền thuần từ hoạt động đầu tư"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING": [
+      "Tiền gửi ngân hàng đầu kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_BEGINNING_OPERATING": [
+      "Tiền gửi ngân hàng cho hoạt động CTCK đầu kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CASH_EQUIVALENTS_BEGINNING": [
+      "Các khoản tương đương tiền đầu kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.FX_EFFECT_BEGINNING": [
+      "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ đầu kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING": [
+      "Tiền gửi ngân hàng cuối kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.BANK_DEPOSITS_ENDING_OPERATING": [
+      "Tiền gửi ngân hàng cho hoạt động CTCK cuối kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CASH_EQUIVALENTS_ENDING": [
+      "Các khoản tương đương tiền cuối kỳ"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.FX_EFFECT_ENDING": [
+      "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ cuối kỳ"
+    ]
+  }
+}

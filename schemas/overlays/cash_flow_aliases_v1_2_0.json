@@ -1,0 +1,18 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_CASH_FLOW_V1@1.2.0",
+  "base_aliases": "../cash_flow_aliases.json",
+  "alias_schema_version": "1.2.0",
+  "target_schema": "UNIVERSAL_CASH_FLOW_V1@1.2.0",
+  "entries_add": {
+    "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING": [
+      "Tiền và các khoản tương đương tiền cuối năm",
+      "Tiền và các khoản tương đương tiền cuối kỳ",
+      "Tiền cuối năm"
+    ],
+    "CASHFLOW.SECURITIES.INDIRECT.CASH_ENDING_CASH": [
+      "Tiền cuối năm",
+      "Tiền"
+    ]
+  }
+}

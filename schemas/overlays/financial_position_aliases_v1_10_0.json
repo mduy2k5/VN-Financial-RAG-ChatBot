@@ -1,0 +1,41 @@
+{
+  "overlay_type": "aliases",
+  "overlay_id": "UNIVERSAL_FINANCIAL_POSITION_V1@1.10.0",
+  "base_aliases": "financial_position_aliases_v1_9_0.json",
+  "alias_schema_version": "1.10.0",
+  "target_schema": "UNIVERSAL_FINANCIAL_POSITION_V1@1.10.0",
+  "entries_update": {
+    "EQUITY.CONSTRUCTION_CAPITAL": {
+      "match": {
+        "exact_add": [
+          "Vốn đầu tư XDCB, mua sắm tài sản cố định",
+          "Vốn đầu tư xây dựng cơ bản, mua sắm tài sản cố định",
+          "Vốn đầu tư XDCB"
+        ]
+      }
+    }
+  },
+  "entries_add": {
+    "LIABILITY.OTHER.CONTINGENT_RISK_PROVISIONS": {
+      "node_id": "LIABILITY.OTHER.CONTINGENT_RISK_PROVISIONS",
+      "canonical_name": "Dự phòng rủi ro khác (Dự phòng cho công nợ tiềm ẩn)",
+      "match": {
+        "exact": [
+          "Dự phòng rủi ro khác (Dự phòng cho công nợ tiềm ẩn)",
+          "Dự phòng rủi ro khác",
+          "Dự phòng cho công nợ tiềm ẩn"
+        ],
+        "aliases": [
+          "Dự phòng rủi ro khác (dự phòng cho công nợ tiềm ẩn)",
+          "Dự phòng công nợ tiềm ẩn"
+        ],
+        "parent_context": [
+          "Các khoản nợ khác",
+          "Nợ phải trả"
+        ],
+        "contains": [],
+        "exclude_if_contains": []
+      }
+    }
+  }
+}

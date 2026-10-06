@@ -1,0 +1,679 @@
+{
+  "alias_type": "notes",
+  "alias_schema_version": "INSURANCE_NOTES_ALIASES_V1@1.0.0",
+  "profile": "insurance_v1",
+  "target_ir_schema": "GENERIC_NOTE_IR_V1",
+  "description": "Optional aliases for insurance Notes. The catalog covers a combined life/non-life report and reuses selected enterprise-style indicators without changing the raw Notes tree.",
+  "sector_scope": ["insurance", "life_insurance", "non_life_insurance"],
+  "report_composition": {
+    "combined_life_non_life": true,
+    "enterprise_indicator_families": [
+      "fixed_assets",
+      "inventory",
+      "tax",
+      "deferred_tax",
+      "equity",
+      "finance_income_and_cost",
+      "general_admin",
+      "other_profit",
+      "related_parties",
+      "segments",
+      "commitments",
+      "eps"
+    ]
+  },
+  "source_templates": [
+    "docs/template/BCTC-BHNT.pdf",
+    "docs/template/BCTC-BHPNT.pdf"
+  ],
+  "matching_policy": {
+    "section": "note_id_and_title_exact_then_title_base",
+    "row": "section_scoped_exact_label",
+    "fuzzy_matching": false,
+    "continuation_title_allowed": true,
+    "parent_context_required_when_declared": true,
+    "reused_note_number_requires_title": true,
+    "strict_note_id": true
+  },
+  "unmatched_policy": {
+    "status": "unmapped",
+    "storage_mode": "raw_tree",
+    "preserve": [
+      "section_id",
+      "section_title",
+      "block_form",
+      "headers_raw",
+      "dimensions",
+      "row_label_raw",
+      "hierarchy_path",
+      "values_in_source_order",
+      "raw_cells",
+      "source_line",
+      "source_column"
+    ]
+  },
+  "multi_column_policy": {
+    "storage_mode": "raw_matrix",
+    "preserve_headers": true,
+    "preserve_empty_cells": true,
+    "preserve_source_column": true,
+    "preserve_value_order": true,
+    "allow_unbounded_rows": true,
+    "semantic_mapping_is_optional": true
+  },
+  "sections": [
+    {
+      "alias_id": "INSURANCE.POLICY.COMPANY_INFO",
+      "canonical_name": "Thông tin doanh nghiệp",
+      "note_ids": ["1"],
+      "titles": ["THÔNG TIN DOANH NGHIỆP"],
+      "title_aliases": ["Thông tin doanh nghiệp", "Thông tin chung về doanh nghiệp"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.POLICY.PRESENTATION",
+      "canonical_name": "Cơ sở trình bày",
+      "note_ids": ["2"],
+      "titles": ["CƠ SỞ TRÌNH BÀY"],
+      "title_aliases": ["Cơ sở lập và trình bày báo cáo tài chính", "Cơ sở lập báo cáo tài chính"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.POLICY.STANDARDS",
+      "canonical_name": "Tuân thủ chuẩn mực và chế độ kế toán",
+      "note_ids": ["3"],
+      "titles": ["TUYÊN BỐ VỀ VIỆC TUÂN THỦ CHUẨN MỰC KẾ TOÁN VÀ CHẾ ĐỘ KẾ TOÁN VIỆT NAM"],
+      "title_aliases": ["Tuân thủ chuẩn mực kế toán và chế độ kế toán Việt Nam"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.POLICY.ACCOUNTING_POLICIES",
+      "canonical_name": "Tóm tắt các chính sách kế toán chủ yếu",
+      "note_ids": ["4"],
+      "titles": ["TÓM TẮT CÁC CHÍNH SÁCH KẾ TOÁN CHỦ YẾU", "CÁC CHÍNH SÁCH KẾ TOÁN CHỦ YẾU"],
+      "title_aliases": ["Các chính sách kế toán chủ yếu", "Chính sách kế toán chủ yếu"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.CASH",
+      "canonical_name": "Tiền và các khoản tương đương tiền",
+      "note_ids": ["5"],
+      "titles": ["TIỀN VÀ CÁC KHOẢN TƯƠNG ĐƯƠNG TIÊN", "TIỀN VÀ CÁC KHOẢN TƯƠNG ĐƯƠNG TIỀN"],
+      "title_aliases": ["Tiền và các khoản tương đương tiền"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.CASH.CASH_ON_HAND","canonical_name":"Tiền mặt tại quỹ","aliases":["Tiền mặt tại quỹ"]},
+        {"alias_id":"INSURANCE.BS.CASH.BANK_DEPOSITS","canonical_name":"Tiền gửi ngân hàng","aliases":["Tiền gửi ngân hàng"]},
+        {"alias_id":"INSURANCE.BS.CASH.IN_TRANSIT","canonical_name":"Tiền đang chuyển","aliases":["Tiền đang chuyển"]},
+        {"alias_id":"INSURANCE.BS.CASH.CASH_EQUIVALENTS","canonical_name":"Các khoản tương đương tiền","aliases":["Các khoản tương đương tiền (*)","Các khoản tương đương tiền"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.RECEIVABLES",
+      "canonical_name": "Các khoản phải thu",
+      "note_ids": ["6"],
+      "titles": ["CÁC KHOẢN PHẢI THU"],
+      "title_aliases": ["Các khoản phải thu ngắn hạn"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.GROSS_INSURANCE","canonical_name":"Phải thu hoạt động bảo hiểm gốc","aliases":["Phải thu hoạt động bảo hiểm gốc"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.ACCEPTED_REINSURANCE","canonical_name":"Phải thu hoạt động nhận tái bảo hiểm","aliases":["Phải thu hoạt động nhận tái bảo hiểm"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.CEDED_REINSURANCE","canonical_name":"Phải thu hoạt động nhượng tái bảo hiểm","aliases":["Phải thu hoạt động nhượng tái bảo hiểm"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.COINSURANCE","canonical_name":"Phải thu liên quan đến đồng bảo hiểm","aliases":["Phải thu liên quan đến đồng bảo hiểm"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.INSURANCE_TOTAL","canonical_name":"Tổng cộng phải thu về hoạt động bảo hiểm","aliases":["Tổng cộng phải thu về hoạt động bảo hiểm"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.DIVIDENDS","canonical_name":"Phải thu cổ tức","aliases":["Phải thu cổ tức"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.BANK_INTEREST","canonical_name":"Phải thu lãi tiền gửi ngân hàng","aliases":["Phải thu lãi tiền gửi ngân hàng"]},
+        {"alias_id":"INSURANCE.BS.RECEIVABLES.BOND_INTEREST","canonical_name":"Phải thu lãi trái phiếu","aliases":["Phải thu lãi trái phiếu"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.LONG_TERM_RECEIVABLES",
+      "canonical_name": "Các khoản phải thu dài hạn",
+      "note_ids": ["6.2"],
+      "titles": ["Các khoản phải thu dài hạn"],
+      "title_aliases": ["CÁC KHOẢN PHẢI THU DÀI HẠN"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.LONG_TERM_RECEIVABLES.LIFE_DEPOSIT","canonical_name":"Hoạt động bảo hiểm nhân thọ","aliases":["Hoạt động bảo hiểm nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.LONG_TERM_RECEIVABLES.NON_LIFE_DEPOSIT","canonical_name":"Hoạt động bảo hiểm phi nhân thọ","aliases":["Hoạt động bảo hiểm phi nhân thọ"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.INVENTORY",
+      "canonical_name": "Hàng tồn kho",
+      "note_ids": ["7"],
+      "titles": ["HÀNG TÔN KHO", "HÀNG TỒN KHO"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.INVENTORY.PROVISION","canonical_name":"Dự phòng giảm giá hàng tồn kho","aliases":["Dự phòng giảm giá hàng tồn kho"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.UNALLOCATED_COMMISSION",
+      "canonical_name": "Chi phí hoa hồng chưa phân bổ",
+      "note_ids": ["8"],
+      "titles": ["CHI PHÍ HOA HỒNG CHƯA PHÂN BỔ"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.UNALLOCATED_COMMISSION.LIFE","canonical_name":"Bảo hiểm nhân thọ","aliases":["Bảo hiểm nhân thọ (VND)","Bảo hiểm nhân thọ"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.UNALLOCATED_COMMISSION.NON_LIFE","canonical_name":"Bảo hiểm phi nhân thọ","aliases":["Bảo hiểm phi nhân thọ (VND)","Bảo hiểm phi nhân thọ"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.UNALLOCATED_COMMISSION.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng (VND)","TỔNG CỘNG"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.PREPAID",
+      "canonical_name": "Chi phí trả trước",
+      "note_ids": ["9"],
+      "titles": ["CHI PHÍ TRẢ TRƯỚC"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.TANGIBLE_ASSETS",
+      "canonical_name": "Tài sản cố định hữu hình",
+      "note_ids": ["10"],
+      "titles": ["TÀI SẢN CÓ ĐỊNH HỮU HÌNH"],
+      "title_aliases": ["Tài sản cố định hữu hình"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.TANGIBLE_ASSETS.BUILDINGS","canonical_name":"Nhà cửa, vật kiến trúc","aliases":["Nhà cửa, vật kiến trúc (VND)","Nhà cửa, vật kiến trúc"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TANGIBLE_ASSETS.MACHINERY","canonical_name":"Máy móc thiết bị","aliases":["Máy móc thiết bị (VND)","Máy móc thiết bị"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TANGIBLE_ASSETS.VEHICLES","canonical_name":"Phương tiện vận tải, thiết bị truyền dẫn","aliases":["Phương tiện vận tải, thiết bị truyền dẫn (VND)","Phương tiện vận tải, thiết bị truyền dẫn"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TANGIBLE_ASSETS.OFFICE_EQUIPMENT","canonical_name":"Công cụ, dụng cụ quản lý","aliases":["Công cụ, dụng cụ quản lý (VND)","Công cụ, dụng cụ quản lý"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TANGIBLE_ASSETS.OTHER","canonical_name":"Tài sản cố định khác","aliases":["Tài sản cố định khác (VND)","Tài sản cố định khác"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.INTANGIBLE_ASSETS",
+      "canonical_name": "Tài sản cố định vô hình",
+      "note_ids": ["11"],
+      "titles": ["TÀI SẢN CÓ ĐỊNH VÔ HÌNH"],
+      "title_aliases": ["Tài sản cố định vô hình"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.INTANGIBLE_ASSETS.LAND_RIGHTS","canonical_name":"Quyền sử dụng đất","aliases":["Quyền sử dụng đất"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.INTANGIBLE_ASSETS.SOFTWARE","canonical_name":"Phần mềm máy tính","aliases":["Phần mềm máy tính"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.INTANGIBLE_ASSETS.OTHER","canonical_name":"Tài sản cố định khác","aliases":["Tài sản cố định khác"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.INVESTMENT_PROPERTY",
+      "canonical_name": "Bất động sản đầu tư",
+      "note_ids": ["12"],
+      "titles": ["BẤT ĐỘNG SẢN ĐẦU TƯ"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.INVESTMENT_PROPERTY.COST","canonical_name":"Nguyên giá","aliases":["Nguyên giá"]},
+        {"alias_id":"INSURANCE.BS.INVESTMENT_PROPERTY.DEPRECIATION","canonical_name":"Hao mòn","aliases":["Hao mòn","Hao mòn trong năm"]},
+        {"alias_id":"INSURANCE.BS.INVESTMENT_PROPERTY.TRANSFERRED_TO_FIXED","canonical_name":"Chuyển sang tài sản cố định","aliases":["Chuyển sang tài sản cố định"]},
+        {"alias_id":"INSURANCE.BS.INVESTMENT_PROPERTY.CARRYING_VALUE","canonical_name":"Giá trị còn lại","aliases":["Giá trị còn lại"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.CONSTRUCTION_IN_PROGRESS",
+      "canonical_name": "Chi phí xây dựng cơ bản dở dang",
+      "note_ids": ["13"],
+      "titles": ["CHI PHÍ XÂY DỰNG CƠ BẢN DỞ DANG"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.CONSTRUCTION_IN_PROGRESS.PURCHASES","canonical_name":"Mua sắm","aliases":["Mua sắm (*)","Mua sắm"]},
+        {"alias_id":"INSURANCE.BS.CONSTRUCTION_IN_PROGRESS.CONSTRUCTION","canonical_name":"Xây dựng cơ bản dở dang","aliases":["Xây dựng cơ bản dở dang (*)","Xây dựng cơ bản dở dang"]},
+        {"alias_id":"INSURANCE.BS.CONSTRUCTION_IN_PROGRESS.MAJOR_REPAIRS","canonical_name":"Sửa chữa lớn","aliases":["Sửa chữa lớn ()","Sửa chữa lớn"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.FINANCIAL_INVESTMENTS",
+      "canonical_name": "Các khoản đầu tư tài chính",
+      "note_ids": ["14"],
+      "titles": ["CÁC KHOẢN ĐẦU TƯ TÀI CHÍNH"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.TRADING_SECURITIES",
+      "canonical_name": "Chứng khoán kinh doanh",
+      "note_ids": ["14.1"],
+      "titles": ["Chứng khoán kinh doanh"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.TRADING_SECURITIES.COST","canonical_name":"Giá gốc","aliases":["Giá gốc"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TRADING_SECURITIES.CARRYING_VALUE","canonical_name":"Giá trị ghi sổ","aliases":["Giá trị ghi sổ (sau khi trích lập dự phòng)","Giá trị ghi sổ"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.HTM_INVESTMENTS",
+      "canonical_name": "Đầu tư nắm giữ đến ngày đáo hạn",
+      "note_ids": ["14.2"],
+      "titles": ["Đầu tư nắm giữ đến ngày đáo hạn"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.HTM_INVESTMENTS.COST","canonical_name":"Giá gốc","aliases":["Giá gốc"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.HTM_INVESTMENTS.CARRYING_VALUE","canonical_name":"Giá trị ghi sổ","aliases":["Giá trị ghi sổ"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.LONG_TERM_INVESTMENTS",
+      "canonical_name": "Đầu tư góp vốn vào đơn vị khác",
+      "note_ids": ["14.3.2"],
+      "titles": ["Đầu tư góp vốn vào đơn vị khác"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.LONG_TERM_INVESTMENTS.COST","canonical_name":"Giá gốc","aliases":["Giá gốc"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.LONG_TERM_INVESTMENTS.CARRYING_VALUE","canonical_name":"Giá trị ghi sổ","aliases":["Giá trị ghi sổ (sau khi trích lập dự phòng)","Giá trị ghi sổ"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.SHORT_TERM_PAYABLES",
+      "canonical_name": "Phải trả người bán ngắn hạn",
+      "note_ids": ["15"],
+      "titles": ["PHẢI TRẢ NGƯỜI BÁN NGẮN HẠN"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.SHORT_TERM_PAYABLES.LIFE","canonical_name":"Bảo hiểm nhân thọ","aliases":["Bảo hiểm nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.SHORT_TERM_PAYABLES.LIFE_CLAIMS","canonical_name":"Phải trả bồi thường và trả tiền bảo hiểm","aliases":["Phải trả bồi thường và trả tiền bảo hiểm"]},
+        {"alias_id":"INSURANCE.BS.SHORT_TERM_PAYABLES.LIFE_AGENTS","canonical_name":"Phải trả thu nhập đại lý","aliases":["Phải trả thu nhập đại lý"]},
+        {"alias_id":"INSURANCE.BS.SHORT_TERM_PAYABLES.NON_LIFE","canonical_name":"Bảo hiểm phi nhân thọ","aliases":["Bảo hiểm phi nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.SHORT_TERM_PAYABLES.NON_LIFE_COMMISSION","canonical_name":"Phải trả hoa hồng bảo hiểm","aliases":["Phải trả hoa hồng bảo hiểm"]},
+        {"alias_id":"INSURANCE.BS.SHORT_TERM_PAYABLES.SUPPLIERS","canonical_name":"Phải trả người bán, nhà cung cấp","aliases":["Phải trả người bán, nhà cung cấp"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.TAXES",
+      "canonical_name": "Thuế và các khoản phải nộp Nhà nước",
+      "note_ids": ["16"],
+      "titles": ["THUẾ VÀ CÁC KHOẢN PHẢI NỘP NHÀ NƯỚC"],
+      "title_aliases": ["Thuế và các khoản phải nộp Nhà nước"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.TAXES.CIT","canonical_name":"Thuế thu nhập doanh nghiệp","aliases":["Thuế thu nhập doanh nghiệp"]},
+        {"alias_id":"INSURANCE.BS.TAXES.VAT","canonical_name":"Thuế giá trị gia tăng","aliases":["Thuế giá trị gia tăng"]},
+        {"alias_id":"INSURANCE.BS.TAXES.OTHER","canonical_name":"Thuế khác","aliases":["Thuế khác"]},
+        {"alias_id":"INSURANCE.BS.TAXES.TOTAL","canonical_name":"Tổng cộng thuế phải nộp Nhà nước","aliases":["Tổng cộng thuế phải nộp Nhà nước","Tổng cộng thuế phải thu Nhà nước"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.DEFERRED_TAX",
+      "canonical_name": "Thuế thu nhập doanh nghiệp hoãn lại",
+      "note_ids": ["16.2"],
+      "titles": ["Thuế thu nhập doanh nghiệp hoãn lại"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.DEFERRED_TAX_ASSET",
+      "canonical_name": "Tài sản thuế thu nhập doanh nghiệp hoãn lại",
+      "note_ids": ["16.2.1"],
+      "titles": ["Tài sản thuế thu nhập doanh nghiệp hoãn lại"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.DEFERRED_TAX_LIABILITY",
+      "canonical_name": "Thuế thu nhập doanh nghiệp hoãn lại phải trả",
+      "note_ids": ["16.2.2"],
+      "titles": ["Thuế thu nhập doanh nghiệp hoãn lại phải trả"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.UNEARNED_REVENUE",
+      "canonical_name": "Doanh thu chưa thực hiện ngắn hạn",
+      "note_ids": ["17"],
+      "titles": ["DOANH THU CHƯA THỰC HIỆN NGẮN HẠN"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.UNEARNED_REVENUE.LIFE","canonical_name":"Bảo hiểm nhân thọ","aliases":["Bảo hiểm nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.UNEARNED_REVENUE.NON_LIFE","canonical_name":"Bảo hiểm phi nhân thọ","aliases":["Bảo hiểm phi nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.UNEARNED_REVENUE.REAL_ESTATE","canonical_name":"Hoạt động quản lý bất động sản","aliases":["Hoạt động quản lý bất động sản"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.REINSURANCE_COMMISSION",
+      "canonical_name": "Thu hoa hồng nhượng tái bảo hiểm",
+      "note_ids": ["18"],
+      "titles": ["THU HOA HỒNG NHƯỢNG TÁI BẢO HIỂM"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.REINSURANCE_COMMISSION.LIFE","canonical_name":"Bảo hiểm nhân thọ","aliases":["Bảo hiểm nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.REINSURANCE_COMMISSION.NON_LIFE","canonical_name":"Bảo hiểm phi nhân thọ","aliases":["Bảo hiểm phi nhân thọ"]},
+        {"alias_id":"INSURANCE.BS.REINSURANCE_COMMISSION.OPENING","canonical_name":"Số đầu năm","aliases":["Số đầu năm"]},
+        {"alias_id":"INSURANCE.BS.REINSURANCE_COMMISSION.ADDITIONS","canonical_name":"Phát sinh trong năm","aliases":["Phát sinh trong năm"]},
+        {"alias_id":"INSURANCE.BS.REINSURANCE_COMMISSION.ALLOCATED","canonical_name":"Thu hoa hồng nhượng tái bảo hiểm - Phân bổ vào doanh thu trong năm","aliases":["Thu hoa hồng nhượng tái bảo hiểm - Phân bổ vào doanh thu trong năm"]},
+        {"alias_id":"INSURANCE.BS.REINSURANCE_COMMISSION.CLOSING","canonical_name":"Số cuối năm","aliases":["Số cuối năm"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.OTHER_CURRENT_PAYABLES",
+      "canonical_name": "Phải trả ngắn hạn khác",
+      "note_ids": ["19"],
+      "titles": ["PHẢI TRẢ NGẮN HẠN KHÁC"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.BORROWINGS",
+      "canonical_name": "Vay",
+      "note_ids": ["20"],
+      "titles": ["VAY"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.DOMESTIC_FINANCIAL_BORROWINGS",
+      "canonical_name": "Vay từ tổ chức tài chính trong nước",
+      "note_ids": ["21"],
+      "titles": ["Vay từ tổ chức tài chính trong nước"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.REPO",
+      "canonical_name": "Giao dịch mua bán lại trái phiếu",
+      "note_ids": ["22"],
+      "titles": ["GIAO DỊCH MUA BÁN LẠI TRÁI PHIẾU"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.BS.LONG_TERM_OTHER_PAYABLES",
+      "canonical_name": "Phải trả dài hạn khác",
+      "note_ids": ["23"],
+      "titles": ["PHẢI TRẢ DÀI HẠN KHÁC"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.LONG_TERM_OTHER_PAYABLES.DEPOSITS","canonical_name":"Ký quỹ đại lý","aliases":["Kỳ quỹ đại lý","Ký quỹ đại lý"]},
+        {"alias_id":"INSURANCE.BS.LONG_TERM_OTHER_PAYABLES.OTHER","canonical_name":"Phải trả khác","aliases":["Phải trả khác"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.BS.TECHNICAL_RESERVES",
+      "canonical_name": "Dự phòng nghiệp vụ bảo hiểm",
+      "note_ids": ["24"],
+      "titles": ["DỰ PHÒNG NGHIỆP VỤ BẢO HIỂM"],
+      "rows": [
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.MATHEMATICAL","canonical_name":"Dự phòng toán học","aliases":["Dự phòng toán học"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.UNEARNED_PREMIUM","canonical_name":"Dự phòng phí chưa được hưởng","aliases":["Dự phòng phí chưa được hưởng"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.CLAIMS","canonical_name":"Dự phòng bồi thường","aliases":["Dự phòng bồi thường"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.PROFIT_SHARING","canonical_name":"Dự phòng chia lãi","aliases":["Dự phòng chia lãi","Dự phòng chia li"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.LARGE_LOSS","canonical_name":"Dự phòng dao động lớn","aliases":["Dự phòng dao động lớn"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.TOTAL","canonical_name":"Tổng cộng","aliases":["Tổng cộng","TỔNG CỘNG"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.CEDED","canonical_name":"Dự phòng nhượng tái bảo hiểm","aliases":["Dự phòng nhượng tái bảo hiểm"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.BS.TECHNICAL_RESERVES.NET","canonical_name":"Dự phòng thuần","aliases":["Dự phòng thuần"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.EQUITY",
+      "canonical_name": "Vốn chủ sở hữu",
+      "note_ids": ["25"],
+      "titles": ["VỐN CHỦ SỞ HỮU"],
+      "title_aliases": ["Vốn chủ sở hữu"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.EQUITY.MOVEMENT",
+      "canonical_name": "Tình hình tăng giảm nguồn vốn chủ sở hữu",
+      "note_ids": ["25.1"],
+      "titles": ["Tình hình tăng giảm nguồn vốn chủ sở hữu"],
+      "rows": [
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.OWNER_CAPITAL","canonical_name":"Vốn góp của chủ sở hữu","aliases":["Vốn góp của chủ sở hữu"]},
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.CAPITAL_SURPLUS","canonical_name":"Thặng dư vốn cổ phần","aliases":["Thặng dư vốn cổ phần","Thặng dư vốn có phần"]},
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.FX_RESERVE","canonical_name":"Chênh lệch tỷ giá hối đoái","aliases":["Chênh lệch tỷ giá hối đoái"]},
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.DEVELOPMENT_FUNDS","canonical_name":"Quỹ đầu tư phát triển và quỹ khác thuộc vốn chủ sở hữu","aliases":["Quỹ đầu tư phát triển và quỹ khác thuộc vốn chủ sở hữu"]},
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.MANDATORY_RESERVE","canonical_name":"Quỹ dự trữ bắt buộc hoạt động bảo hiểm","aliases":["Quỹ dự trữ bắt buộc hoạt động bảo hiểm"]},
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.RETAINED_EARNINGS","canonical_name":"Lợi nhuận sau thuế chưa phân phối","aliases":["Lợi nhuận sau thuế chưa phân phối"]},
+        {"alias_id":"INSURANCE.EQUITY.MOVEMENT.NCI","canonical_name":"Lợi ích cổ đông không kiểm soát","aliases":["Lợi ích cổ đông không kiểm soát"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.EQUITY.DETAIL",
+      "canonical_name": "Chi tiết vốn đầu tư của chủ sở hữu",
+      "note_ids": ["25.2"],
+      "titles": ["Chi tiết vốn đầu tư của chủ sở hữu"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.EQUITY.TRANSACTIONS",
+      "canonical_name": "Các giao dịch về vốn với các chủ sở hữu và phân phối cổ tức, lợi nhuận",
+      "note_ids": ["25.3"],
+      "titles": ["Các giao dịch về vốn với các chủ sở hữu và phân phối cổ tức, lợi nhuận"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.IS.PREMIUM_REVENUE",
+      "canonical_name": "Doanh thu phí bảo hiểm",
+      "note_ids": ["26"],
+      "titles": ["DOANH THU PHÍ BẢO HIỂM"],
+      "rows": [
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.LIFE_MIXED","canonical_name":"Bảo hiểm hỗn hợp","aliases":["Bảo hiểm hỗn hợp"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.LIFE_UNIVERSAL","canonical_name":"Bảo hiểm liên kết chung","aliases":["Bảo hiểm liên kết chung"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.LIFE_OTHER","canonical_name":"Các sản phẩm bảo hiểm nhân thọ khác","aliases":["Các sản phẩm bảo hiểm nhân thọ khác"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.LIFE_TOTAL","canonical_name":"Tổng doanh thu bảo hiểm nhân thọ","aliases":["Tổng doanh thu bảo hiểm nhân thọ"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.NON_LIFE_LIABILITY","canonical_name":"Bảo hiểm trách nhiệm","aliases":["Bảo hiểm trách nhiệm"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.NON_LIFE_PROPERTY","canonical_name":"Bảo hiểm tài sản","aliases":["Bảo hiểm tài sản"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.NON_LIFE_PERSONAL","canonical_name":"Bảo hiểm con người","aliases":["Bảo hiểm con người"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.NON_LIFE_TOTAL","canonical_name":"Tổng doanh thu bảo hiểm phi nhân thọ","aliases":["Tổng doanh thu bảo hiểm phi nhân thọ"]},
+        {"alias_id":"INSURANCE.IS.PREMIUM_REVENUE.TOTAL","canonical_name":"Tổng doanh thu bảo hiểm","aliases":["Tổng doanh thu bảo hiểm"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.IS.CEDED_PREMIUM",
+      "canonical_name": "Tổng phí nhượng tái bảo hiểm",
+      "note_ids": ["27"],
+      "titles": ["TỔNG PHÍ NHƯỢNG TÁI BẢO HIỂM"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.IS.DIRECT_INSURANCE_COST",
+      "canonical_name": "Chi phí trực tiếp liên quan đến hoạt động kinh doanh bảo hiểm",
+      "note_ids": ["28"],
+      "titles": ["CHI PHÍ TRỰC TIẾP LIÊN QUAN ĐẾN HOẠT ĐỘNG KINH DOANH BẢO HIỂM"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.IS.CLAIMS_AND_MATURITIES",
+      "canonical_name": "Chi bồi thường bảo hiểm gốc và chi trả đáo hạn",
+      "note_ids": ["28.1"],
+      "titles": ["Chi bồi thường bảo hiểm gốc và chi trả đáo hạn"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.IS.OTHER_INSURANCE_COST",
+      "canonical_name": "Chi khác hoạt động kinh doanh bảo hiểm",
+      "note_ids": ["29"],
+      "titles": ["CHI KHÁC HOẠT ĐỘNG KINH DOANH BẢO HIỂM"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.IS.NET_OTHER_OPERATIONS",
+      "canonical_name": "Thu nhập thuần từ các hoạt động khác",
+      "note_ids": ["30"],
+      "titles": ["THU NHẬP THUẦN TỪ CÁC HOẠT ĐỘNG KHÁC"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.IS.FINANCE",
+      "canonical_name": "Hoạt động tài chính",
+      "note_ids": ["31"],
+      "titles": ["HOẠT ĐỘNG TÀI CHÍNH"],
+      "rows": [
+        {"alias_id":"INSURANCE.IS.FINANCE.BANK_INTEREST","canonical_name":"Lãi tiền gửi","aliases":["Lãi tiền gửi"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.BOND_INTEREST","canonical_name":"Lãi đầu tư trái phiếu","aliases":["Lãi đầu tư trái phiếu"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.REDEMPTION_ADVANCE","canonical_name":"Thu nhập từ tạm ứng giá trị hoàn lại","aliases":["Thu nhập từ tạm ứng giá trị hoàn lại"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.DIVIDENDS","canonical_name":"Cổ tức được chia","aliases":["Cổ tức được chia"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.FX_GAIN","canonical_name":"Lãi chênh lệch tỷ giá","aliases":["Lãi chênh lệch tỷ giá"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.FX_LOSS","canonical_name":"Lỗ chênh lệch tỷ giá","aliases":["Lỗ chênh lệch tỷ giá"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.OTHER_REVENUE","canonical_name":"Doanh thu hoạt động tài chính khác","aliases":["Doanh thu hoạt động tài chính khác"]},
+        {"alias_id":"INSURANCE.IS.FINANCE.OTHER_COST","canonical_name":"Chi phí hoạt động tài chính khác","aliases":["Chi phí hoạt động tài chính khác"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.IS.SELLING",
+      "canonical_name": "Chi phí bán hàng",
+      "note_ids": ["32"],
+      "titles": ["CHI PHÍ BÁN HÀNG"],
+      "title_aliases": ["Chi phí bán hàng"],
+      "rows": [
+        {"alias_id":"INSURANCE.IS.SELLING.AGENT_SUPPORT","canonical_name":"Chi khen thưởng và hỗ trợ đại lý","aliases":["Chi khen thưởng và hỗ trợ đại lý"]},
+        {"alias_id":"INSURANCE.IS.SELLING.AGENT_TRAINING","canonical_name":"Chi đào tạo đại lý","aliases":["Chi đào tạo đại lý"]},
+        {"alias_id":"INSURANCE.IS.SELLING.RECRUITMENT","canonical_name":"Chi phí tuyển dụng","aliases":["Chi phí tuyển dụng"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.IS.ADMIN",
+      "canonical_name": "Chi phí quản lý doanh nghiệp",
+      "note_ids": ["33"],
+      "titles": ["CHI PHÍ QUẢN LÝ DOANH NGHIỆP"],
+      "title_aliases": ["Chi phí quản lý doanh nghiệp"],
+      "rows": [
+        {"alias_id":"INSURANCE.IS.ADMIN.LABOR","canonical_name":"Chi phí nhân công","aliases":["Chi phí nhân công"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.IS.ADMIN.MATERIALS","canonical_name":"Chi phí nguyên liệu, vật liệu","aliases":["Chi phí nguyên liệu, vật liệu"]},
+        {"alias_id":"INSURANCE.IS.ADMIN.DEPRECIATION","canonical_name":"Chi phí khấu hao và hao mòn tài sản cố định","aliases":["Chi phí khấu hao và hao mòn tài sản cố định"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.IS.ADMIN.TAXES","canonical_name":"Thuế và chi phí lệ phí","aliases":["Thuế và chi phí lệ phí"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.IS.ADMIN.OUTSOURCED","canonical_name":"Chi phí dịch vụ mua ngoài","aliases":["Chi phí dịch vụ mua ngoài"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.IS.ADMIN.PROVISION","canonical_name":"Chi phí dự phòng","aliases":["Chi phí dự phòng"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.IS.ADMIN.OTHER","canonical_name":"Chi phí khác","aliases":["Chi phí khác"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.IS.OTHER_PROFIT",
+      "canonical_name": "Lợi nhuận khác",
+      "note_ids": ["34"],
+      "titles": ["LỢI NHUẬN KHÁC"],
+      "title_aliases": ["Lợi nhuận khác"],
+      "rows": [
+        {"alias_id":"INSURANCE.IS.OTHER_PROFIT.ASSET_DISPOSAL_INCOME","canonical_name":"Thu thanh lý tài sản","aliases":["Thu thanh lý tài sản"]},
+        {"alias_id":"INSURANCE.IS.OTHER_PROFIT.OTHER_INCOME","canonical_name":"Thu nhập khác","aliases":["Thu nhập khác"]},
+        {"alias_id":"INSURANCE.IS.OTHER_PROFIT.ASSET_DISPOSAL_COST","canonical_name":"Chi thanh lý tài sản","aliases":["Chi thanh lý tài sản"]},
+        {"alias_id":"INSURANCE.IS.OTHER_PROFIT.OTHER_COST","canonical_name":"Chi phí khác","aliases":["Chi phí khác"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.RELATED_PARTIES",
+      "canonical_name": "Giao dịch với các bên liên quan",
+      "note_ids": ["35"],
+      "titles": ["GIAO DỊCH VỚI CÁC BÊN LIÊN QUAN"],
+      "title_aliases": ["Giao dịch với các bên liên quan", "Các bên liên quan"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.EPS",
+      "canonical_name": "Lãi trên cổ phiếu",
+      "note_ids": ["36"],
+      "titles": ["LÃI TRÊN CỔ PHIẾU"],
+      "title_aliases": ["Lãi cơ bản trên cổ phiếu", "Lãi suy giảm trên cổ phiếu"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.SEGMENTS",
+      "canonical_name": "Thông tin theo bộ phận",
+      "note_ids": ["37"],
+      "titles": ["THÔNG TIN THEO BỘ PHẬN"],
+      "title_aliases": ["Thông tin theo bộ phận", "Báo cáo bộ phận"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.COMMITMENTS",
+      "canonical_name": "Các cam kết và các tài sản tiềm tàng",
+      "note_ids": ["38"],
+      "titles": ["CÁC CAM KẾT VÀ CÁC TÀI SẢN TIỀM TÀNG"],
+      "title_aliases": ["Các cam kết và các tài sản tiềm tàng", "Các cam kết"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.COMMITMENTS.OPERATING_LEASE",
+      "canonical_name": "Cam kết cho thuê hoạt động",
+      "note_ids": ["38.1"],
+      "titles": ["Cam kết cho thuê hoạt động"],
+      "rows": [
+        {"alias_id":"INSURANCE.COMMITMENTS.OPERATING_LEASE.UNDER_ONE_YEAR","canonical_name":"Đến 01 năm","aliases":["Đến 01 năm"]},
+        {"alias_id":"INSURANCE.COMMITMENTS.OPERATING_LEASE.ONE_TO_FIVE_YEARS","canonical_name":"Trên 01 năm đến 05 năm","aliases":["Trên 01 năm đến 05 năm"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.COMMITMENTS.LEASED_ASSETS",
+      "canonical_name": "Tài sản thuê ngoài",
+      "note_ids": ["38.2"],
+      "titles": ["Tài sản thuê ngoài"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.COMMITMENTS.CONTINGENT_ASSETS",
+      "canonical_name": "Tài sản tiềm tàng",
+      "note_ids": ["38.3"],
+      "titles": ["Tài sản tiềm tàng"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.OFF_BALANCE",
+      "canonical_name": "Các khoản mục ngoài bảng cân đối kế toán hợp nhất",
+      "note_ids": ["39"],
+      "titles": ["CÁC KHOẢN MỤC NGOÀI BẢNG CÂN ĐỐI KẾ TOÁN HỢP NHẤT"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.SOLVENCY",
+      "canonical_name": "Cơ chế quản lý rủi ro",
+      "note_ids": ["40"],
+      "titles": ["CƠ CHẾ QUẢN LÝ RỦI RO"],
+      "rows": [
+        {"alias_id":"INSURANCE.SOLVENCY.MARGIN","canonical_name":"Biên khả năng thanh toán","aliases":["Biên khả năng thanh toán (triệu VND)","Biên khả năng thanh toán"]},
+        {"alias_id":"INSURANCE.SOLVENCY.MINIMUM_MARGIN","canonical_name":"Biên khả năng thanh toán tối thiểu","aliases":["Biên khả năng thanh toán tối thiểu (triệu VND)","Biên khả năng thanh toán tối thiểu"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.RISK_MANAGEMENT",
+      "canonical_name": "Quản lý rủi ro bảo hiểm và rủi ro tài chính",
+      "note_ids": ["41"],
+      "titles": ["QUẢN LÝ RỦI RO BẢO HIỂM VÀ RỦI RO TÀI CHÍNH"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.RISK.INSURANCE_OBJECTIVES",
+      "canonical_name": "Các mục tiêu, chính sách quản lý rủi ro bảo hiểm",
+      "note_ids": ["41.1.1"],
+      "titles": ["Các mục tiêu, chính sách quản lý rủi ro bảo hiểm"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.RISK.INSURANCE_CASHFLOW",
+      "canonical_name": "Quản lý dòng tiền phát sinh từ hoạt động bảo hiểm",
+      "note_ids": ["41.1.2"],
+      "titles": ["Quản lý dòng tiền phát sinh từ hoạt động bảo hiểm"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.RISK.INSURANCE_INFO",
+      "canonical_name": "Thông tin bổ sung về rủi ro bảo hiểm",
+      "note_ids": ["41.1.3"],
+      "titles": ["Thông tin bổ sung về rủi ro bảo hiểm"],
+      "rows": []
+    },
+    {
+      "alias_id": "INSURANCE.RISK.CREDIT",
+      "canonical_name": "Rủi ro tín dụng",
+      "note_ids": ["41.2.1"],
+      "titles": ["Rủi ro tín dụng"],
+      "rows": [
+        {"alias_id":"INSURANCE.RISK.CREDIT.NOT_PAST_DUE","canonical_name":"Chưa quá hạn và không giảm giá trị","aliases":["Chưa quá hạn và không giảm giá trị"]},
+        {"alias_id":"INSURANCE.RISK.CREDIT.PAST_DUE","canonical_name":"Quá hạn nhưng không giảm giá trị riêng lẻ","aliases":["Quá hạn nhưng không giảm giá trị riêng lẻ"]},
+        {"alias_id":"INSURANCE.RISK.CREDIT.IMPAIRED","canonical_name":"Bị giảm giá trị riêng lẻ","aliases":["Bị giảm giá trị riêng lẻ (*)","Bị giảm giá trị riêng lẻ"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.RISK.LIQUIDITY",
+      "canonical_name": "Rủi ro thanh khoản",
+      "note_ids": ["41.2.2"],
+      "titles": ["Rủi ro thanh khoản"],
+      "rows": [
+        {"alias_id":"INSURANCE.RISK.LIQUIDITY.OVERDUE","canonical_name":"Quá hạn","aliases":["Quá hạn"]},
+        {"alias_id":"INSURANCE.RISK.LIQUIDITY.UNSPECIFIED","canonical_name":"Không xác định kỳ hạn","aliases":["Không xác định kỳ hạn"]},
+        {"alias_id":"INSURANCE.RISK.LIQUIDITY.UNDER_ONE_YEAR","canonical_name":"Đến 01 năm","aliases":["Đến 01 năm"]},
+        {"alias_id":"INSURANCE.RISK.LIQUIDITY.ONE_TO_FIVE_YEARS","canonical_name":"Từ 01 - 05 năm","aliases":["Từ 01 - 05 năm"]},
+        {"alias_id":"INSURANCE.RISK.LIQUIDITY.OVER_FIVE_YEARS","canonical_name":"Trên 05 năm","aliases":["Trên 05 năm"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.RISK.MARKET",
+      "canonical_name": "Rủi ro thị trường",
+      "note_ids": ["41.2.3"],
+      "titles": ["Rủi ro thị trường"],
+      "rows": [
+        {"alias_id":"INSURANCE.RISK.MARKET.HOSE","canonical_name":"HOSE","aliases":["HOSE"]},
+        {"alias_id":"INSURANCE.RISK.MARKET.HNX","canonical_name":"HNX","aliases":["HNX"]}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.FINANCIAL_INSTRUMENTS",
+      "canonical_name": "Thuyết minh bổ sung về tài sản tài chính và nợ phải trả tài chính",
+      "note_ids": ["42"],
+      "titles": ["THUYẾT MINH BỔ SUNG VỀ TÀI SẢN TÀI CHÍNH VÀ NỢ PHẢI TRẢ TÀI CHÍNH", "THUYẾT MINH BỘ SUNG VỀ TÀI SẢN TÀI CHÍNH VÀ NỢ PHẢI TRẢ TÀI CHÍNH"],
+      "title_aliases": ["Thuyết minh bổ sung về tài sản tài chính và nợ phải trả tài chính"],
+      "rows": [
+        {"alias_id":"INSURANCE.FINANCIAL_INSTRUMENTS.CARRYING_VALUE","canonical_name":"Giá trị ghi sổ","aliases":["Giá trị ghi sổ"],"allow_repeated":true},
+        {"alias_id":"INSURANCE.FINANCIAL_INSTRUMENTS.FAIR_VALUE","canonical_name":"Giá trị hợp lý","aliases":["Giá trị hợp lý"],"allow_repeated":true}
+      ]
+    },
+    {
+      "alias_id": "INSURANCE.SUBSEQUENT_EVENTS",
+      "canonical_name": "Các sự kiện phát sinh sau ngày kết thúc kỳ kế toán",
+      "note_ids": ["43"],
+      "titles": ["CÁC SỰ KIỆN PHÁT SINH SAU NGÀY KÉT THÚC KỲ KẾ TOÁN", "CÁC SỰ KIỆN PHÁT SINH SAU NGÀY KẾT THÚC KỲ KẾ TOÁN"],
+      "title_aliases": ["Các sự kiện phát sinh sau ngày kết thúc kỳ kế toán năm"],
+      "rows": []
+    }
+  ]
+}
