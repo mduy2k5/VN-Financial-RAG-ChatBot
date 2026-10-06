@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="5200" height="3300" viewBox="0 0 5200 3300" role="img" aria-labelledby="title desc">
-<title id="title">Kiến trúc VN Financial Understanding</title>
+<title id="title">Kiến trúc VN Financial RAG</title>
 <desc id="desc">Sơ đồ có icon, thể hiện từng bước của luồng truy vấn và luồng nạp tài liệu, cùng đường trả kết quả về giao diện.</desc>
 <defs>
 <marker id="arrow-blue" viewBox="0 0 42 42" markerWidth="42" markerHeight="42" refX="37.5" refY="21" markerUnits="userSpaceOnUse" orient="auto"><path d="M3 3L37.5 21L3 39Z" fill="#438fe3"/></marker>
@@ -10,7 +10,7 @@
 </defs>
 <rect x="0" y="0" width="5200" height="3300" rx="0" fill="#f4f6fa" stroke="none" stroke-width="2"/>
 <text x="145" y="120" font-size="78" fill="#172438" font-weight="800" text-anchor="start" letter-spacing="1.2">KIẾN TRÚC HỆ THỐNG</text>
-<text x="150" y="183" font-size="31" fill="#607086" font-weight="600" text-anchor="start" letter-spacing="0.8">VN FINANCIAL UNDERSTANDING  ·  LOCAL-FIRST  ·  QUERY + INGESTION</text>
+<text x="150" y="183" font-size="31" fill="#607086" font-weight="600" text-anchor="start" letter-spacing="0.8">VN FINANCIAL RAG  ·  LOCAL-FIRST  ·  QUERY + INGESTION</text>
 <text x="150" y="242" font-size="29" fill="#607086" font-weight="400" text-anchor="start" letter-spacing="0">Từ request đến câu trả lời; từ tài liệu đến phiên bản sẵn sàng truy vấn.</text>
 <rect x="3290" y="36" width="1780" height="256" rx="25" fill="#ffffff" stroke="#e1e7ef" stroke-width="2"/>
 <text x="3360" y="82" font-size="29" fill="#172438" font-weight="750" text-anchor="start" letter-spacing="0.8">CHÚ GIẢI LUỒNG</text>

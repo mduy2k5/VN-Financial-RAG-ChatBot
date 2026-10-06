@@ -28,7 +28,7 @@ Báo cáo tài chính có nhiều cách đặt tên chỉ tiêu, bảng nhiều 
 
 ## Architecture
 
-![Sơ đồ kiến trúc hệ thống VN Financial Understanding](docs/assets/architecture/pipeline-imagegen.png)
+![Kiến trúc VN Financial RAG](docs/assets/architecture/pipeline.svg)
 
 Web UI được Nginx phục vụ tại cổng `8093` và chuyển tiếp yêu cầu tới FastAPI ở cổng `8092`. MongoDB lưu văn bản nguồn, chunks, notebook và hội thoại; Qdrant lưu các vector embedding. API cùng ingest worker đọc job từ MongoDB. Khi API khởi động, BM25 và dense index được nạp vào RAM. Query Understanding xác định công ty và kỳ trước khi truy xuất; câu trả lời số lấy từ dữ liệu nguồn rồi được kiểm định. Ollama là tùy chọn cho phần diễn giải.
 
@@ -108,7 +108,7 @@ Override này dùng image Ollama và model đã có, đặt endpoint embedding/c
 
 ### Giới hạn tài nguyên Docker
 
-Hai file Compose giới hạn tổng ngân sách ở **10 CPU và 3,94 GiB RAM (4032 MiB)**, tính cả Ollama, init và migration. Mức này chiếm khoảng 52% tài nguyên Docker hiện tại (20 CPU, khoảng 7,57 GiB RAM). Đây là các giới hạn cố định theo máy hiện tại; khi đổi máy cần điều chỉnh lại.
+Các file Compose đặt giới hạn tổng cấu hình tối đa khoảng **10 CPU và 4032 MiB RAM** khi bật toàn bộ dịch vụ, tính cả Ollama, init và migration. Đây là giới hạn của cấu hình Compose mẫu, không phải yêu cầu tối thiểu của máy. Nhu cầu thực tế phụ thuộc kích thước tài liệu, số yêu cầu đồng thời và việc bật dense retrieval/Ollama.
 
 | Service | CPU tối đa | RAM tối đa |
 | --- | ---: | ---: |
@@ -121,7 +121,7 @@ Hai file Compose giới hạn tổng ngân sách ở **10 CPU và 3,94 GiB RAM (
 | UI | 0,25 | 64 MiB |
 | Ollama | 4 | 2048 MiB |
 
-`memswap_limit` bằng `mem_limit` để container không dùng thêm swap. Ollama xử lý một yêu cầu đồng thời và chỉ giữ một model trong bộ nhớ; chuyển giữa embedding và chat có thể phải nạp lại model. Override trỏ cả API và ingest worker tới Ollama này. Giới hạn Ollama chỉ áp dụng khi chạy service `financial-models` bằng lệnh Compose kết hợp ở trên; Ollama chạy riêng tại `host.docker.internal` không chịu giới hạn này. Compose không giới hạn phần trăm GPU hoặc VRAM bằng reservation GPU hiện tại. Container có thể bị OOM nếu workload vượt trần RAM.
+`memswap_limit` bằng `mem_limit` để container không dùng thêm swap. Các giá trị trong bảng là mức trần tham khảo cho cấu hình local; có thể điều chỉnh `cpus`, `mem_limit` và `memswap_limit` theo từng service trong các file Compose. Ollama xử lý một yêu cầu đồng thời và chỉ giữ một model trong bộ nhớ; chuyển giữa embedding và chat có thể phải nạp lại model. Override trỏ cả API và ingest worker tới Ollama này. Giới hạn Ollama chỉ áp dụng khi chạy service `financial-models` bằng lệnh Compose kết hợp ở trên; Ollama chạy riêng tại `host.docker.internal` không chịu giới hạn này. Compose không giới hạn VRAM GPU. Tăng giới hạn RAM khi workload lớn hoặc container bị OOM; trên máy ít RAM có thể tắt dense retrieval hoặc không chạy override Ollama.
 
 Sau khi sửa cấu hình, chạy lại lệnh `up -d` với cả hai file Compose để tạo lại container và áp dụng giới hạn.
 
@@ -169,21 +169,23 @@ OpenAPI/Swagger: [http://127.0.0.1:8092/docs](http://127.0.0.1:8092/docs).
 
 ```text
 .
-├── .github/workflows/ci.yml        # Kiểm thử, lint, typing và cấu hình
-├── docs/                           # Kế hoạch, thiết kế, benchmark, hình ảnh
-│   ├── assets/                     # Pipeline và hình minh họa
-│   ├── benchmarks/
+├── benchmarks/cross_project_rag/  # Công cụ benchmark; corpus đầu vào để riêng
+├── docs/
+│   ├── assets/architecture/        # Sơ đồ kiến trúc dạng SVG/PNG
 │   ├── design/
-│   └── plans/
+│   └── repository/                # Chính sách dữ liệu và hướng dẫn phát hành
 ├── financial_python/
-│   ├── src/financial_rag/          # Parser, retrieval, API, notebooks, validation
-│   ├── evaluation/                 # Bộ nhãn, script benchmark, fixture và kết quả
-│   ├── sample_data/                # Báo cáo demo nhỏ đi kèm repo
-│   └── tests/                      # Kiểm thử tự đủ dữ liệu
+│   ├── evaluation/                 # Benchmark và công cụ đánh giá
+│   ├── sample_data/                # Báo cáo hư cấu dùng làm ví dụ
+│   ├── src/financial_rag/          # API, parsing, retrieval và validation
+│   ├── tests/                      # Kiểm thử tự đủ dữ liệu
+│   └── pyproject.toml
 ├── financial_ui/                   # Giao diện web và Nginx proxy
-├── schemas/                        # Schema báo cáo và alias
+├── schemas/                        # Schema báo cáo và alias tài chính
 ├── .env.example
+├── docker-compose.financial-models.yml
 ├── docker-compose.financial-standalone.yml
+├── LICENSE
 └── README.md
 ```
 
