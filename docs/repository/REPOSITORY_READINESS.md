@@ -10,13 +10,13 @@ The tracked tree is intended to contain application/model code, configuration, s
 
 Real OCR reports, labeled real-report datasets, detailed evaluation outputs, review packs, and QA screenshots have been moved to `financial_python/local_data/archive/`. That directory is ignored by Git. The old local corpus path `/dataset/` also remains ignored. Do not copy items from these folders into a commit or release.
 
-The benchmark and CI defaults use only the fictional demo. Corpus-level experiments require their local inputs and are not part of the default test suite.
+The example benchmark uses only the fictional demo. Corpus-level experiments require their local inputs and are not part of the default test suite.
 
 ## Current release gate
 
-Local and GitHub `main` now use a sanitized two-commit history rooted independently from the old history. The old history remains in ignored local backups and Codex backup refs; never push or publish those refs. A read-only remote check after the update found only `main` among advertised refs and no pull-request refs.
+Local and GitHub `main` use a sanitized history rooted independently from the old history. Commit author and committer addresses use the account's GitHub-provided `noreply` address. Older history remains in local Codex backups; never push those refs or use `git push --mirror`. The remote advertises only `main`.
 
-Gitleaks v8.30.0 scanned the release history and files with no findings. The push triggered GitHub Actions, but its run result has not been checked. Repository visibility was not checked or changed; verify the CI run and visibility before switching the repository to public. A history rewrite does not necessarily purge cached commit views or references held by forks, pull requests, or existing clones; review [GitHub's guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) before changing visibility.
+The repository intentionally has no GitHub Actions workflow; run checks manually when needed. Gitleaks v8.30.0 scans the release history and tracked files with no findings. The local verification record is below. Keep the repository private until its owner decides to change visibility. A history rewrite does not necessarily purge cached commit views or references held by forks, pull requests, or existing clones; review [GitHub's guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) before changing visibility.
 
 ## Verification
 
@@ -30,4 +30,4 @@ python -m mypy src
 python -m financial_rag.evaluation.benchmark
 ```
 
-These checks use the synthetic fixture and do not require the local corpus, MongoDB, Qdrant, Ollama, or a GPU. Docker integration checks are separate from the unit suite.
+These checks use the synthetic fixture and do not require the local corpus, MongoDB, Qdrant, Ollama, or a GPU. On 2026-10-06, local verification passed: 262 pytest tests, Ruff, mypy, JavaScript syntax checks, Docker Compose validation, and Gitleaks history and tracked-file scans. Docker integration checks are separate from the unit suite.

@@ -206,7 +206,7 @@ python -m mypy src
 python -m financial_rag.evaluation.benchmark
 ```
 
-CI chạy test, Ruff, mypy, cú pháp JavaScript và kiểm tra cấu hình Compose. Bộ dữ liệu thật, benchmark phụ thuộc corpus, kết quả chi tiết và ảnh QA được giữ ngoài snapshot Git; hướng dẫn phân loại nằm trong [chính sách dữ liệu repository](docs/repository/REPOSITORY_READINESS.md). Bộ mẫu đi kèm chỉ phục vụ kiểm tra chức năng, không phải phép đo độ chính xác trên báo cáo thực tế.
+Các lệnh kiểm tra ở trên được chạy thủ công; repository hiện không cấu hình GitHub Actions. Bộ dữ liệu thật, benchmark phụ thuộc corpus, kết quả chi tiết và ảnh QA được giữ ngoài snapshot Git; hướng dẫn phân loại nằm trong [chính sách dữ liệu repository](docs/repository/REPOSITORY_READINESS.md). Bộ mẫu đi kèm chỉ phục vụ kiểm tra chức năng, không phải phép đo độ chính xác trên báo cáo thực tế.
 
 ## Known Limitations
 
