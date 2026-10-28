@@ -2,6 +2,8 @@
 
 > Trợ lý hỏi đáp và phân tích báo cáo tài chính Việt Nam, trả lời dựa trên tài liệu đã nạp và kèm trích dẫn nguồn.
 
+[English](README.en.md) · [Tiếng Việt](README.md)
+
 [Hướng dẫn nhanh](#getting-started) · [Kiến trúc](#architecture) · [Bảo mật](SECURITY.md)
 
 ## Overview
