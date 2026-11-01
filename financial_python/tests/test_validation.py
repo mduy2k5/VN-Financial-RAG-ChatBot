@@ -71,6 +71,29 @@ def test_numeric_validation_ignores_labeled_years_and_citation_pages():
     assert result.unit_match is True
 
 
+def test_numeric_validation_ignores_report_row_codes_and_line_numbers():
+    cases = [
+        (
+            "Tổng cộng tài sản là 3.378.833.589.624 VNĐ [c1] (270 = 100 + 200).",
+            "TỔNG CỘNG TÀI SẢN (270 = 100 + 200): 3.378.833.589.624 VNĐ",
+        ),
+        (
+            "Nợ phải trả là 501.375.767.445 VNĐ [c1] (300 = 310 + 330).",
+            "A. NỢ PHẢI TRẢ (300 = 310 + 330): 501.375.767.445 VNĐ",
+        ),
+        (
+            "3. Đầu tư nắm giữ đến ngày đáo hạn là 1.760.000.000.000 VNĐ [c1].",
+            "3. Đầu tư nắm giữ đến ngày đáo hạn: 1.760.000.000.000 VNĐ",
+        ),
+    ]
+
+    for answer, source in cases:
+        result = NumericValidator.validate(answer, [source])
+        assert result.is_valid is True, result
+        assert result.unit_match is True
+        assert result.extracted_number == source.split(":")[-1].strip().split()[0], result
+
+
 def test_numeric_validation_accepts_difference_derived_from_two_labeled_period_values():
     result = NumericValidator.validate(
         "Lợi nhuận tăng 32 Triệu đồng so với kỳ trước [c1].",

@@ -50,6 +50,26 @@ def test_query_understanding_recognizes_acbs_without_confusing_it_with_acb():
     assert query.company_code == "ACBS"
 
 
+def test_fvtpl_asset_query_with_securities_abbreviation_resolves_to_balance_sheet():
+    query = QueryUnderstandingEngine().parse(
+        "Các TSTC ghi nhận thông qua lãi/lỗ (FVTPL) của ACBS năm 2023 là bao nhiêu?"
+    )
+
+    assert query.company_code == "ACBS"
+    assert query.statement_type == StatementType.BALANCE_SHEET
+    assert query.schema_node_id == "ASSET.FIN_INV.TRADING_SECURITIES"
+
+
+def test_fvtpl_loss_query_stays_on_income_statement():
+    query = QueryUnderstandingEngine().parse(
+        "Lỗ từ các tài sản tài chính FVTPL của ACBS năm 2023 là bao nhiêu?"
+    )
+
+    assert query.company_code == "ACBS"
+    assert query.statement_type == StatementType.INCOME_STATEMENT
+    assert query.schema_node_id == "INCOME.SECURITIES.FVTPL_LOSS"
+
+
 def test_query_understanding_handles_vinafreight_and_six_month_periods():
     query = QueryUnderstandingEngine().parse(
         "Doanh thu thuần hợp nhất của VNF lũy kế sáu tháng đầu năm 2025 là bao nhiêu?"

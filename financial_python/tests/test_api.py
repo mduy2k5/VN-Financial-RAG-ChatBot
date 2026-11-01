@@ -848,6 +848,78 @@ def test_answer_endpoint_answers_structured_financial_item_without_model(monkeyp
     assert data["citations"][0]["file_name"] == "DEMO_SYNTHETIC_2025.pdf"
 
 
+def test_exact_row_selection_prefers_requested_child_over_higher_ranked_parent():
+    from financial_rag.api.app import _select_preferred_exact_source_rows
+
+    parent = FinancialChunk(
+        chunk_id="demo-investment-parent",
+        source_file="DEMO_synthetic.txt",
+        document_id="demo-investment",
+        company_code="DEMO",
+        fiscal_year=2025,
+        report_type="consolidated",
+        page=7,
+        statement_type=StatementType.BALANCE_SHEET,
+        chunk_type=ChunkType.FINANCIAL_ITEM,
+        unit="Triệu đồng",
+        content="Chứng khoán đầu tư: 144.164 triệu đồng",
+        metadata={
+            "metric_name": "Chứng khoán đầu tư",
+            "schema_node_id": "ASSET.FIN_INV",
+            "period_values": {"2025": "144.164"},
+        },
+    )
+    child = FinancialChunk(
+        chunk_id="demo-investment-child",
+        source_file="DEMO_synthetic.txt",
+        document_id="demo-investment",
+        company_code="DEMO",
+        fiscal_year=2025,
+        report_type="consolidated",
+        page=7,
+        statement_type=StatementType.BALANCE_SHEET,
+        chunk_type=ChunkType.FINANCIAL_ITEM,
+        unit="Triệu đồng",
+        content="Chứng khoán đầu tư sẵn sàng để bán: 132.778 triệu đồng",
+        metadata={
+            "metric_name": "Chứng khoán đầu tư sẵn sàng để bán",
+            "schema_node_id": "ASSET.FIN_INV.AFS",
+            "period_values": {"2025": "132.778"},
+        },
+    )
+    parsed = api_module.query_engine.parse(
+        "Chứng khoán đầu tư sẵn sàng để bán của DEMO năm 2025"
+    )
+    results = [RetrievalResult(chunk=parent, rrf_score=0.95)]
+
+    selected = _select_preferred_exact_source_rows(
+        parsed.original_query,
+        parsed,
+        results,
+        candidate_chunks=[
+            parent,
+            child,
+            child.model_copy(update={"chunk_id": "other-company-child", "company_code": "OTHER"}),
+            child.model_copy(update={"chunk_id": "prior-year-child", "fiscal_year": 2024}),
+            child.model_copy(update={"chunk_id": "separate-basis-child", "report_type": "separate"}),
+        ],
+    )
+
+    assert [result.chunk.chunk_id for result in selected] == [child.chunk_id]
+
+    # The same exact source-label recovery still works for legacy chunks that
+    # predate schema annotations, using label specificity as the fallback.
+    parent.metadata.pop("schema_node_id")
+    child.metadata.pop("schema_node_id")
+    legacy_selected = _select_preferred_exact_source_rows(
+        parsed.original_query,
+        parsed,
+        results,
+        candidate_chunks=[parent, child],
+    )
+    assert [result.chunk.chunk_id for result in legacy_selected] == [child.chunk_id]
+
+
 def test_answer_endpoint_falls_back_to_retrieval_when_schema_has_no_mapping(monkeypatch):
     retriever = _answer_test_retriever()
     monkeypatch.setattr(api_module, "retriever", retriever)

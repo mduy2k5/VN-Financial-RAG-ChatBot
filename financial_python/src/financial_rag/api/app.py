@@ -856,6 +856,7 @@ def _select_preferred_exact_source_rows(
     query: str,
     parsed_query: ParsedQuery,
     results: List[RetrievalResult],
+    candidate_chunks: List[FinancialChunk] | None = None,
 ) -> List[RetrievalResult]:
     """Prefer the primary statement row over duplicate mentions in note tables."""
     exact_rows = [
@@ -864,21 +865,100 @@ def _select_preferred_exact_source_rows(
         and _raw_source_label_in_query(query, result.chunk)
         and result.chunk.metadata.get("report_eligible") is not False
     ]
-    if not exact_rows:
-        return []
 
     requested_companies = parsed_query.company_codes or (
         [parsed_query.company_code] if parsed_query.company_code else []
     )
+    requested_years = list(parsed_query.fiscal_years)
+    if not requested_years and parsed_query.fiscal_year is not None:
+        requested_years = [parsed_query.fiscal_year]
+
+    # Sparse retrieval can omit a requested row while returning its broader
+    # parent. Recover an exact source-label match from the already request-
+    # scoped corpus, constrained to issuer, period, basis and statement.
+    existing_ids = {result.chunk.chunk_id for result in exact_rows}
+    requested_company_set = {
+        str(company).casefold() for company in requested_companies
+    }
+    for chunk in (candidate_chunks if requested_company_set and candidate_chunks else []):
+        if (
+            chunk.chunk_id in existing_ids
+            or chunk.chunk_type != ChunkType.FINANCIAL_ITEM
+            or chunk.metadata.get("report_eligible") is False
+            or not _raw_source_label_in_query(query, chunk)
+        ):
+            continue
+        if requested_company_set and (chunk.company_code or "").casefold() not in requested_company_set:
+            continue
+        if parsed_query.statement_type and chunk.statement_type != parsed_query.statement_type:
+            continue
+        if parsed_query.report_type and chunk.report_type != parsed_query.report_type:
+            continue
+        if requested_years:
+            period_values = chunk.metadata.get("period_values") or {}
+            years_on_chunk = {chunk.fiscal_year, chunk.comparative_fiscal_year}
+            if isinstance(period_values, dict):
+                years_on_chunk.update(
+                    int(year) for year in period_values if str(year).isdigit()
+                )
+            if not set(requested_years).intersection(years_on_chunk):
+                continue
+        exact_rows.append(RetrievalResult(chunk=chunk, rrf_score=0.0))
+        existing_ids.add(chunk.chunk_id)
+
+    if not exact_rows:
+        return []
+
+    # If the query parser resolved an exact schema line, trust that line over
+    # a more highly ranked ancestor whose label is also contained in the
+    # question (for example, "Chứng khoán đầu tư" versus its AFS component).
+    target_node_id = parsed_query.schema_node_id
+    def source_label_specificity(result: RetrievalResult) -> int:
+        label = source_item_label(result.chunk)
+        label = re.sub(r"\s*\([^)]*\)\s*$", "", label)
+        label = re.sub(r"^\s*(?:\d+(?:\.\d+)*|[A-Z]|[IVXLCDM]+)[.)-]\s*", "", label)
+        return len(re.sub(r"[^\w]+", " ", label, flags=re.UNICODE).strip())
+
+    target_node = chunker.schema_catalog.nodes.get(str(target_node_id or ""))
+
+    def is_target_lineage_row(result: RetrievalResult) -> bool:
+        node = chunker.schema_catalog.nodes.get(
+            str(result.chunk.metadata.get("schema_node_id") or "")
+        )
+        while target_node is not None and node is not None:
+            if node.node_id == target_node.node_id:
+                return True
+            node = chunker.schema_catalog.nodes.get(node.parent_id or "")
+        return False
+
+    schema_exact_rows = [result for result in exact_rows if is_target_lineage_row(result)]
+    if schema_exact_rows:
+        longest_schema_label = max(
+            source_label_specificity(result) for result in schema_exact_rows
+        )
+        schema_exact_rows = [
+            result for result in schema_exact_rows
+            if source_label_specificity(result) == longest_schema_label
+        ]
+        exact_rows = schema_exact_rows
+    else:
+        # Older chunks may not have a schema node ID. In that case, retain the
+        # longest source label explicitly present in the question and discard
+        # its shorter parent label. Keep equal labels from different rows so
+        # existing period/document selection can resolve them below.
+        longest_label = max(source_label_specificity(result) for result in exact_rows)
+        if longest_label:
+            exact_rows = [
+                result for result in exact_rows
+                if source_label_specificity(result) == longest_label
+            ]
+
     if not requested_companies:
         requested_companies = list(dict.fromkeys(
             result.chunk.company_code for result in exact_rows
             if result.chunk.company_code
         ))
 
-    requested_years = list(parsed_query.fiscal_years)
-    if not requested_years and parsed_query.fiscal_year is not None:
-        requested_years = [parsed_query.fiscal_year]
     if not requested_years:
         requested_years = sorted({
             result.chunk.fiscal_year for result in exact_rows
@@ -2327,7 +2407,7 @@ def answer_question(req: QueryRequest):
             and parsed.intent.value == "metric_lookup"
         ):
             exact_source_rows = _select_preferred_exact_source_rows(
-                req.query, parsed, results
+                req.query, parsed, results, _runtime_chunks()
             )
             if exact_source_rows:
                 answer_results = exact_source_rows
@@ -2522,7 +2602,7 @@ def answer_question(req: QueryRequest):
         )
         if not structured_request and parsed.intent.value == "metric_lookup":
             exact_source_rows = _select_preferred_exact_source_rows(
-                req.query, parsed, fallback_results
+                req.query, parsed, fallback_results, _runtime_chunks()
             )
             if exact_source_rows:
                 fallback_results = exact_source_rows

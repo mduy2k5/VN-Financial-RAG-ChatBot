@@ -14,7 +14,7 @@ Benchmark ví dụ chỉ dùng fixture hư cấu. Các thí nghiệm cần corpu
 
 ## Kiểm tra trước khi phát hành
 
-Repository không cấu hình GitHub Actions; maintainer chạy các kiểm tra bên dưới thủ công trước khi phát hành. Hãy rà soát diff, file được stage, nội dung mẫu và secret scan trước khi push.
+GitHub Actions chạy pytest, Ruff và mypy trên push/pull request. Benchmark tổng hợp, kiểm tra JavaScript/Docker Compose và secret scan vẫn cần chạy thủ công trước khi phát hành. Hãy rà soát diff, file được stage, nội dung mẫu và secret scan trước khi push.
 
 ## Lệnh kiểm tra
 

@@ -212,6 +212,10 @@ class ReportSchemaCatalog:
     def normalize_label(value: str) -> str:
         value = re.sub(r"<[^>]+>", " ", value)
         value = value.replace("**", " ").replace("__", " ").replace("`", " ")
+        # Securities reports commonly abbreviate "tài sản tài chính" as
+        # "TSTC". Expand it before alias matching so the FVTPL asset row does
+        # not lose to an income-statement "lãi/lỗ FVTPL" alias.
+        value = re.sub(r"\bTSTC\b", "tài sản tài chính", value, flags=re.IGNORECASE)
         # Financial statements often append a formula/code to the row label,
         # e.g. "Doanh thu thuần ... (10 = 01 - 02)". It is not part of the
         # semantic label and otherwise prevents the source row from receiving

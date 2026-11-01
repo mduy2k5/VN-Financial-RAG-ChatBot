@@ -12,6 +12,8 @@ VN Financial RAG helps users look up and summarize figures from TXT/Markdown fin
 
 The project is intended for analysts, investors, financial-data practitioners, and developers experimenting with a RAG workflow for Vietnamese corporate reports. Ingestion and query processing run as separate services. MongoDB stores documents and chunks, while Qdrant stores E5 embeddings in persistent Docker volumes.
 
+> **Status: experimental / research.** This MVP explores Q&A over Vietnamese financial reports and has not been validated on an independently reviewed holdout of real reports. It can select the wrong row or metric; open citations and check the source before relying on an answer. It is not ready for production financial decisions.
+
 ## Motivation
 
 Financial reports use different names for the same metrics and often contain multi-level tables and columns comparing reporting periods. Plain text search can return the wrong company, year, or table row. This project combines keyword and vector search, preserves row and table structure with provenance, and validates figures and citations before returning an answer.
@@ -30,7 +32,7 @@ Financial reports use different names for the same metrics and often contain mul
 
 ## Architecture
 
-![VN Financial RAG architecture](docs/assets/architecture/pipeline.svg)
+![VN Financial RAG architecture](docs/assets/architecture/pipeline_english.png)
 
 Nginx serves the web UI on port `8093` and forwards requests to FastAPI on port `8092`. MongoDB stores source text, chunks, notebooks, and conversations; Qdrant stores vectors. The API and ingestion worker read jobs from MongoDB. At startup, the API loads the BM25 and dense indexes into memory. Query Understanding identifies the company and reporting period before retrieval; numeric answers are derived from source data and validated. Ollama is optional and can provide narrative explanations.
 
@@ -212,7 +214,23 @@ python -m mypy src
 python -m financial_rag.evaluation.benchmark
 ```
 
-The checks above are run manually; the repository does not configure GitHub Actions. Real datasets, corpus-dependent benchmarks, detailed results, and QA screenshots are kept outside the Git snapshot. See the [repository data policy](docs/repository/REPOSITORY_READINESS.md) for guidance. The included sample is for functional testing and is not an accuracy measurement on real reports.
+The commands above can be run locally. GitHub Actions runs pytest, Ruff, and mypy; the synthetic benchmark below can be run separately. Real data, corpus-dependent benchmark labels/results, and QA screenshots are kept outside the Git snapshot. See the [repository data policy](docs/repository/REPOSITORY_READINESS.md).
+
+### Public benchmark
+
+The default benchmark can be rerun against one fully fictional report with two lookup questions. The latest run used BM25, with dense retrieval disabled and `top_k=5`:
+
+| Measure | Result | How to read it |
+|---|---:|---|
+| Cases / sources | 2 / 1 DEMO report | Two lookups for 2025 assets and revenue; synthetic data |
+| Recall@5 | 1.00 | Both cases retrieved the labeled page |
+| MRR | 1.00 | The relevant page ranked first in both cases |
+| Precision@5 | 0.80 | Computed over five retrieved results per case |
+| Citation-page recall | 1.00 | Every labeled page appeared among pages cited by retrieved results |
+| Citation-page precision | 0.50 | Half of the distinct pages cited by retrieved results matched the labels |
+| Evidence value and unit hit rate | 1.00 / 1.00 | Both expected values and units appeared in retrieved evidence |
+
+This is a **two-case functional smoke test**, not an accuracy estimate on real reports. It measures retrieval and whether expected values/units appear in evidence; it does not score the final LLM answer, PDF/OCR extraction, diverse note disclosures, or generalization. `Citation-page precision` is computed over distinct pages in citations attached to retrieved results; it is not a citation-quality score for the final answer. These numbers help readers run the demo and inspect the workflow, but they are too small to establish suitability for a particular business use. See the [benchmark guide](financial_python/evaluation/README.md), [case labels](financial_python/evaluation/demo_cases.jsonl), and [synthetic report](financial_python/sample_data/DEMO_SYNTHETIC_2025.md).
 
 ## Known Limitations
 
@@ -221,6 +239,7 @@ The checks above are run manually; the repository does not configure GitHub Acti
 - MongoDB stores raw text and chunks. Qdrant stores unique vectors keyed by passage hash in a separate collection for each model revision. Ollama provides a digest; other endpoints need `FINANCIAL_EMBEDDING_REVISION` if they do not return a revision. Persistent vector caching is disabled when a revision cannot be determined. BM25 remains available while the dense index loads or updates.
 - E5 requires a compatible embedding endpoint and sufficient resources. Dense retrieval can be disabled to use BM25 only.
 - In-depth financial analysis has not been validated on a sufficiently large independent holdout set.
+- No independently reviewed holdout establishes accuracy on real financial reports; wrong periods, units, or metric rows are still possible.
 - The MVP UI has no accounts; conversations are shared within a local MongoDB instance, with a limit of 24 conversations and 40 turns per conversation.
 
 ## License

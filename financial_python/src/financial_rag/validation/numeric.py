@@ -13,8 +13,10 @@ class NumericValidator:
     NON_FINANCIAL_IDENTIFIER_PATTERN = re.compile(
         r"\b\d{1,3}\s*/\s*\d{4}\s*/\s*TT\s*-\s*[A-ZĐ-]+\b|"
         r"\b\d{1,2}/\d{1,2}/(?:19|20)\d{2}\b|"
+        r"\(\s*\d{1,4}\s*=\s*\d{1,4}(?:\s*[+-]\s*\d{1,4})+\s*\)|"
+        r"^[ \t]*(?:\d{1,3}(?:\.\d+)*|[IVXLCDM]+|[A-Z])\s*[.)]\s+(?=\D)|"
         r"\b(?:19|20)\d{2}\b",
-        re.IGNORECASE,
+        re.IGNORECASE | re.MULTILINE,
     )
 
     NUMBER_PATTERN = re.compile(

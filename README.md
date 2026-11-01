@@ -12,6 +12,8 @@ VN Financial RAG giúp người dùng tra cứu và tổng hợp số liệu t�
 
 Dự án hướng tới nhà phân tích, nhà đầu tư, người làm dữ liệu tài chính và developer cần thử nghiệm một quy trình RAG chuyên biệt cho báo cáo doanh nghiệp Việt Nam. Ingestion và truy vấn chạy trên dịch vụ riêng; MongoDB lưu tài liệu/chunks còn Qdrant lưu các embedding E5 trong các Docker volume riêng.
 
+> **Trạng thái: experimental / nghiên cứu.** Đây là MVP để thử nghiệm hỏi đáp báo cáo tài chính tiếng Việt, chưa được nghiệm thu bằng holdout độc lập trên báo cáo thực. Kết quả có thể chọn nhầm dòng hoặc chỉ tiêu; hãy mở citation và đối chiếu tài liệu trước khi sử dụng. Chưa nên dùng làm nguồn quyết định tài chính trong production.
+
 ## Motivation
 
 Báo cáo tài chính có nhiều cách đặt tên chỉ tiêu, bảng nhiều tầng và cột so sánh giữa các kỳ. Tìm kiếm văn bản đơn thuần có thể trả nhầm doanh nghiệp, năm hoặc dòng bảng. Dự án kết hợp tìm kiếm từ khóa và vector, giữ cấu trúc dòng/bảng cùng provenance, rồi kiểm tra số liệu và citation trước khi trả lời.
@@ -210,12 +212,29 @@ python -m mypy src
 python -m financial_rag.evaluation.benchmark
 ```
 
-Các lệnh kiểm tra ở trên được chạy thủ công; repository hiện không cấu hình GitHub Actions. Bộ dữ liệu thật, benchmark phụ thuộc corpus, kết quả chi tiết và ảnh QA được giữ ngoài snapshot Git; hướng dẫn phân loại nằm trong [chính sách dữ liệu repository](docs/repository/REPOSITORY_READINESS.md). Bộ mẫu đi kèm chỉ phục vụ kiểm tra chức năng, không phải phép đo độ chính xác trên báo cáo thực tế.
+Các lệnh kiểm tra ở trên có thể chạy cục bộ. GitHub Actions chạy pytest, Ruff và mypy; benchmark dữ liệu tổng hợp dưới đây chạy riêng. Dữ liệu thật, nhãn/kết quả benchmark phụ thuộc corpus và ảnh QA được giữ ngoài snapshot Git; xem [chính sách dữ liệu repository](docs/repository/REPOSITORY_READINESS.md).
+
+### Benchmark công khai
+
+Benchmark mặc định có thể chạy lại trên một báo cáo hoàn toàn hư cấu và hai câu hỏi tra cứu. Kết quả gần nhất dùng BM25, tắt dense retrieval, `top_k=5`:
+
+| Phép đo | Kết quả | Cách đọc |
+|---|---:|---|
+| Số ca / nguồn | 2 / 1 báo cáo DEMO | Hai câu tra cứu tài sản và doanh thu năm 2025; dữ liệu tổng hợp |
+| Recall@5 | 1.00 | Cả hai ca đều tìm thấy trang đã gán nhãn |
+| MRR | 1.00 | Trang đúng đứng đầu trong cả hai ca |
+| Precision@5 | 0.80 | Tính trên 5 kết quả truy xuất cho mỗi ca |
+| Citation-page recall | 1.00 | Các trang được gán nhãn đều có trong tập trang được dẫn từ kết quả truy xuất |
+| Citation-page precision | 0.50 | Một nửa số trang khác nhau trong tập dẫn từ kết quả truy xuất khớp nhãn |
+| Giá trị và đơn vị trong bằng chứng | 1.00 / 1.00 | Cả hai giá trị mong đợi và đơn vị đều xuất hiện trong bằng chứng đã truy xuất |
+
+Đây là **smoke test chức năng gồm hai ca**, không phải ước lượng độ chính xác trên báo cáo thật. Benchmark đo retrieval và việc đưa giá trị/đơn vị vào bằng chứng; không chấm chất lượng câu trả lời cuối của LLM, khả năng đọc PDF/OCR, thuyết minh đa dạng hay khả năng tổng quát hóa. `Citation-page precision` được tính trên các trang khác nhau trong citation của tập kết quả truy xuất, không phải điểm chấm citation cho câu trả lời cuối. Các số này giúp kiểm tra demo và tái hiện quy trình; chúng chưa đủ để kết luận phù hợp cho nghiệp vụ cụ thể. Xem [hướng dẫn benchmark](financial_python/evaluation/README.md), [bộ câu hỏi](financial_python/evaluation/demo_cases.jsonl) và [báo cáo tổng hợp](financial_python/sample_data/DEMO_SYNTHETIC_2025.md).
 
 ## Known Limitations
 
 - Chỉ hỗ trợ TXT và Markdown; PDF nằm ngoài phạm vi.
 - Câu trả lời chỉ dựa trên các báo cáo đã nạp; chất lượng OCR/extraction đầu vào ảnh hưởng kết quả.
+- Chưa có holdout độc lập được rà soát để xác nhận chất lượng trên báo cáo tài chính thực; sai kỳ, đơn vị hoặc dòng chỉ tiêu vẫn có thể xảy ra.
 - MongoDB lưu raw text và chunks; Qdrant lưu các vectors duy nhất theo hash passage trong collection riêng cho mỗi revision model. Ollama cung cấp digest; endpoint khác cần `FINANCIAL_EMBEDDING_REVISION` nếu không trả revision. Không xác định được revision thì cache vector bền bị tắt. BM25 phục vụ trong lúc dense index được nạp hoặc cập nhật.
 - E5 cần endpoint embedding tương thích và tài nguyên phù hợp. Có thể tắt dense retrieval để chạy BM25.
 - Phân tích tài chính chuyên sâu chưa được xác nhận bằng bộ holdout độc lập đủ rộng.
